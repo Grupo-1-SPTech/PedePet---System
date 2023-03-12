@@ -1,41 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navbar</title>
-    <link rel="stylesheet" href="style.css" />
-	<script src="https://kit.fontawesome.com/f0601b0fb2.js" crossorigin="anonymous"></script>
-    <script type='module' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js'></script>
-    <script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js'></script>
-  </head>
 
-  <body>
-    <header>
-      <nav>
-        <a class="logo" href="/">Tiger Codes</a>
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-        <ul class="nav-list">
-          <li><a href="#">Filhotes</a></li>
-          <div class="dropdown">
-            <p class="dropbtn">Empresa</p>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="css/images/logoPedepetRoxo.png" class="logo">
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a class="itemMenu" href="#">Filhotes</a></li>
+        <li><a class="itemMenu" href="#">Empresa</a></li>
+        <li>
+          <div class="btn_pub">
+            Publicar casal
+          </div>
+        </li>
+        <li>
+          <div class="btn_entrar">
+            Entrar
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="containerBanner">
+        <div class="addSquare">
+          <div class="contentSquare">
+            <h1>O sonho de ter um filhote você realiza aqui!</h1>
+            <span>Não perca tempo</span>
+            <br>
+            <p>Invista na sua qualidade de vida e da sua família.
+              Presenteie quem você ama com um filhotinho.</p>
+            <br>
+            <div class="btn_filhote">
+              Quero meu filhote!
             </div>
           </div>
-          <li><button class="btnPublique">Publique seu casal</button></li>
-          <li><button class="btnEntrar">Entrar</button></li>
-        </ul>
-      </nav>
-    </header>
-    <main></main>
-    <script src="script.js"></script>
-  </body>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="containerAbout">
+        <div class="containerContentAbout">
+
+          <div class="leftAbout">
+            <div>
+              <h1>Sobre nós</h1>
+              <h2>Consultoria especializada para encontrar o filhote certo para sua família!</h2>
+              <p id="txtAbout">
+                <span>Atuamos com um rigoroso processo de seleção, controle e avaliação dos vendedores,
+                  tudo para garantir o bem-estar do seu futuro melhor amigo. Todos os nossos bebês acompanham</span>
+                <span id="pt2">Pedigree, estão com as vacinas inícias, de acordo com sua idade e vermifugados.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="rightAbout">
+            <div class="team"></div>
+
+            <div class="stats">
+              <div id="statsInfo1">
+                <span>136+</span>
+                <span id="txtInfo1">Profissionais</span>
+                <span>cadastrados</span>
+              </div>
+              <div id="statsInfo2">
+                <span>98+</span>
+                <span id="txtInfo2">Filhotes</span>
+                <span>adquiridos</span>
+              </div>
+              <div id="statsInfo3">
+                <span>238+</span>
+                <span id="txtInfo3">Casais de</span>
+                <span>pets</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
