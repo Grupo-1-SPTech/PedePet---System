@@ -59,29 +59,6 @@
    flex-direction: column
 }
 
-.login-button {
-   display: flex;
-   align-items: center;
-}
-
-.login-button button {
-   border: none;
-   background-color: #44207e;
-   padding: 0.4rem 1rem;
-   border-radius: 5px;
-   cursor: pointer;
-}
-
-.login-button button:hover {
-   background-color: #44207e;
-}
-
-.login-button button a {
-   text-decoration: none;
-   font-weight: 700;
-   color: #fff;
-}
-
 .form-header h1::after {
    content: '';
    display: block;
@@ -367,4 +344,27 @@ footer {
 #logofooter{
    height: 13vh;
    width: 13rem;
+}
+
+.login-button {
+   display: flex;
+   align-items: center;
+}
+
+.login-button button {
+   border: none;
+   background-color: #44207e;
+   padding: 0.4rem 1rem;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.login-button button:hover {
+   background-color: #44207e;
+}
+
+.login-button button a {
+   text-decoration: none;
+   font-weight: 700;
+   color: #fff;
 }
