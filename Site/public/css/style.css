@@ -34,6 +34,21 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4c4c9d;
+  border-radius: 30px;
+}
+
 /* Menu */
 
 a {
