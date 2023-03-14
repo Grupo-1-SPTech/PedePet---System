@@ -14,6 +14,10 @@
   --greyLight-2: #c8d0e7;
   --greyLight-3: #bec8e4;
   --greyDark: #9baacf;
+  --color-neutral-0: #ffffff;
+  --color-neutral-10: #ffffff;
+  --color-neutral-30: #000000;
+  --color-neutral-40: #000000;
 }
 
 /* definições de navegador */
@@ -539,14 +543,6 @@ nav {
 /* footer */
 
 /*FOOTER*/
-:root {
-  --color-neutral-0: #ffffff;
-  --color-neutral-10: #ffffff;
-  --color-neutral-30: #000000;
-  --color-neutral-40: #000000;
-
-}
-
 .footer {
   margin: 0;
   padding: 0;
@@ -787,5 +783,159 @@ footer {
     overflow: hidden;
     max-height: 0;
     transition: all 0.4s ease-in;
+}
+
+/* Contato */
+
+
+.faleconosco {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary);
+}
+
+.container {
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-image {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.form-image img {
+ width: 80%;
+}
+
+.form {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+.nemDeusSabe {
+ padding: 5%;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+}
+
+.login-button button {
+  border: none;
+  background-color: var(--secondary);
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button button a {
+  text-decoration: none;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--white);
+}
+
+.form-header h1::after {
+  content: '';
+  display: block;
+  width: 5rem;
+  height: 0.3rem;
+  background-color: var(--secondary);
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.1rem;
+}
+
+.input-box input, select  {
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.input-box input:hover, select:hover {
+  background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible, select:focus-visible {
+  outline: 1px solid var(--secondary);
+}
+
+.input-box label,
+.gender-title h6 {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  color: #000000c0;
+}
+
+.input-box input::placeholder, select::placeholder {
+  color: #000000be;
+}
+
+.continue-button button {
+  width: 100%;
+  border: none;
+  background-color: var(--secondary);
+  padding: 0.62rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.continue-button button:hover {
+  background-color: var(--secondary);
+}
+
+.continue-button button a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
 }
 
