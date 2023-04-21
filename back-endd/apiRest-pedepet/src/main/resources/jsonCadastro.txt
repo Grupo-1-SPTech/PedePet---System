@@ -1,0 +1,32 @@
+{
+	"nome":"Fabo",
+	"email":"fabio@gmail.com",
+	"cpf":"38328401843",
+	"telefone":"(11) 99266-4464",
+	"senha":"Jinsuo10@",
+	"tipoUsuario":1,
+	"interesse":1,
+	"preferenciaRaca":1,
+	"pretendeEsperar":1,
+	"moradia":"APT",
+	"qtdComodos":1,
+	"qtdPessoas":5,
+	"qtdHoras":12,
+	"tevePet":1
+}
+{
+	"nome":"Gerson",
+	"email":"Gerson@gmail.com",
+	"cpf":"38328401843",
+	"telefone":"(11) 99266-4464",
+	"senha":"GersonProf10@",
+	"tipoUsuario":0,
+	"interesse":0,
+	"preferenciaRaca":0,
+	"pretendeEsperar":0,
+	"moradia":"APT",
+	"qtdComodos":5,
+	"qtdPessoas":2,
+	"qtdHoras":4,
+	"tevePet":0
+}

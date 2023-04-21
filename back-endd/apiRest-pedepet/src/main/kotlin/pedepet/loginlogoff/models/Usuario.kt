@@ -40,41 +40,26 @@ data class Usuario(
         var senha:String,
 
 
-        @field:NotBlank
         val tipoUsuario:Int, // COMPRADOR = 1, VENDEDOR = 2
 
 
         // PARTE 2 CADASTRO
-        @field:NotBlank
         val interesse:Int, // COMPRAR PET = 1, VENDER UM PET = 2
 
-
-        @field:NotBlank
         val preferenciaRaca:Int, // SIM = 1, NÃO = 2
 
-
-        @field:NotBlank
         val pretendeEsperar:Int, // QTD DE MESES QUE A PESSOA PRETENDE ESPERAR PARA TER UM FILHOTE
 
 
         // PARTE 3 CADASTRO
-        @field:NotBlank
         val moradia:String, // SOBRE A MORADIA DA PESSOA, APTO, CASA ETC
 
-
-        @field:NotBlank
         val qtdComodos:Int, // QTD DE COMODOS NA CASA
 
-
-        @field:NotBlank
         val qtdPessoas:Int, // QTD PESSOAS NA CASA
 
-
-        @field:NotBlank
         val qtdHoras:Int, // QTD HORAS QUE PASSA EM CASA
 
-
-        @field:NotBlank
         val tevePet:Int, // SIM = 1, NÃO = 2
 
 ) {
