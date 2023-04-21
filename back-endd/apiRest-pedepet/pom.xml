@@ -12,7 +12,7 @@
 	<artifactId>login-logoff</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>login-logoff</name>
-	<description>Aplicação de login e logoff para o site Pedepet</description>
+	<description>PedePet Back-end</description>
 	<properties>
 		<java.version>17</java.version>
 		<kotlin.version>1.6.21</kotlin.version>
@@ -21,7 +21,12 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.14</version>
+			<version>1.6.15</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
 		<dependency>
