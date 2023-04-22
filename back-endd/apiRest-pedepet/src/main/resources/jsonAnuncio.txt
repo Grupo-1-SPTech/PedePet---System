@@ -1,6 +1,5 @@
 {
 	"id":"1",
-	"fkVendedorUsuario":"1",
 	"racaMae":"Raça Mae 1",
 	"idadeMae":5,
 	"porteMae":"Medio",
@@ -19,7 +18,6 @@
 }
 {
 	"id":"2",
-	"fkVendedorUsuario":"3",
 	"racaMae":"Raça Mae 2",
 	"idadeMae":5,
 	"porteMae":"Medio",

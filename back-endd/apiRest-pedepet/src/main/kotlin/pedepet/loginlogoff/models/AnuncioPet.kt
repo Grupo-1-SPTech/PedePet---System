@@ -8,12 +8,13 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.ManyToOne
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.Size
 
 @Entity
 data class AnuncioPet(
 
-    @ManyToOne
-    val fkVendedorUsuario: Usuario,
+    //@ManyToOne
+    //val usuario: Usuario,
 
     // PARTE 1 CAD ANUNCIO
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,6 +52,7 @@ data class AnuncioPet(
 
     var fotosCasal:Int,
 
+    @field:Size(min = 0, max= 240)
     var descricao:String,
 
 ) {

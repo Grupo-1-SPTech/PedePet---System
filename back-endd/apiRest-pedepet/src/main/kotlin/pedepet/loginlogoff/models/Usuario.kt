@@ -39,7 +39,6 @@ data class Usuario(
         @field:NotBlank @field:Size(min = 8, max = 25)
         var senha:String,
 
-
         val tipoUsuario:Int, // COMPRADOR = 1, VENDEDOR = 2
 
 
@@ -61,6 +60,8 @@ data class Usuario(
         val qtdHoras:Int, // QTD HORAS QUE PASSA EM CASA
 
         val tevePet:Int, // SIM = 1, NÃO = 2
+
+        var autenticado:Boolean,
 
 ) {
 }

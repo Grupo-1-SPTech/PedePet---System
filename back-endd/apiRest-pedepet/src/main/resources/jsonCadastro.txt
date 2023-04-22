@@ -4,7 +4,7 @@
 	"email":"fabio@gmail.com",
 	"cpf":"38328401843",
 	"telefone":"(11) 99266-4464",
-	"senha":"Jinsuo10@",
+	"senha":"sptech10@",
 	"tipoUsuario":1,
 	"interesse":1,
 	"preferenciaRaca":1,
@@ -18,7 +18,7 @@
 {
 	"id":"2",
 	"nome":"Gerson",
-	"email":"Gerson@gmail.com",
+	"email":"gerson@gmail.com",
 	"cpf":"38328401843",
 	"telefone":"(11) 99266-4464",
 	"senha":"GersonProf10@",

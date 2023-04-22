@@ -2,18 +2,20 @@ package pedepet.loginlogoff.dtos
 
 import pedepet.loginlogoff.models.Usuario
 
-class UsuarioRequest (
+data class UsuarioRequest (
     val id:Int,
     val email:String,
     val nome:String,
-    val senha:String,
+    var senha:String,
     val tipoUsuario:Int,
+    var autenticado:Boolean,
 ) {
     constructor(usuario: Usuario): this(
         usuario.id,
         usuario.email,
         usuario.nome,
         usuario.senha,
-        usuario.tipoUsuario
+        usuario.tipoUsuario,
+        usuario.autenticado
     )
 }

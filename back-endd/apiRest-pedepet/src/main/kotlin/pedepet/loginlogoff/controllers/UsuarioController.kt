@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.server.ResponseStatusException
+import pedepet.loginlogoff.dtos.LoginRequest
 import pedepet.loginlogoff.dtos.SenhaEntradaRequest
 import pedepet.loginlogoff.dtos.UsuarioRequest
 import pedepet.loginlogoff.models.Usuario
 import pedepet.loginlogoff.repositories.AnuncioPetRepository
 import pedepet.loginlogoff.repositories.UsuarioRepository
+import javax.transaction.Transactional
 import javax.validation.Valid
 
 @RestController
@@ -27,7 +29,7 @@ class UsuarioController(
     val usuarios = mutableListOf<Usuario>()
 
     @PostMapping("/cadastrar")
-    fun postCadastrar(@RequestBody @Valid novo: Usuario):ResponseEntity<UsuarioRequest>{
+    fun cadastrar(@RequestBody @Valid novo: Usuario):ResponseEntity<UsuarioRequest>{
         val usuarioExistente = usuarios.firstOrNull{ it.email == novo.email}
 
         if(usuarioExistente != null){
@@ -44,18 +46,20 @@ class UsuarioController(
         if(listaUsuario.isNotEmpty()){
             return ResponseEntity.status(200).body(listaUsuario)
         }
+        //throw ResponseStatusException(204,"Sem cadastros",null)
         return ResponseEntity.status(204).build()
+
     }
 
     @PatchMapping("/alterarSenha/{email}")
-    fun patchAlterarSenha(@PathVariable email:String, @RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Usuario>{
+    fun alterarSenha(@PathVariable email:String, @RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Void>{
         val encontrado = usuarios.firstOrNull{ it.email == email}
 
         if (encontrado == null){
             throw ResponseStatusException(404,"Usuário não encontrado",null)
         }else {
             encontrado.senha = novaSenha.senha
-            return ResponseEntity.status(200).body(usuarioRepository.save(encontrado))
+            return ResponseEntity.status(200).build()
         }
     }
 
@@ -66,7 +70,35 @@ class UsuarioController(
             usuarioRepository.deleteByEmail(email)
             return ResponseEntity.status(200).build()
         } else{
-            throw ResponseStatusException(404,"Esse email não está registrado no sistema",null)
+            throw ResponseStatusException(404,"Esse email não esta registrado no sistema",null)
         }
     }
+
+
+    @PostMapping("/login")
+    fun logar(@RequestBody @Valid usuarioLogin: LoginRequest): ResponseEntity<UsuarioRequest> {
+        val usuarioExistente = usuarios.firstOrNull { it.email == usuarioLogin.email && it.senha == usuarioLogin.senha }
+
+        if(usuarioExistente != null){
+            usuarioExistente.autenticado = true
+
+            val LoginUsuarioDto = UsuarioRequest(usuarioExistente)
+            return ResponseEntity.status(200).body(LoginUsuarioDto)
+        }
+
+        throw ResponseStatusException(404, "Usuário não existe ou credênciais errada",null)
+    }
+
+    @DeleteMapping("/login/{email}")
+    fun deslogar(@PathVariable email:String):ResponseEntity<Void>{
+        val usuarioExistente = usuarios.firstOrNull { it.email == email }
+
+        if(usuarioExistente != null){
+            usuarioExistente.autenticado = false
+            return ResponseEntity.status(200).build()
+        }
+
+        throw ResponseStatusException(404, null,null)
+    }
+
 }
