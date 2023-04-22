@@ -2,6 +2,7 @@ package pedepet.loginlogoff.controllers
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.server.ResponseStatusException
 import pedepet.loginlogoff.dtos.AnuncioRequest
 import pedepet.loginlogoff.dtos.UsuarioRequest
 import pedepet.loginlogoff.models.AnuncioPet
@@ -20,9 +21,14 @@ class AnuncioController(
 
     @PostMapping("/cadastrar")
     fun postCadastrarA(@RequestBody @Valid novoAnuncio:AnuncioPet):ResponseEntity<AnuncioRequest>{
-        val anuncioExistente = anuncios.firstOrNull{ it.}
+        val anuncioExistente = anuncios.firstOrNull{it.fkVendedorUsuario == novoAnuncio.fkVendedorUsuario && it.racaMae == novoAnuncio.racaMae && it.racaPai == novoAnuncio.racaPai}
 
-        return ResponseEntity.status(200).build()
+        if(anuncioExistente != null){
+            throw ResponseStatusException(409,"Esse anúncio já existe no sistema",null)
+        }
+        anuncios.add(novoAnuncio)
+        val novoAnuncioDto = AnuncioRequest(novoAnuncio)
+        return ResponseEntity.status(201).body(novoAnuncioDto)
     }
 
     @GetMapping

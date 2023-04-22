@@ -45,7 +45,7 @@ data class AnuncioPet(
     // PARTE 3 CAD ANUNCIO
     var qtdFilhotes:Int,
 
-    var valorUnitarioFilhotes:Double,
+    val valorUnitarioFilhotes:Double,
 
     var tempoNascer:Int,
 
