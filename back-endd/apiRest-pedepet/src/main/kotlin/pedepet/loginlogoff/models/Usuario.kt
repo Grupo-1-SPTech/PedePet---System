@@ -22,7 +22,7 @@ data class Usuario(
         val nome:String,
 
 
-        @field:Email @field:Size(min = 10, max = 100)
+        @field:Email @field:NotBlank @field:Size(min = 10, max = 100)
         val email:String,
 
 

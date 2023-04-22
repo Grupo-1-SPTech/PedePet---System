@@ -52,7 +52,7 @@ class UsuarioController(
         val encontrado = usuarios.firstOrNull{ it.email == email}
 
         if (encontrado == null){
-            throw ResponseStatusException(401,"Usuário não encontrado",null)
+            throw ResponseStatusException(404,"Usuário não encontrado",null)
         }else {
             encontrado.senha = novaSenha.senha
             return ResponseEntity.status(200).body(usuarioRepository.save(encontrado))
@@ -60,12 +60,13 @@ class UsuarioController(
     }
 
     @DeleteMapping("/deletar/{email}")
-    fun deletarUsuario(@PathVariable email:String):ResponseEntity<Void>{
+    fun deletarUsuario(@PathVariable email: String):ResponseEntity<Void>{
         val encontrado = usuarios.firstOrNull{ it.email == email}
-        if (encontrado == null){
-            throw ResponseStatusException(404,"Esse email não está registrado no sistema",null)
-        } else{
+        if (encontrado != null){
+            usuarioRepository.deleteByEmail(email)
             return ResponseEntity.status(200).build()
+        } else{
+            throw ResponseStatusException(404,"Esse email não está registrado no sistema",null)
         }
     }
 }

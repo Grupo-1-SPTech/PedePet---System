@@ -16,4 +16,7 @@ interface UsuarioRepository: JpaRepository<Usuario, Int> {
     fun findByPretendeEsperar(pretendeEsperar:Int): List<Usuario>
 
     fun findByQtdComodosGreaterThanOrderByNome(tipoUsuario:Int): List<Usuario>
+
+    fun deleteByEmail(email:String): List<Usuario>
+
 }
