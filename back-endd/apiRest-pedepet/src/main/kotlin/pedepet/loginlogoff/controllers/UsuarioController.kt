@@ -23,8 +23,8 @@ import javax.validation.Valid
 @RestController
 @RequestMapping("/usuarios")
 class UsuarioController(
-    val usuarioRepository: UsuarioRepository,
-    val anuncioPetRepository: AnuncioPetRepository
+    //val usuarioRepository: UsuarioRepository,
+    val repository: UsuarioRepository
 ) {
     val usuarios = mutableListOf<Usuario>()
 
@@ -40,6 +40,15 @@ class UsuarioController(
         return ResponseEntity.status(201).body(novoUsuarioDto)
     }
 
+    /*
+    @PostMapping("/cadastrarTeste")
+    fun cad(@RequestBody usuarioNovo:UsuarioRequest):ResponseEntity<Void>{
+        val usuarioCad:Usuario = repository.save(usuarioNovo.usuario)
+        return ResponseEntity.status(200).build()
+    }
+    */
+
+
     @GetMapping
     fun getUsuario():ResponseEntity<List<UsuarioRequest>>{
         val listaUsuario = usuarios.map { UsuarioRequest(it) }
@@ -48,8 +57,17 @@ class UsuarioController(
         }
         //throw ResponseStatusException(204,"Sem cadastros",null)
         return ResponseEntity.status(204).build()
-
     }
+
+    /*@GetMapping
+    fun getTeste(): ResponseEntity<List<Usuario>>{
+        val resultado = repository.findByEmailIgnoreCaseContains()
+        if(resultado.isNotEmpty()){
+            return ResponseEntity.status(200).body(resultado)
+        }
+        return ResponseEntity.status(204).build()
+    }
+     */
 
     @PatchMapping("/alterarSenha/{email}")
     fun alterarSenha(@PathVariable email:String, @RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Void>{
@@ -67,7 +85,7 @@ class UsuarioController(
     fun deletarUsuario(@PathVariable email: String):ResponseEntity<Void>{
         val encontrado = usuarios.firstOrNull{ it.email == email}
         if (encontrado != null){
-            usuarioRepository.deleteByEmail(email)
+            repository.deleteByEmail(email)
             return ResponseEntity.status(200).build()
         } else{
             throw ResponseStatusException(404,"Esse email não esta registrado no sistema",null)
@@ -81,7 +99,6 @@ class UsuarioController(
 
         if(usuarioExistente != null){
             usuarioExistente.autenticado = true
-
             val LoginUsuarioDto = UsuarioRequest(usuarioExistente)
             return ResponseEntity.status(200).body(LoginUsuarioDto)
         }

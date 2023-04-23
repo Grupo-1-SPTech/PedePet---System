@@ -11,6 +11,10 @@ interface UsuarioRepository: JpaRepository<Usuario, Int> {
 
     fun findByInteresse(interesse:Int): List<Usuario>
 
+    fun findByEmailIgnoreCaseContains(email: String):List<Usuario>
+
+    fun findByEmailContainsAndAutenticadoTrue(email: String): List<Usuario>
+
     fun findByPreferenciaRaca(preferenciaRaca:Int): List<Usuario>
 
     fun findByPretendeEsperar(pretendeEsperar:Int): List<Usuario>

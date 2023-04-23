@@ -14,7 +14,7 @@ import javax.validation.Valid
 @RestController
 @RequestMapping("/anuncios")
 class AnuncioController(
-    val usuarioRepository: UsuarioRepository,
+    // val usuarioRepository: UsuarioRepository,
     val anuncioPetRepository: AnuncioPetRepository
 ) {
 
