@@ -44,7 +44,7 @@ class UsuarioController(
     }
 
     @DeleteMapping("/logoff/{email}")
-    fun deslogar(@RequestBody usuarioLogin: LoginRequest, id: Int, @PathVariable email:String):ResponseEntity<Usuario> {
+    fun deslogar(@RequestBody id: Int, @PathVariable email:String):ResponseEntity<Usuario> {
         if (repository.existsById(id)) {
             val usuarioLogin = repository.findById(id).get()
             usuarioLogin.autenticado = false
