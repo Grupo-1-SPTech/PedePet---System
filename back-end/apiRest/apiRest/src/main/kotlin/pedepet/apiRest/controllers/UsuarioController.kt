@@ -14,14 +14,13 @@ import javax.validation.Valid
 @RestController
 @RequestMapping("/usuarios")
 class UsuarioController(
-    //val usuarioRepository: UsuarioRepository,
     val repository: UsuarioRepository
 ) {
-    @PostMapping("/cadastrarTeste")
+    /*@PostMapping("/cadastrarTeste")
     fun cad(@RequestBody usuarioNovo: UsuarioRequest): ResponseEntity<Void> {
         val usuarioCad: Usuario = repository.save(usuarioNovo.usuario)
         return ResponseEntity.status(200).build()
-    }
+    }*/
 
     @PatchMapping("/alterarSenha/{id}")
     fun alterarSenha(@RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Usuario>{
