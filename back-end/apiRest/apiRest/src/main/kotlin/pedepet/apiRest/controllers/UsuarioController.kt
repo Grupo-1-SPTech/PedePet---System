@@ -25,9 +25,10 @@ class UsuarioController(
     @PatchMapping("/alterarSenha/{id}")
     fun alterarSenha(@RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Usuario>{
         val usuario: Usuario =
-            repository.findById(novaSenha.id).orElseThrow()
+            repository.findById(novaSenha.id).get()
         usuario.senha = novaSenha.senha
         return ResponseEntity.status(200).body(repository.save(usuario))
+
     }
 
     @PostMapping("/login")
@@ -38,7 +39,7 @@ class UsuarioController(
             repository.save(usuarioLogin)
             return ResponseEntity.status(200).build()
         } else{
-            return ResponseEntity.status(404).build()
+            throw ResponseStatusException(404,"Credênciais incorretas ou usuario não cadastrado no sistema",null)
         }
     }
 
