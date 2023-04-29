@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+}
+.fundo {
+  animation: animateBg 10s linear infinite;
+  background-image: linear-gradient(70deg,#FB3F08, #4C4C9D,#7C4BC8,#FB3F08);
+  background-size: 100% 1100%;
+  height: 100vh;
+  width: 100vw;
+}
+@keyframes animateBg {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
+  margin-left: inherit;
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background:  #e7e3e3;
+  border-radius: 30px;
+}
+
+/* Menu */
+
+a {
+  color: --white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.logo {
+  height: 70%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  background: #FFFAFA;
+  height: 12vh;
+  padding-left: 5%;
+  padding-right: 5%;
+
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.nav-list li a {
+  font-size: 16px;
+  color: black;
+}
+
+.btn_entrar {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  background: #FB3F08;
+  color:#FFFAFA;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+footer {
+  background-color: #fffafa;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+p {
+  margin: 0;
+}
+
+#campo{
+   color: #FFFAFA;
+   width: 40vw;
+   height: 40vh;
+
+}
