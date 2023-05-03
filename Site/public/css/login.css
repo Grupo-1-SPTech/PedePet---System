@@ -221,7 +221,7 @@ p {
   border: 1px solid var(--gray);
   position: relative;
   background-image: url('../css/images/icon-email.svg');
-  background-size: 25px;
+  background-size: 22px;
   background-repeat: no-repeat;
   background-position: 3vh;
   padding-left: 10vh;
@@ -245,7 +245,7 @@ p {
   border: 1px solid var(--gray);
   position: relative;
   background-image: url('../css/images/icon-user-gray.svg');
-  background-size: 25px;
+  background-size: 22px;
   background-repeat: no-repeat;
   background-position: 3vh;
   padding-left: 10vh;
