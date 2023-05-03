@@ -13,8 +13,8 @@
 
 body {
   margin: 0;
-  
 }
+
 .fundo {
   animation: animateBg 10s linear infinite;
   background-image: var(--background);
@@ -22,6 +22,7 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
 @keyframes animateBg {
   0% { background-position: 0% 0%; }
   100% { background-position: 0% 100%; }
@@ -43,7 +44,6 @@ body {
   overflow-x: hidden;
 
 }
-
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -146,7 +146,7 @@ p {
   align-items: flex-start;
 }
 
-.cachorro {
+/* .cachorro {
   height: 35vh;
   position: absolute;
   align-items: center;
@@ -156,9 +156,9 @@ p {
   flex-direction: row;
   z-index: 1;
   top: 50vh;
-}
+} */
 
-#bloco_campos{
+/* #bloco_campos{
   width: 100vw;
   height: 50vh;
   align-items: center;
@@ -168,17 +168,36 @@ p {
   flex-direction: row;
   position: absolute;
   z-index: 0;
-}
+} */
 
 #campo{
   background-color: #FFFAFA;
+  border-radius: 1.5vh;
   width: 60vw;
   height: 50vh;
   justify-content: center;
   display: flex;
   position: absolute;
   width: 36.6vw;
-  height: 92.4vh;
-  left: 34.4vw;
+  height: 70vh;
+  left: 32vw;
   top: 21.6vh;
+}
+
+#campo h1 {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  position: absolute;
+  left: 5vh;
+  top: 5vh;
+}
+
+#campo #email {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 5vh;
+  top: 15vh;
 }
