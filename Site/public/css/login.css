@@ -201,3 +201,19 @@ p {
   left: 5vh;
   top: 15vh;
 }
+
+#campo #email_input {
+  right: 1vh;
+  top: 20vh;
+  width: 420px;
+  height: 40px;
+  border-radius: 5vh;
+  border: 1px solid var(--gray);
+  position: relative;
+  background-image: url('../css/images/');
+}
+
+::placeholder {
+  left: 10vh;
+  position: relative;
+}
