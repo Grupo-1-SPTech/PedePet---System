@@ -62,7 +62,7 @@ body {
 /* Menu */
 
 a {
-  color: --white;
+  color: var(--white);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -146,17 +146,26 @@ p {
   align-items: flex-start;
 }
 
-/* .cachorro {
-  height: 35vh;
-  position: absolute;
-  align-items: center;
-  justify-content: space-evenly;
+#cachorro {
+  background-color: var(--darkblue);
+  border-radius: 1.5vh;
+  height: 18.5vh;
+  width: 36.6vw;
+  justify-content: center;
   display: flex;
-  align-content: stretch;
-  flex-direction: row;
+  position: absolute;
+  left: 32vw;
+  top: 21.6vh;
+  margin-top: 12px;
+}
+
+.img_cachorro {
+  position: relative;
+  display: flex;
   z-index: 1;
-  top: 50vh;
-} */
+  /* size: 1vh; */
+  /* margin-top:10px; */
+}
 
 /* #bloco_campos{
   width: 100vw;
@@ -172,7 +181,7 @@ p {
 
 #campo{
   background-color: #FFFAFA;
-  border-radius: 1.5vh;
+  border-radius: 0 0 1.5vh 1.5vh;
   width: 60vw;
   height: 50vh;
   justify-content: center;
@@ -181,7 +190,7 @@ p {
   width: 36.6vw;
   height: 70vh;
   left: 32vw;
-  top: 21.6vh;
+  top: 38vh;
   flex-direction: column;
 }
 
@@ -205,8 +214,7 @@ p {
 
 #campo #email_input {
   left: 5vh;
-  /* top: 16vh; */
-  bottom: 5.5vh;
+  bottom: 2vh;
   width: 420px;
   height: 40px;
   border-radius: 5vh;
@@ -230,8 +238,7 @@ p {
 
 #campo #senha_input {
   left: 5vh;
-  /* top: 22vh; */
-  /* bottom: 1vh; */
+  top: 3vh;
   width: 420px;
   height: 40px;
   border-radius: 5vh;
@@ -249,7 +256,7 @@ p {
 }
 
 #campo #esqueci {
-  font-size: 15px;
+  font-size: 12px;
   line-height: 24px;
   font-weight: 500;
   position: absolute;
@@ -258,7 +265,32 @@ p {
   color: var(--orange);
 }
 
-/* #campo #btn_entrar2 {
-  top: 70vh;
-  width: 50vh;
-} */
+#campo #register {
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 43vh;
+  top: 45vh;
+  color: var(--black);
+}
+
+#campo #btn_entrar2 {
+  top: 10vh;
+  /* left: 5vh; */
+  width: 32vw;
+  height: 6.2vh;
+  border-radius: 5vh;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--orange);
+  color:var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 2.4vh;
+  border: 0px;
+  position: relative;
+}
