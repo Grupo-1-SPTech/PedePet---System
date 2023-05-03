@@ -143,11 +143,11 @@ p {
 
 #campo{
   background-color: #FFFAFA;
-  width: 60vw;
-  height: 50vh;
+  width: 55vw;
+  height: 60vh;
   justify-content: center;
   display: flex;
- 
+  
 }
 
 #fundo{
@@ -159,11 +159,22 @@ p {
 
 #bloco_campos{
 width: 100vw;
-height: 50vh;
+height: 100vh;
 align-items: center;
 justify-content: space-evenly;
 display: flex;
 align-content: stretch;
 flex-direction: row;
 
+}
+
+#chorro{
+height: 50%;
+justify-content: center;
+background-color: var(--darkblue);
+
+}
+
+.cachurro{
+  height: 90%;
 }
