@@ -121,11 +121,6 @@ nav {
   font-size: 2.4vh;
 }
 
-.cachorro {
-  width: fit-content;
-  height: 35vh;
-}
-
 footer {
   background-color: var(--white);
   color: var(--gray);
@@ -144,24 +139,23 @@ p {
 
 /*campos*/
 
-#campo{
-  background-color: #FFFAFA;
-  width: 60vw;
-  height: 50vh;
-  justify-content: center;
-  display: flex;
-  position: absolute;
-  width: 500px;
-  height: 600px;
-  left: 470px;
-  top: 140px;
-}
-
 #fundo{
   align-items: center;
   display: flex;
   align-content: stretch;
   align-items: flex-start;
+}
+
+.cachorro {
+  height: 35vh;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  align-content: stretch;
+  flex-direction: row;
+  z-index: 1;
+  top: 50vh;
 }
 
 #bloco_campos{
@@ -172,4 +166,19 @@ p {
   display: flex;
   align-content: stretch;
   flex-direction: row;
+  position: absolute;
+  z-index: 0;
+}
+
+#campo{
+  background-color: #FFFAFA;
+  width: 60vw;
+  height: 50vh;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  width: 36.6vw;
+  height: 92.4vh;
+  left: 34.4vw;
+  top: 21.6vh;
 }
