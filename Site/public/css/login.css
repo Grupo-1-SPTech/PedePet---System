@@ -93,7 +93,7 @@ nav {
 }
 
 .nav-list li {
-  letter-spacing: 0.2vw;
+  /* letter-spacing: 0.2vw; */
   margin-left: 2.3vw;
 }
 
@@ -103,9 +103,9 @@ nav {
 }
 
 .btn_entrar {
-  width: 7.3vw;
+  width: 9vw;
   height: 6.2vh;
-  border-radius: 1.2vh;
+  border-radius: 5vh;
   justify-self: center;
   display: flex;
   align-items: center;
@@ -142,9 +142,34 @@ p {
   margin: 0;
 }
 
-#campo{
-   color: var(--white);
-   width: 40vw;
-   height: 40vh;
+/*campos*/
 
+#campo{
+  background-color: #FFFAFA;
+  width: 60vw;
+  height: 50vh;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  width: 500px;
+  height: 600px;
+  left: 470px;
+  top: 140px;
+}
+
+#fundo{
+  align-items: center;
+  display: flex;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+#bloco_campos{
+  width: 100vw;
+  height: 50vh;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  align-content: stretch;
+  flex-direction: row;
 }
