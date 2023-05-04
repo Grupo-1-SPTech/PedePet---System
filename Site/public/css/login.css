@@ -215,7 +215,7 @@ p {
 #campo #email_input {
   left: 5vh;
   bottom: 2vh;
-  width: 420px;
+  width: 440px;
   height: 40px;
   border-radius: 5vh;
   border: 1px solid var(--gray);
@@ -239,7 +239,7 @@ p {
 #campo #senha_input {
   left: 5vh;
   top: 3vh;
-  width: 420px;
+  width: 440px;
   height: 40px;
   border-radius: 5vh;
   border: 1px solid var(--gray);
