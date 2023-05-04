@@ -19,7 +19,7 @@ body {
   animation: animateBg 10s linear infinite;
   background-image: var(--background);
   background-size: 100% 1100%;
-  height: 100vh;
+  height: 130vh;
   width: 100vw;
 }
 
@@ -182,13 +182,13 @@ p {
 #campo{
   background-color: #FFFAFA;
   border-radius: 0 0 1.5vh 1.5vh;
-  width: 60vw;
-  height: 50vh;
+ 
+  height: 85vh;
   justify-content: center;
   display: flex;
   position: absolute;
   width: 36.6vw;
-  height: 70vh;
+  
   left: 32vw;
   top: 38vh;
   flex-direction: column;
@@ -203,20 +203,20 @@ p {
   top: 5vh;
 }
 
-#campo #email {
+#campo #nome {
   font-size: 20px;
   line-height: 24px;
   font-weight: 500;
   position: absolute;
   left: 5vh;
-  top: 15vh;
+  top: 12vh;
 }
 
-#campo #email_input {
+#campo #nome_input {
   left: 5vh;
-  bottom: 2vh;
+  top: 4vh;
   width: 420px;
-  height: 40px;
+  height: 30px;
   border-radius: 5vh;
   border: 1px solid var(--gray);
   position: relative;
@@ -227,20 +227,142 @@ p {
   padding-left: 10vh;
 }
 
-#campo #senha {
+#campo #email {
   font-size: 20px;
   line-height: 24px;
   font-weight: 500;
   position: absolute;
   left: 5vh;
-  top: 30vh;
+  top: 23vh;
 }
 
-#campo #senha_input {
+#campo #email_input {
   left: 5vh;
-  top: 3vh;
+  top: 7vh;
   width: 420px;
-  height: 40px;
+  height: 30px;
+  border-radius: 5vh;
+  border: 1px solid var(--gray);
+  position: relative;
+  background-image: url('../css/images/icon-email.svg');
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position: 3vh;
+  padding-left: 10vh;
+}
+
+#campo #senha  {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 5vh;
+  top: 33vh;
+}
+
+#campo #senha_input  {
+  left: 5vh;
+  bottom: 6vh;
+  width: 420px;
+  height: 30px;
+  border-radius: 5vh;
+  border: 1px solid var(--gray);
+  position: relative;
+  background-image: url('../css/images/icon-user-gray.svg');
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position: 3vh;
+  padding-left: 10vh;
+}
+
+
+#campo #cpf  {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 5vh;
+  top: 44vh;
+}
+
+#campo #cpf_input  {
+  left: 5vh;
+  top: 16vh;
+  width: 420px;
+  height: 30px;
+  border-radius: 5vh;
+  border: 1px solid var(--gray);
+  position: relative;
+  background-image: url('../css/images/icon-user-gray.svg');
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position: 3vh;
+  padding-left: 10vh;
+}
+
+
+#campo #telefone {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 5vh;
+  top: 40vh;
+}
+
+#campo #telefone_input  {
+  left: 5vh;
+  top: 30vh;
+  width: 420px;
+  height: 30px;
+  border-radius: 5vh;
+  border: 1px solid var(--gray);
+  position: relative;
+  background-image: url('../css/images/icon-user-gray.svg');
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position: 3vh;
+  padding-left: 10vh;
+}
+
+#campo #confSenha {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 5vh;
+  top: 75vh;
+}
+
+#campo #confSenha_input {
+  left: 5vh;
+  top: 5vh;
+  width: 420px;
+  height: 30px;
+  border-radius: 5vh;
+  border: 1px solid var(--gray);
+  position: relative;
+  background-image: url('../css/images/icon-user-gray.svg');
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position: 3vh;
+  padding-left: 10vh;
+}
+
+#campo #escolha {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 5vh;
+  top: 60vh;
+}
+
+#campo #escolha_input  {
+  left: 5vh;
+  top: 5vh;
+  width: 420px;
+  height: 30px;
   border-radius: 5vh;
   border: 1px solid var(--gray);
   position: relative;

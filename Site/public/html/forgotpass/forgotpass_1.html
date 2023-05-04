@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/public/css/images/icon-pata.png">
-  <title>Esqueci a senha</title>
+  <title>Login</title>
   <link rel="stylesheet" href="/public/css/forgotpass.css" />
 </head>
 
-<body>
+<body class="css-selector">
   <header>
     <nav>
-      <img src="/public/css/images/logoPedepetRoxo.png" class="logo">
+      <img src="/public/css/images/logoPedepetRoxo.png" class="logo" href="../home/index.html">
       <div class="mobile-menu">
         <div class="line1"></div>
         <div class="line2"></div>
-
       </div>
       <ul class="nav-list">
         <li>
@@ -49,28 +48,27 @@
     </nav>
   </header>
 
-
   <div id="fundo">
     <article class="fundo">
-      <div id="bloco_campos">
-        <div id="campo">
-       
-          <div id="chorro">
-            <img  src="/public/css/images/cachurro.png" class="cachurro">
-          </div>
-        </div>
+      <div id="cachorro">
+        <img src="/public/css/images/cachurro.png" class="img_cachorro">
+      </div>
+      <div id="campo">
+        <h1>Esqueci minha senha</h1>
+        <span id="email">Email</span>
+        <input id="email_input" type="email" placeholder="email@exemplo.com"> <br>
+        <span id="senha">Senha</span>
+        <input id="senha_input" type="password" placeholder="Sua senha"> <br>
+        <a href="../forgotpass/forgotpass_1.html" id="esqueci">Esqueci minha senha</a>
+        <a href="../forgotpass/register.html" id="register">Não tem uma conta? Crie uma</a>
+        <button id="btn_entrar2">Entrar</button>
       </div>
     </article>
-
-
-
-
   </div>
 
   <footer>
     <div class="container">
       <p>&copy; 2023 Todos os direitos reservados.</p>
-
     </div>
   </footer>
 
