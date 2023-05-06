@@ -1,12 +1,13 @@
 package pedepet.apiRest.controllers
 
 import org.springframework.data.jpa.domain.AbstractPersistable_.id
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
-import pedepet.apiRest.dtos.LoginRequest
-import pedepet.apiRest.dtos.SenhaEntradaRequest
-import pedepet.apiRest.dtos.UsuarioRequest
+import pedepet.apiRest.dto.LoginRequest
+import pedepet.apiRest.dto.SenhaEntradaRequest
+import pedepet.apiRest.dto.UsuarioRequest
 import pedepet.apiRest.models.Usuario
 import pedepet.apiRest.repositories.UsuarioRepository
 import javax.validation.Valid
@@ -39,7 +40,7 @@ class UsuarioController(
             repository.save(usuarioLogin)
             return ResponseEntity.status(200).build()
         } else{
-            throw ResponseStatusException(404,"Credênciais incorretas ou usuario não cadastrado no sistema",null)
+            throw ResponseStatusException(HttpStatus.NOT_FOUND,"Credênciais incorretas ou usuario não cadastrado no sistema")
         }
     }
 

@@ -1,4 +1,4 @@
-package pedepet.apiRest.dtos
+package pedepet.apiRest.dto
 
 data class DescriAnuncioRequest (
     val id:Int,

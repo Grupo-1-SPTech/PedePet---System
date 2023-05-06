@@ -1,4 +1,4 @@
-package pedepet.apiRest.dtos
+package pedepet.apiRest.dto
 
 import pedepet.apiRest.models.Usuario
 

@@ -1,6 +1,4 @@
-package pedepet.apiRest.dtos
-
-import javax.validation.constraints.NotBlank
+package pedepet.apiRest.dto
 
 data class LoginRequest(
     //val id:Int,
