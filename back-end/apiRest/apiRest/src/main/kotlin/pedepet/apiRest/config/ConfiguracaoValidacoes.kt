@@ -1,4 +1,4 @@
-package pedepet.apiRest.configuration
+package pedepet.apiRest.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

@@ -1,6 +1,6 @@
 package pedepet.apiRest.dto
 
-data class DescriAnuncioRequest (
+data class AltDescricaoRequest (
     val id:Int,
     var descricao:String,
 )

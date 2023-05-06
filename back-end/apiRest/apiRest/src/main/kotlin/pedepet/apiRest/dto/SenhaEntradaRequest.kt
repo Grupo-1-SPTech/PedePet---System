@@ -1,6 +1,6 @@
 package pedepet.apiRest.dto
 
 data class SenhaEntradaRequest(
-    val id:Int,
+    val email:String,
     var senha:String,
 )

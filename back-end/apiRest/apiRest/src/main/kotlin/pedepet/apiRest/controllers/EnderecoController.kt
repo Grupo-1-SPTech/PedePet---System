@@ -1,4 +1,4 @@
 package pedepet.apiRest.controllers
 
-class AnuncioPetController {
+class EnderecoController {
 }
