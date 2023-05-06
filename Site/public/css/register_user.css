@@ -139,280 +139,38 @@ p {
 
 /*campos*/
 
-#fundo{
-  align-items: center;
+#fundo {
   display: flex;
-  align-content: stretch;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--background);
 }
 
 #cachorro {
   background-color: var(--darkblue);
-  border-radius: 1.5vh;
+  border-top-left-radius: 1.5vh;
+  border-top-right-radius: 1.5vh;
   height: 18.5vh;
   width: 36.6vw;
-  justify-content: center;
   display: flex;
-  position: absolute;
-  left: 32vw;
-  top: 21.6vh;
-  margin-top: 14.5px;
+  justify-content: center;
 }
 
-.img_cachorro {
-  position: relative;
+.imgcachorro {
+  position: absolute;
   display: flex;
-  z-index: 1;
-  /* size: 1vh; */
-  /* margin-top:10px; */
+  padding-top: 20vh;
 }
 
-/* #bloco_campos{
-  width: 100vw;
-  height: 50vh;
-  align-items: center;
-  justify-content: space-evenly;
-  display: flex;
-  align-content: stretch;
-  flex-direction: row;
-  position: absolute;
-  z-index: 0;
-} */
-
-#campo{
-  background-color: #FFFAFA;
-  border-radius: 0 0 1.5vh 1.5vh;
- 
-  height: 85vh;
-  justify-content: center;
-  display: flex;
-  position: absolute;
+#campo {
+  height: 70vh;
   width: 36.6vw;
-  
-  left: 32vw;
-  top: 38vh;
-  flex-direction: column;
-}
-
-#campo h1 {
-  font-size: 28px;
-  line-height: 34px;
-  font-weight: 700;
-  position: absolute;
-  left: 5vh;
-  top: 5vh;
-}
-
-#campo #nome {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 12vh;
-}
-
-#campo #nome_input {
-  left: 5vh;
-  top: 4vh;
-  width: 420px;
-  height: 30px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-email.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-#campo #email {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 23vh;
-}
-
-#campo #email_input {
-  left: 5vh;
-  top: 7vh;
-  width: 420px;
-  height: 30px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-email.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-#campo #senha  {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 33vh;
-}
-
-#campo #senha_input  {
-  left: 5vh;
-  bottom: 6vh;
-  width: 420px;
-  height: 30px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-user-gray.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-
-#campo #cpf  {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 44vh;
-}
-
-#campo #cpf_input  {
-  left: 5vh;
-  top: 16vh;
-  width: 420px;
-  height: 30px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-user-gray.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-
-#campo #telefone {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 40vh;
-}
-
-#campo #telefone_input  {
-  left: 5vh;
-  top: 30vh;
-  width: 420px;
-  height: 30px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-user-gray.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-#campo #confSenha {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 75vh;
-}
-
-#campo #confSenha_input {
-  left: 5vh;
-  top: 5vh;
-  width: 420px;
-  height: 30px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-user-gray.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-#campo #escolha {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 60vh;
-}
-
-#campo #escolha_input  {
-  left: 5vh;
-  top: 5vh;
-  width: 420px;
-  height: 30px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-user-gray.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-::placeholder {
-  position: relative;
-}
-
-#campo #esqueci {
-  font-size: 12px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 45vh;
-  color: var(--orange);
-}
-
-#campo #register {
-  font-size: 12px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 43vh;
-  top: 45vh;
-  color: var(--black);
-}
-
-#campo #btn_entrar2 {
-  top: 10vh;
-  /* left: 5vh; */
-  width: 32vw;
-  height: 6.2vh;
-  border-radius: 5vh;
+  background-color: white;
   display: flex;
-  align-items: center;
-  align-self: center;
+  flex-direction: column;
   justify-content: center;
-  cursor: pointer;
-  background: var(--orange);
-  color:var(--white);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: 2.4vh;
-  border: 0px;
-  position: relative;
+  align-items: center;
 }
