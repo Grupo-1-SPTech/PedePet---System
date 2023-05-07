@@ -315,3 +315,14 @@ p {
   border: 3px solid var(--darkpurple);
   position: relative;
 }
+
+#check_container {
+
+display: block;
+position: relative;
+padding-top: 3vh;
+cursor: pointer;
+font-size: 22px;
+
+
+}
