@@ -1,12 +1,7 @@
 package pedepet.apiRest.models
 
 import org.hibernate.validator.constraints.br.CPF
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.Pattern
@@ -16,34 +11,34 @@ import javax.validation.constraints.Size
 @Table(name = "usuario")
 data class Usuario(
 
-    //@Column(name = "id")
+    //@Column(name = "idUsuario")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Int,
 
     //@Column(name = "nome")
     @field:NotBlank @field:Size(min = 3, max = 45)
-    val nome:String? = null,
+    val nome:String?,
 
     //@Column(name = "email")
-    @field:Email @field:NotBlank @field:Size(min = 10, max = 100)
-    var email:String? = null,
+    @field:Email @field:NotBlank @field:Size(min = 10, max = 50)
+    var email:String?,
 
     //@Column(name = "cpf", unique = true)
     @field:CPF
-    val cpf:String? = null,
+    val cpf:String?,
 
     //@Column(name = "telefone")
     @field:Pattern(
         regexp = "(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})",
         message = "Envie um telefone válido"
-    ) val telefone: String? = null,
+    ) val telefone: String?,
 
     //@Column(name = "senha")
-    @field:NotBlank @field:Size(min = 8, max = 25)
-    var senha:String? = null,
+    @field:NotBlank @field:Size(min = 8, max = 30)
+    var senha:String?,
 
     //@Column(name = "tipo_usuario")
-    val tipoUsuario:Int?, // COMPRADOR = 1, VENDEDOR = 2
+    val tipoUsuario:Int? = null, // COMPRADOR = 1, VENDEDOR = 2
 
     //@Column(name = "autenticado")
     var autenticado:Boolean? = false,

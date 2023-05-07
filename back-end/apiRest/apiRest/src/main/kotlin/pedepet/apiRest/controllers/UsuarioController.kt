@@ -2,11 +2,13 @@ package pedepet.apiRest.controllers
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import pedepet.apiRest.dto.CompradorRequest
 import pedepet.apiRest.dto.LoginRequest
 import pedepet.apiRest.dto.SenhaEntradaRequest
 import pedepet.apiRest.dto.VendedorRequest
 import pedepet.apiRest.models.Usuario
 import pedepet.apiRest.repositories.AnuncioRepository
+import pedepet.apiRest.repositories.FilhoteRepository
 import pedepet.apiRest.repositories.FormularioRepository
 import pedepet.apiRest.repositories.UsuarioRepository
 
@@ -16,16 +18,18 @@ class UsuarioController(
     val repository: UsuarioRepository,
     val anuncioRepository: AnuncioRepository,
     val formularioRepository: FormularioRepository,
-    val enderecoRepository: AnuncioRepository
+    val enderecoRepository: AnuncioRepository,
+    val filhoteRepository: FilhoteRepository
 
 ) {
 
     @PostMapping("/cadastrar")
-    fun cad(@RequestBody cadVendedorRequest: VendedorRequest): ResponseEntity<Void> {
+    fun cad(@RequestBody cadVendedorRequest: VendedorRequest, cadCompradorRequest: CompradorRequest): ResponseEntity<Void> {
 
-        val selectUsuario: Usuario? = repository.findByEmailAndTipoUsuario(cadVendedorRequest.usuario.email, cadVendedorRequest.usuario.tipoUsuario)
+        val selectUsuario = repository.findByEmailAndTipoUsuario(cadVendedorRequest.usuario.email, cadVendedorRequest.usuario.tipoUsuario)
 
-        if(selectUsuario) {
+        if(selectUsuario == null) {
+
 
         }
 

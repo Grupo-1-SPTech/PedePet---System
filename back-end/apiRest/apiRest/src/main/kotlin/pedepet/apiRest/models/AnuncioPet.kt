@@ -56,7 +56,7 @@ data class AnuncioPet(
     // PARTE 3 CAD ANUNCIO
     //@Column(name = "qtd_filhotes")
     var qtdFilhotes:Int?,
-    
+
     //@Column(name = "descricao")
     @field:Size(min = 0, max= 240)
     var descricao:String?,

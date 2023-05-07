@@ -33,6 +33,6 @@ data class Endereco(
 
     //@Column(name = "fkUsuario")
     @OneToOne
-    val usuario: Usuario?,
+    val usuario: Usuario? = null,
 ) {
 }
