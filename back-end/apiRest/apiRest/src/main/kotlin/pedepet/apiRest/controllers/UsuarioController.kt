@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import pedepet.apiRest.dto.LoginRequest
 import pedepet.apiRest.dto.SenhaEntradaRequest
+import pedepet.apiRest.dto.VendedorRequest
 import pedepet.apiRest.models.Usuario
 import pedepet.apiRest.repositories.AnuncioRepository
 import pedepet.apiRest.repositories.FormularioRepository
@@ -20,6 +21,15 @@ class UsuarioController(
 ) {
 
     @PostMapping("/cadastrar")
+    fun cad(@RequestBody cadVendedorRequest: VendedorRequest): ResponseEntity<Void> {
+
+        val selectUsuario: Usuario? = repository.findByEmailAndTipoUsuario(cadVendedorRequest.usuario.email, cadVendedorRequest.usuario.tipoUsuario)
+
+        if(selectUsuario) {
+
+        }
+
+    }
 
 
 

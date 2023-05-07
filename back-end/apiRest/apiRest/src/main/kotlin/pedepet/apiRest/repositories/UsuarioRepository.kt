@@ -8,7 +8,7 @@ import java.util.*
 @Repository
 interface UsuarioRepository: JpaRepository<Usuario, Int> {
 
-    fun findByTipoUsuario(tipoUsuario:Int): List<Usuario>
+    fun findByEmailAndTipoUsuario(email: String?, tipoUsuario:Int?): Usuario?
 
     fun findByEmailContainsAndAutenticadoTrue(email: String): List<Usuario>
     
