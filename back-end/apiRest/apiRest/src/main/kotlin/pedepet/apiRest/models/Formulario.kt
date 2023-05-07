@@ -3,10 +3,10 @@ package pedepet.apiRest.models
 import javax.persistence.*
 
 @Entity
-@Table(name = "forms_comprador")
+@Table(name = "formulario")
 data class Formulario(
 
-    //@Column(name = "id")
+    //@Column(name = "idFormulario")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Int,
 
@@ -25,6 +25,7 @@ data class Formulario(
     //@Column(name = "possui_pet")
     val possuiPet:Int?, // SIM = 1, NÃO = 2
 
+    //@Column(name = "fkUsuario")
     @OneToOne
     val usuario: Usuario?,
 ) {

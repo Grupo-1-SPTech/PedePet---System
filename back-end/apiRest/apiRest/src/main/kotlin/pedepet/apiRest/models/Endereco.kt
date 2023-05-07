@@ -6,7 +6,7 @@ import javax.persistence.*
 @Table(name = "endereco")
 data class Endereco(
 
-    //@Column(name = "id")
+    //@Column(name = "idEndereco")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Int,
 
@@ -31,6 +31,7 @@ data class Endereco(
     //@Column(name = "estado")
     val estado:String?,
 
+    //@Column(name = "fkUsuario")
     @OneToOne
     val usuario: Usuario?,
 ) {

@@ -8,7 +8,7 @@ import javax.validation.constraints.Size
 data class AnuncioPet(
 
     // PARTE 1 CAD ANUNCIO
-    //@Column(name = "id")
+    //@Column(name = "idNinhada")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id:Int?,
 
@@ -47,24 +47,21 @@ data class AnuncioPet(
     //@Column(name = "vacinado_pai")
     val vacinadoPai:Int?, // SIM = 1, NÃO = 2
 
+    //@Column(name = "foto_casal")
+    var fotosCasal:String?,
+
+    //@Column(name = "visualizacoes")
+    var visualizacoes: Int? = null,
 
     // PARTE 3 CAD ANUNCIO
     //@Column(name = "qtd_filhotes")
     var qtdFilhotes:Int?,
-
-    //@Column(name = "valor_filhote")
-    val valorFilhote:Double?,
-
-    //@Column(name = "tempo_nascer")
-    var tempoNascer:Int?,
-
-    //@Column(name = "foto_casal")
-    var fotosCasal:String?,
-
+    
     //@Column(name = "descricao")
     @field:Size(min = 0, max= 240)
     var descricao:String?,
 
+    //@Column(name = "fkUsuario")
     @ManyToOne
     val usuario: Usuario?,
 ) {
