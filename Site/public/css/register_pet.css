@@ -20,7 +20,7 @@ body {
   animation: animateBg 10s linear infinite;
   background-image: var(--background);
   background-size: 100% 1100%;
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
 }
 
@@ -184,13 +184,12 @@ p {
 #campo{
   background-color: #FFFAFA;
   border-radius: 0 0 1.5vh 1.5vh;
-  width: 60vw;
-  height: 50vh;
+  
   justify-content: center;
   display: flex;
   position: absolute;
   width: 36.6vw;
-  height: 70vh;
+  height: 90vh;
   left: 32vw;
   top: 38vh;
   flex-direction: column;
@@ -316,13 +315,64 @@ p {
   position: relative;
 }
 
-#check_container {
+.check_container {
 
-display: block;
-position: relative;
-padding-top: 3vh;
-cursor: pointer;
-font-size: 22px;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
 
+}
 
+.check_container input {
+ 
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.check_container:hover input ~ .checkmark {
+  background-color: var(--lightgray);
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4vh;
+  width: 2vw;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check_container input:checked ~ .checkmark {
+  background-color: var(--darkpurple);
+}
+
+.check_container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.check_container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
 }
