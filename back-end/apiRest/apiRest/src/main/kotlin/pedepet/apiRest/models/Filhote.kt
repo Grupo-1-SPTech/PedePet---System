@@ -20,5 +20,11 @@ data class Filhote(
 
     @Column(name = "data_criacao")
     val dataCriacao:LocalDateTime?,
+
+    @ManyToOne
+    val anuncioPet: AnuncioPet,
+
+    @ManyToOne
+    val usuario: Usuario,
 ) {
 }

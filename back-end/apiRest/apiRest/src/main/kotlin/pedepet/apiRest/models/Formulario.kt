@@ -27,6 +27,6 @@ data class Formulario(
 
     //@Column(name = "fkUsuario")
     @OneToOne
-    val usuario: Usuario?,
+    val usuario: Usuario,
 ) {
 }

@@ -63,6 +63,6 @@ data class AnuncioPet(
 
     //@Column(name = "fkUsuario")
     @ManyToOne
-    val usuario: Usuario?,
+    val usuario: Usuario,
 ) {
 }
