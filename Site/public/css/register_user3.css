@@ -299,7 +299,7 @@
 
 .cachorrinho {
   height: 20%;
-  margin-bottom: -4.3%;
+  margin-bottom: -2.35%;
   position: absolute;
 }
 
@@ -358,9 +358,7 @@
   background-color: var(--darkpurple);
 }
 
-.fase:nth-child(2),.fase:nth-child(3) {
-  background-color: #d9d9d9;
-}
+
 
 .inputs {
   display: flex;
@@ -376,100 +374,44 @@ margin-bottom: 10px;
 font-weight: 600;
 }
 
-.inputCad {
-  width: 100%;
-  height: 40px;
-  border-radius: 24px;
-  border: 3px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/profile.svg) no-repeat 20px 7px;
-  padding-left: 10%;
-  background-size: 20px;
+.Logradouro {
+    width: 310px;
+    height: 6vh;
+    border: 3px solid rgba(0, 0, 0, 0.6);
+    border-radius: 24px; 
+    color: #707070;
 }
 
-.inputCad2 {
-  width: 100%;
-  height: 40px;
-  border-radius: 24px;
-  border: 3px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/email.svg) no-repeat 20px 7px;
-  padding-left: 10%;
-  background-size: 20px;
+.Comodos {
+    width: 310px;
+    height: 6vh;
+    border: 3px solid rgba(0, 0, 0, 0.6);
+    border-radius: 24px; 
+    color: #707070;
 }
 
-#span_email {
+#alinhamento {
  margin-top: 6%;
 }
 
-.alinhamento2 {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  margin-top: 6%;
-}
-
-.alinhamento2_pt1 {
-  display:flex;
-  flex-direction: column;
-
-}
-
-.inputCad3 {
-  width: 100%;
-  height: 40px;
-  border-radius: 24px;
-  border: 3px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/cpf.svg) no-repeat 20px 7px;
-  padding-left: 22%;
-  background-size: 20px;
-}
-
-.alinhamento2_pt2 {
-  display:flex;
-  flex-direction: column;
-  
-}
-
-.inputCad4 {
-  width: 100%;
-  height: 40px;
-  border-radius: 24px;
-  border: 3px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/phone.svg) no-repeat 20px 7px;
-  padding-left: 22%;
-  background-size: 20px;
-}
-
-#senhaa {
-  margin-top: 6%;
-}
-
-.inputCad5 {
-  width: 100%;
-  height: 40px;
-  border-radius: 24px;
-  border: 3px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/cadeado.svg) no-repeat 20px 7px;
-  padding-left: 10%;
-  background-size: 20px;
-}
-
-.inputCad6 {
-  width: 100%;
-  height: 40px;
-  border-radius: 24px;
-  border: 3px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/cadeado.svg) no-repeat 20px 7px;
-  padding-left: 10%;
-  background-size: 20px;
+.Pessoas {
+    width: 310px;
+    height: 6vh;
+    border: 3px solid rgba(0, 0, 0, 0.6);
+    border-radius: 24px; 
+    color: #707070;
 }
 
 input:focus{ outline: none; }
 
-#span_escolha {
- margin-top: 6%;
+.Horas {
+    width: 310px;
+    height: 6vh;
+    border: 3px solid rgba(0, 0, 0, 0.6);
+    border-radius: 24px; 
+    color: #707070;
 }
-/* Drop Down */
+
 
 select:focus{ outline: none; }
 

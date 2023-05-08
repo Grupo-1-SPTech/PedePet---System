@@ -1,89 +1,116 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/public/css/images/icon-pata.png">
-  <title>Cadastro</title>
-  <link rel="stylesheet" href="/public/css/register_user.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - PedePet</title>
+    <link rel="stylesheet" href="/public/css/register_user.css">
+    <link rel="shortcut icon" href="./images/icon.jpg" />
 </head>
 
-<body class="css-selector">
-  <header>
+<body>
+
     <nav>
-      <img src="/public/css/images/logoPedepetRoxo.png" class="logo" href="../home/index.html">
-      <div class="mobile-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-      </div>
-      <ul class="nav-list">
-        <li>
-          <div class="btn_como_funciona">
-            Como funciona
-          </div>
-        </li>
-        <li>
-          <div class="btn_faq">
-            FAQ
-          </div>
-        </li>
-        <li>
-          <div class="btn_sobre_nos">
-            Sobre nós
-          </div>
-        </li>
-        <li>
-          <div class="btn_contato">
-            Contato
-          </div>
-        </li>
-        <li>
-          <div class="btn_entrar">
-            Entrar
-          </div>
-        </li>
-      </ul>
+        <div class="container-nav">
+            <img id="logo" src="/public/css/images/logoPedepetRoxo.png">
+            <div class="options">
+                <ul>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+                <button class="btn-login">Entrar</a></button>
+            </div>
+        </div>
     </nav>
-  </header>
-
-  <div id="fundo">
-
-
-    <div id="cachorro">
-      <img src="/public/css/images/Pug.png" class="img_cachorro">
-    </div>
-      <div id="campo">
-
-        
-
-        <h1>Crie sua conta</h1>
-        <span id="nome">Nome</span>
-        <input id="nome_input" type="email" placeholder="Seu nome"> <br>
-        <span id="email">Email</span>
-        <input id="email_input" type="password" placeholder="email@exemplo.com"> <br>
-
-         <span id="cpf"> CPF </span>
-        <input type="cpf" id="cpf_input" placeholder="***.***.***-**"> <br>
-
-        <span id="telefone"> Número </span>
-        <input id="telefone_input" type="cpf" placeholder="+55">   <br>
-
-        <span id="senha"> Senha </span>
-        <input id="senha_input" type="password" placeholder="sua senha">  <br>
-
-        <span id="confSenha"> Confirme sua senha </span>
-        <input id="confSenha_input"type="password" placeholder="Confrime sua senha"> <br>
-
-        <span id="escolha"> Quero ser um</span>
-        <input id="escolha_input" placeholder="Escolha"> <br>
-       
-        <button id="btn_entrar2">Entrar</button>
-      </div>
     
-  </div>
+    <main>
+       
+      <div class="containerCad">
+        <div class="formCad">
+          
+          <div class="banner">
+            <img src="/public/css/images/Pug.png" class="cachorrinho">
+          </div>
 
+          <div class="contentCad">
+
+            <div class="alinhamento">
+              <h1>Crie sua conta</h1>
+            </div>
+            
+
+            <div class="contentTop">
+
+
+              <h2>Seus dados</h2>
+
+              <div class="fases">
+                <div class="fase"></div>
+                <div class="fase"></div>
+                <div class="fase"></div>
+              </div>
+            </div>
+            
+            <div class="inputs">
+
+              <span class="title" >Nome</span> 
+              <input class="inputCad" id="input_nome" type="text" placeholder="Seu Nome">
+
+              <span class="title" id="span_email" >Email</span> 
+              <input class="inputCad2" id="input_email" type="email" placeholder="email@exemplo.com">
+
+
+              <div class="alinhamento2">
+                <div class="alinhamento2_pt1">
+                  <span class="title" id="span_cpf" >CPF</span> 
+                  <input class="inputCad3" id="input_cpf" type="text" placeholder="***.***.***-**">
+  
+                </div>
+               
+                <div class="alinhamento2_pt2">
+                  <span class="title" id="span_numero" >Número</span> 
+                  <input class="inputCad4" id="input_numero" type="text" placeholder="+55">
+  
+                </div>
+
+              </div>
+
+              <span class="title" id="senhaa">Senha</span> 
+              <input class="inputCad5" id="input_nome" type="text" placeholder="Sua senha">
+
+              
+              <span class="title" id="span_email">Confirme sua senha</span> 
+              <input class="inputCad6" id="input_email" type="email" placeholder="Sua senha">
+
+              <span class="title" id="span_escolha">Quero ser um</span>
+
+              <div class="container_box">
+                <select name="tipoUser" id="tipoUser">
+                    <option value="" selected disabled>Escolha</option>
+                    <option value="">Vendedor</option>
+                    <option value="">Comprador</option>
+                </select>
+              </div>
+                
+              <div class="btns">
+                <button class="cancelar">Cancelar</button>
+                <button class="prosseguir">Prosseguir</button>
+              </div>
+
+            </div>
+            </div>
+            
+          </div>
+          
+          
+
+        </div>
+      </div>
+    </main>
 </body>
 
 </html>
