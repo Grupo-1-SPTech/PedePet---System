@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  --orange: #FB3F08;
+  --darkblue: #4C4C9D;
+  --purple: #7C4BC8;
+  --darkpurple: #44207E;
+  --white: #FFFAFA;
+  --black: #000;
+  --background: linear-gradient(70deg,#FB3F08, #4C4C9D,#7C4BC8,#FB3F08);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
+  margin-left: inherit;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background:  var(--purple);
+  border-radius: 30px;
+}
+/* menu */
+
+.container-nav {
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    flex-direction: row;
+    padding: 2px 4%;
+    background-color: var(--white);
+    align-items: center;
+    overflow-y: hidden;
+
+}
+
+#logo {
+    height: 80%;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 30%;
+    align-items: center;
+}
+
+.options a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.options ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+}
+
+.options li {
+    text-align: center;
+}
+
+/* Botão menu */
+
+.btn-login {
+    width: 12vw;
+    height: 40px;
+    font-weight: 800;
+    border-radius: 40px;
+    border: none;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* First section */
+
+.containerHome {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.leftHome {
+    display: flex;
+    width: 55vw;
+    flex-direction: column;
+    padding: 6% 4%;
+}
+
+.leftHome h2 {
+    font-size: 24px;
+    color: var(--orange);
+    font-weight: 800;
+}
+
+.leftHome h1 {
+    font-size: 42px;
+    color: var(--black);
+    font-weight: 900;
+}
+
+.leftHome span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.leftHome #txt1 {
+    margin-top: 6%;
+}
+
+.containerBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+    padding-top: 20%;
+}
+
+.cadUser {
+    font-size: 16px;
+    width: 16vw;
+    height: 60px;
+    border-radius: 40px;
+    border: none;
+    color: var(--white);
+    background-color: var(--orange);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cadPet {
+    font-size: 16px;
+    width: 16vw;
+    height: 60px;
+    border-radius: 40px;
+    border: 4px solid var(--darkpurple);
+    color: var(--darkpurple);
+    background-color: transparent;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cadPet:hover {
+    background-color: var(--darkpurple);
+    color: var(--white);
+    transition: .4s;
+}
+
+.rightHome {
+    display: flex;
+    padding-top: 1%;
+}
+
+#blob {
+    position: absolute;
+    right: 0;
+    width: 620px;
+    z-index: -1;
+}
+
+#dog {
+    height: 80%;
+    margin-top: 16%;
+}
+
+.bloco {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 160px;
+    border-radius: 8px;
+    margin-top: 74%;
+    margin-right: 4%;
+    background-color: var(--darkblue);
+}
+
+.topReview {
+    display: flex;
+    flex-direction: row;
+}
+
+/*gradiente de fundo*/
+.containerCad {
+  background: linear-gradient(181deg, var(--orange), var(--purple), var(--darkpurple));
+  background-size: 800% 800%;
+
+  -webkit-animation: gradiente 14s ease infinite;
+  -moz-animation: gradiente 14s ease infinite;
+  animation: gradiente 14s ease infinite;
+}
+
+@-webkit-keyframes gradiente {
+  0% {
+      background-position: 96% 0%
+  }
+
+  50% {
+      background-position: 5% 100%
+  }
+
+  100% {
+      background-position: 96% 0%
+  }
+}
+
+@-moz-keyframes gradiente {
+  0% {
+      background-position: 96% 0%
+  }
+
+  50% {
+      background-position: 5% 100%
+  }
+
+  100% {
+      background-position: 96% 0%
+  }
+}
+
+@keyframes gradiente {
+  0% {
+      background-position: 96% 0%
+  }
+
+  50% {
+      background-position: 5% 100%
+  }
+
+  100% {
+      background-position: 96% 0%
+  }
+}
+
+/* CSS Cadastro Usuário */
+
+.containerCad {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-top: 3%;
+  
+}
+
+.formCad {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+  height: 90%;
+  border-radius: 8px;
+}
+
+.banner {
+  width: 100%;
+  height: 20vh;
+  background-color: var(--darkblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cachorrinho {
+    height: 20%;
+    margin-bottom: -2.35%;
+    position: absolute;
+}
+
+.contentCad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  padding: 10%;
+  background-color: white;
+}
+
+.alinhamento {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: left;
+  padding-bottom: 2%;
+}
+
+.alinhamento h1 {
+  color: var(--black);
+  font-size: 1.8em;
+  font-weight: 800;
+}
+
+.contentTop {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.contentTop h2 {
+  color: var(--darkpurple);
+  font-weight: 800;
+  font-size: 1.5em;
+  
+}
+
+.fases {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 8%;
+}
+
+.fase {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: var(--darkpurple);
+}
+
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+  padding: 5% 0% 0% 0%;
+}
+
+.title {
+margin-bottom: 10px;
+font-weight: 600;
+}
+
+.inputCad {
+  width: 100%;
+  height: 40px;
+  border-radius: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.6); 
+  background: url(images/pata.svg) no-repeat 20px 7px;
+  padding-left: 10%;
+  background-size: 20px;
+}
+
+.alinhamento2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 6%;
+}
+
+.alinhamento2_pt1 {
+  display:flex;
+  flex-direction: column;
+
+}
+
+.inputCad3 {
+  width: 100%;
+  height: 40px;
+  border-radius: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.6); 
+  background: url(images/cpf.svg) no-repeat 20px 7px;
+  padding-left: 22%;
+  background-size: 20px;
+}
+
+.alinhamento2_pt2 {
+  display:flex;
+  flex-direction: column;
+}
+
+
+
+input:focus{ outline: none; }
+
+#span_escolha {
+ margin-top: 6%;
+}
+
+/* Drop Down */
+
+select:focus{ outline: none; }
+
+select {
+  width: 15vw;
+  padding-left: 22%;
+  height: 6vh;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  background-size: 20px;
+  border-radius: 24px; 
+  color: #707070;
+}
+
+
+/* FIM do drop */
+
+
+
+/* Bolinhas de escolha */
+
+.first_check {
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+}
+
+.check_container2 {
+    padding-top: 3%;
+}
+
+
+
+
+/* FIM */
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20%;
+}
+
+.cancelar {
+  font-size: 16px;
+    width: 180px;
+    height: 40px;
+    border-radius: 24px;
+    border: 4px solid var(--darkpurple);
+    color: var(--darkpurple);
+    background-color: transparent;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cancelar:hover {
+  background-color: var(--darkpurple);
+    color: var(--white);
+    transition: .4s;
+}
+
+.prosseguir {
+  font-size: 16px;
+  width: 180px;
+  height: 40px;
+  border-radius: 24px;
+    border: none;
+    color: var(--white);
+    background-color: var(--orange);
+    font-weight: 800;
+    cursor: pointer;
+
+}
