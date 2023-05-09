@@ -312,6 +312,9 @@
   background-color: var(--white);
   padding: 10%;
   background-color: white;
+  margin-bottom: 7vh;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .alinhamento {

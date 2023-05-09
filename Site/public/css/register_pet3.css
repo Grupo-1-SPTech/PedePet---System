@@ -298,9 +298,9 @@
 }
 
 .cachorrinho {
-    height: 20%;
-    margin-bottom: -2.35%;
-    position: absolute;
+  height: 20%;
+  margin-bottom: -2.35%;
+  position: absolute;
 }
 
 .contentCad {
@@ -360,11 +360,6 @@
   border-radius: 10px;
   background-color: var(--darkpurple);
 }
-
-.fase:nth-child(3) {
-  background-color: #d9d9d9;
-}
-
 
 .inputs {
   display: flex;
@@ -443,25 +438,6 @@ select {
 
 
 /* FIM do drop */
-
-
-
-/* Bolinhas de escolha */
-
-.first_check {
-    display: flex;
-    flex-direction: column;
-    font-size: 22px;
-}
-
-.check_container2 {
-    padding-top: 3%;
-}
-
-
-
-
-/* FIM */
 
 .btns {
   display: flex;
