@@ -5,71 +5,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - PedePet</title>
+  <link rel="stylesheet" href="/public/css/login.css">
   <link rel="icon" href="/public/css/images/icon-pata.png">
-  <title>Login</title>
-  <link rel="stylesheet" href="/public/css/login.css" />
 </head>
 
-<body class="css-selector">
-  <header>
-    <nav>
-      <img src="/public/css/images/logoPedepetRoxo.png" class="logo" href="../home/index.html">
-      <div class="mobile-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-      </div>
-      <ul class="nav-list">
-        <li>
-          <div class="btn_como_funciona">
-            Como funciona
-          </div>
-        </li>
-        <li>
-          <div class="btn_faq">
-            FAQ
-          </div>
-        </li>
-        <li>
-          <div class="btn_sobre_nos">
-            Sobre nós
-          </div>
-        </li>
-        <li>
-          <div class="btn_contato">
-            Contato
-          </div>
-        </li>
-        <li>
-          <div class="btn_entrar">
-            Entrar
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<body>
 
-    <div class="fundo">
-      <div id="cachorro">
-        <img src="/public/css/images/pastor-alemao.png" class="img_cachorro">
-      </div>
-      <div id="campo">
-        <h1>Entre em sua conta</h1>
-        <span id="email">Email</span>
-        <input id="email_input" type="email" placeholder="email@exemplo.com"> <br>
-        <span id="senha">Senha</span>
-        <input id="senha_input" type="password" placeholder="Sua senha"> <br>
-        <a href="../forgotpass/forgotpass_1.html" id="esqueci">Esqueci minha senha</a>
-        <a href="../register_user/register_user1.html" id="register">Não tem uma conta? Crie uma</a>
-        <button id="btn_entrar2">Entrar</button>
+  <nav>
+    <div class="container-nav">
+      <img id="logo" src="/public/css/images/logoPedepetRoxo.png">
+      <div class="options">
+        <ul>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+        <button class="btn-login">Entrar</a></button>
       </div>
     </div>
+  </nav>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 Todos os direitos reservados.</p>
+  <main>
+
+    <div class="containerCad">
+      <div class="formCad">
+
+        <div class="banner">
+          <img src="/public/css/images/pastor-alemao.png" class="cachorrinho">
+        </div>
+
+        <div class="contentCad">
+
+          <div class="alinhamento">
+            <h1>Entre em sua conta</h1>
+          </div>
+
+          <div class="inputs">
+
+            <span class="title">Email</span>
+            <input class="inputCad" id="input_nome" type="email" placeholder="email@exemplo.com">
+
+            <span class="title" id="span_email">Senha</span>
+            <input class="inputCad2" id="input_email" type="password" placeholder="Sua senha">
+
+            <div class="extras">
+            <a href="../forgotpass/forgotpass_1.html" id="esqueci">Esqueci minha senha</a>
+            <a href="../register_user/register_user1.html" id="register">Não tem uma conta? Crie uma</a>
+            </div>
+            <div class="btns">
+              <button class="prosseguir">Entrar</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-  </footer>
 
+  </main>
 </body>
 
 </html>
