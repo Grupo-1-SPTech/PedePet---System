@@ -3,7 +3,7 @@ package pedepet.apiRest.models
 import javax.persistence.*
 
 @Entity
-@Table(name = "formulario")
+//@Table(name = "formulario")
 data class Formulario(
 
     //@Column(name = "idFormulario")
@@ -27,6 +27,6 @@ data class Formulario(
 
     //@Column(name = "fkUsuario")
     @OneToOne
-    val usuario: Usuario,
+    var usuario: Int? = null,
 ) {
 }

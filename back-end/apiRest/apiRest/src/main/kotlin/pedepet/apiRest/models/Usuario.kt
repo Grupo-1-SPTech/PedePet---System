@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern
 import javax.validation.constraints.Size
 
 @Entity
-@Table(name = "usuario")
+//@Table(name = "usuario")
 data class Usuario(
 
     //@Column(name = "idUsuario")

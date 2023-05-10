@@ -5,26 +5,27 @@ import java.util.Date
 import javax.persistence.*
 
 @Entity
-@Table(name = "filhote")
+//@Table(name = "filhote")
 data class Filhote(
 
     //@Column(name = "idFilhote")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Int,
 
-    @Column(name = "tempo_espera")
+    //@Column(name = "tempo_espera")
     var tempoEspera: Date?,
 
-    @Column(name = "preco")
+    //@Column(name = "preco")
     val preco:Double?,
 
-    @Column(name = "data_criacao")
+    //@Column(name = "data_criacao")
     val dataCriacao:LocalDateTime?,
 
-    @ManyToOne
-    val anuncioPet: AnuncioPet,
+    @Column(name = "disponivel")
+    var disponivel:Boolean? = true,
 
     @ManyToOne
-    val usuario: Usuario,
+    var anuncioPet: Int? = null,
+
 ) {
 }

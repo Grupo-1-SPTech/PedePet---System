@@ -6,6 +6,7 @@ import pedepet.apiRest.dto.CompradorRequest
 import pedepet.apiRest.dto.LoginRequest
 import pedepet.apiRest.dto.SenhaEntradaRequest
 import pedepet.apiRest.dto.VendedorRequest
+import pedepet.apiRest.models.AnuncioPet
 import pedepet.apiRest.models.Usuario
 import pedepet.apiRest.repositories.*
 
@@ -28,18 +29,18 @@ class UsuarioController(
 
         if(selectComprador == null) {
             val usuarioComprador: Usuario = repository.save(cadCompradorRequest.usuario)
-            cadCompradorRequest.endereco.usuario.id = usuarioComprador.id
-            cadCompradorRequest.formulario.usuario.id = usuarioComprador.id
+            cadCompradorRequest.endereco.usuario = usuarioComprador.id
+            cadCompradorRequest.formulario.usuario = usuarioComprador.id
             enderecoRepository.save(cadCompradorRequest.endereco)
             formularioRepository.save(cadCompradorRequest.formulario)
             ResponseEntity.status(201).body(null)
         } else {
             val usuarioVendedor: Usuario = repository.save(cadVendedorRequest.usuario)
-            cadVendedorRequest.endereco.usuario.id = usuarioVendedor.id
-            cadVendedorRequest.anuncioPet.usuario.id = usuarioVendedor.id
-            cadVendedorRequest.filhote.usuario.id = usuarioVendedor.id
+            cadVendedorRequest.endereco.usuario = usuarioVendedor.id
+            cadVendedorRequest.anuncioPet.usuario = usuarioVendedor.id
             enderecoRepository.save(cadVendedorRequest.endereco)
-            anuncioRepository.save(cadVendedorRequest.anuncioPet)
+            val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
+            cadVendedorRequest.filhote.anuncioPet = saveAnuncio.id
             filhoteRepository.save(cadVendedorRequest.filhote)
             ResponseEntity.status(201).body(null)
         }

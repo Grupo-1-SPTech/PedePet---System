@@ -3,7 +3,7 @@ package pedepet.apiRest.models
 import javax.persistence.*
 
 @Entity
-@Table(name = "endereco")
+//@Table(name = "endereco")
 data class Endereco(
 
     //@Column(name = "idEndereco")
@@ -33,6 +33,6 @@ data class Endereco(
 
     //@Column(name = "fkUsuario")
     @OneToOne
-    val usuario: Usuario,
+    var usuario: Int? = null,
 ) {
 }

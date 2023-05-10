@@ -4,7 +4,7 @@ import javax.persistence.*
 import javax.validation.constraints.Size
 
 @Entity
-@Table(name = "ninhada")
+//@Table(name = "ninhada")
 data class AnuncioPet(
 
     // PARTE 1 CAD ANUNCIO
@@ -63,6 +63,6 @@ data class AnuncioPet(
 
     //@Column(name = "fkUsuario")
     @ManyToOne
-    val usuario: Usuario,
+    var usuario: Int? = null,
 ) {
 }
