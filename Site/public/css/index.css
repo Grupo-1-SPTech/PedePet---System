@@ -39,3 +39,351 @@
   background:  var(--purple);
   border-radius: 30px;
 }
+/* menu */
+
+.container-nav {
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    flex-direction: row;
+    padding: 2px 4%;
+    background-color: var(--white);
+    align-items: center;
+    overflow-y: hidden;
+
+}
+
+#logo {
+    height: 80%;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 30%;
+    align-items: center;
+}
+
+.options a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.options ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+}
+
+.options li {
+    text-align: center;
+}
+
+/* Botão menu */
+
+.btn-login {
+    width: 12vw;
+    height: 40px;
+    font-weight: 800;
+    border-radius: 40px;
+    border: none;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* First section */
+
+.containerHome {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.leftHome {
+    display: flex;
+    width: 55vw;
+    flex-direction: column;
+    padding: 6% 4%;
+}
+
+.rightHome {
+    display: flex;
+    width: 45vw;
+    flex-direction: row;
+}
+
+.leftHome h2 {
+    font-size: 28px;
+    color: var(--orange);
+    font-weight: 800;
+}
+
+.leftHome h1 {
+    font-size: 44px;
+    color: var(--black);
+    font-weight: 900;
+}
+
+.leftHome span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.leftHome #txt1 {
+    margin-top: 6%;
+}
+
+.containerBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+    padding-top: 18%;
+}
+
+.cadUser {
+    font-size: 16px;
+    width: 16vw;
+    height: 60px;
+    border-radius: 40px;
+    border: none;
+    color: var(--white);
+    background-color: var(--orange);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cadPet {
+    font-size: 16px;
+    width: 16vw;
+    height: 60px;
+    border-radius: 40px;
+    border: 4px solid var(--darkpurple);
+    color: var(--darkpurple);
+    background-color: transparent;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cadPet:hover {
+    background-color: var(--darkpurple);
+    color: var(--white);
+    transition: .4s;
+}
+
+#blob {
+    position: absolute;
+    right: 0;
+    width: 620px;
+    z-index: -1;
+    margin-top: 5%;
+}
+
+/* lado direito da home*/
+
+.leftHome2 {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-items: flex-end;
+    padding-top: 58%;
+    width: 100%;
+    gap: 5%;
+}
+
+.leftHome2 h1 {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.cardReview {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    min-height: 180px;
+    background-color: var(--darkblue);
+    border-radius: 8px;
+    padding: 5%;
+    text-align: left;
+}
+
+#midSpan {
+    color: var(--white);
+    font-size: 16px;
+    margin-top: 15%;
+    font-weight: 600;
+}
+
+.topReview {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.topReview h1 {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.midReview {
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    padding-top: 5%;
+}
+
+.midReview img {
+    width: 20px;
+    margin-right: 6%;
+}
+
+.midReview span {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.bottomReview {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5%;
+    gap: 3%;
+}
+
+.bottomReview img {
+    width: 28px;
+}
+
+.rightHome2 {
+    display: flex;
+    height: 100%;
+    width: 100%; 
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+
+.rightHome2 img {
+    height: 70%;
+    margin-bottom: 25%;
+    
+}
+
+/* section como funciona*/
+
+.containerWhatWeDo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding-top: 10%;
+    text-align: center;
+    gap: 16%;
+  }
+  
+#titleHowWork {
+    color: var(--black);
+    font-size: 44px;
+    font-weight: 800;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.containerWWD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+  .cards {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    width: 85vw;
+    justify-content: space-evenly;
+    background-color: var(--darkpurple);
+    padding: 2%;
+    border-radius: 40px;
+  }
+  
+  .cards div.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    background-color: var(--white);
+    padding: 3%;
+    height: 360px;
+    border-radius: 50px;
+  }
+  
+  .cards div.card:first-child {
+    margin-left: 0;
+  }
+  
+  .cards div.card .icon-1 {
+    height: 110px;
+  }
+  .cards div.card .icon-2 {
+    height: 110px;
+    
+  }
+  .cards div.card .icon-3 {
+    height: 110px;
+  }
+  
+  .cards div.card img {
+    height: 100px;
+    
+  }
+  
+  .cards div.card h3 {
+    font-size: 20px;
+    margin: 16px 0;
+    overflow: hidden;
+  }
+  
+  .cards div.card span {
+    text-align: center;
+    font-weight: 400;
+    max-width: 240px;
+    text-align: justify;
+    font-size: 100%;
+    overflow: hidden;
+  }
+  
+  .cards div.card  {
+    box-shadow: 10px 10px 40px -20px black;
+  }
+  
+  @media screen and (max-width: 720px) {
+    .cards {
+        flex-direction: column;
+    }
+  
+    .cards div.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+  
+    .cards div.card:last-child {
+        margin-bottom: 0;
+    }
+  
+  }
+  

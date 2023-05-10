@@ -1,340 +1,115 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./css/images/icon-pata.png">
-  <title>Tela de início</title>
-  <link rel="stylesheet" href="./css/style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - PedePet</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="shortcut icon" href="./images/icon.jpg" />
 </head>
 
 <body>
-  <header>
+
     <nav>
-      <img src="css/images/logoPedepetRoxo.png" class="logo">
-      <div class="mobile-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-      <ul class="nav-list">
-        <li><a class="itemMenu" href="#">Filhotes</a></li>
-        <li><a class="itemMenu" href="#">Empresa</a></li>
-        <li>
-          <div class="btn_pub">
-            Publicar casal
-          </div>
-        </li>
-        <li>
-          <div class="btn_entrar">
-            Entrar
-          </div>
-        </li>
-      </ul>
+        <div class="container-nav">
+            <img id="logo" src="../../css/images/logoPedepetRoxo.png">
+            <div class="options">
+                <ul>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+                <button class="btn-login">Entrar</a></button>
+            </div>
+        </div>
     </nav>
-  </header>
-  <main>
-    <section>
-      <div class="containerBanner">
-        <div class="addSquare">
-          <div class="contentSquare">
-            <h1>O sonho de ter um filhote você realiza aqui!</h1>
-            <span>NÃO PERCA TEMPO</span>
-            <br>
-            <p>Invista na sua qualidade de vida e da sua família!
-              Presenteie quem você ama com um filhotinho!</p>
-            <br>
-            <div class="btn_filhote">
-              Quero meu filhote!
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="containerWhatWeDo">
-        <div class="topWWD">
-          <h1>Como funciona?</h1>
-        </div>
-        <div class="bottomWWD">
-          <div class="cards">
-            <div class="card contact">
-              <div class="icon">
-                <img src="./css/images/1.svg">
-              </div>
-              <h3>Os vendedores</h3>
-              <span>Os vendedores anunciam o casal de pais dos futuros filhotes, colocando imagens, raça, tamanho e
-                outras especificações. Ao anunciarem, eles disponibilizam uma lista de espera com vagas
-                limitadas.</span>
-            </div>
+    <main>
+        <section>
+            <div class="containerHome">
+                <div class="leftHome">
+                    <h2>Não perca tempo</h2>
+                    <h1>O sonho de ter um amigo <br>você realiza aqui</h1>
 
-            <div class="card shop">
-              <div class="icon">
-                <img src="./css/images/2.svg">
-              </div>
-              <h3>Os compradores</h3>
-              <span>Os compradores pesquisam pela raça que desejam, veem os casais anunciados que terão filhotes em
-                breve e entram nas listas de espera dos que desejarem. Caso a pessoa seja selecionada, ela será
-                notificada para entrar em contato com o vendedor.</span>
-            </div>
+                    <span id="txt1">Invista na sua qualidade de vida e da sua família!</span>
+                    <span>Presenteie quem você mais ama com um filhotinho!</span>
 
-            <div class="card about">
-              <div class="icon">
-                <img src="./css/images/3.svg">
-              </div>
-              <h3>Os benefícios</h3>
-              <span>No fim, o vendedores conseguirão vender todas as suas ninhadas, graças às listas de espera e os
-                compradores terão seus tão aguardados filhotes, vindo de alguém confiável e sem uma burocracia
-                desnecessária.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="containerAbout">
-        <div class="containerContentAbout">
-
-          <div class="leftAbout">
-            <div>
-              <h1>Sobre nós</h1>
-              <h2>Consultoria de tecnologia especializada na criação de soluções no ramo animal</h2>
-              <p id="txtAbout">
-                <span>Somos um grupo de estudantes apaixonados por animais e sempre almejamos desenvolver aplicações que
-                  beneficiem e ajudem donos de pets. Além disso, buscamos poder oferecer uma qualidade de vida melhor
-                  para os animais e oportunidades melhores para os comerciantes desta área.</span>
-                <span id="pt2">Com isso, nosso projeto inicial é a PedePet!</span>
-                <br>
-                <span>A PedePet é uma plataforma que une vendedores de filhotes de cachorros com compradores. Sua
-                  inovação é que o comprador entra na fila de espera dos filhotes antes mesmo deles nascerem.</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="rightAbout">
-            <div class="team">
-              <img style="width: 40vw;border-radius: 8px; " src="./css/images/equipe-provianimal.JPG" id="team">
-            </div>
-
-
-            <div class="stats">
-              <div id="statsInfo1">
-                <span>136+</span>
-                <span id="txtInfo1">Profissionais</span>
-                <span>cadastrados</span>
-              </div>
-              <div id="statsInfo2">
-                <span>98+</span>
-                <span id="txtInfo2">Filhotes</span>
-                <span>adquiridos</span>
-              </div>
-              <div id="statsInfo3">
-                <span>238+</span>
-                <span id="txtInfo3">Casais de</span>
-                <span>pets</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="faq">
-        <div class="container-fluid">
-
-          <div class="accordion">
-            <div class="icon"></div>
-            <h5>Posso anúnciar apenas filhotes?</h5>
-          </div>
-          <div class="panel">
-            <p>Não, o anunciante deve fornecer os dados do casal de cachorros e algumas fotos, mas na publicação poderá
-              colocar foto dos filhotes!</p>
-          </div>
-
-
-          <div class="accordion">
-            <div class="icon"></div>
-            <h5>Como faço para adquirir um filhote?</h5>
-          </div>
-          <div class="panel">
-            <p>Para adquirir um filhote você irá em nossa área de filhotes e selecionará o de sua preferência. Lá terá
-              um botão para entrar na fila de espera, ao clicar nesse botão você irá preencher nosso formulário de
-              confiança e, logo após, irá aguardar o dono do casal aprovar seus dados e entrar em contato com você. Após
-              o contato, aguarde até o filhote nascer e vá ao encontro com seu furuto melhor amigo!</p>
-          </div>
-
-          <div class="accordion">
-            <div class="icon"></div>
-            <h5>Política de Entrega</h5>
-          </div>
-          <div class="panel">
-            <p>A entrega do filhote é feita entre o anúnciante e o comprador, após o contato eles poderão decidir como
-              será
-              isso acontecerá. Dê preferencia para filhotes de sua região!</p>
-          </div>
-
-          <div class="accordion">
-            <div class="icon"></div>
-            <h5>Posso ver os pais dos filhotes?</h5>
-          </div>
-          <div class="panel">
-            <p>Caso o anunciante aprovar seu formulário de confiança vocês podem entrar em um acordo para esse encontro!
-            </p>
-          </div>
-
-          <div class="accordion">
-            <div class="icon"></div>
-            <h5>Quanto tempo demora a fila de espera?</h5>
-          </div>
-          <div class="panel">
-            <p>O tempo da fila de espera vai depender de anúncio para anúncio, na descrição do casal vai estar
-              escrito a média de tempo que irá levar a fila. Em certos casos, a entrega pode ser imediata, tudo depende dos
-              filhotes disponíveis no momento.</p>
-          </div>
-
-          <div class="accordion">
-            <div class="icon"></div>
-            <h5>Se eu comprar um filhote, ele vem vacinado?</h5>
-          </div>
-          <div class="panel">
-            <p>Podem ter vacinas iníciais, de acordo com sua idade.</p>
-          </div>
-        </div>
-
-        <div class="div-right">
-          <span>Perguntas mais <br><span style="color: #FB3F08">frequentes</span></span>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="faleconosco">
-        <div class="container">
-          <div class="form">
-            <div class="nemDeusSabe">
-              <form action="#">
-                <div class="form-header">
-                  <div class="title">
-                    <h1 style="font-size:40px; font-family: 'Montserrat', sans-serif;">Fale conosco</h1>
-                  </div>
-                  <div class="input-group">
-                    <div id="pt1Form" class="input-box">
-                      <label for="nome">Nome:</label>
-                      <input name="nome" placeholder="Seu nome" type="text" required>
-
-
-                      <label for="categoria">Categoria:</label>
-                      <select class="teste" name="categoria" required>
-                        <option disabled selected hidden value="Escolha">Escolha</option>
-                        <option value="denuncia">Denúncia</option>
-                        <option value="problema">Problema</option>
-                        <option value="duvida">Dúvida</option>
-                        <option value="sugestao">Sugestão</option>
-                      </select>
+                    <div class="containerBtn">
+                        <button class="cadUser">Quero meu filhote</button>
+                        <button class="cadPet">Anuncie sua ninhada</button>
                     </div>
-                    <div class="input-box">
-                      <label for="email">Email:</label>
-                      <input name="email" placeholder="email@exemplo.com" type="email" required>
-                    </div>
-                    <div class="input-box">
-                      <label class="teste" for="mensagem">Mensagem:</label>
-                      <input name="mensagem" type="text" required>
-                    </div>
-                  </div>
-
                 </div>
-                <div class="continue-button">
-                  <button><a href="#">Enviar</a></button>
+                <div class="rightHome">
+                    <img id="blob" src="../../css/images/blobHome.png">
+                    <div class="leftHome2">
+                        <h1>Ultimas <br> avaliações</h1>
+                        <div class="cardReview">
+                            <div class="topReview">
+                                <h1>Golden Ret.</h1>
+                                <h1>SP</h1>
+                            </div>
+                            <span id="midSpan">Marlon B. Coelho</span>
+                            <div class="midReview">
+                                <img src="../../css/images/calendarIcon.svg" alt="">
+                                <span>05-02-1999</span>
+                            </div>
+                            <div class="bottomReview">
+                                <img src="../../css/images/fullStar.svg" alt="">
+                                <img src="../../css/images/fullStar.svg" alt="">
+                                <img src="../../css/images/fullStar.svg" alt="">
+                                <img src="../../css/images/fullStar.svg" alt="">
+                                <img src="../../css/images/emptyStar.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightHome2">
+                        <img src="../../css/images/goldenHome.png" alt="">
+                    </div>
                 </div>
-              </form>
             </div>
-          </div>
-          <div class="form-image">
-            <img src="css/images/contato.svg" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+        <section>
+            <div class="containerWhatWeDo">
 
-    <div class="footer">
-      <footer>
-        <div id="footer_content">
-          <div id="footer_contacts">
-            <img id="logofooter" src="css/images/logoPedepetRoxo.png" alt="">
+                <h1 id="titleHowWork">Como funciona?</h1>
 
-            <div id="footer_social_media">
-              <a href="#" class="footer-link" id="instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
+                <div class="containerWWD">
+                    <div class="cards">
 
-              <a href="#" class="footer-link" id="facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
+                        <div class="card contact">
+                            <div class="icon-1">
+                                <img src="../../css/images/card1.png">
+                            </div>
+                            <h3>Decida uma raça</h3>
+                            <span>Escolha um filhote que você goste as dentre as diversas raças de ninhadas
+                                disponíveis no site.</span>
+                        </div>
 
-              <a href="#" class="footer-link" id="whatsapp">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
+                        <div class="card shop">
+                            <div class="icon-2">
+                                <img src="../../css/images/card2.png">
+                            </div>
+                            <h3>Escolha um filhote</h3>
+                            <span>Apóes encontrar seu anúncio preferido, escolha um dos filhotes que irão nascer
+                                nessa
+                                ninhada.</span>
+                        </div>
+
+                        <div class="card about">
+                            <div class="icon-3">
+                                <img src="../../css/images/card3.png">
+                            </div>
+                            <h3>Aguarde na fila </h3>
+                            <span>Após reservar seu filhote,logo após o nascimento você será notificado.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <ul class="footer-list">
-            <li>
-              <h3>Conheça a gente!</h3>
-            </li>
-            <li>
-              <a href="#" class="footer-link">Início</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">Sobre nós</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">Contato</a>
-            </li>
-          </ul>
-
-          <ul class="footer-list">
-            <li>
-              <h3>Produtos</h3>
-            </li>
-            <li>
-              <a href="#" class="footer-link">Cadastro</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">Login</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">Home</a>
-            </li>
-          </ul>
-
-          <div id="footer_subscribe">
-            <h3>Fique ligado na gente!</h3>
-
-            <p>
-              Receba notificações!
-            </p>
-
-            <div id="input_group2">
-              <input type="email" id="email2">
-
-              <button>
-                <i class="fa-regular fa-envelope"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div id="footer_copyright">
-          &#169
-          2023 all rights reserved
-        </div>
-      </footer>
-    </div>
-  </main>
-  <script src="js/script.js"></script>
+        </section>
+    </main>
 </body>
 
 </html>
