@@ -7,6 +7,8 @@
   --darkpurple: #44207E;
   --white: #FFFAFA;
   --black: #000;
+  --gray: #333333;
+  --lightgray: #D9D9D9;
   --background: linear-gradient(70deg,#FB3F08, #4C4C9D,#7C4BC8,#FB3F08);
 }
 
@@ -55,6 +57,21 @@
 
 #logo {
     height: 80%;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: var(--darkpurple);
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot1 {
+  height: 15px;
+  width: 15px;
+  background-color: var(--lightgray);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .options {
@@ -337,6 +354,7 @@
   width: 100%;
   justify-content: space-between;
   background-color: white;
+  align-items: center;
 }
 
 .contentTop h2 {
@@ -431,13 +449,12 @@ input:focus{ outline: none; }
 select:focus{ outline: none; }
 
 select {
-  width: 15vw;
-  padding-left: 22%;
-  height: 6vh;
+  width: 14vw;
+  height: 6.8vh;
   border: 3px solid rgba(0, 0, 0, 0.6);
-  background-size: 20px;
   border-radius: 24px; 
-  color: #707070;
+  color: #707070;
+  padding-left: 10%;
 }
 
 
