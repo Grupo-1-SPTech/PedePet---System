@@ -12,122 +12,123 @@
 
 <body>
 
-    <nav>
-        <div class="container-nav">
-            <img id="logo" src="/public/css/images/logoPedepetRoxo.png">
-            <div class="options">
-                <ul>
-                    <li><a href="#">Como funciona</a></li>
-                    <li><a href="#">Sobre nós</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-                <button class="btn-login">Entrar</a></button>
-            </div>
-        </div>
-    </nav>
-    
-    <main>
-       
-      <div class="containerCad">
-        <div class="formCad">
-          
-            <div class="banner">
-                <img src="/public/css/images/pug_binoculos.png" class="cachorrinho">
-              </div>
-
-          <div class="contentCad">
-
-            <div class="alinhamento">
-              <h1>Cadastre o casal</h1>
-            </div>
-            
-
-            <div class="contentTop">
-
-
-              <h2>Sobre o pai</h2>
-
-              <div class="fases">
-                <div class="fase"></div>
-                <div class="fase"></div>
-                <div class="fase"></div>
-              </div>
-            </div>
-            
-            <div class="inputs">
-
-              <span class="title" >Raça</span> 
-              <input class="inputCad" id="input_nome" type="text" placeholder="Raça do pet">
-              
-              <div class="alinhamento2">
-                <div class="alinhamento2_pt1">
-                  <span class="title" id="span_cpf" >Idade</span> 
-                  <input class="inputCad3" id="input_cpf" type="text" placeholder="***.***.***-**">
+  <nav>
+      <div class="container-nav">
+          <img id="logo" src="/public/css/images/logoPedepetRoxo.png">
+          <div class="options">
+              <ul>
+                  <li><a href="#">Como funciona</a></li>
+                  <li><a href="#">Sobre nós</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Contato</a></li>
+              </ul>
+              <button class="btn-login">Entrar</a></button>
+          </div>
+      </div>
+  </nav>
   
-                </div>
-               
-                <div class="alinhamento2_pt2">
-                  <span class="title" id="span_numero" >Número</span> 
-                  
-
-                  <div class="container_box">
-                    <select name="tipoUser" id="tipoUser">
-                        <option value="" selected disabled>Escolha</option>
-                        <option value="">Vendedor</option>
-                        <option value="">Comprador</option>
-                    </select>
-                  </div>
-  
-                </div>
-
-              </div>
-              
-
-              <span class="title" id="span_escolha">Certificado Pedigree</span>
-
-
-            <div class="first_check"> 
-              <label class="check_container1">
-                <input type="checkbox" class="option-input">
-                <span class="checkmark">Sim</span>
-              </label>
-              <label class="check_container2">
-                <input type="checkbox"  class="option-input">
-                <span class="checkmark">Não</span>
-              </label>
+  <main>
+     
+    <div class="containerCad">
+      <div class="formCad">
+        
+          <div class="banner">
+              <img src="/public/css/images/pug_binoculos.png" class="cachorrinho">
             </div>
 
-            <span class="title" id="span_escolha">Vacinado</span>
+        <div class="contentCad">
 
-
-            <div class="first_check"> 
-              <label class="check_container1">
-                <input type="checkbox" class="option-input">
-                <span class="checkmark">Sim</span>
-              </label>
-              <label class="check_container2">
-                <input type="checkbox"  class="option-input">
-                <span class="checkmark">Não</span>
-              </label>
-            </div>
-             
-                
-              <div class="btns">
-                <button class="cancelar">Voltar</button>
-                <button class="prosseguir">Prosseguir</button>
-              </div>
-
-            </div>
-            </div>
-            
+          <div class="alinhamento">
+            <h1>Cadastre o casal</h1>
           </div>
           
-          
 
+          <div class="contentTop">
+
+
+            <h2>Sobre o Pai</h2>
+
+            <div id="bolinhas2">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot1"></span>
+            </div>
+          </div>
+          
+          <div class="inputs">
+
+            <span class="title" >Raça</span> 
+            <input class="inputCad" id="input_nome" type="text" placeholder="Raça do pet">
+            
+            <div class="alinhamento2">
+              <div class="alinhamento2_pt1">
+                <span class="title" id="span_cpf" >Idade</span> 
+                <input class="inputCad3" id="input_cpf" type="number_format" placeholder="idade do pet" >
+
+              </div>
+           
+             
+              <div class="alinhamento2_pt2">
+                <span class="title" id="span_numero" >Porte do animal</span> 
+                
+
+                <div class="container_box">
+                  <select name="tipoUser" id="tipoUser">
+                      <option value="" selected disabled>Escolha</option>
+                      <option value="">Grande</option>
+                      <option value="">Médio</option>
+                      <option value="">Pequeno</option>
+                  </select>
+                </div>
+
+              </div>
+
+            </div>
+            
+
+            <span class="title" id="span_escolha">Certificado Pedigree:</span>
+
+            <div>
+              <input type="radio" class="radio-label" id="flexRadio1" name="radio" value="certificado" checked>
+              <label for="Sim">Sim</label>
+            </div>
+        
+            <div>
+              <input type="radio" id="flexRadio2" class="radio-label" name="radio" value="Ncertificado">
+              <label for="Nao">Não</label>
+            </div>
+
+          <span class="title" id="span_escolha">Vacinado:</span>
+
+     
+          <div>
+            <input type="radio" id="flexRadio3" name="drone2" class="radio-label" value="vacinado" checked>
+            <label for="Sim">Sim</label>
+          </div>
+      
+          <div>
+            <input type="radio" id="flexRadio4" name="drone2" class="radio-label" value="Nvacinado">
+            <label for="Nao">Não</label>
+          </div>
+           
+               <div class="btns">
+              <button class="cancelar">Cancelar</button>
+              <button class="prosseguir">Prosseguir</button>
+            </div>
+
+          </div>
+          </div>
+          
         </div>
+        
+        
+
       </div>
-    </main>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" ></script>
+
 </body>
 
 </html>
