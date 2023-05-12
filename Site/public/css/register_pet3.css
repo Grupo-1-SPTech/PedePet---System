@@ -468,7 +468,10 @@ border: rgba(0, 0, 0, 0.6) 3px dashed;
     border-radius: 24px;
   }
 
-
+ 
+  ::-webkit-input-placeholder { /* Edge */
+    color:var(--lightgray);
+  }
 
 
 input:focus{ outline: none; }
