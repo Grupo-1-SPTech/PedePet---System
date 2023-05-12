@@ -426,7 +426,7 @@ font-weight: 600;
   height: 40px;
   border-radius: 24px;
   border: 3px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/cpf.svg) no-repeat 20px 7px;
+  background: url(images/money-recive-svgrepo-com.svg) no-repeat 20px 7px ;
   padding-left: 22%;
   background-size: 20px;
 }
@@ -457,6 +457,7 @@ border: rgba(0, 0, 0, 0.6) 3px dashed;
   justify-content: center;
   border-radius: 24px;
   padding: 3.5vh;
+
 }
 
 .box_observacao{
@@ -466,6 +467,7 @@ border: rgba(0, 0, 0, 0.6) 3px dashed;
     display: flex;
     justify-content: center;
     border-radius: 24px;
+    padding: 3vh;
   }
 
  
