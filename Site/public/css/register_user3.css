@@ -7,6 +7,8 @@
   --darkpurple: #44207E;
   --white: #FFFAFA;
   --black: #000;
+  --gray: #333333;
+  --lightgray: #D9D9D9;
   --background: linear-gradient(70deg,#FB3F08, #4C4C9D,#7C4BC8,#FB3F08);
 }
 
@@ -346,19 +348,19 @@
   
 }
 
-.fases {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 8%;
-}
-
-.fase {
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
+.dot {
+  height: 15px;
+  width: 15px;
   background-color: var(--darkpurple);
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot1 {
+  height: 15px;
+  width: 15px;
+  background-color: var(--darkpurple);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 
