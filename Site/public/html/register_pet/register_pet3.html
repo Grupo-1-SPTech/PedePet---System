@@ -1,102 +1,122 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro - PedePet</title>
-        <link rel="stylesheet" href="/public/css/register_pet3.css">
-        <link rel="shortcut icon" href="./images/icon.jpg" />
-    </head>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - PedePet</title>
+  <link rel="stylesheet" href="/public/css/register_pet3.css">
+  <link rel="shortcut icon" href="./images/icon.jpg" />
+</head>
+
 <body>
   <nav>
     <div class="container-nav">
-        <img id="logo" src="/public/css/images/logoPedepetRoxo.png">
-        <div class="options">
-            <ul>
-                <li><a href="#">Como funciona</a></li>
-                <li><a href="#">Sobre nós</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-            <button class="btn-login">Entrar</a></button>
-        </div>
+      <img id="logo" src="/public/css/images/logoPedepetRoxo.png">
+      <div class="options">
+        <ul>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+        <button class="btn-login">Entrar</a></button>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<main>
-   
-  <div class="containerCad">
-    <div class="formCad">
-      
+  <main>
+
+    <div class="containerCad">
+      <div class="formCad">
+
         <div class="banner">
-            <img src="/public/css/images/pug_binoculos.png" class="cachorrinho">
+          <img src="/public/css/images/pug_binoculos.png" class="cachorrinho">
+        </div>
+
+        <div class="contentCad">
+
+          <div class="alinhamento">
+            <h1>Cadastre o casal</h1>
           </div>
 
-      <div class="contentCad">
 
-        <div class="alinhamento">
-          <h1>Cadastre o casal</h1>
-        </div>
-        
-
-        <div class="contentTop">
+          <div class="contentTop">
 
 
-          <h2>Sobre os filhotes</h2>
+            <h2>Sobre os filhotes</h2>
 
-          <div id="bolinhas2">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        
-        <div class="inputs">
-
-          <span class="title" >Quantidade de filhotes:</span> 
-          <input class="inputCad" id="input_nome" type="number" placeholder="Quantidade de filhotes da gestação">
-          
-          <div class="alinhamento2">
-            <div class="alinhamento2_pt1">
-              <span class="title" id="span_cpf" >Preço unitário:</span> 
-              <input class="inputCad3" id="input_cpf" type="" placeholder="0,00" >
-
+            <div id="bolinhas2">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
             </div>
-         
-           
-            <div class="alinhamento2_pt2">
-              <span class="title" id="span_numero" >Porte do animal</span> 
-              
+          </div>
 
-              <div class="container_box">
-                <select name="tipoUser" id="tipoUser">
+          <div class="inputs">
+
+            <span class="title">Quantidade de filhotes:</span>
+            <input class="inputCad" id="input_nome" type="number" placeholder="Quantidade de filhotes da gestação">
+
+            <div class="alinhamento2">
+              <div class="alinhamento2_pt1">
+                <span class="title" id="span_cpf">Preço unitário:</span>
+                <input class="inputCad3" id="input_cpf" type="number_format" placeholder="0,00">
+
+              </div>
+
+
+              <div class="alinhamento2_pt2">
+                <span class="title" id="span_numero">Nascem em:</span>
+
+
+                <div class="container_box">
+                  <select name="tipoUser" id="tipoUser">
                     <option value="" selected disabled>Escolha</option>
-                    <option value="">Grande</option>
-                    <option value="">Médio</option>
-                    <option value="">Pequeno</option>
-                </select>
-              </div>
-
-            </div>
-
-          </div>
-                  
-                <div class="btns">
-                  <button class="cancelar">Voltar</button>
-                  <button class="prosseguir">Prosseguir</button>
+                    <option value="">- 1 mês</option>
+                    <option value="">+/- 1 mês</option>
+                    <option value="">+/- 2 meses</option>
+                    <option value="">+/- 3 meses</option>
+                    <option value="">+/- 4 meses</option>
+                  </select>
                 </div>
-  
+
               </div>
-              </div>
-              
+
             </div>
-            
-            
-  
+
+            <div>
+              <div class="alinhamento2_pt3">
+                <span class="title" id="span_foto">Fotos do casal de pet:</span>
+                <div class="box_foto">
+                  <span id="div_imagem">Arraste ou clique aqui para adicionar a <b style="color: #44207E;">url </b> da
+                    imagem do casal :)</span>
+                </div>
+              </div>
+
+              <div class="alinhamento2_pt3">
+                <span class="title" id="span_observacao">Escreva observações sobre os pets:</span>
+                <div class="box_observacao">
+                  <form action=""></form>
+                </div>
+              </div>
+
+              <div class="btns">
+                <button class="cancelar">Voltar</button>
+                <button class="prosseguir">Prosseguir</button>
+              </div>
+
+            </div>
           </div>
+
         </div>
-      </main>
-  </body>
-  
-  </html>
+
+
+
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

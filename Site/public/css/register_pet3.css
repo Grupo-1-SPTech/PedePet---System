@@ -436,6 +436,39 @@ font-weight: 600;
   flex-direction: column;
 }
 
+.alinhamento2_pt3 {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 6%;
+}
+
+#div_imagem{
+color: var(--lightgray);
+font-size: small;
+
+}
+
+.box_foto{
+border: rgba(0, 0, 0, 0.6) 3px dashed;
+  height: 20vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 24px;
+  padding: 3.5vh;
+}
+
+.box_observacao{
+  border: rgba(0, 0, 0, 0.6) 3px solid;
+    height: 20vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 24px;
+  }
+
+
 
 
 input:focus{ outline: none; }
@@ -517,60 +550,3 @@ select {
 
 }
 
-.radio {
-  margin: 0.5rem;
-  input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    + .radio-label {
-      &:before {
-        content: '';
-        background: var(--purple);
-        border-radius: 100%;
-        border: 1px solid darken(#44207E, 25%);
-        display: inline-block;
-        width: 1.4em;
-        height: 1.4em;
-        position: relative;
-        top: -0.2em;
-        margin-right: 1em; 
-        vertical-align: top;
-        cursor: pointer;
-        text-align: center;
-        transition: all 250ms ease;
-      }
-    }
-    &:checked {
-      + .radio-label {
-        &:before {
-          background-color: var(--darkpurple);
-          box-shadow: inset 0 0 0 4px #44207E;
-        }
-      }
-    }
-    &:focus {
-      + .radio-label {
-        &:before {
-          outline: none;
-          border-color: var(--darkpurple);
-        }
-      }
-    }
-    &:disabled {
-      + .radio-label {
-        &:before {
-          box-shadow: inset 0 0 0 4px #44207E;
-          border-color: darken(#44207E, 25%);
-          background: darken(#44207E, 25%);
-        }
-      }
-    }
-    + .radio-label {
-      &:empty {
-        &:before {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-};
