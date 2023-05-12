@@ -13,53 +13,53 @@ data class AnuncioPet(
     val id:Int?,
 
     //@Column(name = "titulo")
-    val titulo:String?,
+    val titulo:String? = null,
 
     //@Column(name = "raca_mae")
-    val racaMae:String?, // RACA DO MAE
+    val racaMae:String? = null, // RACA DO MAE
 
     //@Column(name = "idade_mae")
-    val idadeMae:Int?, // IDADE MAE
+    val idadeMae:Int? = null, // IDADE MAE
 
     //@Column(name = "porte_mae")
-    val porteMae:String?, // TAMANHO MAE (GRANDE, MEDIO, PEQUENO)
+    val porteMae:String? = null, // TAMANHO MAE (GRANDE, MEDIO, PEQUENO)
 
     //@Column(name = "pedigree_mae")
-    val pedigreeMae:Int?, // SIM = 1, NÃO = 2
+    val pedigreeMae:Int? = null, // SIM = 1, NÃO = 2
 
     //@Column(name = "vacinado_mae")
-    val vacinadoMae:Int?, // SIM = 1, NÃO = 2
+    val vacinadoMae:Int? = null, // SIM = 1, NÃO = 2
 
 
     // PARTE 2 CAD ANUNCIO
     //@Column(name = "raca_pai")
-    val racaPai:String?, // RACA DO PAI
+    val racaPai:String? = null, // RACA DO PAI
 
     //@Column(name = "idade_pai")
-    val idadePai:Int?, // IDADE PAI
+    val idadePai:Int? = null, // IDADE PAI
 
     //@Column(name = "porte_pai")
-    val portePai:String?, // TAMANHO PAI (GRANDE, MEDIO, PEQUENO)
+    val portePai:String? = null, // TAMANHO PAI (GRANDE, MEDIO, PEQUENO)
 
     //@Column(name = "pedigree_pai")
-    val pedigreePai:Int?, // SIM = 1, NÃO = 2
+    val pedigreePai:Int? = null, // SIM = 1, NÃO = 2
 
     //@Column(name = "vacinado_pai")
-    val vacinadoPai:Int?, // SIM = 1, NÃO = 2
+    val vacinadoPai:Int? = null, // SIM = 1, NÃO = 2
 
     //@Column(name = "foto_casal")
-    var fotosCasal:String?,
+    var fotosCasal:String? = null,
 
     //@Column(name = "visualizacoes")
     var visualizacoes: Int? = null,
 
     // PARTE 3 CAD ANUNCIO
     //@Column(name = "qtd_filhotes")
-    var qtdFilhotes:Int?,
+    var qtdFilhotes:Int? = null,
 
     //@Column(name = "descricao")
     @field:Size(min = 0, max= 240)
-    var descricao:String?,
+    var descricao:String? = null,
 
     //@Column(name = "fkUsuario")
     @ManyToOne

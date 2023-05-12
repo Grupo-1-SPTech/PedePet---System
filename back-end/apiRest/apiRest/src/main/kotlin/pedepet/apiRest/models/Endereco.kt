@@ -11,25 +11,25 @@ data class Endereco(
     var id:Int,
 
     //@Column(name = "cep", length = 8)
-    val cep:String?,
+    val cep:String? = null,
 
     //@Column(name = "rua")
-    val rua:String?,
+    val rua:String? = null,
 
     //@Column(name = "numero")
-    val numero:Int?,
+    val numero:Int? = null,
 
     //@Column(name = "complemento")
-    val complemento:String?,
+    val complemento:String? = null,
 
     //@Column(name = "bairro")
-    val bairro:String?,
+    val bairro:String? = null,
 
     //@Column(name = "cidade")
-    val cidade:String?,
+    val cidade:String? = null,
 
     //@Column(name = "estado")
-    val estado:String?,
+    val estado:String? = null,
 
     //@Column(name = "fkUsuario")
     @OneToOne

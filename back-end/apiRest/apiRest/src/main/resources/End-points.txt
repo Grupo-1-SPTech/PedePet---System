@@ -1,0 +1,28 @@
+End-points:
+
+HOME
+
+ULTIMAS AVALIAÇÕES
+get >??????
+
+FILHOTES ADQUIRIDOS
+get
+
+PROFISSIONAIS CADASTRADOS
+get na tabela usuario quatidade de vendedores registrados
+
+RAÇAS DISPONIVEIS
+get na tabela Anuncio raças cadastradas unique = true
+
+USUARIOS REGISTRADOS
+get na tabela usuarios count by id
+
+FALE CONOSCO
+post dos dados que tem la
+
+------------------------------------------------------------------
+TELA PUPPYS ADS
+
+get na tabela anuncio all anuncios
+
+get filter raça, porte cachorro, pedrigree, vacina, > get filter
