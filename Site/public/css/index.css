@@ -56,7 +56,7 @@
   height: 80%;
 }
 
-.options {
+.optionsNav {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -64,7 +64,7 @@
   align-items: center;
 }
 
-.options a {
+.optionsNav a {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   color: var(--black);
@@ -72,7 +72,7 @@
   font-size: 16px;
 }
 
-.options ul {
+.optionsNav ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -80,7 +80,7 @@
   list-style-type: none;
 }
 
-.options li {
+.optionsNav li {
   text-align: center;
 }
 
@@ -293,7 +293,7 @@
 #titleHowWork {
   color: var(--black);
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 900;
   overflow: hidden;
   padding-bottom: 5%;
 }
@@ -409,13 +409,13 @@
 .rightFAQ span {
     color: var(--black);
     font-size: 48px;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .rightFAQ span:nth-child(2) {
     color: var(--orange);
     font-size: 48px;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 
@@ -438,7 +438,7 @@
     align-items: center;
     padding: 10px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 800;
     cursor: pointer;
 }
 
@@ -473,4 +473,72 @@ input[type="radio"]{
     width: 620px;
     z-index: -1;
     margin-top: 10%;
+}
+
+/* Section Contato */
+
+.containerCTT {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+}
+
+.select-menu {
+  width: 380px;
+  margin: 150px auto;
+}
+
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  background-color:antiquewhite;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.select-btn img {
+  height: 24px;
+}
+
+.select-menu .options {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  padding: 20px;
+  background-color:rgb(232, 235, 209);
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.options .option{
+  display: flex;
+  height: 55px;
+  width: 100%;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+
+
+.options .option:hover{
+  background-color: #4c4c9d;
+}
+
+.option-text {
+  font-size: 18px;
+  color: black;
 }
