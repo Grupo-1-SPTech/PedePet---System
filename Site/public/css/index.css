@@ -466,3 +466,11 @@ input[type="radio"]{
     max-height: 400px;
     padding: 10px 10px 20px ;
 }
+
+#blobFAQ {
+    position: absolute;
+    left: 0;
+    width: 620px;
+    z-index: -1;
+    margin-top: 10%;
+}
