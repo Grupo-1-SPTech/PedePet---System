@@ -1,0 +1,77 @@
+{
+  "usuario": {
+    "id": 1,
+    "nome": "fabio moledo",
+    "email": "fabio@gmail.com",
+    "cpf": "38328401843",
+    "telefone": "(11) 99266-4464",
+    "senha": "sptech10@",
+    "tipoUsuario": 1,
+    "autenticado": false
+  },
+  "endereco": {
+    "id": 1,
+    "cep": "04143010",
+    "rua": "Avenida 1",
+    "numero": 478,
+    "complemento": "Perto da drogaria",
+    "bairro": "Jabaquara",
+    "cidade": "São paulo",
+    "estado": "SP",
+    "usuario": {
+        "id": 1
+    }
+  },
+  "formulario": {
+    "id": 1,
+    "tipoMoradia": "casa",
+    "qtdComodos": 7,
+    "qtdMoradores": 6,
+    "qtdHorasCasa": 12,
+    "possuiPet": 1,
+    "usuario": {
+        "id": 1
+    }
+  }
+}
+
+----------------------
+
+{
+  "usuario": {
+    "id": 2,
+    "nome": "ruy barbosa",
+    "email": "ruybarbao@gmail.com",
+    "cpf": "86731896080",
+    "telefone": "(11) 99266-4464",
+    "senha": "sptech10@",
+    "tipoUsuario": 1,
+    "autenticado": true
+  },
+  "endereco": {
+    "id": 2,
+    "cep": "04143010",
+    "rua": "Avenida 2",
+    "numero": 666,
+    "complemento": "Perto do mercado",
+    "bairro": "Jabaquara",
+    "cidade": "São paulo",
+    "estado": "SP",
+    "usuario": {
+        "id": 2
+    }
+  },
+  "formulario": {
+    "id": 2,
+    "tipoMoradia": "apto",
+    "qtdComodos": 5,
+    "qtdMoradores": 4,
+    "qtdHorasCasa": 12,
+    "possuiPet": 1,
+    "usuario": {
+        "id": 2
+    }
+  }
+}
+
+

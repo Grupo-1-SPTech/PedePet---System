@@ -17,7 +17,7 @@ data class Usuario(
 
     //@Column(name = "nome")
     @field:NotBlank @field:Size(min = 3, max = 45)
-    val nome:String?,
+    var nome:String?,
 
     //@Column(name = "email")
     @field:Email @field:NotBlank @field:Size(min = 10, max = 50)
@@ -25,20 +25,20 @@ data class Usuario(
 
     //@Column(name = "cpf", unique = true)
     @field:CPF
-    val cpf:String?,
+    var cpf:String?,
 
     //@Column(name = "telefone")
     @field:Pattern(
         regexp = "(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})",
         message = "Envie um telefone válido"
-    ) val telefone: String?,
+    ) var telefone: String?,
 
     //@Column(name = "senha")
     @field:NotBlank @field:Size(min = 8, max = 30)
     var senha:String?,
 
     //@Column(name = "tipo_usuario")
-    val tipoUsuario:Int? = null, // COMPRADOR = 1, VENDEDOR = 2
+    var tipoUsuario:Int? = null, // COMPRADOR = 1, VENDEDOR = 2
 
     //@Column(name = "autenticado")
     var autenticado:Boolean? = false,

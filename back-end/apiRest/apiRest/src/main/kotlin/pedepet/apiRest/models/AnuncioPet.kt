@@ -10,7 +10,7 @@ data class AnuncioPet(
     // PARTE 1 CAD ANUNCIO
     //@Column(name = "idNinhada")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id:Int?,
+    var id:Int,
 
     //@Column(name = "titulo")
     val titulo:String? = null,
@@ -63,6 +63,6 @@ data class AnuncioPet(
 
     //@Column(name = "fkUsuario")
     @ManyToOne
-    var usuario: Int? = null,
+    var usuario: Usuario,
 ) {
 }

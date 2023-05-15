@@ -27,6 +27,6 @@ data class Formulario(
 
     //@Column(name = "fkUsuario")
     @OneToOne
-    var usuario: Int? = null,
+    var usuario: Usuario,
 ) {
 }

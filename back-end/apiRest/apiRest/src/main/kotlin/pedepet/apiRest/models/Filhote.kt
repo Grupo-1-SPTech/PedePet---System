@@ -13,19 +13,19 @@ data class Filhote(
     var id:Int,
 
     //@Column(name = "tempo_espera")
-    var tempoEspera: Date? = null,
+    var tempoEspera: Int? = null,
 
     //@Column(name = "preco")
     val preco:Double? = null,
 
     //@Column(name = "data_criacao")
-    val dataCriacao:LocalDateTime? = null,
+    val dataCriacao:String? = null,
 
-    @Column(name = "disponivel")
+    //@Column(name = "disponivel")
     var disponivel:Boolean? = true,
 
     @ManyToOne
-    var anuncioPet: Int? = null,
+    var anuncioPet: AnuncioPet,
 
 ) {
 }

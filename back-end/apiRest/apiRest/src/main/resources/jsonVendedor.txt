@@ -1,0 +1,59 @@
+{
+  "usuario": {
+    "id": 3,
+    "nome": "Julia Barbosa",
+    "email": "julia@gmail.com",
+    "cpf": "22973980003",
+    "telefone": "(11) 92276-6147",
+    "senha": "sptech10@",
+    "tipoUsuario": 2,
+    "autenticado": true
+  },
+  "endereco": {
+    "id": 3,
+    "cep": "04342011",
+    "rua": "Rua ABC",
+    "numero": 71,
+    "complemento": "Perto do parque jardim",
+    "bairro": "Campo Belo",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "usuario": {
+      "id": 3
+    }
+  },
+  "anuncioPet": {
+    "id": 1,
+    "titulo": "Filhotes golden",
+    "racaMae": "Golden",
+    "idadeMae": 5,
+    "porteMae": "Grande",
+    "pedigreeMae": 1,
+    "vacinadoMae": 1,
+    "racaPai": "Golden",
+    "idadePai": 5,
+    "portePai": "Grande",
+    "pedigreePai": 1,
+    "vacinadoPai": 1,
+    "fotosCasal": "urlCasal",
+    "visualizacoes": 1,
+    "qtdFilhotes": 1,
+    "descricao": "Bla bla bla bla bla",
+    "usuario": {
+      "id": 3
+    }
+  },
+  "filhote": {
+    "id": 1,
+    "tempoEspera": 3,
+    "preco": 1000.00,
+    "dataCriacao": "TESTE",
+    "disponivel": true,
+    "anuncioPet": {
+      "id": 1,
+      "usuario": {
+        "id": 3
+      }
+    }
+  }
+}

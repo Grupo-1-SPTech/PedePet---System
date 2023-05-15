@@ -21,6 +21,7 @@ class UsuarioController(
 
 ) {
 
+    /*
     @PostMapping("/cadastrar")
     fun cad(@RequestBody cadVendedorRequest: VendedorRequest, cadCompradorRequest: CompradorRequest): ResponseEntity<Void> {
 
@@ -41,6 +42,41 @@ class UsuarioController(
             enderecoRepository.save(cadVendedorRequest.endereco)
             val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
             cadVendedorRequest.filhote.anuncioPet = saveAnuncio.id
+            filhoteRepository.save(cadVendedorRequest.filhote)
+            ResponseEntity.status(201).body(null)
+        }
+        return ResponseEntity.status(404).build()
+    }
+     */
+
+    @PostMapping("cadastrar/comprador")
+    fun cadComprador(@RequestBody cadCompradorRequest: CompradorRequest): ResponseEntity<Void> {
+
+        val selectComprador = repository.findByEmailAndTipoUsuario(cadCompradorRequest.usuario.email, cadCompradorRequest.usuario.tipoUsuario)
+
+        if(selectComprador == null) {
+            val usuarioComprador: Usuario = repository.save(cadCompradorRequest.usuario)
+            cadCompradorRequest.endereco.usuario.id = usuarioComprador.id
+            cadCompradorRequest.formulario.usuario.id = usuarioComprador.id
+            enderecoRepository.save(cadCompradorRequest.endereco)
+            formularioRepository.save(cadCompradorRequest.formulario)
+            ResponseEntity.status(201).body(null)
+        }
+        return ResponseEntity.status(404).build()
+    }
+
+    @PostMapping("cadastrar/vendedor")
+    fun cadVendedor(@RequestBody cadVendedorRequest: VendedorRequest): ResponseEntity<Void> {
+
+        val selectVendedor = repository.findByEmail(cadVendedorRequest.usuario.email)
+
+        if(selectVendedor == null) {
+            val usuarioVendedor: Usuario = repository.save(cadVendedorRequest.usuario)
+            cadVendedorRequest.endereco.usuario.id = usuarioVendedor.id
+            cadVendedorRequest.anuncioPet.usuario.id = usuarioVendedor.id
+            enderecoRepository.save(cadVendedorRequest.endereco)
+            val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
+            cadVendedorRequest.filhote.anuncioPet.id = saveAnuncio.id
             filhoteRepository.save(cadVendedorRequest.filhote)
             ResponseEntity.status(201).body(null)
         }
