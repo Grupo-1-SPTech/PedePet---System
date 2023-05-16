@@ -475,6 +475,31 @@ input[type="radio"]{
     margin-top: 10%;
 }
 
+/* Sobre nós */
+
+.containerPai{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10%;
+}
+
+
+.image-SBN{
+ 
+ width: 500px;
+ height: 500px;
+
+
+}
+.text-SBN{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 40%;
+}
+
+
 /* Section Contato */
 
 .containerCTT {
