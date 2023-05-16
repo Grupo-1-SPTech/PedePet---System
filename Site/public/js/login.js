@@ -43,16 +43,6 @@ function entrar() {
                 sessionStorage.EMAIL_USUARIO = json.Email;
                 sessionStorage.NOME_USUARIO = json.Nome_Pessoa;
                 sessionStorage.ID_USUARIO = json.idPessoa;
-                if (sessionStorage.fkPerfil == 2) {
-                    setTimeout(function () {
-                        window.location = "./Dashboards/dash-nova/dashboardGest.html";
-                    }, 1000); // apenas para exibir o loading
-                }
-                if(sessionStorage.fkPerfil == 3){
-                    setTimeout(function () {
-                        window.location = "./Dashboards/dash-nova/dashboardTecn.html";
-                    }, 1000); // apenas para exibir o loading
-                }
             });
 
         } else {
