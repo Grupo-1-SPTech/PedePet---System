@@ -32,7 +32,11 @@ data class Endereco(
     val estado:String? = null,
 
     //@Column(name = "fkUsuario")
+//    @OneToOne(targetEntity = Usuario::class)
+//    @JoinColumn(name = "fkUsuario", referencedColumnName = "id")
+//    var usuario: Int? = null,
     @OneToOne
-    var usuario: Usuario,
+    @JoinColumn(name = "fkUsuario", referencedColumnName = "id")
+    var usuario: Usuario? = null,
 ) {
 }

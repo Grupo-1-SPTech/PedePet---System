@@ -26,7 +26,9 @@ data class Formulario(
     val possuiPet:Int? = null, // SIM = 1, NÃO = 2
 
     //@Column(name = "fkUsuario")
+//    @OneToOne(targetEntity = Usuario::class)
     @OneToOne
-    var usuario: Usuario,
+    @JoinColumn(name = "fkUsuario", referencedColumnName = "id")
+    var usuario: Usuario? = null,
 ) {
 }

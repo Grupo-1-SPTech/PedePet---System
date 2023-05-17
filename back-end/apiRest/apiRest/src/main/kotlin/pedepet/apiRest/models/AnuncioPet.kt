@@ -63,6 +63,7 @@ data class AnuncioPet(
 
     //@Column(name = "fkUsuario")
     @ManyToOne
-    var usuario: Usuario,
+    @JoinColumn(name = "fkUsuario", referencedColumnName = "id")
+    var usuario: Usuario? = null,
 ) {
 }

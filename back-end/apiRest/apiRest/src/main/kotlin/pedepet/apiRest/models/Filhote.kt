@@ -25,7 +25,8 @@ data class Filhote(
     var disponivel:Boolean? = true,
 
     @ManyToOne
-    var anuncioPet: AnuncioPet,
+    @JoinColumn(name = "fkAnuncio", referencedColumnName = "id")
+    var anuncioPet: AnuncioPet? = null,
 
 ) {
 }
