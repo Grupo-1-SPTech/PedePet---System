@@ -121,13 +121,6 @@ nav {
   font-size: 2.4vh;
 }
 
-footer {
-  background-color: var(--white);
-  color: var(--gray);
-  text-align: center;
-  padding: 3.1vh;
-}
-
 .container {
   max-width: 87.8vw;
   margin: 0 auto;
@@ -432,5 +425,5 @@ footer {
   font-size: 0.8rem;
   padding: 1.5rem;
   font-weight: 400;
-  color: var(--black);
+  color: var(--black);
 }
