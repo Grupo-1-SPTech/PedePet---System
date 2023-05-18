@@ -1,89 +1,42 @@
-function entrar() {
-    const modal_container = document.getElementById('modal_container');
-    const close = document.getElementById('modal_container');
+function controller() {
+    fetch("http://localhost:8080/usuarios/controller/demo", {
+        method: "GET"
+    })
+    .then(res => res.text())
+    .then((res) => {
+        console.log(res)
+    })
+}
 
-    var emailVar = input_email.value;
-    var senhaVar = input_senha.value;
+function usuarios() {
+    fetch("http://localhost:8080/usuarios", {
+        method: "GET"
+    })
+    .then(res => res.json())
+    .then((res) => {
+        for (let i = 0; i < res._embedded.usuarios.length; i++) {
+            console.log(res._embedded.usuarios[i])
+        }
+    })
+}
 
-    if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1 || senhaVar == '') {
-        msgErro.innerHTML = `Email ou senha inválidos.`
-
-        modal_container.classList.add('show');
-
-
-        close.addEventListener('click', () => {
-            modal_container.classList.remove('show');
-        });
-        return
-    }
-
-
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
-
-    fetch("/usuarios/autenticar", {
+function cadastro() {
+    fetch("http://localhost:8080/usuarios", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar
+            nome: document.getElementById("nome").value,
+            email: document.getElementById("email").value,
+            senha: document.getElementById("senha").value
         })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                
-                sessionStorage.EMAIL_USUARIO = json.Email;
-                sessionStorage.NOME_USUARIO = json.Nome_Pessoa;
-                sessionStorage.ID_USUARIO = json.idPessoa;
-            });
-
-        } else {
-
-            console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-                finalizarAguardar(texto);
-            });
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
     })
-
-    return false;
-
-}
-
-function validarSessao() {
-    aguardar();
-
-    var login = sessionStorage.LOGIN_USUARIO;
-    var nome = sessionStorage.NOME_USUARIO;
-
-    var h1Titulo = document.getElementById("h1_titulo");
-
-    if (login != null && nome != null) {
-        // window.alert(`Seja bem-vindo, ${nome}!`);
-        h1Titulo.innerHTML = `${login}`;
-
-        finalizarAguardar();
-    } else {
-        window.location = "./Dashboards/DashboardGeralCPU.html";
-    }
-}
-
-function sair() {
-    aguardar();
-    sessionStorage.clear();
-    finalizarAguardar();
-    window.location = "login.html";
+    .then(res => res.json())
+    .then((res) => {
+        console.log(res)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 }
