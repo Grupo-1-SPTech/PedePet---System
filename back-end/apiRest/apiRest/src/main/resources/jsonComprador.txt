@@ -15,14 +15,18 @@
     "complemento": "Perto da drogaria",
     "bairro": "Jabaquara",
     "cidade": "São paulo",
-    "estado": "SP"
+    "estado": "SP",
+    "usuario": {
+        }
   },
   "formulario": {
     "tipoMoradia": "casa",
     "qtdComodos": 7,
     "qtdMoradores": 6,
     "qtdHorasCasa": 12,
-    "possuiPet": 1
+    "possuiPet": 1,
+    "usuario": {
+        }
   }
 }
 ----------------------
@@ -45,14 +49,18 @@
     "complemento": "Perto do mercado",
     "bairro": "Jabaquara",
     "cidade": "São paulo",
-    "estado": "SP"
+    "estado": "SP",
+    "usuario": {
+            }
   },
   "formulario": {
     "tipoMoradia": "apto",
     "qtdComodos": 5,
     "qtdMoradores": 4,
     "qtdHorasCasa": 12,
-    "possuiPet": 1
+    "possuiPet": 0,
+    "usuario": {
+            }
   }
 }
 

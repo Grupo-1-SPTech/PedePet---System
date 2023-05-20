@@ -8,39 +8,39 @@ import javax.validation.constraints.Pattern
 import javax.validation.constraints.Size
 
 @Entity
-//@Table(name = "usuario")
+@Table(name = "usuario")
 data class Usuario(
 
-    //@Column(name = "idUsuario")
+    @Column(name = "id")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Int,
 
-    //@Column(name = "nome")
+    @Column(name = "nome")
     @field:NotBlank @field:Size(min = 3, max = 45)
     var nome:String?,
 
-    //@Column(name = "email")
+    @Column(name = "email")
     @field:Email @field:NotBlank @field:Size(min = 10, max = 50)
     var email:String?,
 
-    //@Column(name = "cpf", unique = true)
+    @Column(name = "cpf", unique = true)
     @field:CPF
     var cpf:String?,
 
-    //@Column(name = "telefone")
+    @Column(name = "telefone")
     @field:Pattern(
         regexp = "(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})",
         message = "Envie um telefone válido"
     ) var telefone: String?,
 
-    //@Column(name = "senha")
+    @Column(name = "senha")
     @field:NotBlank @field:Size(min = 8, max = 30)
     var senha:String?,
 
-    //@Column(name = "tipo_usuario")
+    @Column(name = "tipo_usuario")
     var tipoUsuario:Int? = null, // COMPRADOR = 1, VENDEDOR = 2
 
-    //@Column(name = "autenticado")
+    @Column(name = "autenticado")
     var autenticado:Boolean? = false,
     ) {
 }

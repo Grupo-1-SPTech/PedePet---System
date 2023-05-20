@@ -1,11 +1,9 @@
 package pedepet.apiRest.controllers
 
+import org.springframework.data.jpa.domain.AbstractPersistable_.id
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import pedepet.apiRest.dto.CompradorRequest
-import pedepet.apiRest.dto.LoginRequest
-import pedepet.apiRest.dto.SenhaEntradaRequest
-import pedepet.apiRest.dto.VendedorRequest
+import pedepet.apiRest.dto.*
 import pedepet.apiRest.models.AnuncioPet
 import pedepet.apiRest.models.Usuario
 import pedepet.apiRest.repositories.*
@@ -20,34 +18,6 @@ class UsuarioController(
     val filhoteRepository: FilhoteRepository
 
 ) {
-
-    /*
-    @PostMapping("/cadastrar")
-    fun cad(@RequestBody cadVendedorRequest: VendedorRequest, cadCompradorRequest: CompradorRequest): ResponseEntity<Void> {
-
-        //val selectVendedor = repository.findByEmailAndTipoUsuario(cadVendedorRequest.usuario.email, cadVendedorRequest.usuario.tipoUsuario)
-        val selectComprador = repository.findByEmailAndTipoUsuario(cadCompradorRequest.usuario.email, cadCompradorRequest.usuario.tipoUsuario)
-
-        if(selectComprador == null) {
-            val usuarioComprador: Usuario = repository.save(cadCompradorRequest.usuario)
-            cadCompradorRequest.endereco.usuario = usuarioComprador.id
-            cadCompradorRequest.formulario.usuario = usuarioComprador.id
-            enderecoRepository.save(cadCompradorRequest.endereco)
-            formularioRepository.save(cadCompradorRequest.formulario)
-            ResponseEntity.status(201).body(null)
-        } else {
-            val usuarioVendedor: Usuario = repository.save(cadVendedorRequest.usuario)
-            cadVendedorRequest.endereco.usuario = usuarioVendedor.id
-            cadVendedorRequest.anuncioPet.usuario = usuarioVendedor.id
-            enderecoRepository.save(cadVendedorRequest.endereco)
-            val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
-            cadVendedorRequest.filhote.anuncioPet = saveAnuncio.id
-            filhoteRepository.save(cadVendedorRequest.filhote)
-            ResponseEntity.status(201).body(null)
-        }
-        return ResponseEntity.status(404).build()
-    }
-     */
 
     @PostMapping("cadastrar/comprador")
     fun cadComprador(@RequestBody cadCompradorRequest: CompradorRequest): ResponseEntity<Usuario> {
@@ -83,8 +53,19 @@ class UsuarioController(
         }
         return ResponseEntity.status(404).build()
     }
-    //anuncioRepository.save(cadVendedorRequest.anuncioPet)
-    //cadVendedorRequest.filhote.anuncioPet.id = usuarioVendedor.id
+
+    @PostMapping("cadastrar/vendedor/{id}/anuncio")
+    fun cadAnuncio(@RequestBody novoAnuncio: AddAnuncioRequest, @PathVariable id: Int): ResponseEntity<AnuncioPet> {
+
+        val selectVendedor = repository.findById(id).get()
+
+        if(selectVendedor != null){
+            val anuncio: AnuncioPet = anuncioRepository.save(novoAnuncio.anuncioPet)
+            return ResponseEntity.status(201).body(anuncio)
+        }
+        return ResponseEntity.status(404).build()
+    }
+
 
     @PatchMapping("/alterarSenha/{emal}")
     fun alterarSenha(@RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Usuario>{
@@ -126,16 +107,4 @@ class UsuarioController(
     }
 
 
-    /*@PostMapping("/login")
-    fun logar(@RequestBody usuarioLogin: LoginRequest, id:Int): ResponseEntity<Usuario> {
-        if(repository.existsById(id)){
-            val usuarioLogin = repository.findById(id).get()
-            usuarioLogin.autenticado = true
-            repository.save(usuarioLogin)
-            return ResponseEntity.status(200).build()
-        } else{
-            throw ResponseStatusException(HttpStatus.NOT_FOUND,"Credênciais incorretas ou usuario não cadastrado no sistema")
-        }
-    }
-    */
 }

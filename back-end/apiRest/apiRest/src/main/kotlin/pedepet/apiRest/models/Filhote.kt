@@ -3,29 +3,30 @@ package pedepet.apiRest.models
 import java.time.LocalDateTime
 import java.util.Date
 import javax.persistence.*
+import javax.validation.constraints.Pattern
 
 @Entity
-//@Table(name = "filhote")
+@Table(name = "filhote")
 data class Filhote(
 
-    //@Column(name = "idFilhote")
+    @Column(name = "id")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Int,
 
-    //@Column(name = "tempo_espera")
+    @Column(name = "tempo_espera")
     var tempoEspera: Int? = null,
 
-    //@Column(name = "preco")
+    @Column(name = "preco")
     val preco:Double? = null,
 
-    //@Column(name = "data_criacao")
-    val dataCriacao:String? = null,
+    @Column(name = "data_criacao")
+    val dataCriacao:Date? = null,
 
-    //@Column(name = "disponivel")
+    @Column(name = "disponivel")
     var disponivel:Boolean? = true,
 
     @ManyToOne
-    @JoinColumn(name = "fkAnuncio", referencedColumnName = "id")
+    @JoinColumn(name = "fk_ninhada", referencedColumnName = "id")
     var anuncioPet: AnuncioPet? = null,
 
 ) {

@@ -1,10 +1,8 @@
 package pedepet.apiRest.controllers
 
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.PatchMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import pedepet.apiRest.dto.AddAnuncioRequest
 import pedepet.apiRest.dto.AltDescricaoRequest
 import pedepet.apiRest.models.AnuncioPet
 import pedepet.apiRest.repositories.AnuncioRepository
@@ -18,6 +16,11 @@ class AnuncioController(
     val usuarioRepository: UsuarioRepository
 ) {
 
+    @GetMapping("{id}")
+    fun buscarAnuncioPorId(@PathVariable id:Int): AnuncioPet? {
+        return anuncioRepository.findById(id).get()
+    }
+
     @PatchMapping("/alterarDescri/{id}")
     fun atualizarDescricao(@RequestBody alterarDescricao: AltDescricaoRequest): ResponseEntity<AnuncioPet?> {
 
@@ -26,5 +29,7 @@ class AnuncioController(
         anuncio.descricao = alterarDescricao.descricao
         return ResponseEntity.status(200).body(anuncioRepository.save(anuncio))
     }
+
+
 
 }

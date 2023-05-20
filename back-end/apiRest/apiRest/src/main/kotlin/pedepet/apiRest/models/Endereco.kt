@@ -3,40 +3,36 @@ package pedepet.apiRest.models
 import javax.persistence.*
 
 @Entity
-//@Table(name = "endereco")
+@Table(name = "endereco")
 data class Endereco(
 
-    //@Column(name = "idEndereco")
+    @Column(name = "id")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Int,
 
-    //@Column(name = "cep", length = 8)
+    @Column(name = "cep", length = 8)
     val cep:String? = null,
 
-    //@Column(name = "rua")
+    @Column(name = "rua")
     val rua:String? = null,
 
-    //@Column(name = "numero")
+    @Column(name = "numero")
     val numero:Int? = null,
 
-    //@Column(name = "complemento")
+    @Column(name = "complemento")
     val complemento:String? = null,
 
-    //@Column(name = "bairro")
+    @Column(name = "bairro")
     val bairro:String? = null,
 
-    //@Column(name = "cidade")
+    @Column(name = "cidade")
     val cidade:String? = null,
 
-    //@Column(name = "estado")
+    @Column(name = "estado")
     val estado:String? = null,
 
-    //@Column(name = "fkUsuario")
-//    @OneToOne(targetEntity = Usuario::class)
-//    @JoinColumn(name = "fkUsuario", referencedColumnName = "id")
-//    var usuario: Int? = null,
     @OneToOne
-    @JoinColumn(name = "fkUsuario", referencedColumnName = "id")
+    @JoinColumn(name = "fk_usuario", referencedColumnName = "id")
     var usuario: Usuario? = null,
 ) {
 }

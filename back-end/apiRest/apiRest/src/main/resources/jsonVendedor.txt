@@ -15,7 +15,9 @@
     "complemento": "Perto do parque jardim",
     "bairro": "Campo Belo",
     "cidade": "São Paulo",
-    "estado": "SP"
+    "estado": "SP",
+    "usuario": {
+            }
   },
   "anuncioPet": {
     "titulo": "Filhotes golden",
@@ -29,15 +31,18 @@
     "portePai": "Grande",
     "pedigreePai": 1,
     "vacinadoPai": 1,
-    "fotosCasal": "urlCasal",
+    "fotoPet": "urlPet",
     "visualizacoes": 1,
     "qtdFilhotes": 1,
-    "descricao": "Bla bla bla bla bla"
+    "descricao": "Bla bla bla bla bla",
+    "usuario": {
+            }
   },
   "filhote": {
     "tempoEspera": 3,
     "preco": 1000.00,
-    "dataCriacao": "TESTE",
-    "disponivel": true
+    "disponivel": true,
+    "anuncioPet": {
+            }
   }
 }
