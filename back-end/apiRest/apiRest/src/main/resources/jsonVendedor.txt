@@ -32,7 +32,7 @@
     "pedigreePai": 1,
     "vacinadoPai": 1,
     "fotoPet": "urlPet",
-    "visualizacoes": 1,
+    "visualizacoes": 0,
     "qtdFilhotes": 1,
     "descricao": "Bla bla bla bla bla",
     "usuario": {
@@ -44,5 +44,38 @@
     "disponivel": true,
     "anuncioPet": {
             }
+  }
+}
+
+--------------------------------
+{
+  "anuncioPet": {
+    "titulo": "Filhotes Pitbull",
+    "racaMae": "Pitbull",
+    "idadeMae": 6,
+    "porteMae": "Médio",
+    "pedigreeMae": 1,
+    "vacinadoMae": 1,
+    "racaPai": "Pitbull",
+    "idadePai": 7,
+    "portePai": "Médio",
+    "pedigreePai": 1,
+    "vacinadoPai": 1,
+    "fotoPet": "urlPet",
+    "visualizacoes":0,
+    "qtdFilhotes": 1,
+    "descricao": "Bla2 bla2 bla2 bla2 bla2",
+    "usuario": {
+      "id": 1
+    }
+  },
+  "filhote": {
+    "tempoEspera": 4,
+    "preco": 1200.00,
+    "disponivel": true,
+    "anuncioPet": {
+      "usuario": {
+      }
+    }
   }
 }

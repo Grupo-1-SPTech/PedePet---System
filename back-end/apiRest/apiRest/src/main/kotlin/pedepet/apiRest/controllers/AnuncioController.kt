@@ -11,6 +11,7 @@ import pedepet.apiRest.repositories.UsuarioRepository
 
 @RestController
 @RequestMapping("/anuncios")
+@CrossOrigin("http://localhost:3000")
 class AnuncioController(
     val anuncioRepository: AnuncioRepository,
     val usuarioRepository: UsuarioRepository

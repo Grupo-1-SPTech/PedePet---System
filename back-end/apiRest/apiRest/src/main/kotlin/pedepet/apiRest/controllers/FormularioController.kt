@@ -1,15 +1,13 @@
 package pedepet.apiRest.controllers
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import pedepet.apiRest.models.Formulario
 import pedepet.apiRest.repositories.FormularioRepository
 
 
 @RestController
 @RequestMapping("/formularios")
+@CrossOrigin("http://localhost:3000")
 class FormularioController(
     val formularioRepository: FormularioRepository
 ) {

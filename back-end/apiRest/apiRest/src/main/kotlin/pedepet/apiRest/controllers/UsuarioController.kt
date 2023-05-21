@@ -10,6 +10,7 @@ import pedepet.apiRest.repositories.*
 
 @RestController
 @RequestMapping("/usuarios")
+@CrossOrigin("http://localhost:3000")
 class UsuarioController(
     val repository: UsuarioRepository,
     val anuncioRepository: AnuncioRepository,
@@ -61,6 +62,8 @@ class UsuarioController(
 
         if(selectVendedor != null){
             val anuncio: AnuncioPet = anuncioRepository.save(novoAnuncio.anuncioPet)
+            novoAnuncio.filhote.anuncioPet?.id = anuncio.id
+            filhoteRepository.save(novoAnuncio.filhote)
             return ResponseEntity.status(201).body(anuncio)
         }
         return ResponseEntity.status(404).build()
