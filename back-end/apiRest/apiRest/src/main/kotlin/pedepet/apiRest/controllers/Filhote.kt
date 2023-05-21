@@ -1,5 +1,6 @@
 package pedepet.apiRest.controllers
 
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import pedepet.apiRest.models.Filhote
 import pedepet.apiRest.repositories.FilhoteRepository

@@ -31,6 +31,4 @@ class AnuncioController(
         return ResponseEntity.status(200).body(anuncioRepository.save(anuncio))
     }
 
-
-
 }

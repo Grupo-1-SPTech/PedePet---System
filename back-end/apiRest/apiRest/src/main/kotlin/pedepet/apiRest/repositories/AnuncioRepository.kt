@@ -6,4 +6,6 @@ import pedepet.apiRest.models.AnuncioPet
 
 @CrossOrigin("http://localhost:3000")
 interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
+
+    fun findByIdAndQtdFilhotes(id:Int, qtdFilhotes:Int):AnuncioPet?
 }

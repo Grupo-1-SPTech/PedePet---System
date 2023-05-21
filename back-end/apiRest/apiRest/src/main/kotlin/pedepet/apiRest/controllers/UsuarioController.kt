@@ -17,7 +17,6 @@ class UsuarioController(
     val formularioRepository: FormularioRepository,
     val enderecoRepository: EnderecoRepository,
     val filhoteRepository: FilhoteRepository
-
 ) {
 
     @PostMapping("cadastrar/comprador")
@@ -49,6 +48,14 @@ class UsuarioController(
             enderecoRepository.save(cadVendedorRequest.endereco)
             val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
             cadVendedorRequest.filhote.anuncioPet?.id = saveAnuncio.id
+            val qtdFilhote: Int? = saveAnuncio.qtdFilhotes
+            fun addFilhote(addFilhotes: AddFilhotes): AnuncioPet {
+                for (i in 1..qtdFilhote){
+                    val dog = saveAnuncio(i)
+                    filhoteRepository.add(dog)
+                }
+                return saveAnuncio
+            }
             filhoteRepository.save(cadVendedorRequest.filhote)
             return ResponseEntity.status(201).body(usuarioVendedor)
         }
