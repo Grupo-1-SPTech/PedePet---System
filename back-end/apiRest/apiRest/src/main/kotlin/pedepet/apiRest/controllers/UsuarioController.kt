@@ -48,14 +48,6 @@ class UsuarioController(
             enderecoRepository.save(cadVendedorRequest.endereco)
             val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
             cadVendedorRequest.filhote.anuncioPet?.id = saveAnuncio.id
-            val qtdFilhote: Int? = saveAnuncio.qtdFilhotes
-            fun addFilhote(addFilhotes: AddFilhotes): AnuncioPet {
-                for (i in 1..qtdFilhote){
-                    val dog = saveAnuncio(i)
-                    filhoteRepository.add(dog)
-                }
-                return saveAnuncio
-            }
             filhoteRepository.save(cadVendedorRequest.filhote)
             return ResponseEntity.status(201).body(usuarioVendedor)
         }
@@ -70,6 +62,11 @@ class UsuarioController(
         if(selectVendedor != null){
             val anuncio: AnuncioPet = anuncioRepository.save(novoAnuncio.anuncioPet)
             novoAnuncio.filhote.anuncioPet?.id = anuncio.id
+//            val qtdFilhote: Int? = novoAnuncio.anuncioPet.qtdFilhotes
+//            for (i in 1..qtdFilhote){
+//                val dog = novoAnuncio.filhote
+//                filhoteRepository.save(dog)
+//            }
             filhoteRepository.save(novoAnuncio.filhote)
             return ResponseEntity.status(201).body(anuncio)
         }
@@ -104,8 +101,8 @@ class UsuarioController(
         }
     }
 
-    @DeleteMapping("/logoff/{email}")
-    fun deslogar(@RequestBody id: Int, @PathVariable email:String):ResponseEntity<Usuario> {
+    @DeleteMapping("/logoff/{id}")
+    fun deslogar(@PathVariable id: Int):ResponseEntity<Usuario> {
         if (repository.existsById(id)) {
             val usuarioLogin = repository.findById(id).get()
             usuarioLogin.autenticado = false

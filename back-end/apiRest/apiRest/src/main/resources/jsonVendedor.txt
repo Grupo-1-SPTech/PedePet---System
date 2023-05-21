@@ -66,11 +66,11 @@
     "qtdFilhotes": 1,
     "descricao": "Bla2 bla2 bla2 bla2 bla2",
     "usuario": {
-      "id": 1
+      "id": 2
     }
   },
   "filhote": {
-    "tempoEspera": 4,
+   "tempoEspera": 4,
     "preco": 1200.00,
     "disponivel": true,
     "anuncioPet": {
@@ -78,4 +78,5 @@
       }
     }
   }
+}
 }
