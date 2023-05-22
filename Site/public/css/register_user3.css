@@ -379,54 +379,101 @@ margin-bottom: 10px;
 font-weight: 600;
 }
 
-.Logradouro {
-    width: 310px;
-    height: 6vh;
-    border: 3px solid rgba(0, 0, 0, 0.6);
-    border-radius: 24px; 
-    color: #707070;
-}
-
-.Comodos {
-    width: 310px;
-    height: 6vh;
-    border: 3px solid rgba(0, 0, 0, 0.6);
-    border-radius: 24px; 
-    color: #707070;
-}
-
 #alinhamento {
  margin-top: 6%;
 }
 
-.Pessoas {
-    width: 310px;
-    height: 6vh;
-    border: 3px solid rgba(0, 0, 0, 0.6);
-    border-radius: 24px; 
-    color: #707070;
-}
-
 input:focus{ outline: none; }
 
-.Horas {
-    width: 310px;
-    height: 6vh;
-    border: 3px solid rgba(0, 0, 0, 0.6);
-    border-radius: 24px; 
-    color: #707070;
+
+/* css dropdown */
+.select-menu {
+  width: 260px;
+  border-radius: 12px;
+  border: 2px solid;
+  border-color: var(--lightgray);
+  margin-top: 6px;
+  color: var(--lightgray);
+}
+
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  background-color: var(--white);
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+ }
+
+.select-btn img {
+  height: 24px;
+  transition: 0.3s;
+}
+
+#select_estado {
+  background: url(images/paper.csv.svg) no-repeat 18px 14px;
+  background-size: 28px 28px;
+  padding-left: 25%;
 }
 
 
-select:focus{ outline: none; }
-
-select {
-  width: 310px;
-  height: 6vh;
-  border: 3px solid rgba(0, 0, 0, 0.6);
-  border-radius: 24px; 
-  color: #707070;
+#select_assunto {
+  background: url(images/localiza.svg) no-repeat 18px 14px;
+  background-size: 28px 28px;
+  padding-left: 25%;  
 }
+
+.select-menu.active .select-btn img {
+  transform: rotate(-180deg);
+}
+
+.select-menu .options {
+  position: relative;
+  display: none;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.1);
+}
+
+.select-menu.active .options {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  max-height: 400px;
+}
+
+.options .option {
+  display: flex;
+  height: 55px;
+  width: 100%;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  margin-top: 10px;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 18px;
+}
+
+.options .option:hover {
+  background-color: var(--darkpurple);
+  color: var(--white);
+}
+
+/* fim dropdown */
+
+
+
+
+
 
 
 /* FIM do drop */
