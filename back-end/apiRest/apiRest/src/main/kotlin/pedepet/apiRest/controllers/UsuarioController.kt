@@ -19,6 +19,8 @@ class UsuarioController(
     val filhoteRepository: FilhoteRepository
 ) {
 
+
+    // CADASTRAR COMPRADOR
     @PostMapping("cadastrar/comprador")
     fun cadComprador(@RequestBody cadCompradorRequest: CompradorRequest): ResponseEntity<Usuario> {
 
@@ -36,6 +38,7 @@ class UsuarioController(
     }
 
 
+    // CADASTRAR VENDEDOR
     @PostMapping("cadastrar/vendedor")
     fun cadVendedor(@RequestBody cadVendedorRequest: VendedorRequest): ResponseEntity<Usuario> {
 
@@ -54,6 +57,7 @@ class UsuarioController(
         return ResponseEntity.status(404).build()
     }
 
+    // CADASTRAR ANUNCIO DE VENDEDOR ESPECIFICO(VENDEDOR JÁ ERA CADASTRADO)
     @PostMapping("cadastrar/vendedor/{id}/anuncio")
     fun cadAnuncio(@RequestBody novoAnuncio: AddAnuncioRequest, @PathVariable id: Int): ResponseEntity<AnuncioPet> {
 
@@ -74,6 +78,7 @@ class UsuarioController(
     }
 
 
+    // ALTERAR SENHA
     @PatchMapping("/alterarSenha/{emal}")
     fun alterarSenha(@RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Usuario>{
         val usuario: Usuario =
@@ -83,6 +88,7 @@ class UsuarioController(
 
     }
 
+    // LOGIN
     @PostMapping("/login")
     fun logar(@RequestBody usuarioLogin: LoginRequest): ResponseEntity<Usuario> {
 
@@ -101,6 +107,7 @@ class UsuarioController(
         }
     }
 
+    // DESLOGAR
     @DeleteMapping("/logoff/{id}")
     fun deslogar(@PathVariable id: Int):ResponseEntity<Usuario> {
         if (repository.existsById(id)) {
@@ -113,5 +120,26 @@ class UsuarioController(
         }
     }
 
+    // TOTAL DE VENDEDORES CADASTRADOS
+    @GetMapping("/vendedor/total")
+    fun buscarQtdVendedores():ResponseEntity<List<Usuario?>>{
+        val vendedores = repository.buscarQtdVendedores()
+
+        if (vendedores.isNotEmpty()){
+            return ResponseEntity.status(200).body(vendedores)
+        }
+        return ResponseEntity.status(204).build()
+    }
+
+    // TOTAL DE USUARIOS CADASTRADOS
+    @GetMapping("/total")
+    fun buscarTotalUsuario():ResponseEntity<List<Usuario?>>{
+        val usuarios = repository.buscarTotalUsuarios()
+
+        if (usuarios.isNotEmpty()){
+            return ResponseEntity.status(200).body(usuarios)
+        }
+        return ResponseEntity.status(204).build()
+    }
 
 }

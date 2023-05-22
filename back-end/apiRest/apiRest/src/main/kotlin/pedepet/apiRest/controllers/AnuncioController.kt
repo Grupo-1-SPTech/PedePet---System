@@ -17,11 +17,13 @@ class AnuncioController(
     val usuarioRepository: UsuarioRepository
 ) {
 
+    // PEGAR ANUNCIO POR ID
     @GetMapping("{id}")
     fun buscarAnuncioPorId(@PathVariable id:Int): AnuncioPet? {
         return anuncioRepository.findById(id).get()
     }
 
+    // ALTERAR DESCRICAO
     @PatchMapping("/alterarDescri/{id}")
     fun atualizarDescricao(@RequestBody alterarDescricao: AltDescricaoRequest): ResponseEntity<AnuncioPet?> {
 
@@ -29,6 +31,17 @@ class AnuncioController(
             anuncioRepository.findById(alterarDescricao.id).get()
         anuncio.descricao = alterarDescricao.descricao
         return ResponseEntity.status(200).body(anuncioRepository.save(anuncio))
+    }
+
+    // RACAS DISPONIVEIS
+    @GetMapping("/racasDiponiveis")
+    fun buscarRacasDisponiveis():ResponseEntity<List<AnuncioPet?>>{
+        val racas = anuncioRepository.buscarRacas()
+
+        if(racas.isNotEmpty()){
+            return ResponseEntity.status(200).body(racas)
+        }
+        return ResponseEntity.status(204).build()
     }
 
 }

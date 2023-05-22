@@ -15,9 +15,10 @@ interface HistoricoVendasRepository: JpaRepository<HistoricoVendas, Int> {
         SELECT
         v FROM historico_venda v ORDER BY v.dataVenda DESC
     """)
+    @RestResource(exported = false)
     fun buscasVendaMaisRecente():HistoricoVendas?
+*/
 
- */
 
 
 }

@@ -12,9 +12,22 @@ class Filhote(
     val filhoteRepository: FilhoteRepository
 ) {
 
+    // PEGAR FILHOTES POR ID
     @GetMapping("{id}")
     fun buscarFilhotePorId(@PathVariable id:Int): Filhote? {
         return filhoteRepository.findById(id).get()
     }
+
+    // TOTAL FILHOTES ADQUIRIDOS
+    @GetMapping("adquiridos")
+    fun buscarFilhotesAdquiridos():ResponseEntity<List<Filhote?>> {
+        val filhotes = filhoteRepository.buscarFilhotesAdiquiridos()
+
+        if(filhotes.isNotEmpty()){
+            return ResponseEntity.status(200).body(filhotes)
+        }
+        return ResponseEntity.status(204).build()
+    }
+
 
 }
