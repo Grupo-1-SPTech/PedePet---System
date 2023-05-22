@@ -36,7 +36,7 @@ class AnuncioController(
     // RACAS DISPONIVEIS
     @GetMapping("/racasDiponiveis")
     fun buscarRacasDisponiveis():ResponseEntity<List<AnuncioPet?>>{
-        val racas = anuncioRepository.buscarRacas()
+        val racas = anuncioRepository.findAllDistinctRacas()
 
         if(racas.isNotEmpty()){
             return ResponseEntity.status(200).body(racas)
@@ -47,7 +47,7 @@ class AnuncioController(
     // FILTRO RAÇA
     @GetMapping("filtro/raca")
     fun buscarCachorroPorRaca():ResponseEntity<List<AnuncioPet?>>{
-        val racas = anuncioRepository.findByRacaPaiAndRacaMae()
+        val racas = anuncioRepository.findByRacaMae()
 
         if(racas.isNotEmpty()){
             return ResponseEntity.status(200).body(racas)
