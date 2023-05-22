@@ -79,13 +79,12 @@ class UsuarioController(
 
 
     // ALTERAR SENHA
-    @PatchMapping("/alterarSenha/{emal}")
+    @PatchMapping("/alterarSenha/{email}")
     fun alterarSenha(@RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Usuario>{
         val usuario: Usuario =
             repository.findByEmail(novaSenha.email).get()
         usuario.senha = novaSenha.senha
         return ResponseEntity.status(200).body(repository.save(usuario))
-
     }
 
     // LOGIN

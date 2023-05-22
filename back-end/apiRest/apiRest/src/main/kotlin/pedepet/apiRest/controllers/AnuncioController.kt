@@ -44,4 +44,17 @@ class AnuncioController(
         return ResponseEntity.status(204).build()
     }
 
+    // FILTRO RAÇA
+    @GetMapping("filtro/raca")
+    fun buscarCachorroPorRaca():ResponseEntity<List<AnuncioPet?>>{
+        val racas = anuncioRepository.findByRacaPaiAndRacaMae()
+
+        if(racas.isNotEmpty()){
+            return ResponseEntity.status(200).body(racas)
+        }
+        return ResponseEntity.status(204).build()
+    }
+
+
+
 }
