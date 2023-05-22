@@ -16,4 +16,10 @@ interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
     """)
     @RestResource(exported = false)
     fun buscarRacas():List<AnuncioPet?>
+
+    @Query("""
+        SELECT c FROM ninhada c WHERE c.racaPai = :racaPai AND c.racaMae = :racaMae
+    """)
+    @RestResource(exported = false)
+    fun findByRacaPaiAndRacaMae():List<AnuncioPet?>
 }
