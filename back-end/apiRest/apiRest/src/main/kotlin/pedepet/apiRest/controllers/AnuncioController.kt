@@ -34,14 +34,10 @@ class AnuncioController(
     }
 
     // RACAS DISPONIVEIS
-    @GetMapping("/racasDiponiveis")
-    fun buscarRacasDisponiveis():ResponseEntity<List<AnuncioPet?>>{
-        val racas = anuncioRepository.findAllDistinctRacas()
-
-        if(racas.isNotEmpty()){
-            return ResponseEntity.status(200).body(racas)
-        }
-        return ResponseEntity.status(204).build()
+        @GetMapping("/racasDiponiveis")
+    fun buscarRacasDisponiveis():ResponseEntity<Long>{
+        val qtdRacas = anuncioRepository.countDistinctRacas()
+        return ResponseEntity.status(200).body(qtdRacas)
     }
 
     // FILTRO RAÇA

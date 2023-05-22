@@ -121,24 +121,16 @@ class UsuarioController(
 
     // TOTAL DE VENDEDORES CADASTRADOS
     @GetMapping("/vendedor/total")
-    fun buscarQtdVendedores():ResponseEntity<List<Usuario?>>{
+    fun buscarQtdVendedores():ResponseEntity<Long>{
         val vendedores = repository.buscarQtdVendedores()
-
-        if (vendedores.isNotEmpty()){
-            return ResponseEntity.status(200).body(vendedores)
-        }
-        return ResponseEntity.status(204).build()
+        return ResponseEntity.status(200).body(vendedores)
     }
 
     // TOTAL DE USUARIOS CADASTRADOS
     @GetMapping("/total")
-    fun buscarTotalUsuario():ResponseEntity<List<Usuario?>>{
+    fun buscarTotalUsuario():ResponseEntity<Long>{
         val usuarios = repository.buscarTotalUsuarios()
-
-        if (usuarios.isNotEmpty()){
-            return ResponseEntity.status(200).body(usuarios)
-        }
-        return ResponseEntity.status(204).build()
+        return ResponseEntity.status(200).body(usuarios)
     }
 
 }
