@@ -16,5 +16,10 @@ options.forEach(option => {
 });
 
 
+function entrar() {
+window.location.href = "../html/login/login.html"
+}
+
+
 
 

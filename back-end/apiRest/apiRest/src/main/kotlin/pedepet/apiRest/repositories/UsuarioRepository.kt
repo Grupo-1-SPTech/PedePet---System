@@ -35,5 +35,4 @@ interface UsuarioRepository: JpaRepository<Usuario, Int> {
 
 
 
-
 }
