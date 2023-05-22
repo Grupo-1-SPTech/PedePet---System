@@ -17,7 +17,7 @@ options.forEach(option => {
 
 
 function entrar() {
-window.location.href = "../html/login/login.html"
+window.location.href = "/public/html/login/login.html"
 }
 
 
