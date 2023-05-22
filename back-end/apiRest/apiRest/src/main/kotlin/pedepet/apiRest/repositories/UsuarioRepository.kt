@@ -25,13 +25,13 @@ interface UsuarioRepository: JpaRepository<Usuario, Int> {
         SELECT COUNT(v) FROM Usuario v WHERE v.tipoUsuario = 2
     """)
     @RestResource(exported = true)
-    fun buscarQtdVendedores():List<Usuario?>
+    fun buscarQtdVendedores():Long
 
     @Query("""
         SELECT COUNT(u) FROM Usuario u
     """)
     @RestResource(exported = true)
-    fun buscarTotalUsuarios():List<Usuario?>
+    fun buscarTotalUsuarios():Long
 
 
 

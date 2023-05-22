@@ -15,16 +15,7 @@ interface FilhoteRepository: JpaRepository<Filhote, Int> {
         SELECT COUNT(f) FROM Filhote f WHERE f.disponivel = FALSE
     """)
     @RestResource(exported = true)
-    fun buscarFilhotesAdiquiridos():List<Filhote?>
-
-    /*
-    @Query("""
-        SELECT f FROM Filhote f WHERE f.disponivel = FALSE
-    """)
-    @RestResource(exported = false)
-    fun findDisponivel():List<Filhote?>
-    */
-
+    fun countFilhotesAdquiridos():Long
 
 
 }

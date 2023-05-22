@@ -18,7 +18,7 @@ interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
         COUNT(DISTINCT c.racaMae) FROM AnuncioPet c
     """)
     @RestResource(exported = true)
-    fun findAllDistinctRacas():List<AnuncioPet>
+    fun countDistinctRacas():Long
 
     @Query("""
         SELECT c FROM AnuncioPet c WHERE c.racaMae = :racaMae

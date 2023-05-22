@@ -8,7 +8,7 @@ import pedepet.apiRest.repositories.FilhoteRepository
 @RestController
 @RequestMapping("/filhotes")
 @CrossOrigin("http://localhost:3000")
-class Filhote(
+class FilhoteController(
     val filhoteRepository: FilhoteRepository
 ) {
 
@@ -20,13 +20,9 @@ class Filhote(
 
     // TOTAL FILHOTES ADQUIRIDOS
     @GetMapping("adquiridos")
-    fun buscarFilhotesAdquiridos():ResponseEntity<List<Filhote?>> {
-        val filhotes = filhoteRepository.buscarFilhotesAdiquiridos()
-
-        if(filhotes.isNotEmpty()){
-            return ResponseEntity.status(200).body(filhotes)
-        }
-        return ResponseEntity.status(204).build()
+    fun buscarFilhotesAdquiridos():ResponseEntity<Long> {
+        val qtdFilhotes = filhoteRepository.countFilhotesAdquiridos()
+        return ResponseEntity.status(200).body(qtdFilhotes)
     }
 
 
