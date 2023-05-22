@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - PedePet</title>
+  <title>Cadastro Usuário 2 - PedePet</title>
   <link rel="stylesheet" href="/public/css/register_user2.css">
   <link rel="icon" href="/public/css/images/icon-pata.png">
 </head>
@@ -49,9 +49,9 @@
             <h2>Seu endereço</h2>
 
             <div id="bolinhas2">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot1"></span>
+              <span onclick="location.href='../register_user/register_user1.html'" class="dot"></span>
+              <span onclick="location.href='../register_user/register_user2.html'" class="dot"></span>
+              <span onclick="location.href='../register_user/register_user3.html'" class="dot1"></span>
             </div>
           </div>
 
@@ -60,22 +60,22 @@
 
 
             <span class="title" id="span_CEP">CEP</span>
-            <input class="inputCad1" id="input_email" type="email" placeholder="_____-__">
+            <input class="inputCEP" id="input_cep" type="number" placeholder="_____-__">
 
-            <span class="title" id="enderecoo">Endereço</span>
-            <input class="inputCad2" id="input_nome" type="text" placeholder="Rua">
+            <span class="title" id="span_endereco">Endereço</span>
+            <input class="inputEnd" id="input_end" type="text" placeholder="Seu endereço">
 
             <div class="alinhamento2">
               <div class="alinhamento2_pt1">
                 <span class="title" id="span_numero">Número</span>
-                <input class="inputCad3" id="input_numero" type="text" placeholder="Número">
+                <input class="inputNumero" id="input_numero" type="text" placeholder="Número">
 
               </div>
 
               <div class="alinhamento2_pt2">
-                <span class="title" id="span_numero">UF</span>
+                <span class="title" id="span_UF">UF</span>
 
-                <select name="tipoUser" id="tipoUser">
+                <select name="selectUF" id="select_UF">
                   <option value="" selected disabled>Escolha</option>
                   <option value="">Vendedor</option>
                   <option value="">Comprador</option>
@@ -85,21 +85,21 @@
 
             </div>
 
-            <span class="title" id="cidadee">Cidade</span>
-            <input class="inputCad4" id="input_nome" type="text" placeholder="Sua cidade">
+            <span class="title" id="span_cidade">Cidade</span>
+            <input class="inputCidade" id="input_cidade" type="text" placeholder="Sua cidade">
 
 
             <span class="title" id="span_bairro">Bairro</span>
-            <input class="inputCad5" id="input_bairro" type="email" placeholder="Seu bairro">
+            <input class="inputBairro" id="input_bairro" type="text" placeholder="Seu bairro">
 
-            <span class="title" id="span_bairro">Logradouro</span>
-            <input class="inputCad6" id="input_bairro" type="email" placeholder="Seu lougradouro">
+            <span class="title" id="span_comp">Complemento</span>
+            <input class="inputComp" id="input_comp" type="text" placeholder="Seu lougradouro">
 
 
 
             <div class="btns">
               <button class="cancelar">Cancelar</button>
-              <button class="prosseguir">Prosseguir</button>
+              <button onclick="location.href='../register_user/register_user3.html'" class="prosseguir">Prosseguir</button>
             </div>
 
           </div>

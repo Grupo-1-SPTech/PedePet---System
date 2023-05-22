@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - PedePet</title>
+  <title>Cadastro Usuário 1 - PedePet</title>
   <link rel="stylesheet" href="/public/css/register_user.css">
   <link rel="icon" href="/public/css/images/icon-pata.png">
 </head>
@@ -49,43 +49,43 @@
             <h2>Seus dados</h2>
 
             <div id="bolinhas2">
-              <span class="dot"></span>
-              <span class="dot1"></span>
-              <span class="dot1"></span>
+              <span onclick="location.href='../register_user/register_user1.html'" class="dot"></span>
+              <span onclick="location.href='../register_user/register_user2.html'" class="dot1"></span>
+              <span onclick="location.href='../register_user/register_user3.html'" class="dot1"></span>
             </div>
           </div>
 
           <div class="inputs">
 
             <span class="title" id="span_nome">Nome</span>
-            <input class="inputCad2" id="input_nome" type="text" placeholder="Digite seu nome completo">
+            <input class="inputNome" type="text" placeholder="Seu nome completo">
 
 
             <span class="title" id="span_email">Email</span>
-            <input class="inputCad2" id="input_email" type="email" placeholder="email@exemplo.com">
+            <input class="inputEmail" id="input_email" type="email" placeholder="email@exemplo.com">
 
 
             <div class="alinhamento2">
               <div class="alinhamento2_pt1">
                 <span class="title" id="span_cpf">CPF</span>
-                <input class="inputCad3" id="input_cpf" type="number" placeholder="***********">
+                <input class="inputCPF" id="input_cpf" type="number" placeholder="111.111.111-11">
 
               </div>
 
               <div class="alinhamento2_pt2">
-                <span class="title" id="span_numero">Número</span>
-                <input class="inputCad4" id="input_numero" type="number" placeholder="+55 ...">
+                <span class="title" id="span_numero">Telefone</span>
+                <input class="inputTel" id="input_telefone" type="tel" placeholder="+55">
 
               </div>
 
             </div>
 
             <span class="title" id="span_senha">Senha</span>
-            <input class="inputCad5" id="input_senha" type="password" placeholder="Sua senha">
+            <input class="inputSenha" id="input_senha" type="password" placeholder="Sua senha">
 
 
             <span class="title" id="span_confSenha">Confirme sua senha</span>
-            <input class="inputCad6" id="input_confSenha" type="password" placeholder="Sua senha">
+            <input class="inputSenha2" id="input_confSenha" type="password" placeholder="Sua senha">
 
             <span class="title" id="span_escolha">Quero ser um</span>
 
@@ -98,7 +98,7 @@
             </div>
             <div class="btns">
               <button class="cancelar">Cancelar</button>
-              <button onclick="cadastro()" class="prosseguir">Prosseguir</button>
+              <button onclick="location.href='../register_user/register_user2.html'" class="prosseguir">Prosseguir</button>
             </div>
 
           </div>

@@ -369,36 +369,32 @@
   align-items: left;
   width: 100%;
   height: 100%;
-  padding: 5% 0% 0% 0%;
 }
 
 .title {
-margin-bottom: 10px;
-font-weight: 600;
+  padding-bottom: 10px;
+  padding-top: 6%;
+  font-weight: 600;
 }
 
-.inputCad {
+.inputNome {
   width: 100%;
   height: 40px;
   border-radius: 24px;
   border: 2px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/profile.svg) no-repeat 20px 7px;
-  padding-left: 10%;
+  background: url(images/icon-user-gray.svg) no-repeat 20px 7px;
+  padding-left: 12%;
   background-size: 20px;
 }
 
-.inputCad2 {
+.inputEmail {
   width: 100%;
   height: 40px;
   border-radius: 24px;
   border: 2px solid rgba(0, 0, 0, 0.6); 
   background: url(images/email.svg) no-repeat 20px 7px;
-  padding-left: 10%;
+  padding-left: 12%;
   background-size: 20px;
-}
-
-#span_email {
- margin-top: 6%;
 }
 
 .alinhamento2 {
@@ -406,22 +402,22 @@ font-weight: 600;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  margin-top: 6%;
+  padding-top: 3%;
 }
+
 
 .alinhamento2_pt1 {
   display:flex;
   flex-direction: column;
-
 }
 
-.inputCad3 {
+.inputCPF {
   width: 100%;
   height: 40px;
   border-radius: 24px;
   border: 2px solid rgba(0, 0, 0, 0.6); 
   background: url(images/cpf.svg) no-repeat 20px 7px;
-  padding-left: 22%;
+  padding-left: 25%;
   background-size: 20px;
 }
 
@@ -431,13 +427,13 @@ font-weight: 600;
   
 }
 
-.inputCad4 {
+.inputTel {
   width: 100%;
   height: 40px;
   border-radius: 24px;
   border: 2px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/phone.svg) no-repeat 20px 7px;
-  padding-left: 22%;
+  background: url(images/icon-phone.svg) no-repeat 20px 7px;
+  padding-left: 25%;
   background-size: 20px;
 }
 
@@ -445,31 +441,28 @@ font-weight: 600;
   margin-top: 6%;
 }
 
-.inputCad5 {
+.inputSenha {
   width: 100%;
   height: 40px;
   border-radius: 24px;
   border: 2px solid rgba(0, 0, 0, 0.6); 
   background: url(images/cadeado.svg) no-repeat 20px 7px;
-  padding-left: 10%;
+  padding-left: 12%;
   background-size: 20px;
 }
 
-.inputCad6 {
+.inputSenha2 {
   width: 100%;
   height: 40px;
   border-radius: 24px;
   border: 2px solid rgba(0, 0, 0, 0.6); 
   background: url(images/cadeado.svg) no-repeat 20px 7px;
-  padding-left: 10%;
+  padding-left: 12%;
   background-size: 20px;
 }
 
 input:focus{ outline: none; }
 
-#span_escolha {
- margin-top: 6%;
-}
 /* Drop Down */
 
 select:focus{ outline: none; }
@@ -489,7 +482,7 @@ select {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 20%;
+  padding-top: 10%;
 }
 
 .cancelar {
