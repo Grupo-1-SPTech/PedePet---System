@@ -11,7 +11,7 @@ data class Filhote(
 
     @Column(name = "id")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id:Int,
+    var id:Int?,
 
     @Column(name = "tempo_espera")
     var tempoEspera: Int? = null,
