@@ -415,14 +415,20 @@ input:focus{ outline: none; }
   transition: 0.3s;
 }
 
-#select_estado {
+#select_logradouro {
   background: url(images/paper.csv.svg) no-repeat 18px 14px;
   background-size: 28px 28px;
   padding-left: 25%;
 }
 
 
-#select_assunto {
+#select_comodos {
+  background: url(images/localiza.svg) no-repeat 18px 14px;
+  background-size: 28px 28px;
+  padding-left: 25%;  
+}
+
+#select_comodos {
   background: url(images/localiza.svg) no-repeat 18px 14px;
   background-size: 28px 28px;
   padding-left: 25%;  
