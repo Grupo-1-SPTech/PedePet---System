@@ -1,8 +1,12 @@
 package pedepet.apiRest.models
 
+import java.time.LocalDate
+import java.time.YearMonth
+import java.time.format.DateTimeFormatter
 import java.util.Date
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.Pattern
 import javax.validation.constraints.Size
 
 @Entity
@@ -21,7 +25,10 @@ data class DadosPagamento(
     var numeroCartao:Int? = null,
 
     @Column(name = "validade")
-    var validade:Date? = null,
+    @field:Pattern(
+        regexp = "^(0[1-9]|1[0-2])/(y{2})\$",
+        message = "Envie uma validade no formato MM-yy"
+    ) var validade:String? = null,
 
     @Column(name = "cvv", length = 3)
     var cvv:Int? = null,
@@ -30,4 +37,7 @@ data class DadosPagamento(
     @JoinColumn(name = "fk_usuario", referencedColumnName = "id")
     var usuario: Usuario? = null,
 ) {
+    init {
+        validade = YearMonth.now().format(DateTimeFormatter.ofPattern("MM-yy"))
+    }
 }

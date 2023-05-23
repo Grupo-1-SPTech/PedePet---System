@@ -1,5 +1,6 @@
 package pedepet.apiRest.models
 
+import java.time.LocalDateTime
 import java.util.*
 import javax.persistence.*
 import javax.validation.constraints.Max
@@ -19,7 +20,7 @@ data class HistoricoVendas(
     var nota:Int? = null,
 
     @Column(name = "data_venda")
-    var dataVenda: Date? = null,
+    var dataVenda: LocalDateTime? = null,
 
     @Column(name = "preco")
     var preco:Double? = null,
@@ -43,5 +44,7 @@ data class HistoricoVendas(
     @JoinColumn(name = "fk_dados_pagamento", referencedColumnName = "id")
     var dadosPagamento: DadosPagamento? = null,
 ) {
-
+    init {
+        dataVenda = LocalDateTime.now()
+    }
 }

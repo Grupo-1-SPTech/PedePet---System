@@ -20,7 +20,7 @@ data class Filhote(
     val preco:Double? = null,
 
     @Column(name = "data_criacao")
-    val dataCriacao:Date? = null,
+    var dataCriacao:LocalDateTime? = null,
 
     @Column(name = "disponivel")
     var disponivel:Boolean? = true,
@@ -30,4 +30,7 @@ data class Filhote(
     var anuncioPet: AnuncioPet? = null,
 
 ) {
+    init {
+        dataCriacao = LocalDateTime.now()
+    }
 }

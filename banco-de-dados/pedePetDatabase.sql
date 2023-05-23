@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS lista_espera(
 id INT PRIMARY KEY AUTO_INCREMENT,
 status_teste VARCHAR(15),
 posicao_fila INT,
-data_hora DATETIME,
+data_hora TIMESTAMP NULL,
 fk_filhote INT,
 FOREIGN KEY (fk_filhotes) REFERENCES filhote(id),
 fk_usuario INT,
