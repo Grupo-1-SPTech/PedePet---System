@@ -9,5 +9,5 @@ data class VendedorRequest (
     val usuario: Usuario,
     val endereco: Endereco,
     val anuncioPet: AnuncioPet,
-    val filhote: Filhote
+    var filhote: Filhote
 )

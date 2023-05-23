@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import pedepet.apiRest.dto.*
 import pedepet.apiRest.models.AnuncioPet
+import pedepet.apiRest.models.Filhote
 import pedepet.apiRest.models.Usuario
 import pedepet.apiRest.repositories.*
 
@@ -52,11 +53,25 @@ class UsuarioController(
             val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
             cadVendedorRequest.filhote.anuncioPet?.id = saveAnuncio.id
             val qtdFilhote = saveAnuncio.qtdFilhotes
+            var nextId: Int? = null
             for (i in 1..qtdFilhote){
-                val dog = cadVendedorRequest.filhote
-                filhoteRepository.save(dog)
+                val dog = Filhote(
+                    id = nextId ?: cadVendedorRequest.filhote.id,
+                    tempoEspera = cadVendedorRequest.filhote.tempoEspera,
+                    preco = cadVendedorRequest.filhote.preco,
+                    dataCriacao = cadVendedorRequest.filhote.dataCriacao,
+                    disponivel = cadVendedorRequest.filhote.disponivel,
+                    anuncioPet = cadVendedorRequest.filhote.anuncioPet,
+                )
+//                    cadVendedorRequest.filhote.copy(id = )
+//                val dog = filhote?: cadVendedorRequest.filhote
+                filhoteRepository.save(dog).also {
+                    nextId = it.id++
+                }
+//                val addFilhote = filhoteRepository.save(dog)
+//                cadVendedorRequest.filhote = cadVendedorRequest.filhote.copy(id = addFilhote.id++)
             }
-            filhoteRepository.save(cadVendedorRequest.filhote)
+//            filhoteRepository.save(cadVendedorRequest.filhote)
             return ResponseEntity.status(201).body(usuarioVendedor)
         }
         return ResponseEntity.status(404).build()
