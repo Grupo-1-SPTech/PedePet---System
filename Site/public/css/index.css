@@ -605,7 +605,7 @@ input[type="radio"]{
   left: 0;
 }
 
-/* css dropdown */
+/* css dropdown ASSUNTO */
 .select-menu {
   width: 260px;
   border-radius: 12px;
@@ -662,7 +662,7 @@ input[type="radio"]{
   display: block;
   position: absolute;
   z-index: 2;
-  max-height: 400px;
+  max-height: 300px;
 }
 
 .options .option {
@@ -683,8 +683,75 @@ input[type="radio"]{
   background-color: var(--darkpurple);
   color: var(--white);
 }
+/* fim dropdown ASSUNTO */
 
-/* fim dropdown */
+
+/* css dropdown ESTADOS */
+.select-menu2 {
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.1);
+}
+
+.select-menu2 .select-btn2 {
+  display: flex;
+  height: 55px;
+  background-color: var(--white);
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+ }
+
+.select-btn2 img {
+  height: 24px;
+  transition: 0.3s;
+}
+.select-menu2.active2 .select-btn2 img {
+  transform: rotate(-180deg);
+}
+
+.select-menu2 .options2 {
+  position: relative;
+  display: none;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.1);
+}
+
+.select-menu2.active2 .options2 {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  max-height: 300px;
+}
+
+.options2 .option2 {
+  display: flex;
+  height: 55px;
+  width: 100%;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  margin-top: 10px;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 18px;
+}
+
+.options2 .option2:hover {
+  background-color: var(--darkpurple);
+  color: var(--white);
+}
+/* fim dropdown ESTADOS */
+
 
 .leftCTT3 {
   display: flex;
