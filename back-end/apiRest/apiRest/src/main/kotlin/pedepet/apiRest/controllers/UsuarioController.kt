@@ -73,12 +73,13 @@ class UsuarioController(
         if(selectVendedor != null){
             val anuncio: AnuncioPet = anuncioRepository.save(novoAnuncio.anuncioPet)
             novoAnuncio.filhote.anuncioPet?.id = anuncio.id
-            val qtdFilhote= novoAnuncio.anuncioPet.qtdFilhotes
+            val qtdFilhote = anuncio.qtdFilhotes
             for (i in 1..qtdFilhote){
                 val dog = novoAnuncio.filhote
-                filhoteRepository.save(dog)
+                filhoteRepository.save(dog).also {
+                    novoAnuncio.filhote = novoAnuncio.filhote.copy(id = null)
+                }
             }
-            filhoteRepository.save(novoAnuncio.filhote)
             return ResponseEntity.status(201).body(anuncio)
         }
         return ResponseEntity.status(404).build()
