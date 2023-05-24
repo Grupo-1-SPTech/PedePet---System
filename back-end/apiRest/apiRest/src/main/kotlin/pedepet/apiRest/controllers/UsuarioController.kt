@@ -53,25 +53,12 @@ class UsuarioController(
             val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
             cadVendedorRequest.filhote.anuncioPet?.id = saveAnuncio.id
             val qtdFilhote = saveAnuncio.qtdFilhotes
-            var nextId: Int? = null
             for (i in 1..qtdFilhote){
-                val dog = Filhote(
-                    id = nextId ?: cadVendedorRequest.filhote.id,
-                    tempoEspera = cadVendedorRequest.filhote.tempoEspera,
-                    preco = cadVendedorRequest.filhote.preco,
-                    dataCriacao = cadVendedorRequest.filhote.dataCriacao,
-                    disponivel = cadVendedorRequest.filhote.disponivel,
-                    anuncioPet = cadVendedorRequest.filhote.anuncioPet,
-                )
-//                    cadVendedorRequest.filhote.copy(id = )
-//                val dog = filhote?: cadVendedorRequest.filhote
+                val dog = cadVendedorRequest.filhote
                 filhoteRepository.save(dog).also {
-                    nextId = it.id++
+                    cadVendedorRequest.filhote = cadVendedorRequest.filhote.copy(id = null)
                 }
-//                val addFilhote = filhoteRepository.save(dog)
-//                cadVendedorRequest.filhote = cadVendedorRequest.filhote.copy(id = addFilhote.id++)
             }
-//            filhoteRepository.save(cadVendedorRequest.filhote)
             return ResponseEntity.status(201).body(usuarioVendedor)
         }
         return ResponseEntity.status(404).build()
@@ -86,12 +73,13 @@ class UsuarioController(
         if(selectVendedor != null){
             val anuncio: AnuncioPet = anuncioRepository.save(novoAnuncio.anuncioPet)
             novoAnuncio.filhote.anuncioPet?.id = anuncio.id
-            val qtdFilhote= novoAnuncio.anuncioPet.qtdFilhotes
+            val qtdFilhote = anuncio.qtdFilhotes
             for (i in 1..qtdFilhote){
                 val dog = novoAnuncio.filhote
-                filhoteRepository.save(dog)
+                filhoteRepository.save(dog).also {
+                    novoAnuncio.filhote = novoAnuncio.filhote.copy(id = null)
+                }
             }
-            filhoteRepository.save(novoAnuncio.filhote)
             return ResponseEntity.status(201).body(anuncio)
         }
         return ResponseEntity.status(404).build()
