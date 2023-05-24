@@ -333,6 +333,11 @@
   font-weight: 800;
 }
 
+#span_pedigree {
+  display: flex;
+  padding-top: 6%;
+}
+
 .contentTop {
   display: flex;
   flex-direction: row;
@@ -371,16 +376,79 @@
   align-items: left;
   width: 100%;
   height: 100%;
-  padding: 5% 0% 0% 0%;
 }
 
 .title {
-margin-bottom: 10px;
-font-weight: 600;
+  padding-bottom: 10px;
+  padding-top: 6%;
+  font-weight: 600;
 }
 
-#alinhamento {
- margin-top: 6%;
+.form-control {
+  font-size: medium;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 17px auto;
+  gap: 0.5em;
+  padding-left: 5px;
+  padding-top: 6px;
+  padding-bottom: 3px;
+}
+
+.form-control + .form-control {
+  margin-top: 17px;
+}
+
+.form-control:focus-within {
+  color: var(--darkpurple);
+}
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--white);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: var(--purple);
+  width: 15px;
+  height: 15px;
+  border: 0.15em solid var(--darkpurple);
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--orange);
+  /* Windows High Contrast Mode */
+  background-color: var(--orange);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:focus {
+  outline: max(2px, 2px) solid var(--purple);
+  outline-offset: max(2px, 2px);
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color:var(--lightgray);
 }
 
 input:focus{ outline: none; }
@@ -415,23 +483,28 @@ input:focus{ outline: none; }
   transition: 0.3s;
 }
 
-#select_logradouro {
-  background: url(images/paper.csv.svg) no-repeat 18px 14px;
+#select_moradia {
+  background: url(images/localiza.svg) no-repeat 18px 14px;
   background-size: 28px 28px;
   padding-left: 25%;
 }
 
-
 #select_comodos {
   background: url(images/localiza.svg) no-repeat 18px 14px;
   background-size: 28px 28px;
-  padding-left: 25%;  
+  padding-left: 25%;
 }
 
-#select_comodos {
-  background: url(images/localiza.svg) no-repeat 18px 14px;
+#select_residentes {
+  background: url(images/icon-user-gray.svg) no-repeat 18px 14px;
   background-size: 28px 28px;
-  padding-left: 25%;  
+  padding-left: 25%;
+}
+
+#select_horas {
+  background: url(images/calendar-svgrepo-com.svg) no-repeat 18px 14px;
+  background-size: 28px 28px;
+  padding-left: 25%;
 }
 
 .select-menu.active .select-btn img {
@@ -505,7 +578,7 @@ input:focus{ outline: none; }
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 20%;
+  padding-top: 10%;
 }
 
 .cancelar {

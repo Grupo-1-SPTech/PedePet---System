@@ -48,31 +48,31 @@
             <h2>Sobre os filhotes</h2>
 
             <div id="bolinhas2">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
+              <span onclick="location.href='./register_pet1.html'" class="dot"></span>
+              <span onclick="location.href='./register_pet2.html'" class="dot"></span>
+              <span onclick="location.href='./register_pet3.html'" class="dot"></span>
             </div>
           </div>
 
           <div class="inputs">
 
-            <span class="title">Quantidade de filhotes:</span>
-            <input class="inputCad" id="input_nome" type="number" placeholder="Quantidade de filhotes da gestação">
+            <span class="title" id="span_quant">Quantidade de filhotes:</span>
+            <input class="inputQuant" id="input_quant" type="number" placeholder="Quantidade de filhotes da gestação">
 
             <div class="alinhamento2">
               <div class="alinhamento2_pt1">
-                <span class="title" id="span_cpf">Preço unitário:</span>
-                <input class="inputCad3" id="input_cpf" type="number_format" placeholder="0,00">
+                <span class="title" id="span_preco">Preço unitário:</span>
+                <input class="inputPreco" id="input_preco" type="number_format" placeholder="0,00">
 
               </div>
 
 
               <div class="alinhamento2_pt2">
-                <span class="title" id="span_numero">Nascem em:</span>
+                <span class="title" id="span_nasc">Nascem em</span>
 
 
                 <div class="container_box">
-                  <select name="tipoUser" id="tipoUser">
+                  <select name="select_mes" id="select_mes">
                     <option value="" selected disabled>Escolha</option>
                     <option value="">- 1 mês</option>
                     <option value="">+/- 1 mês</option>
@@ -90,8 +90,7 @@
               <div class="alinhamento2_pt3">
                 <span class="title" id="span_foto">Fotos do casal de pet:</span>
                 <div class="box_foto">
-                  <span id="div_imagem">Arraste ou clique aqui para adicionar a <b style="color: #44207E;">url </b> da
-                    imagem do casal :)</span>
+                  <span id="div_imagem">Arraste ou clique aqui para adicionar a url da imagem do casal</span>
                 </div>
               </div>
 

@@ -45,7 +45,7 @@
           <div class="contentTop">
 
 
-            <h2>Carinho com o pet</h2>
+            <h2>Sobre seu lar</h2>
 
             <div id="bolinhas2">
               <span onclick="location.href='./register_user1.html'" class="dot"></span>
@@ -56,138 +56,112 @@
 
           <div class="inputs">
 
-            <span class="title">Sobre a moradia</span>
+            <span class="title">Tipo de moradia</span>
             <div class="select-menu">
-              <div class="select-btn" id="select_logradouro">
-                <span class="sBtn-text">Logradouro</span>
+              <div class="select-btn" class="selectMoradia" id="select_moradia">
+                <span class="sBtn-text">Tipo</span>
                 <img src="./css/images/arrowDrop.svg" alt="">
               </div>
 
               <ul class="options">
                 <li class="option">
-                  <span class="option-text">Problemas</span>
+                  <span class="option-text">Casa</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Sugestões</span>
+                  <span class="option-text">Apartamento</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Dúvidas</span>
+                  <span class="option-text">Sítio/Chácara</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Reclamações</span>
+                  <span class="option-text">Fazenda</span>
                 </li>
               </ul>
             </div>
 
             <span class="title" id="alinhamento">Quantos cômodos na casa</span>
             <div class="select-menu">
-              <div class="select-btn" id="select_comodos">
-                <span class="sBtn-text">Comodos</span>
+              <div class="select-btn" class="selectComodos" id="select_comodos">
+                <span class="sBtn-text">Cômodos</span>
                 <img src="./css/images/arrowDrop.svg" alt="">
               </div>
 
               <ul class="options">
                 <li class="option">
-                  <span class="option-text">Problemas</span>
+                  <span class="option-text">1</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Sugestões</span>
+                  <span class="option-text">2</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Dúvidas</span>
+                  <span class="option-text">3</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Reclamações</span>
+                  <span class="option-text">4 ou mais</span>
                 </li>
               </ul>
             </div>
-
-            <span class="title" id="alinhamento">Senha</span>
-            <div class="select-menu">
-              <div class="select-btn" id="select_estado">
-                <span class="sBtn-text">Assunto</span>
-                <img src="./css/images/arrowDrop.svg" alt="">
-              </div>
-
-              <ul class="options">
-                <li class="option">
-                  <span class="option-text">Problemas</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Sugestões</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Dúvidas</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Reclamações</span>
-                </li>
-              </ul>
-            </div>
-
 
             <span class="title" id="alinhamento">Quantos residentes na casa</span>
             <div class="select-menu">
-              <div class="select-btn" id="select_estado">
-                <span class="sBtn-text">Assunto</span>
+              <div class="select-btn" class="selectResidentes" id="select_residentes">
+                <span class="sBtn-text">Pessoas</span>
                 <img src="./css/images/arrowDrop.svg" alt="">
               </div>
 
               <ul class="options">
                 <li class="option">
-                  <span class="option-text">Problemas</span>
+                  <span class="option-text">1</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Sugestões</span>
+                  <span class="option-text">2</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Dúvidas</span>
+                  <span class="option-text">3</span>
                 </li>
                 <li class="option">
-                  <span class="option-text">Reclamações</span>
+                  <span class="option-text">4 ou mais</span>
                 </li>
               </ul>
             </div>
 
-            <span class="title" id="alinhamento">Quantas horas você passa em casa</span>
+            <span class="title" id="alinhamento">Quantas horas você passa em casa por dia</span>
 
             <div class="container_box">
               <div class="select-menu">
-                <div class="select-btn" id="select_estado">
-                  <span class="sBtn-text">A</span>
+                <div class="select-btn" class="selectHoras" id="select_horas">
+                  <span class="sBtn-text">Horas</span>
                   <img src="./css/images/arrowDrop.svg" alt="">
                 </div>
 
                 <ul class="options">
                   <li class="option">
-                    <span class="option-text">Problemas</span>
+                    <span class="option-text">1 a 8</span>
                   </li>
                   <li class="option">
-                    <span class="option-text">Sugestões</span>
+                    <span class="option-text">8 a 16</span>
                   </li>
                   <li class="option">
-                    <span class="option-text">Dúvidas</span>
-                  </li>
-                  <li class="option">
-                    <span class="option-text">Reclamações</span>
+                    <span class="option-text">16 a 24</span>
                   </li>
                 </ul>
               </div>
 
-              <span class="title" id="alinhamento">Já teve pet alguma vez? </span>
+              <span class="title" id="span_pedigree">Já teve algum pet?</span>
 
-              <div class="first_check">
-                <div>
-                  <input type="radio" class="radio-label" id="flexRadio1" name="radio" value="certificado" checked>
-                  <label for="Sim">Sim</label>
-                </div>
-
-                <div>
-                  <input type="radio" id="flexRadio2" class="radio-label" name="radio" value="Ncertificado">
-                  <label for="Nao">Não</label>
-                </div>
+              <div>
+                <label class="form-control" value="tevePet">
+                  <input type="radio" name="radioTevePet" />
+                  Sim
+                </label>
               </div>
 
+              <div>
+                <label class="form-control" value="naoTevePet">
+                  <input type="radio" name="radioNaoTevePet" />
+                  Não
+                </label>
+              </div>
               <div class="btns">
                 <button class="cancelar">Voltar</button>
                 <button class="prosseguir">Prosseguir</button>

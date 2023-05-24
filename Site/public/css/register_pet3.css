@@ -389,15 +389,15 @@
   align-items: left;
   width: 100%;
   height: 100%;
-  padding: 5% 0% 0% 0%;
 }
 
 .title {
-margin-bottom: 10px;
-font-weight: 600;
+  padding-bottom: 10px;
+  padding-top: 6%;
+  font-weight: 600;
 }
 
-.inputCad {
+.inputQuant {
   width: 100%;
   height: 40px;
   border-radius: 24px;
@@ -412,21 +412,20 @@ font-weight: 600;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  margin-top: 6%;
+  padding-top: 3%;
 }
 
 .alinhamento2_pt1 {
   display:flex;
   flex-direction: column;
-
 }
 
-.inputCad3 {
+.inputPreco {
   width: 100%;
   height: 40px;
   border-radius: 24px;
-  border: 3px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/money-recive-svgrepo-com.svg) no-repeat 20px 7px ;
+  border: 2px solid rgba(0, 0, 0, 0.6); 
+  background: url(images/money-recive-svgrepo-com.svg) no-repeat 20px 7px;
   padding-left: 22%;
   background-size: 20px;
 }
@@ -440,17 +439,16 @@ font-weight: 600;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 6%;
+  
 }
 
 #div_imagem{
-color: var(--lightgray);
-font-size: small;
-
+  color: var(--lightgray);
+  font-size: small;
 }
 
 .box_foto{
-border: rgba(0, 0, 0, 0.6) 3px dashed;
+  border: rgba(0, 0, 0, 0.6) 3px dashed;
   height: 20vh;
   align-items: center;
   display: flex;
@@ -462,18 +460,18 @@ border: rgba(0, 0, 0, 0.6) 3px dashed;
 
 .box_observacao{
   border: rgba(0, 0, 0, 0.6) 3px solid;
-    height: 20vh;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 24px;
-    padding: 3vh;
-  }
+  height: 20vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 24px;
+  padding: 3vh;
+}
 
  
-  ::-webkit-input-placeholder { /* Edge */
-    color:var(--lightgray);
-  }
+::-webkit-input-placeholder { /* Edge */
+  color:var(--lightgray);
+}
 
 
 input:focus{ outline: none; }
@@ -487,14 +485,13 @@ input:focus{ outline: none; }
 select:focus{ outline: none; }
 
 select {
-  width: 14vw;
+  width: 13vw;
   height: 6.8vh;
-  border: 3px solid rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(0, 0, 0, 0.6);
   border-radius: 24px; 
-  color: #707070;
-  padding-left: 15%;
+  color: #707070;
+  padding-left: 9%;
 }
-
 
 /* FIM do drop */
 
