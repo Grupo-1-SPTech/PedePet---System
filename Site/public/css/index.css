@@ -291,7 +291,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 14% 0 6% 0;
+  padding-top: 18%;
   text-align: center;
 }
 
@@ -391,7 +391,9 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
-  padding: 4%;
+  padding-top: 10%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .leftFAQ {
@@ -486,8 +488,7 @@ input[type="radio"]{
   width: 100vw;
   display: flex;
   flex-direction: row;
-  padding-top: 15%;
-  padding-bottom: 10%;
+  padding-top: 20%;
   padding-left: 4%;
   padding-right: 4%;
 }
@@ -535,6 +536,32 @@ input[type="radio"]{
   margin-top: 87px;
 }
 
+/* Sobre a PedePet  */
+
+.containerSBP {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  padding-top: 15%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.textSBP {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 40%;
+  padding-right: 8%;
+}
+
+#titleSBP {
+  color: var(--black);
+  font-size: 44px;
+  font-weight: 800;
+  padding-bottom: 2%;
+}
+
 
 /* Section Contato */
 
@@ -542,8 +569,8 @@ input[type="radio"]{
   width: 100vw;
   display: flex;
   flex-direction: row;
-  padding-top: 15%;
-  padding-bottom: 5%;
+  padding-top: 10%;
+  padding-left: 2%;
 }
 
 .containerCTT2 { /*div da esquerda */
@@ -555,14 +582,19 @@ input[type="radio"]{
 .leftCTT {
   display: flex;
   flex-direction: column;
-  padding: 5% 5% 3%;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  padding-right: 4%;
+  padding-left: 4%;
 }
 
 .leftCTT2 {
   display: flex;
   flex-direction: column;
   width: 50vw;
-  padding: 1.5% 5% 6% 5%;
+  /* padding-top: 5%;
+  padding-bottom: 3%;
+  padding-right: 4%; */
 }
 
 .leftCTT h1 {
@@ -605,9 +637,11 @@ input[type="radio"]{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3% 5% 3% 5%;
-  width: 50vw;
-  left: 0;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-right: 4%;
+  padding-left: 4%;
+  width: 100%;
 }
 
 /* css dropdown ASSUNTO */
@@ -761,8 +795,12 @@ input[type="radio"]{
 .leftCTT3 {
   display: flex;
   flex-direction: column;
-  width: 50vw;
-  padding: 3% 5% 5% 5%;
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-right: 4%;
+  padding-left: 4%;
+  /* padding: 3% 5% 5% 5%; */
 }
 
 .input-ctt-msg {
