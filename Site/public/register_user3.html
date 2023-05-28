@@ -57,111 +57,50 @@
           <div class="inputs">
 
             <span class="title">Tipo de moradia</span>
-            <div class="select-menu">
-              <div class="select-btn" class="selectMoradia" id="select_moradia">
-                <span class="sBtn-text">Tipo</span>
-                <img src="./css/images/arrowDrop.svg" alt="">
-              </div>
-
-              <ul class="options">
-                <li class="option">
-                  <span class="option-text">Casa</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Apartamento</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Sítio/Chácara</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Fazenda</span>
-                </li>
-              </ul>
-            </div>
+              <select name="select_moradia" id="select_moradia">
+                <option value="" selected disabled>Escolha</option>
+                <option value="">Vendedor</option>
+                <option value="">Comprador</option>
+              </select>
+            
 
             <span class="title" id="alinhamento">Quantos cômodos na casa</span>
-            <div class="select-menu">
-              <div class="select-btn" class="selectComodos" id="select_comodos">
-                <span class="sBtn-text">Cômodos</span>
-                <img src="./css/images/arrowDrop.svg" alt="">
-              </div>
-
-              <ul class="options">
-                <li class="option">
-                  <span class="option-text">1</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">2</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">3</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">4 ou mais</span>
-                </li>
-              </ul>
-            </div>
+            <select name="select_comodos" id="select_comodos">
+              <option value="" selected disabled>Escolha</option>
+              <option value="">Vendedor</option>
+              <option value="">Comprador</option>
+            </select>
 
             <span class="title" id="alinhamento">Quantos residentes na casa</span>
-            <div class="select-menu">
-              <div class="select-btn" class="selectResidentes" id="select_residentes">
-                <span class="sBtn-text">Pessoas</span>
-                <img src="./css/images/arrowDrop.svg" alt="">
-              </div>
-
-              <ul class="options">
-                <li class="option">
-                  <span class="option-text">1</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">2</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">3</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">4 ou mais</span>
-                </li>
-              </ul>
-            </div>
+            <select name="select_residentes" id="select_residentes">
+              <option value="" selected disabled>Escolha</option>
+              <option value="">Vendedor</option>
+              <option value="">Comprador</option>
+            </select>
 
             <span class="title" id="alinhamento">Quantas horas você passa em casa por dia</span>
-
-            <div class="container_box">
-              <div class="select-menu">
-                <div class="select-btn" class="selectHoras" id="select_horas">
-                  <span class="sBtn-text">Horas</span>
-                  <img src="./css/images/arrowDrop.svg" alt="">
-                </div>
-
-                <ul class="options">
-                  <li class="option">
-                    <span class="option-text">1 a 8</span>
-                  </li>
-                  <li class="option">
-                    <span class="option-text">8 a 16</span>
-                  </li>
-                  <li class="option">
-                    <span class="option-text">16 a 24</span>
-                  </li>
-                </ul>
-              </div>
+            <select name="select_horas" id="select_horas">
+              <option value="" selected disabled>Escolha</option>
+              <option value="">Vendedor</option>
+              <option value="">Comprador</option>
+            </select>
+            
 
               <span class="title" id="span_pedigree">Já teve algum pet?</span>
 
-              <div>
+              
                 <label class="form-control" value="tevePet">
                   <input type="radio" name="radioTevePet" />
                   Sim
                 </label>
-              </div>
+              
 
-              <div>
+              
                 <label class="form-control" value="naoTevePet">
                   <input type="radio" name="radioNaoTevePet" />
                   Não
                 </label>
-              </div>
+              
               <div class="btns">
                 <button class="cancelar">Voltar</button>
                 <button class="prosseguir">Prosseguir</button>
