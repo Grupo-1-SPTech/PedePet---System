@@ -60,6 +60,7 @@ body {
 
 #logo {
   height: 80%;
+  cursor: pointer;
 }
 
 .optionsNav {

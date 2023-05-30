@@ -41,5 +41,58 @@ window.location.href = "./login.html"
 }
 
 
+function entrarComprador() {
+    window.location = "./register_user1.html"
+}
 
+function entrarVendedor() {
+    window.location = "./register_user1.html"
+}
 
+function getFilhotesAdquiridos(){
+    fetch("http://localhost:3000/filhotes/adquiridos", {
+        method: "GET"
+    })
+    .then(res => res.json())
+    .then((res) => {
+        for (let i = 0; i < res._embedded.filhotes.length; i++) {
+            console.log(res._embedded.filhotes[i])
+        }
+    })  
+}
+
+function getTotalVendedores(){
+    fetch("http://localhost:3000/usuarios/vendedor/total", {
+        method: "GET"
+    })
+    .then(res => res.json())
+    .then((res) => {
+        for (let i = 0; i < res._embedded.vendedores.length; i++) {
+            console.log(res._embedded.vendedores[i])
+        }
+    })  
+}
+
+function getRacasDisponiveis(){
+    fetch("http://localhost:3000/anuncios/racasDiponiveis", {
+        method: "GET"
+    })
+    .then(res => res.json())
+    .then((res) => {
+        for (let i = 0; i < res._embedded.anuncios.length; i++) {
+            console.log(res._embedded.anuncios[i])
+        }
+    })  
+}
+
+function getUsuariosTotal(){
+    fetch("http://localhost:3000/usuarios", {
+        method: "GET"
+    })
+    .then(res => res.json())
+    .then((res) => {
+        for (let i = 0; i < res._embedded.usuarios.length; i++) {
+            console.log(res._embedded.usuarios[i])
+        }
+    })  
+}

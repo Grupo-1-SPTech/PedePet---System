@@ -41,7 +41,7 @@ class AnuncioController(
     }
 
     // FILTRO RAÇA
-    @GetMapping("filtro/raca")
+    @GetMapping("/filtro/raca")
     fun buscarCachorroPorRaca():ResponseEntity<List<AnuncioPet?>>{
         val racas = anuncioRepository.findByRacaMae()
 

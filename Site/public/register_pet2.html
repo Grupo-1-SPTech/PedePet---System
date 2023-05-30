@@ -8,11 +8,9 @@
   <title>Cadastro Pet 2 - PedePet</title>
   <link rel="stylesheet" href="./css/register_pet2.css">
   <link rel="icon" href="./css/images/icon-pata.png">
-
 </head>
 
 <body>
-
   <nav>
     <div class="container-nav">
       <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
@@ -34,7 +32,7 @@
       <div class="formCad">
 
         <div class="banner">
-          <img src="./css/images/pug_binoculos.png" class="cachorrinho">
+          <img src="./css/images/Pug.png" class="cachorrinho">
         </div>
 
         <div class="contentCad">
@@ -101,9 +99,9 @@
                 <div class="container_box">
                   <select name="selectPorte" class="selectPorte" id="select_porte">
                     <option value="" selected disabled>Escolha</option>
-                    <option value="">Grande</option>
-                    <option value="">Médio</option>
-                    <option value="">Pequeno</option>
+                    <option value="Pequeno">Pequeno</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Grande">Grande</option>
                   </select>
                 </div>
 
@@ -115,14 +113,14 @@
             <span class="title" id="span_pedigree">Possui certificado de pedigree?</span>
 
             <div>
-              <label class="form-control" value="certificado">
+              <label class="form-control" value="1">
                 <input type="radio" name="radioCertificado" />
                 Sim
               </label>
             </div>
 
             <div>
-              <label class="form-control" value="certificadoNao">
+              <label class="form-control" value="0">
                 <input type="radio" name="radioCertificadoNao" />
                 Não
               </label>
@@ -132,14 +130,14 @@
 
 
             <div>
-              <label class="form-control" value="vacinado">
+              <label class="form-control" value="1">
                 <input type="radio" name="radioVacinado" />
                 Sim
               </label>
             </div>
 
             <div>
-              <label class="form-control" value="vacinadoNao">
+              <label class="form-control" value="0">
                 <input type="radio" name="radioVacinadoNao" />
                 Não
               </label>
@@ -147,7 +145,7 @@
 
             <div class="btns">
               <button class="cancelar">Cancelar</button>
-              <button onclick="location.href='./register_pet3.html'" class="prosseguir">Prosseguir</button>
+              <button onclick="cadastrarPet2()" class="prosseguir">Prosseguir</button>
             </div>
 
           </div>
@@ -237,7 +235,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="js/register_pet2.js"></script>
 </body>
 
 </html>

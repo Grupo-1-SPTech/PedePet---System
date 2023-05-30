@@ -58,6 +58,7 @@
 
 #logo {
     height: 80%;
+    cursor: pointer;
 }
 
 .options {

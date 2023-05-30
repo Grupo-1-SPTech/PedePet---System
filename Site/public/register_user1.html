@@ -92,13 +92,13 @@
             <div class="container_box">
               <select name="selectUser" class="selectUser" id="select_user" onchange="selecionarUsuario()">
                 <option value="" selected disabled>Escolha seu tipo de usuário</option>
-                <option value="2">Vendedor</option>
                 <option value="1">Comprador</option>
+                <option value="2">Vendedor</option>
               </select>
             </div>
             <div class="btns">
               <button class="cancelar">Cancelar</button>
-              <button onclick="location.href='./register_user2.html'" class="prosseguir">Prosseguir</button>
+              <button onclick="selecionarUsuario()" class="prosseguir">Prosseguir</button>
             </div>
 
           </div>
@@ -187,6 +187,7 @@
     </div>
   </footer>
 
+<script src="js/register_user1.js"></script>
 </body>
 
 </html>

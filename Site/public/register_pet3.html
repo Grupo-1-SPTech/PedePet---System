@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro Pet 3 - PedePet</title>
-  <link rel="stylesheet" href="/public/css/register_pet3.css">
-  <link rel="icon" href="/public/css/images/icon-pata.png">
+  <link rel="stylesheet" href="./css/register_pet3.css">
+  <link rel="icon" href="./css/images/icon-pata.png">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
       <div class="formCad">
 
         <div class="banner">
-          <img src="/public/css/images/pug_binoculos.png" class="cachorrinho">
+          <img src="./css/images/pug_binoculos.png" class="cachorrinho">
         </div>
 
         <div class="contentCad">
@@ -68,17 +68,21 @@
 
 
               <div class="alinhamento2_pt2">
-                <span class="title" id="span_nasc">Nascem em</span>
+                <span class="title" id="span_nasc">Nascem em (+/-)</span>
 
 
                 <div class="container_box">
-                  <select name="select_mes" id="select_mes">
+                  <select name="select_semana" id="select_semana">
                     <option value="" selected disabled>Escolha</option>
-                    <option value="">- 1 mês</option>
-                    <option value="">+/- 1 mês</option>
-                    <option value="">+/- 2 meses</option>
-                    <option value="">+/- 3 meses</option>
-                    <option value="">+/- 4 meses</option>
+                    <option value="1">1 semana (7 dias)</option>
+                    <option value="2">2 semanas (14 dias)</option>
+                    <option value="3">3 semanas (21 dias)</option>
+                    <option value="4">4 semanas (28 dias)</option>
+                    <option value="5">5 semanas (35 dias)</option>
+                    <option value="6">6 semanas (42 dias)</option>
+                    <option value="7">7 semanas (49 dias)</option>
+                    <option value="8">8 semanas (56 dias)</option>
+                    <option value="9">9 semanas (63 dias)</option>
                   </select>
                 </div>
 
@@ -102,7 +106,7 @@
 
               <div class="btns">
                 <button class="cancelar">Voltar</button>
-                <button class="prosseguir">Prosseguir</button>
+                <button class="prosseguir" onclick="cadastrarPet3()">Prosseguir</button>
               </div>
 
             </div>
@@ -190,7 +194,7 @@
       2023 todos os direitos reservados.
     </div>
   </footer>
-
+  <script src="js/register_pet3.js"></script>
 </body>
 
 </html>

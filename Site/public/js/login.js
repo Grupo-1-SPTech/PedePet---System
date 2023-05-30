@@ -1,35 +1,12 @@
-function controller() {
-    fetch("http://localhost:8080/usuarios/controller/demo", {
-        method: "GET"
-    })
-    .then(res => res.text())
-    .then((res) => {
-        console.log(res)
-    })
-}
-
-function usuarios() {
-    fetch("http://localhost:8080/usuarios", {
-        method: "GET"
-    })
-    .then(res => res.json())
-    .then((res) => {
-        for (let i = 0; i < res._embedded.usuarios.length; i++) {
-            console.log(res._embedded.usuarios[i])
-        }
-    })
-}
-
-function cadastro() {
-    fetch("http://localhost:8080/usuarios", {
+function entrar(){
+    fetch("http://localhost:3000/usuarios/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            nome: document.getElementById("nome").value,
-            email: document.getElementById("email").value,
-            senha: document.getElementById("senha").value
+            email: document.getElementById("input_email").value,
+            senha: document.getElementById("input_senha").value
         })
     })
     .then(res => res.json())
