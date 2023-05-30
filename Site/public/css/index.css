@@ -157,7 +157,7 @@ body {
 }
 
 .cadUser {
-  font-size: 20px;
+  font-size: 16px;
   width: 16vw;
   height: 60px;
   border-radius: 40px;
@@ -169,7 +169,7 @@ body {
 }
 
 .cadPet {
-  font-size: 20px;
+  font-size: 16px;
   width: 16vw;
   height: 60px;
   border-radius: 40px;
@@ -482,86 +482,123 @@ input[type="radio"]{
     margin-top: 10%;
 }
 
-/* Sobre nós */
+/* Sobre a PedePet  */
 
-.containerSBN {
+.containerSobreNos {
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
-  padding-top: 20%;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-top: 18%;
 }
 
-.textSBN {
+.leftSobreNos {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  height: 40%;
-  padding-right: 8%;
+  width: 50%;
+  height: 100%;
+  padding-left: 5%;
 }
 
-#titleSBN {
+.leftSobreNos h1 {
   color: var(--black);
   font-size: 44px;
+  font-weight: 900;
+  padding-bottom: 5%;
+}
+
+#txt_sn1 {
+  font-size: 20px;
   font-weight: 800;
-  padding-bottom: 2%;
+  opacity: 0.6;
+  color: var(--black);
+  width: 75%;
+  padding-bottom: 10%;
 }
 
-#subtitleSBN {
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 32px;
-  color: var(--darkgray);
-  padding-bottom: 2%;
-  text-align: justify;
-}
-
-#infoSBN {
+.leffSobreNos p {
   font-size: 18px;
-  line-height: 32px;
-  text-align: justify;
+  color: var(--black);
+  font-weight: 400;
 }
 
-#infoSBN b {
+#txt_sn2 {
+  font-size: 20px;
+  font-weight: 800;
   color: var(--darkpurple);
 }
 
-.imageSBN {
+.rightSobreNos {
   display: flex;
-  width: 800px;
-  height: 450px;
-  border: 5px solid var(--darkpurple);
-  border-radius: 8px;
-  margin-top: 90px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+} 
+.containerFtSn {
+  width: 80%;
+  border: 6px solid var(--darkpurple);
+  height: 338px;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
-/* Sobre a PedePet  */
+.containerFtSn img {
+  width: 100%;
+}
+
+/* Section metricas pedepet */ 
 
 .containerSBP {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  padding-top: 15%;
-  padding-left: 4%;
-  padding-right: 4%;
-}
-
-.textSBP {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  height: 40%;
-  padding-right: 8%;
+  padding-top: 5%;
+  width: 100vw;
+  padding-left: 5%;
 }
 
-#titleSBP {
-  color: var(--black);
+.containerSBP h1 {
   font-size: 44px;
-  font-weight: 800;
-  padding-bottom: 2%;
+  font-weight: 900;
+  color: var(--black);
 }
 
+.containerCardsSBP {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10%;
+  width: 90%;
+}
+
+.cardSBP {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 220px;
+}
+
+.linhaSBP {
+  overflow: hidden;
+  margin: 0% 2% 2% 0%;
+  width: 100%;
+  height: 4px;
+  background-color: var(--darkblue);
+}
+
+.value_metrica {
+  color: var(--orange);
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 5%;
+}
+
+.txt_metrica {
+  color: var(--darkpurple);
+  font-size: 20px;
+  font-weight: 800;
+}
 
 /* Section Contato */
 
@@ -569,7 +606,7 @@ input[type="radio"]{
   width: 100vw;
   display: flex;
   flex-direction: row;
-  padding-top: 10%;
+  padding-top: 15%;
   padding-left: 2%;
 }
 
