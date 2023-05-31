@@ -60,7 +60,6 @@ body {
 
 #logo {
   height: 80%;
-  cursor: pointer;
 }
 
 .optionsNav {
@@ -483,69 +482,58 @@ input[type="radio"]{
     margin-top: 10%;
 }
 
-/* Sobre a PedePet  */
+/* Sobre nós */
 
-.containerSobreNos {
+.containerSBN {
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
-  padding-top: 18%;
+  padding-top: 20%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
-.leftSobreNos {
+.textSBN {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 100%;
-  padding-left: 5%;
+  width: 60%;
+  height: 40%;
+  padding-right: 8%;
 }
 
-.leftSobreNos h1 {
+#titleSBN {
   color: var(--black);
   font-size: 44px;
-  font-weight: 900;
-  padding-bottom: 5%;
-}
-
-#txt_sn1 {
-  font-size: 20px;
   font-weight: 800;
-  opacity: 0.6;
-  color: var(--black);
-  width: 75%;
-  padding-bottom: 10%;
+  padding-bottom: 2%;
 }
 
-.leffSobreNos p {
+#subtitleSBN {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32px;
+  color: var(--darkgray);
+  padding-bottom: 2%;
+  text-align: justify;
+}
+
+#infoSBN {
   font-size: 18px;
-  color: var(--black);
-  font-weight: 400;
+  line-height: 32px;
+  text-align: justify;
 }
 
-#txt_sn2 {
-  font-size: 20px;
-  font-weight: 800;
+#infoSBN b {
   color: var(--darkpurple);
 }
 
-.rightSobreNos {
+.imageSBN {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  height: 100%;
-} 
-.containerFtSn {
-  width: 80%;
-  border: 6px solid var(--darkpurple);
-  height: 338px;
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-.containerFtSn img {
-  width: 100%;
+  width: 800px;
+  height: 450px;
+  border: 5px solid var(--darkpurple);
+  border-radius: 8px;
+  margin-top: 90px;
 }
 
 /* Section metricas pedepet */ 
@@ -553,22 +541,22 @@ input[type="radio"]{
 .containerSBP {
   display: flex;
   flex-direction: column;
-  padding-top: 5%;
+  padding-top: 10%;
   width: 100vw;
-  padding-left: 5%;
+  padding-left: 4%;
 }
 
 .containerSBP h1 {
   font-size: 44px;
   font-weight: 900;
   color: var(--black);
+  padding-bottom: 5%;
 }
 
 .containerCardsSBP {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 10%;
   width: 90%;
 }
 
@@ -607,7 +595,7 @@ input[type="radio"]{
   width: 100vw;
   display: flex;
   flex-direction: row;
-  padding-top: 15%;
+  padding-top: 10%;
   padding-left: 2%;
 }
 
