@@ -41,6 +41,6 @@ data class Usuario(
     var tipoUsuario:Int? = null, // COMPRADOR = 1, VENDEDOR = 2
 
     @Column(name = "autenticado")
-    var autenticado:Boolean? = false,
+    var autenticado:Boolean? = true,
     ) {
 }

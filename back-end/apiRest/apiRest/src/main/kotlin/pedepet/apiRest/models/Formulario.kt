@@ -14,16 +14,19 @@ data class Formulario(
     val tipoMoradia:String? = null, // SOBRE A MORADIA DA PESSOA, APTO, CASA ETC
 
     @Column(name = "qtd_comodos")
-    val qtdComodos:Int? = null, // QTD DE COMODOS NA CASA
+    val qtdComodos:String? = null, // QTD DE COMODOS NA CASA
 
     @Column(name = "qtd_moradores")
-    val qtdMoradores:Int? = null, // QTD PESSOAS NA CASA
+    val qtdMoradores:String? = null, // QTD PESSOAS NA CASA
 
     @Column(name = "qtd_horas_casa")
-    val qtdHorasCasa:Int? = null, // QTD HORAS QUE PASSA EM CASA
+    val qtdHorasCasa:String? = null, // QTD HORAS QUE PASSA EM CASA
 
     @Column(name = "possui_pet")
     val possuiPet:Int? = null, // SIM = 1, NÃO = 0
+
+//    @Column(name = "status_forms")  // aprovado = 1, não aprovado = 0
+//    val statusForms:Boolean? = false,
 
     @OneToOne
     @JoinColumn(name = "fk_usuario", referencedColumnName = "id")

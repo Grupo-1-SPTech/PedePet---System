@@ -12,11 +12,8 @@ data class AnuncioPet(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Int,
 
-    @Column(name = "titulo")
-    val titulo:String? = null,
-
     @Column(name = "raca_mae")
-    val racaMae:String? = null, // RACA DO MAE
+    val racaMae:Int? = null, // RACA DO MAE
 
     @Column(name = "idade_mae")
     val idadeMae:Int? = null, // IDADE MAE
@@ -33,7 +30,7 @@ data class AnuncioPet(
 
     // PARTE 2 CAD ANUNCIO
     @Column(name = "raca_pai")
-    val racaPai:String? = null, // RACA DO PAI
+    val racaPai:Int? = null, // RACA DO PAI
 
     @Column(name = "idade_pai")
     val idadePai:Int? = null, // IDADE PAI

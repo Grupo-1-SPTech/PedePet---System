@@ -17,66 +17,63 @@
     "cidade": "São Paulo",
     "estado": "SP",
     "usuario": {
-            }
+    }
   },
   "anuncioPet": {
-    "titulo": "Filhotes golden",
-    "racaMae": "Golden",
+    "racaMae": 1,
     "idadeMae": 5,
-    "porteMae": "Grande",
+    "porteMae": "Pequeno",
     "pedigreeMae": 1,
     "vacinadoMae": 1,
-    "racaPai": "Golden",
-    "idadePai": 5,
-    "portePai": "Grande",
+    "racaPai": 1,
+    "idadePai": 6,
+    "portePai": "Pequeno",
     "pedigreePai": 1,
     "vacinadoPai": 1,
-    "fotoPet": "urlPet",
+    "fotoPet": "urlFoto",
     "visualizacoes": 0,
-    "qtdFilhotes": 1,
-    "descricao": "Bla bla bla bla bla",
+    "qtdFilhotes": 4,
+    "descricao": "Bla bla bla bla bla bla bla",
     "usuario": {
-            }
+    }
   },
   "filhote": {
-    "tempoEspera": 3,
-    "preco": 1000.00,
+    "tempoEspera": 7,
+    "preco": 2000.00,
     "disponivel": true,
     "anuncioPet": {
-            }
+    }
   }
 }
 
 --------------------------------
 {
   "anuncioPet": {
-    "titulo": "Filhotes Pitbull",
-    "racaMae": "Pitbull",
-    "idadeMae": 6,
+    "racaMae": 2,
+    "idadeMae": 5,
     "porteMae": "Médio",
     "pedigreeMae": 1,
     "vacinadoMae": 1,
-    "racaPai": "Pitbull",
-    "idadePai": 7,
+    "racaPai": 2,
+    "idadePai": 5,
     "portePai": "Médio",
     "pedigreePai": 1,
     "vacinadoPai": 1,
-    "fotoPet": "urlPet",
-    "visualizacoes":0,
-    "qtdFilhotes": 1,
-    "descricao": "Bla2 bla2 bla2 bla2 bla2",
+    "fotoPet": "urlPets",
+    "visualizacoes": 0,
+    "qtdFilhotes": 3,
+    "descricao": "Teste teste teste teste ",
     "usuario": {
       "id": 2
     }
   },
   "filhote": {
-   "tempoEspera": 4,
+    "tempoEspera": 4,
     "preco": 1200.00,
-    "disponivel": true,
+    "disponivel": false,
     "anuncioPet": {
       "usuario": {
       }
     }
   }
-}
 }

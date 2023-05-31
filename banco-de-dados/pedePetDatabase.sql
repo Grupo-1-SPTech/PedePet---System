@@ -29,9 +29,9 @@ FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 CREATE TABLE IF NOT EXISTS formulario(
 id INT PRIMARY KEY AUTO_INCREMENT,
 tipo_moradia VARCHAR(15) NULL,
-qtd_comodos INT NULL,
-qtd_moradores INT NULL,
-qtd_horas_casa INT NULL,
+qtd_comodos VARCHAR(15) NULL,
+qtd_moradores VARCHAR(15) NULL,
+qtd_horas_casa VARCHAR(15) NULL,
 possui_pet INT NULL,
 fk_usuario INT NULL,
 FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
@@ -39,13 +39,12 @@ FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 
 CREATE TABLE IF NOT EXISTS ninhada(
 id INT PRIMARY KEY AUTO_INCREMENT,
-titulo VARCHAR(45) NULL,
-raca_mae VARCHAR(20) NULL,
+raca_mae INT NULL,
 idade_mae INT NULL,
 porte_mae VARCHAR(10) NULL,
 vacina_mae INT NULL,
 pedigree_mae INT NULL,
-raca_pai VARCHAR(20) NULL,
+raca_pai INT NULL,
 idade_pai INT NULL,
 porte_pai VARCHAR(10) NULL,
 vacina_pai INT NULL,
@@ -83,7 +82,7 @@ FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 /*
 CREATE TABLE IF NOT EXISTS lista_espera(
 id INT PRIMARY KEY AUTO_INCREMENT,
-status_teste VARCHAR(15),
+status_lista VARCHAR(15),
 posicao_fila INT,
 data_hora TIMESTAMP NULL,
 fk_filhote INT,
