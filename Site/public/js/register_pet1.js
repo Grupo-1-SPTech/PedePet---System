@@ -35,3 +35,20 @@ fetch("http://localhost:3000/usuarios", {
     }
 })
 }
+
+function cancelar() {
+    Swal.fire({
+      title: 'Deseja prosseguir com esta ação?',
+      showCancelButton: true,
+      confirmButtonColor: '#FB3F08',
+      cancelButtonColor: '#7C4BC8',
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Não'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = './index.html';
+      } else {
+     
+      }
+    });
+  }
