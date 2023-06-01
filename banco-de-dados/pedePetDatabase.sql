@@ -115,6 +115,18 @@ tipo_pagamento VARCHAR(10)
 
 -- Inserção de dados:
 
+-- COMPRADOR
+insert into usuario (nome, email, cpf, telefone, senha, tipo_usuario, autenticado) values 
+('Luigi Ceolin', 'luigi@gmail.com', '0188418457', '(11) 97252-7483', 'sptech10@', 1, 1);
+
+insert into endereco (cep, rua, numero, complemento, bairro, cidade, estado, fk_usuario) values
+('09580330', 'Rua 1', 77, 'Ao lado do mercado Extra', 'Maua', 'São Paulo', 'SP', 1);
+
+insert into formulario (tipo_moradia, qtd_comodos, qtd_moradores, qtd_horas_casa, possui_pet, fk_usuario) values
+('Apartamento', '1 a 5', '1 a 5', '7 a 12', 1, 1); 
+
+-- VENDEDOR
+
 select * from usuario;
 select * from endereco;
 select * from formulario;
