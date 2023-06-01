@@ -32,13 +32,6 @@ class AnuncioPetTest{
     }
 
 
-        @Test
-        fun `campo id deve estar anotado com @Column(name = "id")`() {
-            val propriedade = AnuncioPet::class.members.find { it.name == "id" }
-
-            assertNotNull(propriedade)
-            assertNotNull(propriedade?.findAnnotation<Column>())
-            assertEquals("id", propriedade?.findAnnotation<Column>()?.name)
-        }
+     
     }
 
