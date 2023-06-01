@@ -10,8 +10,8 @@ import pedepet.apiRest.repositories.EnderecoRepository
 class EnderecoController(
     val enderecoRepository: EnderecoRepository
 ) {
-
-    @GetMapping("{id}")
+// GET BUSCAR ENDEREÇO POR ID
+    @GetMapping("/{id}")
     fun buscarEnderecoPorId(@PathVariable id:Int): Endereco? {
         return enderecoRepository.findById(id).get()
     }

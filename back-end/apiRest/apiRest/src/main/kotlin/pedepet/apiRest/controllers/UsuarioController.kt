@@ -22,7 +22,7 @@ class UsuarioController(
 
 
     // CADASTRAR COMPRADOR
-    @PostMapping("cadastrar/comprador")
+    @PostMapping("/cadastrar/comprador")
     fun cadComprador(@RequestBody cadCompradorRequest: CompradorRequest): ResponseEntity<Usuario> {
 
         val selectComprador = repository.findByEmailAndTipoUsuario(cadCompradorRequest.usuario.email, cadCompradorRequest.usuario.tipoUsuario)
@@ -40,7 +40,7 @@ class UsuarioController(
 
 
     // CADASTRAR VENDEDOR
-    @PostMapping("cadastrar/vendedor")
+    @PostMapping("/cadastrar/vendedor")
     fun cadVendedor(@RequestBody cadVendedorRequest: VendedorRequest): ResponseEntity<Usuario> {
 
         val selectVendedor = repository.findByEmailAndTipoUsuario(cadVendedorRequest.usuario.email, tipoUsuario = 2)
@@ -65,7 +65,7 @@ class UsuarioController(
     }
 
     // CADASTRAR ANUNCIO DE VENDEDOR ESPECIFICO(VENDEDOR JÁ ERA CADASTRADO)
-    @PostMapping("cadastrar/vendedor/{id}/anuncio")
+    @PostMapping("/cadastrar/vendedor/{id}/anuncio")
     fun cadAnuncio(@RequestBody novoAnuncio: AddAnuncioRequest, @PathVariable id: Int): ResponseEntity<AnuncioPet> {
 
         val selectVendedor = repository.findById(id).get()

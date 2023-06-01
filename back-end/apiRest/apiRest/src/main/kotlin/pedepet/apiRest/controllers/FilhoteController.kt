@@ -13,13 +13,13 @@ class FilhoteController(
 ) {
 
     // PEGAR FILHOTES POR ID
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     fun buscarFilhotePorId(@PathVariable id:Int): Filhote? {
         return filhoteRepository.findById(id).get()
     }
 
     // TOTAL FILHOTES ADQUIRIDOS
-    @GetMapping("adquiridos")
+    @GetMapping("/adquiridos")
     fun buscarFilhotesAdquiridos():ResponseEntity<Long> {
         val qtdFilhotes = filhoteRepository.countFilhotesAdquiridos()
         return ResponseEntity.status(200).body(qtdFilhotes)

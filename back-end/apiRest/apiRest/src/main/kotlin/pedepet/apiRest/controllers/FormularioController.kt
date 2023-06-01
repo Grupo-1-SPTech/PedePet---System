@@ -11,7 +11,7 @@ import pedepet.apiRest.repositories.FormularioRepository
 class FormularioController(
     val formularioRepository: FormularioRepository
 ) {
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     fun buscarFormularioPorId(@PathVariable id:Int): Formulario? {
         return formularioRepository.findById(id).get()
     }

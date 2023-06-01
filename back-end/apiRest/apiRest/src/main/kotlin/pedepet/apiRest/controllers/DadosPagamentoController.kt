@@ -15,8 +15,8 @@ class DadosPagamentoController(
     val dadosPagamentoRepository: DadosPagamentoRepository
 ) {
 
-    // teste
-    @GetMapping("{id}")
+    // GET BUSCAR PAGAMENTO POR ID
+    @GetMapping("/{id}")
     fun buscarDadosPagamentoPorId(@PathVariable id:Int): DadosPagamento? {
         if (dadosPagamentoRepository.existsById(id)){
             return dadosPagamentoRepository.findById(id).get()

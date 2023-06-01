@@ -12,7 +12,7 @@ class HistoricoVendasController(
     val historicoVendasRepository: HistoricoVendasRepository
 ) {
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     fun buscarHistoricoVendasPorId(@PathVariable id:Int): HistoricoVendas? {
         return historicoVendasRepository.findById(id).get()
     }

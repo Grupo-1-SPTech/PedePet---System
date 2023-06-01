@@ -18,7 +18,7 @@ class AnuncioController(
 ) {
 
     // PEGAR ANUNCIO POR ID
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     fun buscarAnuncioPorId(@PathVariable id:Int): AnuncioPet? {
         return anuncioRepository.findById(id).get()
     }

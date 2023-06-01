@@ -1,26 +1,13 @@
 package pedepet.apiRest.controllers
 
-import net.bytebuddy.matcher.ElementMatchers.any
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
-import org.mockito.InjectMocks
-import org.mockito.Mock
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
-import org.springframework.http.HttpStatus
-import org.springframework.test.web.servlet.MockMvc
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.client.HttpStatusCodeException
-import pedepet.apiRest.dto.CompradorRequest
-import pedepet.apiRest.models.Usuario
-import pedepet.apiRest.repositories.*
 import kotlin.reflect.full.hasAnnotation
 import org.junit.jupiter.api.Test as Test1
 
 
 class UsuarioControllerTest {
-
 
     @Test1
     fun `classe deve estar anotada com @RestController`() {
@@ -32,7 +19,6 @@ class UsuarioControllerTest {
     @Test1
     fun `classe deve estar anotada com @RequestMapping('usuarios')`() {
         val classe = UsuarioController::class.java
-
         val anotacao = classe.getAnnotation(RequestMapping::class.java)
 
         assertNotNull(anotacao)
@@ -41,6 +27,16 @@ class UsuarioControllerTest {
         print("O parametro está presente? $result")
     }
 
+    @Test1
+    fun `class deve estar annotada com @CrossOrigin(http---localhost-3000')`() {
+        val classe = UsuarioController::class.java
+        val anotacao = classe.getAnnotation(CrossOrigin::class.java)
+
+        assertNotNull(anotacao)
+
+        val result = assertEquals("http://localhost:3000", anotacao.value[0])
+        print("O parametro está presente? $result")
+    }
 
     /*POST CADASTRAR COMPRADOR */
 
@@ -48,12 +44,10 @@ class UsuarioControllerTest {
     fun `cadComprador() deve estar anotado com @PostMapping('cadastrar-comprador')`() {
 
         val metodo = UsuarioController::cadComprador
-
         val anotacao = metodo.annotations[0] as PostMapping
 
         val resultMetodo = assertNotNull(anotacao)
-
-        val result = assertEquals("cadastrar/comprador", anotacao.value[0])
+        val result = assertEquals("/cadastrar/comprador", anotacao.value[0])
 
         print("O método está: $resultMetodo e dentro tem o caminho? $result")
     }
@@ -65,8 +59,6 @@ class UsuarioControllerTest {
         val result = (metodo.parameters[1].hasAnnotation<RequestBody>())
         print("O parametro está presente? $result")
     }
-
-
 
 
     /* POST CADASTRAR VENDEDOR */
@@ -84,12 +76,10 @@ class UsuarioControllerTest {
     fun `cadVendedor() deve estar anotado com @PostMapping('cadastrar-vendedor')`() {
 
         val metodo = UsuarioController::cadVendedor
-
         val anotacao = metodo.annotations[0] as PostMapping
 
         val resultMetodo = assertNotNull(anotacao)
-
-        val result = assertEquals("cadastrar/vendedor", anotacao.value[0])
+        val result = assertEquals("/cadastrar/vendedor", anotacao.value[0])
 
         print("O método está: $resultMetodo e dentro tem o caminho? $result")
     }
@@ -102,11 +92,9 @@ class UsuarioControllerTest {
     fun `alterarsenha() deve estar anotado com @PatchMapping('-alterarSenha-{email}')`() {
 
         val metodo = UsuarioController::alterarSenha
-
         val anotacao = metodo.annotations[0] as PatchMapping
 
         val resultMetodo = assertNotNull(anotacao)
-
         val result = assertEquals("/alterarSenha/{email}", anotacao.value[0])
 
         print("O método está: $resultMetodo e dentro tem o caminho? $result")
@@ -128,11 +116,9 @@ class UsuarioControllerTest {
     fun `logar() deve estar anotado com @PostMapping('-login')`() {
 
         val metodo = UsuarioController::logar
-
         val anotacao = metodo.annotations[0] as PostMapping
 
         val resultMetodo = assertNotNull(anotacao)
-
         val result = assertEquals("/login", anotacao.value[0])
 
         print("O método está: $resultMetodo e dentro tem o caminho? $result")
@@ -153,11 +139,9 @@ class UsuarioControllerTest {
     fun `deslogar() deve estar anotado com @DeleteMapping('-logoff-{id}')`() {
 
         val metodo = UsuarioController::deslogar
-
         val anotacao = metodo.annotations[0] as DeleteMapping
 
         val resultMetodo = assertNotNull(anotacao)
-
         val result = assertEquals("/logoff/{id}", anotacao.value[0])
 
         print("O método está: $resultMetodo e dentro tem o caminho? $result")
@@ -171,4 +155,32 @@ class UsuarioControllerTest {
 
         print("O parametro está presente @PathVariable? $resultPath")
     }
+
+   //GET TOTAL VENDEDORES
+
+    @Test
+    fun `buscarQtdVendedores() deve estar anotado com @GetMapping('-vendedor-total')`() {
+
+        val metodo = UsuarioController::buscarQtdVendedores
+        val anotacao = metodo.annotations[0] as GetMapping
+
+        val resultMetodo = assertNotNull(anotacao)
+        val result = assertEquals("/vendedor/total", anotacao.value[0])
+
+        print("O método está: $resultMetodo e dentro tem o caminho? $result")
+    }
+
+   //GET TOTAL COMPRADORES
+   @Test
+   fun `buscarTotalUsuario() deve estar anotado com @GetMapping('-total')`() {
+
+       val metodo = UsuarioController::buscarTotalUsuario
+       val anotacao = metodo.annotations[0] as GetMapping
+
+       val resultMetodo = assertNotNull(anotacao)
+       val result = assertEquals("/total", anotacao.value[0])
+
+       print("O método está: $resultMetodo e dentro tem o caminho? $result")
+   }
+
 }
