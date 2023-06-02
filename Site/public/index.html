@@ -11,7 +11,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
+<body onload = buscarDados()>
 
     <nav>
         <div class="container-nav">
@@ -205,25 +205,25 @@
                 <div class="containerCardsSBP">
 
                     <div class="cardSBP">
-                        <span class="value_metrica">+ 108</span>
+                        <span id="filhotes_adquiridos" class="value_metrica"></span>
                         <div class="linhaSBP">.</div>
                         <span class="txt_metrica">Filhotes<br>adquiridos</span>
                     </div>
 
                     <div class="cardSBP">
-                        <span class="value_metrica">+ 135</span>
+                        <span id="profissionais_cad" class="value_metrica" onload="getTotalVendedores()"></span>
                         <div class="linhaSBP">.</div>
                         <span class="txt_metrica">Profissionais<br>cadastrados</span>
                     </div>
 
                     <div class="cardSBP">
-                        <span class="value_metrica">+ 52</span>
+                        <span id="racas_disp" class="value_metrica" onload="getRacasDisponiveis()"></span>
                         <div class="linhaSBP">.</div>
                         <span class="txt_metrica">Raças<br>disponíveis</span>
                     </div>
 
                     <div class="cardSBP">
-                        <span class="value_metrica">+ 2400</span>
+                        <span id="users_registrados" class="value_metrica" onload="getUsuariosTotal()"></span>
                         <div class="linhaSBP">.</div>
                         <span class="txt_metrica">Usuários<br>registrados</span>
                     </div>
@@ -445,11 +445,7 @@
         </div>
     </footer>
 </body>
-<script src="js/index.js"></script>
 
 </html>
 
-<script>
-
-
-</script>
+<script src="./js/index.js"></script>
