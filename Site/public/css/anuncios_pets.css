@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --orange: #fb3f08;
+  --darkblue: #4c4c9d;
+  --purple: #7c4bc8;
+  --darkpurple: #44207e;
+  --white: #fffafa;
+  --black: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --background: linear-gradient(70deg, #fb3f08, #4c4c9d, #7c4bc8, #fb3f08);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: large;
+  margin-left: inherit;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--purple);
+  border-radius: 30px;
+}
+/* menu */
+
+.container-nav {
+  display: flex;
+  width: 100vw;
+  height: 8vh;
+  flex-direction: row;
+  padding: 2px 4%;
+  background-color: var(--white);
+  align-items: center;
+  overflow-y: hidden;
+}
+
+#logo {
+  height: 80%;
+}
+
+.optionsNav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 30%;
+  align-items: center;
+}
+
+.optionsNav a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.optionsNav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+}
+
+.optionsNav li {
+  text-align: center;
+}
+
+/* Botão menu */
+
+.btn-login {
+  width: 12vw;
+  height: 40px;
+  font-weight: 800;
+  border-radius: 40px;
+  border: none;
+  background-color: var(--orange);
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
