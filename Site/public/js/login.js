@@ -1,26 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("btn-entrar").addEventListener("click", entrar);
-});
-
-function entrar() {
-    fetch("http://localhost:3000/usuarios/login", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            email: document.getElementById("input_email").value,
-            senha: document.getElementById("input_senha").value
-        })
-    })
-        .then(res => res.json())
-        .then((res) => {
-            console.log(res);
-            // Faça algo com a resposta do servidor, como redirecionar para outra página
-            // ou exibir uma mensagem de sucesso.
-        })
-        .catch((err) => {
-            console.log(err);
-            // Trate o erro, por exemplo, exibindo uma mensagem de erro para o usuário.
-        });
-}
+// Função para fazer a requisição de login
+async function fazerLogin() {
+    const email = document.getElementById('input_email').value;
+    const senha = document.getElementById('input_senha').value;
+  
+    const response = await fetch('http://localhost:8080/usuarios/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        senha: senha,
+      }),
+    });
+  
+    if (response.status === 200) {
+      // Login bem-sucedido, redirecionar para a próxima página
+      window.location.href = './index.html';
+    } else if (response.status === 204) {
+      // Usuário não encontrado
+      alert('Usuário não encontrado.');
+    } else if (response.status === 404) {
+      // Senha incorreta
+      alert('Senha incorreta.');
+    } else {
+      // Outro erro
+      alert('Ocorreu um erro durante o login.');
+    }
+  }
+  
+  // Adicionar evento de clique no botão de login
+  document.getElementById('btn-entrar').addEventListener('click', fazerLogin);
