@@ -18,8 +18,8 @@ async function fazerLogin() {
       // Login bem-sucedido, redirecionar para a próxima página
       window.location.href = './index.html';
     } else if (response.status === 204) {
-      // Usuário não encontrado
-      alert('Usuário não encontrado.');
+      // Email inválido.
+      alert('Email inválido.');
     } else if (response.status === 404) {
       // Senha incorreta
       alert('Senha incorreta.');
