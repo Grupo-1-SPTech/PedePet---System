@@ -60,45 +60,50 @@
 
 
             <span class="title" id="span_CEP">CEP</span>
-            <input class="inputCEP" id="input_cep" type="number" placeholder="11111111">
+            <input value="09876543" class="inputCEP" id="input_cep" type="text" placeholder="11111111">
 
             <span class="title" id="span_endereco">Endereço</span>
-            <input class="inputEnd" id="input_end" type="text" placeholder="Seu endereço">
+            <input value="francisco baldin" class="inputEnd" id="input_endereco" type="text" placeholder="Seu endereço">
 
             <div class="alinhamento2">
               <div class="alinhamento2_pt1">
                 <span class="title" id="span_numero">Número</span>
-                <input class="inputNumero" id="input_numero" type="text" placeholder="Número">
+                <input value="135" class="inputNumero" id="input_numero" type="text" placeholder="Número">
 
               </div>
 
               <div class="alinhamento2_pt2">
                 <span class="title" id="span_UF">UF</span>
-
-                <select name="selectUF" id="select_UF">
-                  <option value="" selected disabled>Escolha</option>
-                  <option value="SP">SP</option>
-                </select>
-
+                <div class="select-menu">
+                  <div class="select-btn" id="select_assunto">
+                    <span class="sBtn-text">Estado</span>
+                    <img src="./css/images/arrowDrop.svg" alt="">
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">SP</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-
             </div>
 
             <span class="title" id="span_cidade">Cidade</span>
-            <input class="inputCidade" id="input_cidade" type="text" placeholder="Sua cidade">
+            <input value="São Paulo" class="inputCidade" id="input_cidade" type="text" placeholder="Sua cidade">
 
 
             <span class="title" id="span_bairro">Bairro</span>
-            <input class="inputBairro" id="input_bairro" type="text" placeholder="Seu bairro">
+            <input value="Guaianases" class="inputBairro" id="input_bairro" type="text" placeholder="Seu bairro">
 
             <span class="title" id="span_comp">Complemento</span>
-            <input class="inputComp" id="input_comp" type="text" placeholder="Ponto de referência">
+            <input value="Casa" class="inputComp" id="input_complemento" type="text" placeholder="Ponto de referência">
 
 
 
             <div class="btns">
               <button class="cancelar">Cancelar</button>
-              <button onclick="selecionarUsuario2()" class="prosseguir">Prosseguir</button>
+              <button onclick="validarCampoCad2()" class="prosseguir">Prosseguir</button>
+              <div id="snackbar"></div>
             </div>
 
           </div>
@@ -186,7 +191,7 @@
       2023 todos os direitos reservados.
     </div>
   </footer>
-  <script src="js/register_user2.js"></script>
 </body>
+<script src="./js/registerUser.js"></script>
 
 </html>

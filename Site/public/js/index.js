@@ -1,4 +1,4 @@
-// função select ASSUNTO
+// função select ASSUNTO 
 const optionMenu = document.querySelector('.select-menu');
     selectBtn = optionMenu.querySelector('.select-btn');
     options = optionMenu.querySelectorAll('.option');

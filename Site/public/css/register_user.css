@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
+:root {
   --orange: #FB3F08;
   --darkblue: #4C4C9D;
   --purple: #7C4BC8;
@@ -9,7 +9,7 @@
   --black: #000;
   --gray: #333333;
   --lightgray: #D9D9D9;
-  --background: linear-gradient(70deg,#FB3F08, #4C4C9D,#7C4BC8,#FB3F08);
+  --background: linear-gradient(70deg, #FB3F08, #4C4C9D, #7C4BC8, #FB3F08);
 }
 
 *,
@@ -38,184 +38,185 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background:  var(--purple);
+  background: var(--purple);
   border-radius: 30px;
 }
+
 /* menu */
 
 .container-nav {
-    display: flex;
-    width: 100vw;
-    height: 8vh;
-    flex-direction: row;
-    padding: 2px 4%;
-    background-color: var(--white);
-    align-items: center;
-    overflow-y: hidden;
+  display: flex;
+  width: 100vw;
+  height: 8vh;
+  flex-direction: row;
+  padding: 2px 4%;
+  background-color: var(--white);
+  align-items: center;
+  overflow-y: hidden;
 
 }
 
 #logo {
-    height: 80%;
-    cursor: pointer;
+  height: 80%;
+  cursor: pointer;
 }
 
 .options {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding-left: 30%;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 30%;
+  align-items: center;
 }
 
 .options a {
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--black);
-    font-weight: 800;
-    font-size: 16px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--black);
+  font-weight: 800;
+  font-size: 16px;
 }
 
 .options ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
 }
 
 .options li {
-    text-align: center;
+  text-align: center;
 }
 
 /* Botão menu */
 
 .btn-login {
-    width: 12vw;
-    height: 40px;
-    font-weight: 800;
-    border-radius: 40px;
-    border: none;
-    background-color: var(--orange);
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
+  width: 12vw;
+  height: 40px;
+  font-weight: 800;
+  border-radius: 40px;
+  border: none;
+  background-color: var(--orange);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* First section */
 
 .containerHome {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    flex-direction: row;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
 }
 
 .leftHome {
-    display: flex;
-    width: 55vw;
-    flex-direction: column;
-    padding: 6% 4%;
+  display: flex;
+  width: 55vw;
+  flex-direction: column;
+  padding: 6% 4%;
 }
 
 .leftHome h2 {
-    font-size: 24px;
-    color: var(--orange);
-    font-weight: 800;
+  font-size: 24px;
+  color: var(--orange);
+  font-weight: 800;
 }
 
 .leftHome h1 {
-    font-size: 42px;
-    color: var(--black);
-    font-weight: 900;
+  font-size: 42px;
+  color: var(--black);
+  font-weight: 900;
 }
 
 .leftHome span {
-    font-size: 20px;
-    font-weight: 600;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .leftHome #txt1 {
-    margin-top: 6%;
+  margin-top: 6%;
 }
 
 .containerBtn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5%;
-    padding-top: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5%;
+  padding-top: 20%;
 }
 
 .cadUser {
-    font-size: 16px;
-    width: 16vw;
-    height: 60px;
-    border-radius: 40px;
-    border: none;
-    color: var(--white);
-    background-color: var(--orange);
-    font-weight: 800;
-    cursor: pointer;
+  font-size: 16px;
+  width: 16vw;
+  height: 60px;
+  border-radius: 40px;
+  border: none;
+  color: var(--white);
+  background-color: var(--orange);
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .cadPet {
-    font-size: 16px;
-    width: 16vw;
-    height: 60px;
-    border-radius: 40px;
-    border: 4px solid var(--darkpurple);
-    color: var(--darkpurple);
-    background-color: transparent;
-    font-weight: 800;
-    cursor: pointer;
+  font-size: 16px;
+  width: 16vw;
+  height: 60px;
+  border-radius: 40px;
+  border: 4px solid var(--darkpurple);
+  color: var(--darkpurple);
+  background-color: transparent;
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .cadPet:hover {
-    background-color: var(--darkpurple);
-    color: var(--white);
-    transition: .4s;
+  background-color: var(--darkpurple);
+  color: var(--white);
+  transition: .4s;
 }
 
 .rightHome {
-    display: flex;
-    padding-top: 1%;
+  display: flex;
+  padding-top: 1%;
 }
 
 #blob {
-    position: absolute;
-    right: 0;
-    width: 620px;
-    z-index: -1;
+  position: absolute;
+  right: 0;
+  width: 620px;
+  z-index: -1;
 }
 
 #dog {
-    height: 80%;
-    margin-top: 16%;
+  height: 80%;
+  margin-top: 16%;
 }
 
 .bloco {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .review {
-    display: flex;
-    flex-direction: column;
-    width: 240px;
-    height: 160px;
-    border-radius: 8px;
-    margin-top: 74%;
-    margin-right: 4%;
-    background-color: var(--darkblue);
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 160px;
+  border-radius: 8px;
+  margin-top: 74%;
+  margin-right: 4%;
+  background-color: var(--darkblue);
 }
 
 .topReview {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 /*gradiente de fundo*/
@@ -230,43 +231,43 @@
 
 @-webkit-keyframes gradiente {
   0% {
-      background-position: 96% 0%
+    background-position: 96% 0%
   }
 
   50% {
-      background-position: 5% 100%
+    background-position: 5% 100%
   }
 
   100% {
-      background-position: 96% 0%
+    background-position: 96% 0%
   }
 }
 
 @-moz-keyframes gradiente {
   0% {
-      background-position: 96% 0%
+    background-position: 96% 0%
   }
 
   50% {
-      background-position: 5% 100%
+    background-position: 5% 100%
   }
 
   100% {
-      background-position: 96% 0%
+    background-position: 96% 0%
   }
 }
 
 @keyframes gradiente {
   0% {
-      background-position: 96% 0%
+    background-position: 96% 0%
   }
 
   50% {
-      background-position: 5% 100%
+    background-position: 5% 100%
   }
 
   100% {
-      background-position: 96% 0%
+    background-position: 96% 0%
   }
 }
 
@@ -279,7 +280,7 @@
   width: 100%;
   height: 100%;
   padding-top: 3%;
-  
+
 }
 
 .formCad {
@@ -346,7 +347,7 @@
   color: var(--darkpurple);
   font-weight: 800;
   font-size: 1.5em;
-  
+
 }
 
 .dot {
@@ -356,6 +357,7 @@
   border-radius: 50%;
   display: inline-block;
 }
+
 .dot1 {
   height: 15px;
   width: 15px;
@@ -381,8 +383,8 @@
 .inputNome {
   width: 100%;
   height: 40px;
-  border-radius: 24px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   background: url(images/icon-user-gray.svg) no-repeat 20px 7px;
   padding-left: 12%;
   background-size: 20px;
@@ -391,8 +393,8 @@
 .inputEmail {
   width: 100%;
   height: 40px;
-  border-radius: 24px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   background: url(images/email.svg) no-repeat 20px 7px;
   padding-left: 12%;
   background-size: 20px;
@@ -408,22 +410,22 @@
 
 
 .alinhamento2_pt1 {
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
 .inputIdade {
   width: 100%;
   height: 40px;
-  border-radius: 24px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   background: url(images/cpf.svg) no-repeat 20px 7px;
   padding-left: 25%;
   background-size: 20px;
 }
 
 .alinhamento2_pt2 {
-  display:flex;
+  display: flex;
   flex-direction: column;
   padding-left: 15px;
 }
@@ -431,8 +433,8 @@
 .inputCPF {
   width: 100%;
   height: 40px;
-  border-radius: 24px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   background: url(images/cpf.svg) no-repeat 20px 7px;
   padding-left: 25%;
   background-size: 20px;
@@ -441,8 +443,8 @@
 .inputTel {
   width: 100%;
   height: 40px;
-  border-radius: 24px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   background: url(images/icon-phone.svg) no-repeat 20px 7px;
   padding-left: 25%;
   background-size: 20px;
@@ -451,8 +453,8 @@
 .inputSenha {
   width: 100%;
   height: 40px;
-  border-radius: 24px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   background: url(images/cadeado.svg) no-repeat 20px 7px;
   padding-left: 12%;
   background-size: 20px;
@@ -461,44 +463,105 @@
 .inputSenha2 {
   width: 100%;
   height: 40px;
-  border-radius: 24px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   background: url(images/cadeado.svg) no-repeat 20px 7px;
   padding-left: 12%;
   background-size: 20px;
 }
 
-.selectUser {
+.container_box {
+  padding: 6% 0% 6% 0%;
+}
+
+/* css dropdown Tipo User */
+.select-menu {
   width: 100%;
-  height: 40px;
-  border-radius: 24px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/icon-user-gray.svg) no-repeat 20px 7px;
-  padding-left: 12%;
-  background-size: 20px;
-}
-
-::-webkit-input-placeholder { /* Edge */
-  color:var(--lightgray);
-}
-
-input:focus{ outline: none; }
-
-/* Drop Down */
-
-select:focus{ outline: none; }
-
-select {
-  width: 13vw;
-  height: 6.8vh;
+  border-radius: 12px;
   border: 2px solid rgba(0, 0, 0, 0.6);
-  border-radius: 24px; 
-  color: #707070;
-  padding-left: 9%
+  ;
+}
+
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  background-color: #fff;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.select-btn img {
+  height: 24px;
+  transition: 0.3s;
+}
+
+#select_tipo_user {
+  background: url(images/icon-user-gray.svg) no-repeat 18px 14px;
+  background-size: 28px 28px;
+  padding-left: 15%;
+}
+
+.select-menu.active .select-btn img {
+  transform: rotate(-180deg);
+}
+
+.select-menu .options {
+  position: relative;
+  display: none;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+}
+
+.select-menu.active .options {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  max-height: 180px;
+  max-width: 280px;
+}
+
+.options .option {
+  display: flex;
+  height: 55px;
+  width: 100%;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  margin-top: 10px;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 18px;
+}
+
+.options .option:hover {
+  background-color: var(--darkpurple);
+  color: var(--white);
 }
 
 
-/* FIM do drop */
+
+::-webkit-input-placeholder {
+  /* Edge */
+  color: var(--lightgray);
+}
+
+input:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
 
 .btns {
   display: flex;
@@ -509,33 +572,120 @@ select {
 
 .cancelar {
   font-size: 16px;
-    width: 180px;
-    height: 40px;
-    border-radius: 24px;
-    border: 4px solid var(--darkpurple);
-    color: var(--darkpurple);
-    background-color: transparent;
-    font-weight: 800;
-    cursor: pointer;
+  width: 180px;
+  height: 40px;
+  border-radius: 12px;
+  border: 4px solid var(--darkpurple);
+  color: var(--darkpurple);
+  background-color: transparent;
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .cancelar:hover {
   background-color: var(--darkpurple);
-    color: var(--white);
-    transition: .4s;
+  color: var(--white);
+  transition: .4s;
 }
 
 .prosseguir {
   font-size: 16px;
   width: 180px;
   height: 40px;
-  border-radius: 24px;
-    border: none;
-    color: var(--white);
-    background-color: var(--orange);
-    font-weight: 800;
-    cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  color: var(--white);
+  background-color: var(--orange);
+  font-weight: 800;
+  cursor: pointer;
+}
 
+#snackbar {
+  visibility: hidden;
+  /* Hidden by default. Visible on click */
+  min-width: 250px;
+  /* Set a default minimum width */
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(-50%);
+  /* Divide value of min-width by 2 */
+  background-color: var(--darkpurple);
+  /* Black background color */
+  color: var(--white);
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  left: 50%;
+  /* Center the snackbar */
+  bottom: 30px;
+  /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 /* Footer */
@@ -564,7 +714,7 @@ footer {
   display: flex;
   gap: 2rem;
   margin-top: 1.5rem;
-} 
+}
 
 #footer_social_media .footer-link {
   display: flex;

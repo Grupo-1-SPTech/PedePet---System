@@ -57,56 +57,111 @@
           <div class="inputs">
 
             <span class="title">Tipo de moradia</span>
-              <select name="select_moradia" id="select_moradia">
-                <option value="" selected disabled>Escolha</option>
-                <option value="Apartamento">Apartamento</option>
-                <option value="Casa">Casa</option>
-              </select>
-            
+            <div class="select-menu1">
+              <div class="select-btn1" id="select_moradia">
+                <span class="sBtn-text1">Escolha</span>
+                <img src="./css/images/arrowDrop.svg" alt="">
+              </div>
 
-            <span class="title" id="alinhamento">Quantos cômodos na casa</span>
-            <select name="select_comodos" id="select_comodos">
-              <option value="" selected disabled>Escolha</option>
-              <option value="1 a 5">1 a 5</option>
-              <option value="6 ou mais">6 ou mais</option>
-            </select>
+              <ul class="options1">
+                <li class="option1">
+                  <span class="option-text1">Casa</span>
+                </li>
+                <li class="option1">
+                  <span class="option-text1">Apartamento</span>
+                </li>
+                <li class="option1">
+                  <span class="option-text1">Sitio/ Fazenda</span>
+                </li>
+              </ul>
+            </div>
 
-            <span class="title" id="alinhamento">Quantos residentes na casa</span>
-            <select name="select_residentes" id="select_residentes">
-              <option value="" selected disabled>Escolha</option>
-              <option value="1 a 5">1 a 5</option>
-              <option value="6 ou mais">6 ou mais</option>
-            </select>
+            <span class="title">Quantos cômodos na casa</span>
+            <div class="select-menu2">
+              <div class="select-btn2" id="select_comodos">
+                <span class="sBtn-text2">Escolha a quantidade</span>
+                <img src="./css/images/arrowDrop.svg" alt="">
+              </div>
 
-            <span class="title" id="alinhamento">Quantas horas você passa em casa por dia</span>
-            <select name="select_horas" id="select_horas">
-              <option value="" selected disabled>Escolha</option>
-              <option value="1 a 6">1 a 3</option>
-              <option value="7 a 12">7 a 12</option>
-              <option value="13 a 18">13 a 18</option>
-              <option value="19 a 24">19 a 24</option>
-            </select>
-            
+              <ul class="options2">
+                <li class="option2">
+                  <span class="option-text2">1 a 3</span>
+                </li>
+                <li class="option2">
+                  <span class="option-text2">3 a 5</span>
+                </li>
+                <li class="option2">
+                  <span class="option-text2">5 a 10</span>
+                </li>
+                <li class="option2">
+                  <span class="option-text2">mais de 10</span>
+                </li>
+              </ul>
+            </div>
 
-              <span class="title" id="span_pedigree">Já teve algum pet?</span>
+            <span class="title">Quantos residentes na casa</span>
+            <div class="select-menu3">
+              <div class="select-btn3" id="select_residentes">
+                <span class="sBtn-text3">Residentes</span>
+                <img src="./css/images/arrowDrop.svg" alt="">
+              </div>
 
-              
+              <ul class="options3">
+                <li class="option3">
+                  <span class="option-text3">2 a 3</span>
+                </li>
+                <li class="option3">
+                  <span class="option-text3">3 a 5</span>
+                </li>
+                <li class="option3">
+                  <span class="option-text3">5 a 8</span>
+                </li>
+                <li class="option3">
+                  <span class="option-text3">mais de 8</span>
+                </li>
+              </ul>
+            </div>
+
+            <span class="title">Quantas horas você passa em casa por dia</span>
+            <div class="select-menu4">
+              <div class="select-btn4" id="select_horasCasa">
+                <span class="sBtn-text4">Período em casa</span>
+                <img src="./css/images/arrowDrop.svg" alt="">
+              </div>
+
+              <ul class="options4">
+                <li class="option4">
+                  <span class="option-text4">1 a 3hr</span>
+                </li>
+                <li class="option4">
+                  <span class="option-text4">7 a 12hr</span>
+                </li>
+                <li class="option4">
+                  <span class="option-text4">13 a 18hr</span>
+                </li>
+                </ul>
+                </div>
+
+
+                <span class="title" id="span_pedigree">Já teve algum pet?</span>
+
+
                 <label class="form-control" value="1">
                   <input type="radio" name="radioTevePet" />
                   Sim
                 </label>
-              
 
-              
+
+
                 <label class="form-control" value="0">
                   <input type="radio" name="radioNaoTevePet" />
                   Não
                 </label>
-              
-              <div class="btns">
-                <button class="cancelar">Voltar</button>
-                <button class="prosseguir">Prosseguir</button>
-              </div>
+
+                <div class="btns">
+                  <button class="cancelar">Voltar</button>
+                  <button onclick="validarCampoCad3()" class="prosseguir">Prosseguir</button>
+                </div>
 
 
 
@@ -191,7 +246,7 @@
       2023 todos os direitos reservados.
     </div>
   </footer>
-  <script src="js/register_user3.js"></script>
+  <script src="js/registerUser.js"></script>
 </body>
 
 </html>
