@@ -29,7 +29,7 @@ data class Usuario(
 
     @Column(name = "telefone")
     @field:Pattern(
-        regexp = "(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})",
+        regexp = "^[0-9]+\$",
         message = "Envie um telefone válido"
     ) var telefone: String?,
 

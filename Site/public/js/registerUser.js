@@ -40,11 +40,12 @@ class formCadPt2 {
 
 // objeto que recebe valores do Cadastro de usuário Pt3
 class formCadPt3 {
-    constructor(moradia, comodos, residentes, horasCasa) {
+    constructor(moradia, comodos, residentes, horasCasa, tevePet) {
         this.moradia = moradia;
         this.comodos = comodos;
         this.residentes = residentes;
         this.horasCasa = horasCasa;
+        this.tevePet = tevePet;
     }
 }
 
@@ -218,14 +219,10 @@ function validarCampoCad2() {
         cadastroUserOBJT2.complemento = complemento;
     }
 
-    console.log(cadastroUserOBJT2);
-    console.log(cadastroUserOBJT);
-
-    localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
-    localStorage.setItem('cadastroUserOBJT2', JSON.stringify(cadastroUserOBJT2));
-
     if (cadastroUserOBJT.tipoUser == "Comprador") {
         cadastroUserOBJT.tipoUser = 1;
+        localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+        localStorage.setItem('cadastroUserOBJT2', JSON.stringify(cadastroUserOBJT2));
         window.location.href = "./register_user3.html";
     } else {
         cadastroUserOBJT.tipoUser = 2;
@@ -233,28 +230,72 @@ function validarCampoCad2() {
         console.log("cadastro de vendedor realizado");
         return
     }
-
 }
 
-const cadastroUserOBJTaa = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
-const cadastroUserOBJT2bb = JSON.parse(localStorage.getItem('cadastroUserOBJT2'));
-console.log(cadastroUserOBJTaa);
-console.log(cadastroUserOBJT2bb);
-console.log(cadastroUserOBJT3);
 
-function validarCampoCad3(cadastroUserOBJT3) {
 
-    fetch("http://localhost:8080/usuarios/cadastrar/comprador", {
+function validarCampoCad3() {
+
+    const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
+    const cadastroUserOBJT2 = JSON.parse(localStorage.getItem('cadastroUserOBJT2'));
+
+    const radioTevePet = document.querySelector('.radioTevePet');
+    const radioNaoTevePet = document.querySelector('.radioNaoTevePet');
+
+    // Verificar qual radio button foi selecionado
+    if (radioTevePet.checked) {
+        // O usuário selecionou o radio button "Sim"
+        cadastroUserOBJT3.tevePet = 1;
+        console.log("Opção selecionada: Sim");
+    } else if (radioNaoTevePet.checked) {
+        // O usuário selecionou o radio button "Não"
+        cadastroUserOBJT3.tevePet = 0;
+        console.log("Opção selecionada: Não");
+    }
+
+    console.log(cadastroUserOBJT);
+    console.log(cadastroUserOBJT2);
+    console.log(cadastroUserOBJT3);
+
+    if (cadastroUserOBJT3.tevePet == undefined  || cadastroUserOBJT3.moradia == undefined || cadastroUserOBJT3.comodos == undefined || cadastroUserOBJT3.residentes == undefined || cadastroUserOBJT3.horasCasa == undefined) {
+        snackbar.innerHTML = "É necessário preencher todos os campos";
+        showSnackBar();
+        return
+    } else {
+        console.log("inserirendo objetos")
+        cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
+    }
+}
+
+
+function cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2) {
+   
+
+    // Cadastro de usuario (vendedor)
+    fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            nome: pt1Cad.nome,
-            email: pt1Cad.email,
-            senha: pt1Cad.senha,
-            cpf: pt1Cad.cpf,
-            tipoUser: pt1Cad.tipoUser
+                "usuario": {
+                  "nome": cadastroUserOBJT.nome,
+                  "email": cadastroUserOBJT.email,
+                  "cpf": cadastroUserOBJT.cpf,
+                  "telefone": cadastroUserOBJT.numero,
+                  "senha": cadastroUserOBJT.senha,
+                  "tipoUsuario": cadastroUserOBJT.tipoUser,
+                  "autenticado": true
+                },
+                "endereco": {
+                  "cep": cadastroUserOBJT2.cep,
+                  "rua": cadastroUserOBJT2.rua,
+                  "numero": cadastroUserOBJT2.numero,
+                  "complemento": cadastroUserOBJT2.complemento,
+                  "bairro": cadastroUserOBJT2.bairro,
+                  "cidade": cadastroUserOBJT2.cidade,
+                  "estado": cadastroUserOBJT2.uf
+                }
         })
     })
         .then(res => res.json())
@@ -264,8 +305,56 @@ function validarCampoCad3(cadastroUserOBJT3) {
         .catch((err) => {
             console.log(err)
         })
+}
 
+function cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3) {
+
+    console.log('entrando no fetch comprador');
+    console.log(cadastroUserOBJT);
+    console.log(cadastroUserOBJT2);
     console.log(cadastroUserOBJT3);
+
+
+    fetch("http://localhost:8080/usuarios/cadastrar/comprador", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "usuario": {
+                "nome": cadastroUserOBJT.nome,
+                "email": cadastroUserOBJT.email,
+                "cpf": cadastroUserOBJT.cpf,
+                "telefone": cadastroUserOBJT.telefone,
+                "senha": cadastroUserOBJT.senha,
+                "tipoUsuario": cadastroUserOBJT.tipoUser,
+                "autenticado": true
+            },
+            "endereco": {
+                "cep": cadastroUserOBJT2.cep,
+                "rua": cadastroUserOBJT2.rua,
+                "numero": cadastroUserOBJT2.numero,
+                "complemento": cadastroUserOBJT2.complemento,
+                "bairro": cadastroUserOBJT2.bairro,
+                "cidade": cadastroUserOBJT2.cidade,
+                "estado": cadastroUserOBJT2.uf
+            },
+            "formulario": {
+                "tipoMoradia": cadastroUserOBJT3.moradia,
+                "qtdComodos": cadastroUserOBJT3.comodos,
+                "qtdMoradores": cadastroUserOBJT3.residentes,
+                "qtdHorasCasa": cadastroUserOBJT3.horasCasa,
+                "possuiPet": cadastroUserOBJT3.tevePet
+            }
+        })
+    })
+        .then(res => res.json())
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 }
 
 if (document.querySelector('.select-menu') != null) {
@@ -299,8 +388,6 @@ options1 = optionMenu1.querySelectorAll('.option1');
 sBtn_text1 = optionMenu1.querySelector('.sBtn-text1');
 
 selectBtn1.addEventListener('click', () => optionMenu1.classList.toggle('active1'))
-console.log("estou na fun")
-
 
 options1.forEach(option1 => {
     option1.addEventListener('click', () => {
@@ -345,7 +432,6 @@ options3.forEach(option3 => {
         cadastroUserOBJT3.residentes = selectedOption3; // valor selecionado pelo usuário
 
         optionMenu3.classList.remove('active3')
-        console.log('dentro do select');
     })
 });
 
@@ -366,56 +452,3 @@ options4.forEach(option4 => {
         optionMenu4.classList.remove('active4')
     })
 });
-
-
-function cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2) {
-    const pt1Cad = cadastroUserOBJT;
-    const pt2Cad = cadastroUserOBJT2;
-
-    // Cadastro de usuario (vendedor)
-    fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nome: pt1Cad.nome,
-            email: pt1Cad.email,
-            senha: pt1Cad.senha,
-            cpf: pt1Cad.cpf,
-            tipoUser: pt1Cad.tipoUser
-        })
-    })
-        .then(res => res.json())
-        .then((res) => {
-            console.log(res)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-
-    // Cadastro de endereço
-    fetch("http://localhost:8080/usuarios/cadastrar/endereco", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            cep: pt2Cad.cep,
-            rua: pt2Cad.rua,
-            numero: pt2Cad.numero,
-            complemento: pt2Cad.complemento,
-            bairro: pt2Cad.bairro,
-            estado: pt2Cad.uf
-        })
-    })
-        .then(res => res.json())
-        .then((res) => {
-            console.log(res)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-}
-
-
