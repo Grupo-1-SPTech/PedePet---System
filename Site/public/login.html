@@ -44,23 +44,29 @@
             <h1>Entre em sua conta</h1>
           </div>
 
-          <div class="inputs">
+          <form action="" id="loginForm">
+            <div class="inputs">
 
-            <span class="title">Email</span>
-            <input class="inputCad" id="input_email" type="email" placeholder="email@exemplo.com">
+              <span class="title">Email</span>
+              <input class="inputCad" id="input_email" type="email" placeholder="email@exemplo.com"
+                autocomplete="email">
 
-            <span class="title" id="span_email">Senha</span>
-            <input class="inputCad2" id="input_senha" type="password" placeholder="Sua senha">
+              <span class="title" id="span_email">Senha</span>
+              <input class="inputCad2" id="input_senha" type="password" placeholder="Sua senha"
+                autocomplete="current-password">
 
-            <div class="extras">
-              <a href="./forgotpass_1.html" id="esqueci">Esqueci minha senha</a>
-              <a href="./register_user1.html" id="register">Não tem uma conta? Crie uma</a>
+              <div class="extras">
+                <a href="./forgotpass_1.html" id="esqueci">Esqueci minha senha</a>
+                <a href="./register_user1.html" id="register">Não tem uma conta? Crie uma</a>
+              </div>
+
+              <div class="btns">
+                <button type="button" onclick="validarLogin()" id="btn-entrar" class="prosseguir">Entrar</button>
+                <div id="snackbar"></div>
+              </div>
+
             </div>
-            <div class="btns">
-              <button onclick="entrar()" class="prosseguir">Entrar</button>
-            </div>
-
-          </div>
+          </form>
 
         </div>
 

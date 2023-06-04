@@ -50,51 +50,50 @@ function entrarVendedor() {
 }
 
 function getFilhotesAdquiridos(){
-    fetch("http://localhost:3000/filhotes/adquiridos", {
+    fetch("http://localhost:8080/filhotes/adquiridos", {
         method: "GET"
     })
     .then(res => res.json())
-    .then((res) => {
-        for (let i = 0; i < res._embedded.filhotes.length; i++) {
-            console.log(res._embedded.filhotes[i])
-        }
+    .then((data) => {
+        filhotes_adquiridos.innerHTML = data
     })  
 }
 
 function getTotalVendedores(){
-    fetch("http://localhost:3000/usuarios/vendedor/total", {
+    fetch("http://localhost:8080/usuarios/vendedor/total", {
         method: "GET"
     })
     .then(res => res.json())
-    .then((res) => {
-        for (let i = 0; i < res._embedded.vendedores.length; i++) {
-            console.log(res._embedded.vendedores[i])
-        }
+    .then((data) => {
+        profissionais_cad.innerHTML = data
     })  
 }
 
 function getRacasDisponiveis(){
-    fetch("http://localhost:3000/anuncios/racasDiponiveis", {
+    fetch("http://localhost:8080/anuncios/racasDiponiveis", {
         method: "GET"
     })
     .then(res => res.json())
-    .then((res) => {
-        for (let i = 0; i < res._embedded.anuncios.length; i++) {
-            console.log(res._embedded.anuncios[i])
-        }
+    .then((data) => {
+        racas_disp.innerHTML = data
     })  
 }
 
 function getUsuariosTotal(){
-    fetch("http://localhost:3000/usuarios", {
+    fetch("http://localhost:8080/usuarios/total", {
         method: "GET"
     })
     .then(res => res.json())
-    .then((res) => {
-        for (let i = 0; i < res._embedded.usuarios.length; i++) {
-            console.log(res._embedded.usuarios[i])
-        }
-    })  
+    .then((data) => {
+        users_registrados.innerHTML = data
+    }) 
+}
+
+function buscarDados() {
+    getFilhotesAdquiridos()
+    getRacasDisponiveis()
+    getTotalVendedores()
+    getUsuariosTotal()
 }
 
 
