@@ -1015,3 +1015,7 @@ footer {
   font-weight: 400;
   color: var(--black);
 }
+
+::-webkit-input-placeholder { /* Edge */
+  color:var(--darkgray);
+}

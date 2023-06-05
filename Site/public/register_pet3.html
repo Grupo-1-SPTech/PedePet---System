@@ -94,48 +94,51 @@
               <div class="alinhamento2_pt3">
                 <span class="title" id="span_foto">Fotos do casal de pais</span>
                 <div class="box_foto">
-                  <span id="div_imagem">Arraste ou clique aqui para adicionar a url da imagem do casal</span>
+                  <!-- <label for="input_imagem" id="div_imagem">
+                   Clique aqui para adicionar a url da imagem do casal
+                  </label> -->
+                  <input type="file" id="input_imagem" accept="image/*" placeholder="Escolha uma imagem">
                 </div>
+
+                <div class="alinhamento2_pt3">
+                  <span class="title" id="span_foto">Descrição do casal de pais</span>
+                  <input class="box_observacao" id="span_observacao"
+                    placeholder="Escreva uma descrição para os pets"></input>
+                </div>
+
+                <div class="btns">
+                  <button onclick="location.href='./register_pet2.html'" class="cancelar">Voltar</button>
+                  <button class="prosseguir" onclick="validarCampoCad3()">Prosseguir</button>
+                  <div id="snackbar"></div>
+                </div>
+
               </div>
-
-              <div class="alinhamento2_pt3">
-                <input class="box_observacao" id="span_observacao"
-                  placeholder="Escreva observações sobre os pets:"></input>
-
-              </div>
-
-              <div class="btns">
-                <button onclick="location.href='./register_pet2.html'" class="cancelar">Voltar</button>
-                <button class="prosseguir" onclick="cadastrarPet3()">Prosseguir</button>
-              </div>
-
             </div>
+
           </div>
 
+
+
         </div>
-
-
-
       </div>
-    </div>
   </main>
 
   <footer>
     <div id="footer_content">
       <div id="footer_contacts">
-        <img src="/public/css/images/logoPedepetRoxo.png" alt="Logo PedePet" id="logoFooter">
+        <img src="./css/images/logoPedepetRoxo.png" alt="Logo PedePet" id="logoFooter">
 
         <div id="footer_social_media">
           <a href="https://instagram.com/pedepetoficial?igshid=MTIyMzRjYmRlZg==" class="footer-link" id="instagram">
-            <img src="/public/css/images/icon-instagram.svg" class="fa-brands fa-facebook-f">
+            <img src="./css/images/icon-instagram.svg" class="fa-brands fa-facebook-f">
           </a>
 
           <a href="#" class="footer-link" id="facebook">
-            <img src="/public/css/images/icon-facebook.svg" class="fa-brands fa-facebook-f">
+            <img src="./css/images/icon-facebook.svg" class="fa-brands fa-facebook-f">
           </a>
 
           <a href="#" class="footer-link" id="whatsapp">
-            <img src="/public/css/images/icon-whatsapp.svg" class="fa-brands fa-facebook-f">
+            <img src="./css/images/icon-whatsapp.svg" class="fa-brands fa-facebook-f">
           </a>
         </div>
       </div>
@@ -163,13 +166,13 @@
           <h3>Funções</h3>
         </li>
         <li>
-          <a href="../login/login.html" class="footer-link">Entrar</a>
+          <a href="./login.html" class="footer-link">Entrar</a>
         </li>
         <li>
-          <a href="../register_user/register_user1.html" class="footer-link">Cadastrar-se</a>
+          <a href="./register_user1.html" class="footer-link">Cadastrar-se</a>
         </li>
         <li>
-          <a href="../forgotpass/forgotpass_1.html" class="footer-link">Esqueci minha senha</a>
+          <a href="./forgotpass_1.html" class="footer-link">Esqueci minha senha</a>
         </li>
       </ul>
 
@@ -183,7 +186,7 @@
         <div id="input_group">
           <input type="email" id="email" placeholder="email@exemplo.com">
           <button>
-            <img src="/public/css/images/email.svg" class="fa-regular fa-envelope">
+            <img src="./css/images/email.svg" class="fa-regular fa-envelope">
           </button>
         </div>
       </div>
@@ -194,7 +197,8 @@
       2023 todos os direitos reservados.
     </div>
   </footer>
-  <script src="js/register_pet3.js"></script>
 </body>
+
+<script src="js/register_pet.js"></script>
 
 </html>

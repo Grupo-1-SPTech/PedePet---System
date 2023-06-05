@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
-  --orange: #FB3F08;
-  --darkblue: #4C4C9D;
-  --purple: #7C4BC8;
-  --darkpurple: #44207E;
-  --white: #FFFAFA;
+:root {
+  --orange: #fb3f08;
+  --darkblue: #4c4c9d;
+  --purple: #7c4bc8;
+  --darkpurple: #44207e;
+  --white: #fffafa;
   --black: #000;
-  --gray: #333333;
-  --lightgray: #D9D9D9;
-  --background: linear-gradient(70deg,#FB3F08, #4C4C9D,#7C4BC8,#FB3F08);
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --background: linear-gradient(70deg, #fb3f08, #4c4c9d, #7c4bc8, #fb3f08);
 }
 
 *,
@@ -502,7 +502,7 @@ input[type="radio"]:focus {
 }
 
 ::-webkit-input-placeholder { /* Edge */
-  color:var(--lightgray);
+  color:var(--darkgray);
 }
 
 input:focus{ outline: none; }
@@ -585,6 +585,96 @@ select {
     font-weight: 800;
     cursor: pointer;
 
+}
+
+/* Modal erros  */
+
+#snackbar {
+  visibility: hidden;
+  /* Hidden by default. Visible on click */
+  min-width: 250px;
+  /* Set a default minimum width */
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(-50%);
+  /* Divide value of min-width by 2 */
+  background-color: var(--darkpurple);
+  /* Black background color */
+  color: var(--white);
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  left: 50%;
+  /* Center the snackbar */
+  bottom: 30px;
+  /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 /* Footer */

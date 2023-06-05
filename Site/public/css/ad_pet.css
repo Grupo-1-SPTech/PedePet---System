@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
-  --orange: #FB3F08;
-  --darkblue: #4C4C9D;
-  --purple: #7C4BC8;
-  --darkpurple: #44207E;
-  --white: #FFFAFA;
+:root {
+  --orange: #fb3f08;
+  --darkblue: #4c4c9d;
+  --purple: #7c4bc8;
+  --darkpurple: #44207e;
+  --white: #fffafa;
   --black: #000;
-  --background: linear-gradient(70deg,#FB3F08, #4C4C9D,#7C4BC8,#FB3F08);
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --background: linear-gradient(70deg, #fb3f08, #4c4c9d, #7c4bc8, #fb3f08);
 }
+
 
 *,
 *::before,
@@ -178,4 +181,8 @@ footer {
   padding: 1.5rem;
   font-weight: 400;
   color: var(--black);
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color:var(--darkgray);
 }

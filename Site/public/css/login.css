@@ -2,15 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
 
 
-:root{
-  --orange: #FB3F08;
-  --darkblue: #4C4C9D;
-  --purple: #7C4BC8;
-  --darkpurple: #44207E;
-  --white: #FFFAFA;
+:root {
+  --orange: #fb3f08;
+  --darkblue: #4c4c9d;
+  --purple: #7c4bc8;
+  --darkpurple: #44207e;
+  --white: #fffafa;
   --black: #000;
   --gray: #d0d0d0;
-  --background: linear-gradient(70deg,#FB3F08, #4C4C9D,#7C4BC8,#FB3F08);
+  --darkgray: #6c6c6c;
+  --background: linear-gradient(70deg, #fb3f08, #4c4c9d, #7c4bc8, #fb3f08);
 }
 
 *,
@@ -673,4 +674,8 @@ footer {
   padding: 1.5rem;
   font-weight: 400;
   color: var(--black);
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color:var(--darkgray);
 }

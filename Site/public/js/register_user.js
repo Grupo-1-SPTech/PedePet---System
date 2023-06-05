@@ -1,4 +1,3 @@
-
 // aviso de algum erro nas validações
 function showSnackBar() {
     var x = document.getElementById("snackbar");
