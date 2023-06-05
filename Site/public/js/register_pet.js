@@ -63,7 +63,7 @@ function validarCampoCad1() {
     const vacinaMae = document.querySelector('.radioVacinado');
     const vacinaNaoMae = document.querySelector('.radioVacinadoNao');
 
-    if (racaMae == "" || idadeMae == "" || porteMae == "" || pedigreeMae == "" || pedigreeNaoMae == "" || vacinaMae == ""|| vacinaNaoMae == "") {
+    if (racaMae == "" || idadeMae == "" || porteMae == "" || pedigreeMae == "" || pedigreeNaoMae == "" || vacinaMae == "" || vacinaNaoMae == "") {
         snackbar.innerHTML = "É necessário preencher todos os campos!";
         showSnackBar();
         //snackbar é o elemento que recebe uma mensagem a ser exibida ao usuário
@@ -118,7 +118,7 @@ function validarCampoCad2() {
     const vacinaPai = document.querySelector('.radioVacinado');
     const vacinaNaoPai = document.querySelector('.radioVacinadoNao');
 
-    if (racaPai == "" || idadePai == "" || portePai == "" || pedigreePai == "" || pedigreeNaoPai == "" || vacinaPai == ""|| vacinaNaoPai == "") {
+    if (racaPai == "" || idadePai == "" || portePai == "" || pedigreePai == "" || pedigreeNaoPai == "" || vacinaPai == "" || vacinaNaoPai == "") {
         snackbar.innerHTML = "É necessário preencher todos os campos!";
         showSnackBar();
         //snackbar é o elemento que recebe uma mensagem a ser exibida ao usuário
@@ -200,41 +200,68 @@ function validarCampoCad3() {
     window.location.href = "./anuncios_pets.html";
 }
 
-function cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2) {
-   
-    // Cadastro de usuario (vendedor)
-    fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
+function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
+    // Função para converter a imagem em base64
+    function convertToBase64(file, callback) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+        callback(base64String);
+      };
+      reader.readAsDataURL(file);
+    }
+  
+    // Função para enviar os dados do cadastro para o backend
+    function sendCadastroData(imageData) {
+      // Cadastro de usuario (vendedor)
+      fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-                "ninhada": {
-                  "raca_mae": cadastroPetOBJT.racaMae,
-                  "idade_mae": cadastroPetOBJT.idadeMae,
-                  "porte_mae": cadastroPetOBJT.porteMae,
-                  "vacina_mae": cadastroPetOBJT.vacinaMae,
-                  "pedigree_mae": cadastroPetOBJT.pedigreeMae,
-                  "raca_pai": cadastroPetOBJT2.racaPai,
-                  "idade_pai": cadastroPetOBJT2.idadePai,
-                  "porte_pai": cadastroPetOBJT2.portePai,
-                  "vacina_pai": cadastroPetOBJT2.vacinaPai,
-                  "pedigree_pai": cadastroPetOBJT2.pedigreePai,
-                  "qtd_filhotes": cadastroPetOBJT3.quant,
-                  "foto_casal": cadastroPetOBJT3.foto,
-                  "descricao": cadastroPetOBJT3.descric
-                },
-                "filhote": {
-                  "tempo_espera": cadastroPetOBJT3.nasc,
-                  "preco": cadastroPetOBJT3.preco
-                }
+          "ninhada": {
+            "raca_mae": cadastroPetOBJT.racaMae,
+            "idade_mae": cadastroPetOBJT.idadeMae,
+            "porte_mae": cadastroPetOBJT.porteMae,
+            "vacina_mae": cadastroPetOBJT.vacinaMae,
+            "pedigree_mae": cadastroPetOBJT.pedigreeMae,
+            "raca_pai": cadastroPetOBJT2.racaPai,
+            "idade_pai": cadastroPetOBJT2.idadePai,
+            "porte_pai": cadastroPetOBJT2.portePai,
+            "vacina_pai": cadastroPetOBJT2.vacinaPai,
+            "pedigree_pai": cadastroPetOBJT2.pedigreePai,
+            "qtd_filhotes": cadastroPetOBJT3.quant,
+            "foto_casal": imageData, // Imagem convertida para base64
+            "descricao": cadastroPetOBJT3.descric
+          },
+          "filhote": {
+            "tempo_espera": cadastroPetOBJT3.nasc,
+            "preco": cadastroPetOBJT3.preco
+          }
         })
-    })
+      })
         .then(res => res.json())
         .then((res) => {
-            console.log(res)
+          console.log(res);
         })
         .catch((err) => {
-            console.log(err)
-        })
-}
+          console.log(err);
+        });
+    }
+  
+    // Verifica se um arquivo foi selecionado
+    if (foto.files.length > 0) {
+      // Obtém o arquivo de imagem
+      const file = foto.files[0];
+  
+      // Converte a imagem para base64
+      convertToBase64(file, function (imageData) {
+        // Chama a função sendCadastroData para enviar os dados do cadastro para o backend
+        sendCadastroData(imageData);
+      });
+    } else {
+      // Caso nenhum arquivo tenha sido selecionado, envie uma mensagem de erro ou faça a validação adequada
+      console.log('Selecione uma imagem');
+    }
+  }  
