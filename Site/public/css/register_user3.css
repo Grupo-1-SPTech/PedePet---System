@@ -94,7 +94,7 @@
   width: 12vw;
   height: 40px;
   font-weight: 800;
-  border-radius: 40px;
+  border-radius: 12px;
   border: none;
   background-color: var(--orange);
   color: var(--white);
@@ -435,7 +435,7 @@ input[type="radio"]:-ms-check {
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-
+  
   /* Windows High Contrast Mode */
   background-color: var(--orange);
 }
@@ -450,14 +450,13 @@ input[type="radio"]:focus {
   outline-offset: max(2px, 2px);
 }
 
-::-webkit-input-placeholder {
-  /* Edge */
-  color: var(--darkgray);
+::-webkit-input-placeholder { /* Edge */
+  color:var(--darkgray);
 }
 
-input:focus {
-  outline: none;
-}
+input:focus{ outline: none; }
+
+select:focus{ outline: none; }
 
 option {
   color: black;

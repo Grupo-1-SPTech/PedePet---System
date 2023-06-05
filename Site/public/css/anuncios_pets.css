@@ -97,7 +97,7 @@ body {
   width: 12vw;
   height: 40px;
   font-weight: 800;
-  border-radius: 40px;
+  border-radius: 12px;
   border: none;
   background-color: var(--orange);
   color: var(--white);
