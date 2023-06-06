@@ -1,6 +1,15 @@
 CREATE DATABASE PedePet;
 USE PedePet;
 
+CREATE TABLE IF NOT EXISTS tipo_usuario(
+id INT PRIMARY KEY AUTO_INCREMENT,
+tipo VARCHAR(10) NULL
+);
+
+CREATE TABLE IF NOT EXISTS racas(
+id_raca INT PRIMARY KEY AUTO_INCREMENT,
+nome_raca VARCHAR(45) NULL
+);
 
 CREATE TABLE IF NOT EXISTS usuario(
 id INT PRIMARY KEY AUTO_INCREMENT,
@@ -10,8 +19,8 @@ cpf CHAR(11) NULL,
 telefone CHAR(16) NULL,
 senha VARCHAR(30) NULL,
 autenticado BIT(1),
-fk_tipousuario INT NULL,
-FOREIGN KEY (fk_tipousuario) REFERENCES tipo_usuario(id_tipo)
+tipo_Usuario INT NULL,
+FOREIGN KEY (tipo_Usuario) REFERENCES tipo_usuario(id)
 );
 
 CREATE TABLE IF NOT EXISTS endereco(
@@ -69,20 +78,6 @@ FOREIGN KEY (fk_ninhada) REFERENCES ninhada(id)
 );
 
 /*
-CREATE TABLE IF NOT EXISTS tipo_usuario(
-id_tipo INT PRIMARY KEY AUTO_INCREMENT,
-tipo VARCHAR(10) NULL
-);
-*/
-
-/*
-CREATE TABLE IF NOT EXISTS racas(
-id_raca INT PRIMARY KEY AUTO_INCREMENT,
-tipo_raca VARCHAR(45) NULL
-);
-*/
-
-/*
 CREATE TABLE IF NOT EXISTS dados_pagamento(
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45) NULL,
@@ -125,26 +120,13 @@ tipo_pagamento VARCHAR(10)
 );
 */
 
-
-
-
 -- Inserção de dados:
 
--- COMPRADOR
-insert into usuario (nome, email, cpf, telefone, senha, tipo_usuario, autenticado) values 
-('Luigi Ceolin', 'luigi@gmail.com', '0188418457', '(11) 97252-7483', 'sptech10@', 1, 1);
-
-insert into endereco (cep, rua, numero, complemento, bairro, cidade, estado, fk_usuario) values
-('09580330', 'Rua 1', 77, 'Ao lado do mercado Extra', 'Maua', 'São Paulo', 'SP', 1);
-
-insert into formulario (tipo_moradia, qtd_comodos, qtd_moradores, qtd_horas_casa, possui_pet, fk_usuario) values
-('Apartamento', '1 a 5', '1 a 5', '7 a 12', 1, 1); 
-
-insert into tipo_usuario (tipo_usuario)values
+insert into tipo_usuario (tipo) values
 ('comprador'),
 ('vendedor');
 
-insert into racas(tipo_raca)values
+insert into racas (nome_raca) values
 ('Pomerânia (Spitz Alemão)'),
 ('Bulldog Francês'),
 ('Bulldog Inglês'),
@@ -169,6 +151,16 @@ insert into racas(tipo_raca)values
 ('Dálmata'),
 ('Boxer'),
 ('Fila Brasileiro');
+
+-- COMPRADOR
+insert into usuario (nome, email, cpf, telefone, senha, tipo_Usuario, autenticado) values 
+('Luigi Ceolin', 'luigi@gmail.com', '0188418457', '(11) 97252-7483', 'sptech10@', 1, 1);
+
+insert into endereco (cep, rua, numero, complemento, bairro, cidade, estado, fk_usuario) values
+('09580330', 'Rua 1', 77, 'Ao lado do mercado Extra', 'Maua', 'São Paulo', 'SP', 1);
+
+insert into formulario (tipo_moradia, qtd_comodos, qtd_moradores, qtd_horas_casa, possui_pet, fk_usuario) values
+('Apartamento', '1 a 5', '1 a 5', '7 a 12', 1, 1); 
 
 -- VENDEDOR
 

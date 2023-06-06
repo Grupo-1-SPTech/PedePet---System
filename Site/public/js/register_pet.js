@@ -189,8 +189,8 @@ function validarCampoCad3() {
     const quant = document.getElementById('input_quant').value;
     const preco = document.getElementById('input_preco').value;
     const nasc = document.getElementById('select_semana').value;
-    const foto = document.querySelector('.input_imagem');
-    const desc = document.querySelector('.span_observacao');
+    const foto = document.getElementById('input_imagem').value;
+    const desc = document.getElementById('span_observacao').value;
 
     if (quant == "" || preco == "" || nasc == "" || foto == "" || desc == "") {
         snackbar.innerHTML = "É necessário preencher todos os campos!";
@@ -220,18 +220,7 @@ function validarCampoCad3() {
 }
 
 function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
-    // Função para converter a imagem em base64
-    function convertToBase64(file, callback) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
-        callback(base64String);
-      };
-      reader.readAsDataURL(file);
-    }
-  
-    // Função para enviar os dados do cadastro para o backend
-    function sendCadastroData(imageData) {
+
       // Cadastro de usuario (vendedor)
       fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
         method: "POST",
@@ -251,7 +240,7 @@ function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
             "vacina_pai": cadastroPetOBJT2.vacinaPai,
             "pedigree_pai": cadastroPetOBJT2.pedigreePai,
             "qtd_filhotes": cadastroPetOBJT3.quant,
-            "foto_casal": imageData, // Imagem convertida para base64
+            "foto_casal": cadastroPetOBJT3.foto,
             "descricao": cadastroPetOBJT3.descric
           },
           "filhote": {
@@ -267,22 +256,4 @@ function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
         .catch((err) => {
           console.log(err);
         });
-    }
-  
-    // Verifica se um arquivo foi selecionado
-    if (foto.files.length > 0) {
-      // Obtém o arquivo de imagem
-      const file = foto.files[0];
-  
-      // Converte a imagem para base64
-      convertToBase64(file, function (imageData) {
-        // Chama a função sendCadastroData para enviar os dados do cadastro para o backend
-        sendCadastroData(imageData);
-      });
-    } else {
-      // Caso nenhum arquivo tenha sido selecionado, envie uma mensagem de erro ou faça a validação adequada
-      snackbar.innerHTML = "O campo 'Foto' deve conter um arquivo de imagem (jpg, jpeg, png ou gif)!";
-        showSnackBar();
-        return;
-    }
-  }  
+}
