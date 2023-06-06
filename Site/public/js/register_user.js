@@ -263,7 +263,7 @@ function validarCampoCad3() {
     } else {
         console.log("inserirendo objetos")
         cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
-        window.location.href = "./anuncios_pets.html";
+        window.location.href = "./index.html";
     }
 }
 

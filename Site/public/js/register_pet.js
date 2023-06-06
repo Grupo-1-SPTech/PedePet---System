@@ -73,6 +73,8 @@ function validarCampoCad1() {
         snackbar.innerHTML = "É necessário escolher a raça da mãe!";
         showSnackBar();
         return
+    } else {
+        cadastroPetOBJT.racaMae = idadeMae
     }
 
     if (regexNumero.test(idadeMae) && idadeMae.length == 1 || idadeMae.length == 2) {
@@ -87,18 +89,24 @@ function validarCampoCad1() {
         snackbar.innerHTML = "É necessário escolher o porte da mãe!";
         showSnackBar();
         return
+    } else {
+        cadastroPetOBJT.porteMae = porteMae
     }
 
     if (cadastroPetOBJT.pedigreeMae == "" && cadastroPetOBJT.pedigreeNaoMae == "") {
         snackbar.innerHTML = "É necessário assinalar se a mãe possui pedigree!";
         showSnackBar();
         return
+    } else {
+        cadastroPetOBJT.pedigreeMae = pedigreeMae
     }
 
     if (cadastroPetOBJT.vacinaMae == "" && cadastroPetOBJT.vacinaNaoMae == "") {
         snackbar.innerHTML = "É necessário escolher se a mãe é vacinada ou não!";
         showSnackBar();
         return
+    } else {
+        cadastroPetOBJT.vacinaMae = vacinaMae
     }
 
     localStorage.setItem('cadastroPetOBJT', JSON.stringify(cadastroPetOBJT));
@@ -107,6 +115,8 @@ function validarCampoCad1() {
 
 // função de validação dos campos do cadastro pet pt. 2
 function validarCampoCad2() {
+
+    const cadastroPetOBJT = JSON.parse(localStorage.getItem('cadastroPetOBJT'));
 
     //declarando variaveis que recebem o valor dos inputs
     const racaPai = document.getElementById('select_raca').value;
@@ -124,44 +134,56 @@ function validarCampoCad2() {
         return
     }
 
-    if (cadastroPetOBJT.racaPai == "") {
+    if (cadastroPetOBJT2.racaPai == "") {
         snackbar.innerHTML = "É necessário escolher a raça do pai!";
         showSnackBar();
         return
+    } else {
+        cadastroPetOBJT2.racaPai = racaPai
     }
 
     if (regexNumero.test(idadePai) && idadePai.length == 1 || idadePai.length == 2) {
-        cadastroPetOBJT.idadePai = idadePai;
+        cadastroPetOBJT2.idadePai = idadePai;
     } else {
         snackbar.innerHTML = "Idade do pai inválida!";
         showSnackBar();
         return
     }
 
-    if (cadastroPetOBJT.portePai == "") {
+    if (cadastroPetOBJT2.portePai == "") {
         snackbar.innerHTML = "É necessário escolher o porte do pai!";
         showSnackBar();
         return
+    } else {
+        cadastroPetOBJT2.portePai = portePai
     }
 
-    if (cadastroPetOBJT.pedigreePai == "" && cadastroPetOBJT.pedigreeNaoPai == "") {
+    if (cadastroPetOBJT2.pedigreePai == "" && cadastroPetOBJT2.pedigreeNaoPai == "") {
         snackbar.innerHTML = "É necessário assinalar se o pai possui pedigree!";
         showSnackBar();
         return
+    } else {
+        cadastroPetOBJT2.pedigreePai = pedigreePai
     }
 
     if (cadastroPetOBJT.vacinaPai == "" && cadastroPetOBJT.vacinaNaoPai == "") {
         snackbar.innerHTML = "É necessário escolher se o pai é vacinado ou não!";
         showSnackBar();
         return
+    } else {
+        cadastroPetOBJT2.vacinaPai = vacinaPai
     }
 
+    localStorage.setItem('cadastroPetOBJT', JSON.stringify(cadastroPetOBJT));
     localStorage.setItem('cadastroPetOBJT2', JSON.stringify(cadastroPetOBJT2));
     window.location.href = "./register_pet3.html";
 }
 
 // função de validação dos campos do cadastro pet pt. 3
 function validarCampoCad3() {
+
+    const cadastroPetOBJT = JSON.parse(localStorage.getItem('cadastroPetOBJT'));
+    const cadastroPetOBJT2 = JSON.parse(localStorage.getItem('cadastroPetOBJT2'));
 
     //declarando variaveis que recebem o valor dos inputs
     const quant = document.getElementById('input_quant').value;
@@ -181,16 +203,20 @@ function validarCampoCad3() {
         snackbar.innerHTML = "O campo 'Quantidade de filhotes' deve conter apenas números!";
         showSnackBar();
         return;
+    } else {
+        cadastroPetOBJT3.quant = quant
     }
 
     if (!regexNumero.test(preco)) {
         snackbar.innerHTML = "O campo 'Preço unitário' deve conter apenas números!";
         showSnackBar();
         return;
+    } else {
+        cadastroPetOBJT3.preco = preco
     }
 
-    localStorage.setItem('cadastroPetOBJT3', JSON.stringify(cadastroPetOBJT3));
-    window.location.href = "./anuncios_pets.html";
+    cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3);
+    window.location.href = "./index.html";
 }
 
 function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
