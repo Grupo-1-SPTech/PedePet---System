@@ -16,11 +16,11 @@ data class Usuario(
     var id:Int,
 
     @Column(name = "nome")
-    @field:NotBlank @field:Size(min = 3, max = 45)
+    @field:NotBlank @field:Size(min = 3, max = 60)
     var nome:String?,
 
     @Column(name = "email")
-    @field:Email @field:NotBlank @field:Size(min = 10, max = 50)
+    @field:Email @field:NotBlank @field:Size(min = 10, max = 60)
     var email:String?,
 
     @Column(name = "cpf", unique = true)
