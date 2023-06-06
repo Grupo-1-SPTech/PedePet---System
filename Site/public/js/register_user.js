@@ -261,15 +261,22 @@ function validarCampoCad3() {
         showSnackBar();
         return
     } else {
-        console.log("inserirendo objetos")
-        cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
-        window.location.href = "./index.html";
+        if (cadastroUserOBJT.tipoUser == '2') {
+            console.log("Inserindo dados de vendedor")
+            cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
+            // window.location.href = "./register_pet1.html";
+
+        } else if (cadastroUserOBJT.tipoUser == '1') {
+            console.log("Inserindo dados de comprador")
+            cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
+            // window.location.href = "./index.html";
+
+        }
     }
 }
 
 
 function cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2) {
-   
 
     // Cadastro de usuario (vendedor)
     fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
