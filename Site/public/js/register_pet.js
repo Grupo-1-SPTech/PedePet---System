@@ -7,7 +7,6 @@ function showSnackBar() {
 
 // regex de verificações (verifica os caracteres de uma variavel)
 const regexNumero = /^[0-9]+$/;
-const regexImagem = /\.(jpg|jpeg|png|gif)$/i;
 
 // objeto que recebe valores do cadastro de pet pt. 1
 class formCadPet1 {
@@ -190,12 +189,6 @@ function validarCampoCad3() {
         return;
     }
 
-    if (!regexImagem.test(foto)) {
-        snackbar.innerHTML = "O campo 'Foto' deve conter um arquivo de imagem (jpg, jpeg, png ou gif)!";
-        showSnackBar();
-        return;
-    }
-
     localStorage.setItem('cadastroPetOBJT3', JSON.stringify(cadastroPetOBJT3));
     window.location.href = "./anuncios_pets.html";
 }
@@ -262,6 +255,8 @@ function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
       });
     } else {
       // Caso nenhum arquivo tenha sido selecionado, envie uma mensagem de erro ou faça a validação adequada
-      console.log('Selecione uma imagem');
+      snackbar.innerHTML = "O campo 'Foto' deve conter um arquivo de imagem (jpg, jpeg, png ou gif)!";
+        showSnackBar();
+        return;
     }
   }  

@@ -9,8 +9,9 @@ email VARCHAR(50) NULL,
 cpf CHAR(11) NULL,
 telefone CHAR(16) NULL,
 senha VARCHAR(30) NULL,
-tipo_usuario INT NULL,
-autenticado BIT(1)
+autenticado BIT(1),
+fk_tipousuario INT NULL,
+FOREIGN KEY (fk_tipousuario) REFERENCES tipo_usuario(id_tipo)
 );
 
 CREATE TABLE IF NOT EXISTS endereco(
@@ -66,6 +67,20 @@ disponivel BIT(1) NULL,
 fk_ninhada INT NULL,
 FOREIGN KEY (fk_ninhada) REFERENCES ninhada(id)
 );
+
+/*
+CREATE TABLE IF NOT EXISTS tipo_usuario(
+id_tipo INT PRIMARY KEY AUTO_INCREMENT,
+tipo VARCHAR(10) NULL
+);
+*/
+
+/*
+CREATE TABLE IF NOT EXISTS racas(
+id_raca INT PRIMARY KEY AUTO_INCREMENT,
+tipo_raca VARCHAR(45) NULL
+);
+*/
 
 /*
 CREATE TABLE IF NOT EXISTS dados_pagamento(
@@ -124,6 +139,36 @@ insert into endereco (cep, rua, numero, complemento, bairro, cidade, estado, fk_
 
 insert into formulario (tipo_moradia, qtd_comodos, qtd_moradores, qtd_horas_casa, possui_pet, fk_usuario) values
 ('Apartamento', '1 a 5', '1 a 5', '7 a 12', 1, 1); 
+
+insert into tipo_usuario (tipo_usuario)values
+('comprador'),
+('vendedor');
+
+insert into racas(tipo_raca)values
+('Pomerânia (Spitz Alemão)'),
+('Bulldog Francês'),
+('Bulldog Inglês'),
+('Shih Tzu'),
+('Rottweiler'),
+('Pug'),
+('Golden Retriever'),
+('Pastor Alemão'),
+('Yorkshire Terrier'),
+('Border Collie'),
+('Maltês'),
+('Poodle'),
+('Beagle'),
+('Lhasa Apso'),
+('Labrador'),
+('Schnauzer'),
+('Border Collie'),
+('Pitbull'),
+('American Bully'),
+('Husky Siberiano'),
+('Chow Chow'),
+('Dálmata'),
+('Boxer'),
+('Fila Brasileiro');
 
 -- VENDEDOR
 

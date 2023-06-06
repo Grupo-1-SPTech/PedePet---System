@@ -47,7 +47,7 @@ function fazerLogin(email, senha) {
     .then(response => {
       if (response.ok) {
         // Login bem-sucedido, redirecionar para a próxima página
-        window.location.href = './anuncios_pets.html'
+        window.location.href = './index.html'
       } else if (response.status === 204 || response.status === 404) {
         // E-mail não encontrado ou senha incorreta
         showSnackBar("Senha ou e-mail inválido!");

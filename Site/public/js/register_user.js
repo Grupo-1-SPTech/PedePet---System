@@ -226,8 +226,8 @@ function validarCampoCad2() {
     } else {
         cadastroUserOBJT.tipoUser = 2;
         cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2);
-        console.log("cadastro de vendedor realizado");
-        return
+        window.location.href = "./register_pet1.html";
+        console.log("cadastrando vendedor");
     }
 }
 
@@ -263,6 +263,7 @@ function validarCampoCad3() {
     } else {
         console.log("inserirendo objetos")
         cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
+        window.location.href = "./anuncios_pets.html";
     }
 }
 
@@ -331,7 +332,7 @@ function cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT
             },
             "endereco": {
                 "cep": cadastroUserOBJT2.cep,
-                "rua": cadastroUserOBJT2.rua,
+                "rua": cadastroUserOBJT2.endereco,
                 "numero": cadastroUserOBJT2.numero,
                 "complemento": cadastroUserOBJT2.complemento,
                 "bairro": cadastroUserOBJT2.bairro,
