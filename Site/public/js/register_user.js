@@ -264,12 +264,12 @@ function validarCampoCad3() {
         if (cadastroUserOBJT.tipoUser == '2') {
             console.log("Inserindo dados de vendedor")
             cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
-            // window.location.href = "./register_pet1.html";
+            window.location.href = "./register_pet1.html";
 
         } else if (cadastroUserOBJT.tipoUser == '1') {
             console.log("Inserindo dados de comprador")
             cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
-            // window.location.href = "./index.html";
+            window.location.href = "./index.html";
 
         }
     }

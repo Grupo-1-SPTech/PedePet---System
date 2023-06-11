@@ -43,8 +43,11 @@ class UsuarioController(
     @PostMapping("/cadastrar/vendedor")
     fun cadVendedor(@RequestBody cadVendedorRequest: VendedorRequest): ResponseEntity<Usuario> {
 
+        println("bbbbbbbbbbbbbbbbbbbbbbbb")
         val selectVendedor = repository.findByEmailAndTipoUsuario(cadVendedorRequest.usuario.email, tipoUsuario = 2)
 
+        println("aaaaaaaaaaaaaaaaaaaaaaa")
+        println(selectVendedor)
         if(selectVendedor == null) {
             val usuarioVendedor: Usuario = repository.save(cadVendedorRequest.usuario)
             cadVendedorRequest.endereco.usuario?.id = usuarioVendedor.id
