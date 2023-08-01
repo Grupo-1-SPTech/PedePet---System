@@ -107,6 +107,18 @@
     cursor: pointer;
 }
 
+
+/* INICIO MAIN ADPET */
+
+.bg-adpet {
+  background-color: var(--darkgray);
+  /* width: 100px; */
+  height: 85vh;
+  background-image: url(./images/bg_adpet.png);
+  
+  
+}
+
 /* Footer */
 
 footer {
