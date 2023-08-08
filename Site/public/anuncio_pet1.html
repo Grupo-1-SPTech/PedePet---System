@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmação Ind - PedePet</title>
-  <link rel="stylesheet" href="./css/anuncio_pet2.css">
+  <title>Anuncio Ind - PedePet</title>
+  <link rel="stylesheet" href="./css/anuncio_pet1.css">
   <link rel="icon" href="./css/images/icon-pata.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
 
@@ -33,31 +33,52 @@
   <main>
 
     <div class="containerCad">
+
       <div class="formCad">
 
 
         <div class="contentCad">
 
-          <div class="contentTop">
+        <div class="ladoEsquerdo">
 
-            <h2>Falta pouco para garantir seu filhote!</h2>
+        <div class="imagem"></div>
 
-          </div>    
-
-          <div class="banner">
-            <img src="./css/images/check-mark-circle-2-svgrepo-com.svg" class="cachorrinho">
+        <div class="conteudo">
+        <div class="cardsInfos">
+          <div class="cardTempo"> Em 
+          <span id="cardTempo" class="value_tempo" onload="getTotalTempoEspera()"></span>
+          meses
           </div>
 
-            <span class="title" id="span_pedigree"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  O vendedor será notificado da sua aplicação e ela vai ser <span class="letrinhas" style="color:#44207e" >analisada</span>. <br />
-                Você receberá uma notificação em seu <span class="letrinhas" style="color:#44207e; opacity: 100%;">email</span> assim que a avaliação for concluída.</span>
-
-            <div class="btns">
-              <button onclick="location.href='./anuncios_pets.html'" class="cancelar">Ver anúncio</button>
-              <button onclick="" class="prosseguir">Inicio</button>
-              <div id="snackbar"></div>
+          <div class="cardConfianca">
+            <span id="cardConfianca" class="value_confianca">Vendedor confiável</span>
             </div>
 
-          </div>
+          <div class="cardTempo"> Em 
+              <span id="cardTempo" class="value_tempo" onload="getTotalTempoEspera()"></span>
+              meses
+              </div>
+    
+              <div class="cardConfianca">
+                <span id="cardConfianca" class="value_confianca">Vendedor confiável</span>
+                </div>
+    
+        </div>
+
+
+        </div>
+
+        </div>
+        
+        <div class="ladoDireito">
+
+
+
+
+       <button onclick="" class="prosseguir">Garantir Filhote</button>
+        </div>  
+
+        
         </div>
 
       </div>
