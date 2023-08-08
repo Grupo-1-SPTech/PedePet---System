@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
 
 :root {
   --orange: #fb3f08;
@@ -23,14 +25,10 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: large;
   margin-left: inherit;
   overflow-x: hidden;
-}
-
-body {
-  background-color: var(--white);
 }
 
 /* Scrollbar */
@@ -43,242 +41,525 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--purple);
+  background:  var(--purple);
   border-radius: 30px;
 }
 /* menu */
 
 .container-nav {
-  display: flex;
-  width: 100vw;
-  height: 8vh;
-  flex-direction: row;
-  padding: 2px 4%;
-  background-color: var(--white);
-  align-items: center;
-  overflow-y: hidden;
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    flex-direction: row;
+    padding: 2px 4%;
+    background-color: var(--white);
+    align-items: center;
+    overflow-y: hidden;
+
 }
 
 #logo {
-  height: 80%;
+    height: 80%;
+    cursor: pointer;
 }
 
-.optionsNav {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding-left: 30%;
-  align-items: center;
+.options {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 30%;
+    align-items: center;
 }
 
-.optionsNav a {
-  text-decoration: none;
-  font-family: "Montserrat", sans-serif;
-  color: var(--black);
-  font-weight: 800;
-  font-size: 16px;
+.options a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    font-weight: 800;
+    font-size: 16px;
 }
 
-.optionsNav ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  list-style-type: none;
+.options ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
 }
 
-.optionsNav li {
-  text-align: center;
+.options li {
+    text-align: center;
 }
 
 /* Botão menu */
 
 .btn-login {
-  width: 12vw;
-  height: 40px;
+    width: 12vw;
+    height: 40px;
+    font-weight: 800;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* First section */
+
+.containerHome {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.leftHome {
+    display: flex;
+    width: 55vw;
+    flex-direction: column;
+    padding: 6% 4%;
+}
+
+.leftHome h2 {
+    font-size: 24px;
+    color: var(--orange);
+    font-weight: 800;
+}
+
+.leftHome h1 {
+    font-size: 42px;
+    color: var(--black);
+    font-weight: 900;
+}
+
+.leftHome span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.leftHome #txt1 {
+    margin-top: 6%;
+}
+
+.containerBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+    padding-top: 20%;
+}
+
+.cadUser {
+    font-size: 16px;
+    width: 16vw;
+    height: 60px;
+    border-radius: 12px;
+    border: none;
+    color: var(--white);
+    background-color: var(--orange);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cadPet {
+    font-size: 16px;
+    width: 16vw;
+    height: 60px;
+    border-radius: 12px;
+    border: 4px solid var(--darkpurple);
+    color: var(--darkpurple);
+    background-color: transparent;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cadPet:hover {
+    background-color: var(--darkpurple);
+    color: var(--white);
+    transition: .4s;
+}
+
+.rightHome {
+    display: flex;
+    padding-top: 1%;
+}
+
+#blob {
+    position: absolute;
+    right: 0;
+    width: 620px;
+    z-index: -1;
+}
+
+#dog {
+    height: 80%;
+    margin-top: 16%;
+}
+
+.bloco {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 160px;
+    border-radius: 8px;
+    margin-top: 74%;
+    margin-right: 4%;
+    background-color: var(--darkblue);
+}
+
+.topReview {
+    display: flex;
+    flex-direction: row;
+}
+
+/*gradiente de fundo*/
+.containerCad {
+  background: linear-gradient(181deg, var(--orange), var(--purple), var(--darkpurple));
+  background-size: 800% 800%;
+
+  -webkit-animation: gradiente 14s ease infinite;
+  -moz-animation: gradiente 14s ease infinite;
+  animation: gradiente 14s ease infinite;
+}
+
+@-webkit-keyframes gradiente {
+  0% {
+      background-position: 96% 0%
+  }
+
+  50% {
+      background-position: 5% 100%
+  }
+
+  100% {
+      background-position: 96% 0%
+  }
+}
+
+@-moz-keyframes gradiente {
+  0% {
+      background-position: 96% 0%
+  }
+
+  50% {
+      background-position: 5% 100%
+  }
+
+  100% {
+      background-position: 96% 0%
+  }
+}
+
+@keyframes gradiente {
+  0% {
+      background-position: 96% 0%
+  }
+
+  50% {
+      background-position: 5% 100%
+  }
+
+  100% {
+      background-position: 96% 0%
+  }
+}
+
+/* CSS Cadastro Usuário */
+
+.containerCad {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-top: 3%;
+  
+}
+
+.formCad {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+  height: 90%;
+  border-radius: 8px;
+}
+
+.banner {
+  width: 100%;
+  height: 20vh;
+  background-color: var(--darkblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cachorrinho {
+  height: 25%;
+  margin-bottom: -2.5%;
+  position: absolute;
+}
+
+.contentCad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  padding: 10%;
+  background-color: white;
+  margin-bottom: 7vh;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.alinhamento {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: left;
+  padding-bottom: 2%;
+}
+
+.alinhamento h1 {
+  color: var(--black);
+  font-size: 1.8em;
   font-weight: 800;
+}
+
+.contentTop {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+}
+
+.contentTop h2 {
+  color: var(--darkpurple);
+  font-weight: 800;
+  font-size: 1.5em;
+  
+}
+
+#loginForm {
+  width: 100%;
+  height: 100%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+  padding: 5% 0% 0% 0%;
+}
+
+.title {
+margin-bottom: 10px;
+font-weight: 600;
+}
+
+.inputCad {
+  width: 100%;
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6); 
+  background: url(images/email.svg) no-repeat 20px 7px;
+  padding-left: 12%;
+  background-size: 20px;
+}
+
+.inputCad2 {
+  width: 100%;
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6); 
+  background: url(images/cadeado.svg) no-repeat 20px 7px;
+  padding-left: 12%;
+  background-size: 20px;
+}
+
+#span_email {
+ margin-top: 6%;
+}
+
+.extras {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8%;
+}
+
+.extras #esqueci {
+  color: var(--orange);
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 550;
+}
+
+.extras #register {
+  color: var(--black);
+  font-size: 12px;
+  padding-left: 26%;
+  text-decoration: none;
+  font-weight: 550;
+}
+
+input:focus{ outline: none; }
+
+
+/* Drop Down */
+
+select:focus{ outline: none; }
+
+select {
+  width: 310px;
+  height: 6vh;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  border-radius: 12px; 
+  color: var(--gray);
+}
+
+
+/* FIM do drop */
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10%;
+}
+
+.cancelar {
+  font-size: 16px;
+  width: 180px;
+  height: 40px;
+  border-radius: 12px;
+  border: 4px solid var(--darkpurple);
+  color: var(--darkpurple);
+  background-color: transparent;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cancelar:hover {
+  background-color: var(--darkpurple);
+  color: var(--white);
+  transition: .4s;
+}
+
+.prosseguir {
+  font-size: 16px;
+  width: 180px;
+  height: 40px;
   border-radius: 12px;
   border: none;
-  background-color: var(--orange);
   color: var(--white);
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.fundo {
-  animation: animateBg 10s linear infinite;
-  background-image: var(--background);
-  background-size: 100% 1100%;
-  height: 100vh;
-  width: 100vw;
-}
-
-.container {
-  max-width: 87.8vw;
-  margin: 0 auto;
-}
-
-p {
-  margin: 0;
-}
-
-/*campos*/
-
-#fundo{
-  align-items: center;
-  display: flex;
-  align-content: stretch;
-  align-items: flex-start;
-}
-
-#cachorro {
-  background-color: var(--darkblue);
-  border-radius: 1.5vh;
-  height: 18.5vh;
-  width: 36.6vw;
-  justify-content: center;
-  display: flex;
-  position: absolute;
-  left: 32vw;
-  top: 21.6vh;
-  margin-top: 12px;
-}
-
-.img_cachorro {
-  position: relative;
-  display: flex;
-  z-index: 1;
-  /* size: 1vh; */
-  /* margin-top:10px; */
-}
-
-/* #bloco_campos{
-  width: 100vw;
-  height: 50vh;
-  align-items: center;
-  justify-content: space-evenly;
-  display: flex;
-  align-content: stretch;
-  flex-direction: row;
-  position: absolute;
-  z-index: 0;
-} */
-
-#campo{
-  background-color: #FFFAFA;
-  border-radius: 0 0 1.5vh 1.5vh;
-  width: 60vw;
-  height: 50vh;
-  justify-content: center;
-  display: flex;
-  position: absolute;
-  width: 36.6vw;
-  height: 70vh;
-  left: 32vw;
-  top: 38vh;
-  flex-direction: column;
-}
-
-#campo h1 {
-  font-size: 28px;
-  line-height: 34px;
-  font-weight: 700;
-  position: absolute;
-  left: 5vh;
-  top: 5vh;
-}
-
-#campo #email {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 15vh;
-}
-
-#campo #email_input {
-  left: 5vh;
-  bottom: 2vh;
-  width: 420px;
-  height: 40px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-email.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-#campo #senha {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 30vh;
-}
-
-#campo #senha_input {
-  left: 5vh;
-  top: 3vh;
-  width: 420px;
-  height: 40px;
-  border-radius: 5vh;
-  border: 1px solid var(--gray);
-  position: relative;
-  background-image: url('../css/images/icon-user-gray.svg');
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: 3vh;
-  padding-left: 10vh;
-}
-
-::placeholder {
-  position: relative;
-}
-
-#campo #esqueci {
-  font-size: 12px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 5vh;
-  top: 45vh;
-  color: var(--orange);
-}
-
-#campo #register {
-  font-size: 12px;
-  line-height: 24px;
-  font-weight: 500;
-  position: absolute;
-  left: 43vh;
-  top: 45vh;
-  color: var(--black);
-}
-
-#campo #btn_entrar2 {
-  top: 10vh;
-  /* left: 5vh; */
-  width: 32vw;
-  height: 6.2vh;
-  border-radius: 5vh;
-  display: flex;
-  align-items: center;
-  align-self: center;
-  justify-content: center;
-  cursor: pointer;
-  background: var(--orange);
-  color:var(--white);
-  font-family: "Montserrat", sans-serif;
+  background-color: var(--orange);
   font-weight: 800;
-  font-size: 2.4vh;
-  border: 0px;
-  position: relative;
+  cursor: pointer;
+}
+
+/* Modal erros  */
+
+#snackbar {
+  visibility: hidden;
+  /* Hidden by default. Visible on click */
+  min-width: 250px;
+  /* Set a default minimum width */
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(-50%);
+  /* Divide value of min-width by 2 */
+  background-color: var(--darkpurple);
+  /* Black background color */
+  color: var(--white);
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  left: 50%;
+  /* Center the snackbar */
+  bottom: 30px;
+  /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 /* Footer */
@@ -414,7 +695,7 @@ footer {
 #footer_copyright {
   display: flex;
   justify-content: center;
-  background-color: var(--gray);
+  background-color: rgb(208, 208, 208);
   font-size: 0.8rem;
   padding: 1.5rem;
   font-weight: 400;
