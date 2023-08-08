@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
-
 
 :root {
   --orange: #fb3f08;
@@ -61,6 +59,21 @@
 #logo {
     height: 80%;
     cursor: pointer;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: var(--darkpurple);
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot1 {
+  height: 15px;
+  width: 15px;
+  background-color: var(--lightgray);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .options {
@@ -156,7 +169,7 @@
     font-size: 16px;
     width: 16vw;
     height: 60px;
-    border-radius: 12px;
+    border-radius: 40px;
     border: none;
     color: var(--white);
     background-color: var(--orange);
@@ -168,7 +181,7 @@
     font-size: 16px;
     width: 16vw;
     height: 60px;
-    border-radius: 12px;
+    border-radius: 40px;
     border: 4px solid var(--darkpurple);
     color: var(--darkpurple);
     background-color: transparent;
@@ -289,7 +302,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 40vw;
+  width: 75vw;
   height: 90%;
   border-radius: 8px;
 }
@@ -297,30 +310,31 @@
 .banner {
   width: 100%;
   height: 20vh;
-  background-color: var(--darkblue);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cachorrinho {
-  height: 25%;
-  margin-bottom: -4%;
+  height: 20%;
+  margin-bottom: -4.3%;
   position: absolute;
 }
 
 .contentCad {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   height: 100%;
   background-color: var(--white);
-  padding: 10%;
+  padding: 4% 4% 4% 5%;
   background-color: white;
   margin-bottom: 7vh;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .alinhamento {
@@ -341,21 +355,35 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: white;
   align-items: center;
 }
 
 .contentTop h2 {
   color: var(--darkpurple);
-  font-weight: 700;
-  font-size: 1em;
+  font-weight: 800;
+  font-size: 1.5em;
   
 }
 
-#loginForm {
-  width: 100%;
-  height: 100%;
+.fases {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 8%;
+}
+
+.fase {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: var(--darkpurple);
+}
+
+.fase:nth-child(2),.fase:nth-child(3) {
+  background-color: #d9d9d9;
 }
 
 .inputs {
@@ -364,82 +392,177 @@
   align-items: left;
   width: 100%;
   height: 100%;
-  padding: 5% 0% 0% 0%;
 }
 
 .title {
-margin-bottom: 10px;
-font-weight: 600;
+  padding-bottom: 10px;
+  padding-top: 6%;
+  font-weight: 600;
+color: #999999;
 }
 
-.inputCad {
+.letrinhas{
+color: var(--darkpurple);
+
+}
+
+.selectRaca {
   width: 100%;
   height: 40px;
   border-radius: 12px;
   border: 2px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/email.svg) no-repeat 20px 7px;
+  background: url(images/pata.svg) no-repeat 20px 7px;
   padding-left: 12%;
   background-size: 20px;
 }
 
-.inputCad2 {
-  width: 100%;
-  height: 40px;
-  border-radius: 12px;
-  border: 2px solid rgba(0, 0, 0, 0.6); 
-  background: url(images/cadeado.svg) no-repeat 20px 7px;
-  padding-left: 12%;
-  background-size: 20px;
-}
-
-#span_email {
- margin-top: 6%;
-}
-
-.extras {
+.alinhamento2 {
   display: flex;
   flex-direction: row;
-  margin-top: 8%;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 3%;
 }
 
-.extras #esqueci {
-  color: var(--orange);
-  font-size: 14px;
-  text-decoration: none;
-  font-weight: 600;
+.alinhamento2_pt1 {
+  display:flex;
+  flex-direction: column;
 }
 
-.extras #register {
-  color: var(--black);
-  font-size: 12px;
-  padding-left: 26%;
-  text-decoration: none;
-  font-weight: 550;
+.inputIdade {
+  width: 100%;
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6); 
+  background: url(images/calendar-svgrepo-com.svg) no-repeat 20px 7px;
+  padding-left: 22%;
+  background-size: 20px;
+}
+
+.alinhamento2_pt2 {
+  display:flex;
+  flex-direction: column;
+  padding-left: 15px;
+}
+
+.form-control {
+  font-size: medium;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 17px auto;
+  gap: 0.5em;
+  padding-left: 5px;
+  padding-top: 6px;
+  padding-bottom: 3px;
+}
+
+.form-control + .form-control {
+  margin-top: 17px;
+}
+
+.form-control:focus-within {
+  color: var(--darkpurple);
+}
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--white);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: var(--purple);
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]:-ms-check {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  
+  /* Windows High Contrast Mode */
+  background-color: var(--orange);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:focus {
+  outline: max(2px, 2px) solid var(--purple);
+  box-shadow: inset 1em 1em var(--purple);
+  outline-offset: max(2px, 2px);
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color:var(--darkgray);
 }
 
 input:focus{ outline: none; }
 
+select:focus{ outline: none; }
+
+option {
+  color: black;
+}
 
 /* Drop Down */
 
 select:focus{ outline: none; }
 
 select {
-  width: 310px;
-  height: 6vh;
-  border: 3px solid rgba(0, 0, 0, 0.6);
+  width: 13vw;
+  height: 6.8vh;
+  border: 2px solid rgba(0, 0, 0, 0.6);
   border-radius: 12px; 
-  color: var(--gray);
+  color: #707070;
+  padding-left: 9%;
 }
 
 
+
 /* FIM do drop */
+
+
+
+/* Bolinhas de escolha */
+
+.first_check {
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+}
+
+.check_container2 {
+    padding-top: 3%;
+}
+
+
+
+
+/* FIM */
 
 .btns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 10%;
+  padding-top: 7%;
+  width: 58%;
 }
 
 .cancelar {
@@ -462,14 +585,15 @@ select {
 
 .prosseguir {
   font-size: 16px;
-  width: 180px;
-  height: 40px;
-  border-radius: 12px;
+  width: 80%;
+  height: 35px;
+  border-radius: 22px;
   border: none;
   color: var(--white);
   background-color: var(--orange);
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
+  margin: 93% 0% 0% 0%;
 }
 
 /* Modal erros  */
@@ -702,6 +826,40 @@ footer {
   color: var(--black);
 }
 
-::-webkit-input-placeholder { /* Edge */
-  color:var(--darkgray);
+.ladoEsquerdo {
+   
+    height: 26rem;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+ 
 }
+
+.conteudo {
+ 
+  height: 48%;
+  width: 93%;
+  box-shadow: 5px 5px 17px -10px black;
+  border-radius: 10px;
+}
+
+.imagem {
+
+  height: 43%;
+  width:93%;
+  border:4px solid #25d366 ;
+  border-radius: 10px;
+}
+
+.ladoDireito{
+    
+    height:25rem;
+    width: 48%;
+    box-shadow: 5px 5px 17px -10px black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+

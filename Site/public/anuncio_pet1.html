@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recuperar senha 3 - PedePet</title>
-  <link rel="stylesheet" href="./css/forgotpass_3.css">
+  <title>Anuncio Ind - PedePet</title>
+  <link rel="stylesheet" href="./css/anuncio_pet1.css">
   <link rel="icon" href="./css/images/icon-pata.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+
+
 </head>
 
 <body>
@@ -31,46 +31,61 @@
   </nav>
 
   <main>
+
     <div class="containerCad">
+
       <div class="formCad">
 
-        <div class="banner">
-          <img src="./css/images/cachurro.png" class="cachorrinho">
-        </div>
 
         <div class="contentCad">
 
-          <div class="alinhamento">
-            <h1>Altere sua senha</h1>
+        <div class="ladoEsquerdo">
+
+        <div class="imagem"></div>
+
+        <div class="conteudo">
+        <div class="cardsInfos">
+          <div class="cardTempo"> Em 
+          <span id="cardTempo" class="value_tempo" onload="getTotalTempoEspera()"></span>
+          meses
           </div>
 
-          <div class="contentTop">
-            <h2>Definindo uma nova senha</h2>
-          </div>
-
-          <form action="" id="loginForm">
-            <div class="inputs">
-
-              <span class="title">Nova senha</span>
-              <input class="inputCad" id="input_senha" type="password" placeholder="Sua nova senha"
-                autocomplete="current-password">
-
-              <span class="title" id="conf_senha">Confirme a senha</span>
-              <input class="inputCad2" id="input_senhaconf" type="password" placeholder="Sua nova senha"
-                autocomplete="current-password">
-
-              <div class="btns">
-                <button onclick="validarCampoCad1()" class="prosseguir">Prosseguir</button>
-                <div id="snackbar"></div>
-              </div>
-
+          <div class="cardConfianca">
+            <span id="cardConfianca" class="value_confianca">Vendedor confiável</span>
             </div>
-          </form>
 
+          <div class="cardTempo"> Em 
+              <span id="cardTempo" class="value_tempo" onload="getTotalTempoEspera()"></span>
+              meses
+              </div>
+    
+              <div class="cardConfianca">
+                <span id="cardConfianca" class="value_confianca">Vendedor confiável</span>
+                </div>
+    
+        </div>
+
+
+        </div>
+
+        </div>
+        
+        <div class="ladoDireito">
+
+
+
+
+       <button onclick="" class="prosseguir">Garantir Filhote</button>
+        </div>  
+
+        
         </div>
 
       </div>
 
+
+
+    </div>
     </div>
   </main>
 
@@ -148,7 +163,11 @@
       2023 todos os direitos reservados.
     </div>
   </footer>
-  <script src="js/login.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 </body>
+
+<script src="js/register_pet.js"></script>
 
 </html>
