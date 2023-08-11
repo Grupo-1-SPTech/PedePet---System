@@ -187,6 +187,13 @@ body {
   transition: 0.4s;
 }
 
+.cadUser:hover {
+  background-color: var(--white);
+  color: var(--orange);
+  border: 4px solid var(--orange);
+  transition: 0.4s;
+}
+
 #blob {
   position: absolute;
   right: 0;
