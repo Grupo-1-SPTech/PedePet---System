@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Pedidos - PedePet</title>
+  <link rel="stylesheet" href="./css/menu_pedidos.css">
+  <link rel="icon" href="./css/images/icon-pata.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <nav>
+    <div class="container-nav">
+      <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
+      <div class="options">
+        <ul>
+          <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
+          <li><a href="./index.html#SobreNos">Sobre nós</a></li>
+          <li><a href="./index.html#FAQ">FAQ</a></li>
+          <li><a href="./index.html#Contato">Contato</a></li>
+        </ul>
+        <button onclick="entrar()" href="./login.html" class="btn-login">Entrar</a></button>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+
+  <main>
+    <div class="minha-fila">
+        <div class="titulo-fila">
+            <h3>Minhas filas</h3>
+        </div>
+<br>
+        <div class="mensagem">
+        
+        <div class="msg-erro">
+            <h1>Você não está em nenhuma fila</h1>
+        </div>
+
+            <img src="./css/images/MicrosoftTeams-image.png" class="Img-erro" alt="Nenhuma fila">
+        
+
+            <button onclick="ver_anuncio()" href="./anuncios_pets.html" class="botao-anuncio">Ver anúncios</button>
+          </div>
+        
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="minha-compra">
+      <div class="titulo-compra">
+        <h3>Minhas Compras</h3>
+      </div>
+      <div class="msg-erro">
+        <h1>Nenhuma compra efetuada</h1>
+      </div>
+      
+        <img src="./css/images/MicrosoftTeams-image.png" class="img-dois" alt="Nenhuma compra">
+    </div>
+
+
+
+  </main>
+
+
