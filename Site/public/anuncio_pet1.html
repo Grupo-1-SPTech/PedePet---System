@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/anuncio_pet1.css">
   <link rel="icon" href="./css/images/icon-pata.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -44,6 +44,7 @@
             <div class="imagem"></div>
 
             <div class="conteudo">
+
               <div class="cardInfos">
                 <div class="cardTempo">
                   <img class="icons_ad" src="../public/css/images/calendar-laranja.svg" alt="">
@@ -68,9 +69,22 @@
 
                 </div>
               </div>
+
               <div class="containerInfo">
-                <div class="dashFilhote"></div>
-                <div class="info"></div>
+                <div class="dashFilhote">
+                  
+                </div>
+                <div class="info">
+                  <span id="frasesNegrito">Fila de espera</span>
+                  <div class="informacoes">
+                    <span class="qtdFilhotes" onload="qtdFilhote()" style="color: black; ">4 </span> filhotes disponíveis <br>
+           
+                    <span class="raca" onload="raca()">Golden Retriever <br></span>
+           
+                    <span class="cidade">São Paulo - SP</span>
+                  </div>
+
+                </div>
               </div>
             </div>
 
@@ -174,6 +188,6 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 </body>
 
-<script src="js/register_pet.js"></script>
+<script src="js/anuncio_pet1.js"></script>
 
 </html>
