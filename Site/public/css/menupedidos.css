@@ -186,35 +186,36 @@ body {
 }
 
 .content h1 {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 900;
     font-family: 'Montserrat' sans-serif;
     color: var(--black);
 }
 
-.containerProfiles {
+.containerProfile {
     width: 100%;
-    height: 100%;
-    border-radius: 12px;
+    height: 50vh;
+    margin-top: 20px;
     background-color: var(--white);
-    background-color: green;
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: -5px 5px 20px #676767;
+}
+
+.titleProfile2 {
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 30px;
+    font-family: 'Montserrat' sans-serif;
+    color: var(--black);
 }
 
 .banner {
     width: 100%;
-    height: 120px;
-    background-color: var(--darkpurple);
-    border-radius: 12px 12px 0px 0px;
+    height: 9vh;
+    margin-top: 40px;
+    background-color: var(--white);
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: -5px 5px 20px #676767;
 }
 
-.changePhoto {
-    width: 220px;
-    height: 60px;
-    color: var(--white);
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    border-radius: 12px;
-    border: none;
-    background-color: var(--orange);
-}
+
