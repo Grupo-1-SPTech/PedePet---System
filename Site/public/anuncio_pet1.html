@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/anuncio_pet1.css">
   <link rel="icon" href="./css/images/icon-pata.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -44,6 +44,7 @@
             <div class="imagem"></div>
 
             <div class="conteudo">
+
               <div class="cardInfos">
                 <div class="cardTempo">
                   <img class="icons_ad" src="../public/css/images/calendar-laranja.svg" alt="">
@@ -68,9 +69,22 @@
 
                 </div>
               </div>
+
               <div class="containerInfo">
-                <div class="dashFilhote"></div>
-                <div class="info"></div>
+                <div class="dashFilhote">
+                  
+                </div>
+                <div class="info">
+                  <span id="frasesNegrito">Fila de espera</span>
+                  <div class="informacoes">
+                    <span class="qtdFilhotes" id="espacinho" onload="qtdFilhote()" style="color: black; ">4 &nbsp; </span> filhotes disponíveis <br>
+           
+                    <span class="raca"id="espacinho" onload="raca()">Golden Retriever <br></span>
+           
+                    <span id="espacinho" class="cidade">São Paulo - SP</span>
+                  </div>
+
+                </div>
               </div>
             </div>
 
@@ -78,8 +92,18 @@
 
           <div class="ladoDireito">
 
+          <div class="title-adpet">
+          <h1 onload="raca()"> Golden Retriver<h1>  
+            <span id="sub-title">Vendedor:&nbsp;<h4 onload="vendedor()">Fabio Moledo</h4></span> <br>
+            <span id="filhotes_preco" class="value_metrica">R$ 2.800,00</span>
+            <span id="aprovacao">*Sujeito a espera de aprovação do vendedor*</span>
 
+           <span id="sub-title">Observações:</span>
+           <div class="observacao" onload="info_pet()">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </div>
+           <span id="sub-title">Formas de pagamento:</span>
+          </div>
 
+        
 
             <button onclick="" class="prosseguir">Garantir Filhote</button>
           </div>
@@ -174,6 +198,6 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 </body>
 
-<script src="js/register_pet.js"></script>
+<script src="js/anuncio_pet1.js"></script>
 
 </html>
