@@ -215,19 +215,25 @@ body {
 .ver_anuncio {
     width: 200px;
     height: 40px;
-    color: #44207E;
+    color: var(--darkpurple);
     font-size: 20px;
     font-family: 'Montserrat';
     font-weight: 700;
     border-radius: 40px;
     border: none;
-    border: 3px solid purple;
+    border: 3px solid var(--darkpurple);
     background-color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 40%;
     margin-top: 3%;
+}
+
+.ver_anuncio:hover {
+    background-color: var(--darkpurple);
+    color: var(--white);
+    transition: 0.4s;
 }
 
 .title1{
