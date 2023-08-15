@@ -1,72 +1,104 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Pedidos - PedePet</title>
-  <link rel="stylesheet" href="./css/menu_pedidos.css">
-  <link rel="icon" href="./css/images/icon-pata.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/menu_pedidos.css">
+    <link rel="icon" href="./css/images/logoPedepetRoxo.png">
 </head>
 
 <body>
-
-  <nav>
     <div class="container-nav">
-      <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
-      <div class="options">
-        <ul>
-          <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
-          <li><a href="./index.html#SobreNos">Sobre nós</a></li>
-          <li><a href="./index.html#FAQ">FAQ</a></li>
-          <li><a href="./index.html#Contato">Contato</a></li>
-        </ul>
-        <button onclick="entrar()" href="./login.html" class="btn-login">Entrar</a></button>
-      </div>
-    </div>
-  </nav>
-  <br>
-  <br>
-  <br>
-
-  <main>
-    <div class="minha-fila">
-        <div class="titulo-fila">
-            <h3>Minhas filas</h3>
+        <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
+        <div class="optionsNav">
+            <ul>
+                <li><a href="#ComoFunciona">Como funciona</a></li>
+                <li><a href="#SobreNos">Sobre nós</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+                <li><a href="#Contato">Contato</a></li>
+            </ul>
+            <button onclick="entrar()" href="./login.html" class="btn-login">Entrar</button>
         </div>
-<br>
-        <div class="mensagem">
+    </div>
+    </nav>
+    <main>
+
+
+        <div class="container">
+
+            <div class="sidebar">
+                <button id="b1" class="opt">
+                    <img src="css/images/profileOrangeIcon.svg" alt="">
+                    <span>Perfil</span>
+                </button>
+
+                <button id="b2" class="opt">
+                    <img src="css/images/archiveIcon.svg" alt="">
+                    <span>Meus pedidos</span>
+                </button>
+
+                <button id="b3" class="opt">
+                    <img src="css/images/accessibilityIcon.svg" alt="">
+                    <span>Acessibilidade</span>
+                </button>
+
+                <button id="b4" class="opt">
+                    <img src="css/images/cardIcon.svg" alt="">
+                    <span>Pagamentos</span>
+                </button>
+
+                <button id="b5" class="opt">
+                    <img src="css/images/localOrangeIcon.svg" alt="">
+                    <span>Endereços</span>
+                </button>
+
+                <button id="b6" class="opt">
+                    <img src="css/images/logoutIcon.svg" alt="">
+                    <span>Sair</span>
+                </button>
+
+                <button class="logout" onclick="logoutUser()">Voltar ao inicio</button>
+            </div>
+
+            <div class="content">
+                <h1 class="titleProfile">
+                    Minhas filas
+                </h1>
+                <br>
+
+                <div class="containerProfile">
+                    <div class="banner">
+                     <h2 class="title1">Você não tem nenhuma fila no momento</h2>
+                     <br>
+
+                     <img src="./css/images/MicrosoftTeams-image.png" class="img-erro">
+                     <br>
+
+                        <button href="./anuncio_pet1.html" class="ver_anuncio">Ver anúncios</button>
+                    </div>
+                </div>
+
+                <h1 class="titleProfile2">
+                  Histórico de Compra
+              </h1>
+              <br><br>
+              <h2 class="title2">
+                Você não tem nenhuma compra disponível
+              </h2>
+              <br><br>
+              <img src="./css/images/MicrosoftTeams-image.png" class="img-erro">
+
+          
+            </div>
+
         
-        <div class="msg-erro">
-            <h1>Você não está em nenhuma fila</h1>
         </div>
 
-            <img src="./css/images/MicrosoftTeams-image.png" class="Img-erro" alt="Nenhuma fila">
-        
 
-            <button onclick="ver_anuncio()" href="./anuncios_pets.html" class="botao-anuncio">Ver anúncios</button>
-          </div>
-        
-    </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </main>
+</body>
 
-    <div class="minha-compra">
-      <div class="titulo-compra">
-        <h3>Minhas Compras</h3>
-      </div>
-      <div class="msg-erro">
-        <h1>Nenhuma compra efetuada</h1>
-      </div>
-      
-        <img src="./css/images/MicrosoftTeams-image.png" class="img-dois" alt="Nenhuma compra">
-    </div>
-
-
-
-  </main>
-
-
+</html>
+<nav>
