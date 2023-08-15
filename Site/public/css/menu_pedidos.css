@@ -120,7 +120,7 @@ body {
 
 .sidebar {
     width: 20vw;
-    height: 100vh;
+    height: 170vh;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
@@ -185,7 +185,9 @@ body {
 }
 
 .content h1 {
-    font-size: 28px;
+    width: 600px;
+    height: 59px;
+    font-size: 48px;
     font-weight: 900;
     font-family: 'Montserrat' sans-serif;
     color: var(--black);
@@ -201,7 +203,7 @@ body {
 
 .banner {
     width: 100%;
-    height: 220px;
+    height: 336px;
     background-color: var(--white);
     border-radius: 12px 12px 0px 0px;
     box-shadow: rgb(0, 0, 0.6);
@@ -211,30 +213,41 @@ body {
 .ver_anuncio {
     width: 200px;
     height: 40px;
-    color: var(--darkpurple);
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    border-radius: 12px;
+    color: #44207E;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    border-radius: 40px;
     border: none;
-    border: 2px solid purple;
+    border: 3px solid purple;
     background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    margin-top: 3%;
 }
 
 .title1{
-  font-size: 20px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: 700;
     color: var(--gray);
     color: gray;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
 }
 
 .img-erro {
-width: 120px;
-height: 120px;
+width: 140px;
+height: 140px;
+margin-left: 43%;
 }
 
 .titleProfile2 {
-  font-size: 30px;
+    width: 526px;
+    height: 59px;
+  font-size: 48px;
   font-weight: 900;
   margin-top: 30px;
   font-family: 'Montserrat' sans-serif;
@@ -242,8 +255,20 @@ height: 120px;
 }
 
 .title2{
-  font-size: 20px;
-    font-weight: 900;
+    width: 700px;
+    height: 34px;
+    font-family: "Montserrat";
+    font-size: 28px;
+    font-weight: 700;
     color: var(--gray);
     color: gray;
+    display: flex;
+    justify-content: center;
+    margin-left: 19%;
+}
+
+.img2{
+    width: 200px;
+height: 200px;
+margin-left: 41%;
 }
