@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/menupedidos.css">
     <link rel="icon" href="./css/images/logoPedepetRoxo.png">
 </head>
 
@@ -63,20 +63,131 @@
             </div>
 
             <div class="content">
-                <h1 class="titleProfile">
+                <span class="titleProfile">
                     Minhas filas
-                </h1>
+                </span>
 
                 <div class="containerProfile">
-                    <div class="banner"></div>
-                    <div class="contentProfile">
-                        <div class="topProfile">
-                            <div class="profilePhoto"></div>
-                            <button class="changePhoto">Alterar foto de usuário</button>
+                    <div class="left">
+                        <div class="containerImage"> 
+                            <img class="Puppy" src="css/images/puppys.png">
+                        </div>
+                        <div class="containerText">
+                            <div class="Part">
+                                <span class="Tittle2">
+                                    Nascimento Em
+                                </span>
+                                <span class="subtitle1">
+                                    147 <span class="OrangeText">Dias</span>
+                                </span>    
+                            </div>
+                            <div class="Part">
+                                <span class="Tittle2">
+                                    Sua Posição
+                                </span>  
+                                <span class="subtitle2">
+                                    4º <span class="OrangeText">Lugar</span>
+                                </span>   
+                            </div>
                         </div>
                     </div>
+                    <div class="center">
+
+                        <span class="text1">
+                            Sobre o anúncio
+                        </span>
+
+                        <div id="in" class="Infos">
+                            <img src="css/images/profileOrangeIcon.svg" alt="">
+                            <span>Vendedor: Fábio Moledo</span>
+                        </div>
+
+                        <div id="in" class="Infos">
+                            <img src="css/images/verified-svgrepo-com.svg" alt="">
+                            <span>Vendedor Confiável</span>
+                        </div>
+
+                        <div id="in" class="Infos">
+                            <img src="css/images/iconVacina.svg" alt="">
+                            <span>Vacinados</span>
+                        </div>
+
+                        <span class="text1">
+                            Contato do vendedor
+                        </span>
+
+                        <div class="ContainerRedes">
+                            <img src="css/images/whatsapp.svg" class="espacamento">
+                            <img src="css/images/insta.svg" class="espacamento">
+                            <img src="css/images/gmail.svg" class="espacamento">
+                        </div>
+
+                    </div>
+                    <div class="direita">
+
+                        <div class="alinhamento"> 
+                            <span class="text2">
+                                Status do pedido
+                            </span>
+
+                            <div id="in" class="Status">
+                                <span onclick="location.href='./register_user1.html'" id="bolinha" class="dot"></span>
+                                <span class="Statustext">Aguardando aprovação</span>
+                            </div>
+
+                            <div id="in" class="Status">
+                                <span onclick="location.href='./register_user1.html'" id="bolinha" class="dot"></span>
+                                <span class="Statustext">Pagamento inicial</span>
+                            </div>
+
+                            <div id="in" class="Status">
+                                <span onclick="location.href='./register_user3.html'" class="dot1"></span>
+                                <span class="Statustext">Fila de espera</span>
+                            </div>
+                            
+                            <div id="in" class="Status">
+                                <span onclick="location.href='./register_user3.html'" class="dot1"></span>
+                                <span class="Statustext">Nascimento da ninhada</span>
+                            </div>
+
+                            <div id="in" class="Status">
+                                <span onclick="location.href='./register_user3.html'" class="dot1"></span>
+                                <span class="Statustext">Pagamento final</span>
+                            </div>
+
+                            <div id="in" class="Status">
+                                <span onclick="location.href='./register_user3.html'" class="dot1"></span>
+                                <span class="Statustext">Recebimento</span>
+                            </div>
+                        </div>
+                        <div class="ContainerCancelar"> 
+                            <button class="Cancelar" onclick="logoutUser()">Cancelar Pedido</button>
+                            </div>
+                    </div>
                 </div>
+
+                <div class="containerHist">
+                <span class="titleProfile2">
+                    Histórico de compra
+                </span>
+
+                
+                    <div class="banner">
+
+                    </div>
+
+                    <div class="banner">
+
+                    </div>
+
+                    <div class="banner">
+
+                    </div>
+                </div>  
+               
             </div>
+
+            
         </div>
 
 
