@@ -216,7 +216,7 @@ function validarCampoCad3() {
     }
 
     cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3);
-    window.location.href = "./index.html";
+    window.location.href = "./puppys_ad.html";
 }
 
 function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
