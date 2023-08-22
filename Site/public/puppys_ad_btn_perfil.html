@@ -6,19 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anúncio Pet - PedePet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="./css/teste.css">
+    <link rel="stylesheet" href="./css/puppys_ad_btn_perfil.css">
     <link rel="icon" href="./css/images/logoIcon.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="container-nav">
         <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
-        <ul class="navbar-list">
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
+        <ul class="options">
+            <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
+            <li><a href="./index.html#SobreNos">Sobre nós</a></li>
+            <li><a href="./index.html#FAQ">FAQ</a></li>
+            <li><a href="./index.html#Contato">Contato</a></li>
         </ul>
+        <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" onclick="toggle()">
+                <div class="profile-img">
+                </div>
+            </div>
+
+            <ul class="profile-dropdown-list">
+                <li class="profile-name">
+                       <h1>Fabio Moledo</h1>
+                       <span>Comprador</span>
+                </li>
+                <hr/>
+                <li class="profile-dropdown-list-item" id="config">
+                    <a href="">
+                        <i class="fa-regular fa-user"> </i>
+                        Configurações da conta
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item" id="mode">
+                    <a href="">
+                        <i class="fa-regular fa-moon"> </i>
+                        Tema
+                        <div class="switch-theme">
+                            <input type="checkbox" id="check" id=>
+                            <label for="check" class="button" id="btn-dark-mode-toggle"></label>
+                        </div>
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item" id="daltonismo">
+                    <a href="#">
+                        <i class="fa-regular fa-eye"> </i>
+                        Daltonismo
+                    </a>
+                </li>
+                <hr/>
+                <li class="profile-dropdown-list-item" id="sair">
+                    <a href="index.html">
+                        <i class="fa-solid fa-arrow-right-to-bracket"> </i>
+                        Sair
+                    </a>
+                </li>
+            </ul>
+        </div>
+
     </nav>
     <main>
         <!-- IMAGE -->
@@ -38,7 +83,7 @@
                         <div class="select-menu">
                             <div class="select-btn" id="select-raca">
                                 <span class="sBtn-text">Escolha uma raça</span>
-                                <img src="./css/images/arrowDrop.svg" alt="">
+                                <img src="./css/images/arrowDrop.svg" alt="" id="icon-seta">
                             </div>
                             <ul class="options">
                                 <li class="option" value="0">
@@ -88,7 +133,7 @@
                         <div class="select-menu2">
                             <div class="select-btn2" id="select-tamanho">
                                 <span class="sBtn-text2" >Escolha um tamanho</span>
-                                <img src="./css/images/arrowDrop.svg" alt="">
+                                <img src="./css/images/arrowDrop.svg" alt="" id="icon-seta">
                             </div>
                             <ul class="options2">
                                 <li class="option2" value="1">
@@ -126,7 +171,7 @@
                         <button onclick="" class="filtrar">Filtrar</button>
                     </div>
                 </div>
-                <div class="card-adpet">
+                <div class="card-adpet" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">
                     <div class="ex-card">
                         <div class="img-pet"></div>
                         <div class="content-card">
@@ -157,7 +202,7 @@
                             <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
                         </div>
                     </div>
-                    <div class="ex-card3">
+                    <div  class="ex-card3">
                         <div class="img-pet"></div>
                         <div class="content-card">
                             <h3>Spitz Alemão</h3>
@@ -172,23 +217,6 @@
                             <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
                         </div>
                     </div>
-                    <div class="ex-card4">
-                        <div class="img-pet"></div>
-                        <div class="content-card">
-                            <h3>Spitz Alemão</h3>
-                            <p id="mes">3 meses</p>
-                            <p id="preco">R$ 2.800,00</p>
-                            <div class="fila-local">
-                                <p id="fila">6/10 Fila de espera</p>
-                                <p id="local">SP</p>
-                            </div>
-                        </div>
-                        <div class="btn-fila">
-                            <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-pet2">
                     <div class="ex-card4">
                         <div class="img-pet"></div>
                         <div class="content-card">
@@ -287,4 +315,8 @@
 </body>
 
 </html>
-<script src="./js/puppy_ad_login.js"></script>
+<script src="./js/puppys_ad_btn_perfil.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>

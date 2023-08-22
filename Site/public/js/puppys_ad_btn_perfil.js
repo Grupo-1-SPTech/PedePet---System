@@ -1,3 +1,14 @@
+let profileDropdownList = document.querySelector('.profile-dropdown-list');
+let btn = document.querySelector('.profile-dropdown-btn');
+let modoBtn = document.querySelector('modo');
+let daltonismoBtn = document.querySelector('daltonismo');
+
+const toggle = () => profileDropdownList.classList.toggle('active');
+
+window.addEventListener('click', function(e){
+    if(!btn.contains(e.target)) profileDropdownList.classList.remove('active');
+});
+
 // função select raça
 const optionMenu = document.querySelector('.select-menu');
 selectBtn = optionMenu.querySelector('.select-btn');
@@ -5,6 +16,7 @@ options = optionMenu.querySelectorAll('.option');
 sBtn_text = optionMenu.querySelector('.sBtn-text');
 
 selectBtn.addEventListener('click', () => optionMenu.classList.toggle('active'))
+
 
 options.forEach(option => {
     option.addEventListener('click', () => {
@@ -14,6 +26,10 @@ options.forEach(option => {
 
         optionMenu.classList.remove('active')
     })
+});
+
+window.addEventListener('click', function(e){
+    if(!selectBtn.contains(e.target)) optionMenu.classList.remove('active'); 
 });
 
 // função select tamanho
@@ -34,8 +50,15 @@ options2.forEach(option2 => {
     })
 });
 
+window.addEventListener('click', function(e){
+    if(!selectBtn2.contains(e.target)) optionMenu2.classList.remove('active2'); 
+});
+
 
 // limpar filtros
+
+// crieate a function to clear the value select in the filter
+
 
 const racaSelect = document.getElementById('select-raca')
 const tamanhoSelect = document.getElementById('select-tamanho')
@@ -44,23 +67,35 @@ const vacinaNaoSelect = document.getElementById('vacina-nao')
 const limparFilter = document.getElementById('limpar-filter')
 
 function limparFiltros() {
-    racaSelect.selectedOption = 0;
-    tamanhoSelect.selectedIndex = 0;
-    vacinaSimSelect.selectedIndex = 0;
-    vacinaNaoSelect.selectedIndex = 0;
-    // racaSelect.innerText = null;
-    // tamanhoSelect.innerText = null;
-    // vacinaSimSelect.innerText = null;
-    // vacinaNaoSelect.innerText = null;
+    document.getElementById("select-raca").querySelector(".sBtn-text").textContent = "Escolha uma raça";
+
+    document.getElementById("select-tamanho").querySelector(".sBtn-text2").textContent = "Escolha um tamanho";
+
+    document.querySelector(".radioVacinado").checked = false;
+
+    document.querySelector(".radioVacinadoNao").checked = false;
 }
 
 limparFilter.addEventListener('click', limparFiltros);
 
-let profileDropdownList = document.querySelector('.profile-dropdown-list');
-let btn = document.querySelector('.profile-dropdown-btn');
 
-const toggle = () => profileDropdownList.classList.toggle('active');
+// troca de temar dark mode
 
-window.addEventListener('click', function(e){
-    if(!btn.contains(e.target)) profileDropdownList.classList.remove('active');
-});
+const btnDarkMode = document.getElementById('btn-dark-mode-toggle')
+const themeSystem = localStorage.getItem("themeSystem") || "light"
+
+btnDarkMode.addEventListener('click', () => {
+    let oldTheme = localStorage.getItem("themeSystem") || "light"
+    let newTheme = oldTheme === "light" ? "dark" : "light"
+
+    localStorage.setItem("themeSystem", newTheme)
+    defineCurrentTheme(newTheme)
+})
+
+function defineCurrentTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme)
+    if(theme == "light")
+    {
+
+    }
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/puppys_ad.css">
  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -132,7 +133,7 @@
                         <button onclick="" class="filtrar">Filtrar</button>
                     </div>
                 </div>
-                <div class="card-adpet">
+                <div class="card-adpet" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">
                     <div class="ex-card">
                         <div class="img-pet"></div>
                         <div class="content-card">
@@ -163,7 +164,7 @@
                             <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
                         </div>
                     </div>
-                    <div class="ex-card3">
+                    <div  class="ex-card3">
                         <div class="img-pet"></div>
                         <div class="content-card">
                             <h3>Spitz Alemão</h3>
@@ -267,6 +268,9 @@
                 <li>
                     <a href="./forgotpass_1.html" class="footer-link">Esqueci minha senha</a>
                 </li>
+                <li>
+                    <a href="./puppys_ad_btn_perfil.html" class="footer-link">Anúncios</a>
+                </li>
             </ul>
 
             <div id="footer_subscribe">
@@ -294,3 +298,7 @@
 
 </html>
 <script src="./js/puppys_ad.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>

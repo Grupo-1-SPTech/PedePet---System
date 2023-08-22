@@ -356,6 +356,7 @@ body {
     width: 100%;
     height: 75%;
     margin-top: 7.5%;
+    overflow: hidden;
 }
 
 .text2 {
@@ -460,8 +461,9 @@ body {
 }
 
 .banner {
-    width: 90%;
-    height: 9vh;
+    display: flex;
+    width: 98%;
+    height: 8vh;
     margin-top: 40px;
     margin-left: 0.5vw;
     background-color: var(--white);
@@ -469,4 +471,137 @@ body {
     box-shadow: 0px 1px 15px #676767;
 }
 
+.Infos2 {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+ 
+.Infos2 span {
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    margin-left: 5%;
+}
+
+.ContainerProfile {
+    width: 40px;
+    height: 40px;
+    background-color: var(--orange);
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    
+}
+
+.IconProfile {
+    width: 20px;
+    height: 20px;
+    align-items: center;    
+    margin-left: 23%;
+}
+
+.containerTexto {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.Texto {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--darkpurple);
+}
+
+.containerStatus {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.corPendente {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 29px;
+    overflow: hidden;
+    margin-left: 15%;
+    background-color: #FFBF00;
+    border-radius: 16px;
+}
+
+.Pendente2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.corConcluido {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 29px;
+    overflow: hidden;
+    margin-left: 15%;
+    background-color: #3FD73C;
+    border-radius: 16px;
+}
+
+.Concluido2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.corCancelado {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 29px;
+    overflow: hidden;
+    margin-left: 15%;
+    background-color: #B81000;
+    border-radius: 16px;
+}
+
+.Cancelado2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.containerVerMais {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.VerMais {
+    width: 121px;
+    height: 40px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-left: 10%;
+    border-color: var(--orange);
+}
+
+.VerMais:hover {
+    background-color: var(--white);
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    transition: 0.4s;
+  }
 
