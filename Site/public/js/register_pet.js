@@ -318,3 +318,7 @@ function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
             console.log(err);
         });
 }
+
+function entrar() {
+    window.location.href = "./login.html"
+}

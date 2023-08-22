@@ -459,3 +459,7 @@ options4.forEach(option4 => {
         optionMenu4.classList.remove('active4')
     })
 });
+
+function entrar() {
+    window.location.href = "./login.html"
+}

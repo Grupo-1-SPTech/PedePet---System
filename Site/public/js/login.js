@@ -60,3 +60,7 @@ function fazerLogin(email, senha) {
       console.error('Erro ao fazer login:', error);
     });
 }
+
+function entrar() {
+  window.location.href = "./login.html"
+}
