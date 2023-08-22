@@ -29,8 +29,8 @@ class UsuarioController(
 
         if(selectComprador == null) {
             val usuarioComprador: Usuario = repository.save(cadCompradorRequest.usuario)
-            cadCompradorRequest.endereco.usuario?.id = usuarioComprador.id
-            cadCompradorRequest.formulario.usuario?.id = usuarioComprador.id
+            cadCompradorRequest.endereco.usuario = repository.findById(usuarioComprador.id).get()
+            cadCompradorRequest.formulario.usuario = repository.findById(usuarioComprador.id).get()
             enderecoRepository.save(cadCompradorRequest.endereco)
             formularioRepository.save(cadCompradorRequest.formulario)
             return ResponseEntity.status(201).body(usuarioComprador)
@@ -43,18 +43,15 @@ class UsuarioController(
     @PostMapping("/cadastrar/vendedor")
     fun cadVendedor(@RequestBody cadVendedorRequest: VendedorRequest): ResponseEntity<Usuario> {
 
-        println("bbbbbbbbbbbbbbbbbbbbbbbb")
         val selectVendedor = repository.findByEmailAndTipoUsuario(cadVendedorRequest.usuario.email, tipoUsuario = 2)
 
-        println("aaaaaaaaaaaaaaaaaaaaaaa")
-        println(selectVendedor)
         if(selectVendedor == null) {
             val usuarioVendedor: Usuario = repository.save(cadVendedorRequest.usuario)
-            cadVendedorRequest.endereco.usuario?.id = usuarioVendedor.id
-            cadVendedorRequest.anuncioPet.usuario?.id = usuarioVendedor.id
+            cadVendedorRequest.endereco.usuario = repository.findById(usuarioVendedor.id).get()
+            cadVendedorRequest.anuncioPet.usuario = repository.findById(usuarioVendedor.id).get()
             enderecoRepository.save(cadVendedorRequest.endereco)
             val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
-            cadVendedorRequest.filhote.anuncioPet?.id = saveAnuncio.id
+            cadVendedorRequest.filhote.anuncioPet = anuncioRepository.findById(saveAnuncio.id).get()
             val qtdFilhote = saveAnuncio.qtdFilhotes
             for (i in 1..qtdFilhote){
                 val dog = cadVendedorRequest.filhote
