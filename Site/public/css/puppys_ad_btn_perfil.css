@@ -7,13 +7,19 @@
   --darkblue: #4c4c9d;
   --purple: #7c4bc8;
   --darkpurple: #44207e;
-  --white: #fffafa;
-  --black: #000;
+  --white: #fff;
+  --dark: #000;
   --gray: #d0d0d0;
   --darkgray: #6c6c6c;
   --lightgray: #D9D9D9;
   --background: linear-gradient(70deg, #fb3f08, #4c4c9d, #7c4bc8, #fb3f08);
   --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+
+[data-theme="dark"]{
+  --white:#000;
+  --dark: #fff;
+  --darkpurple: #7c4bc8;
 }
 
 *,
@@ -45,6 +51,10 @@
   background:  var(--purple);
   border-radius: 30px;
 }
+
+main {
+  background-color: var(--white);
+}
 /* menu */
 
 .container-nav {
@@ -67,7 +77,7 @@
   align-items: center;
 }
 
-.options li {
+.container-nav .options li {
   display: inline-block;
   text-align: center;
   margin: 0 1.8rem;
@@ -76,7 +86,7 @@
 .options li a {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    color: var(--black);
+    color: var(--dark);
     font-weight: 800;
     font-size: 16px;
     position: relative;
@@ -116,6 +126,7 @@
 
 .profile-name{
   padding: 5%;
+  color: var(--dark);
 }
 
 .profile-dropdown-list {
@@ -167,7 +178,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--black);
+  color: var(--dark);
 }
 
 .profile-dropdown-list-item a i{
@@ -176,7 +187,7 @@
   width: 2.3rem;
   height: 2.3rem;
   background-color: var(--orange);
-  color: white;
+  color: var(--white);
   line-height: 2.3rem;
   text-align: center;
   border-radius: 50%;
@@ -221,7 +232,7 @@ input:checked + .button::before{
   transform: translateX(25px);
 }
 
-input{
+.switch-theme input{
   display: none;
 }
 
@@ -261,16 +272,22 @@ input{
   font-size: 45px;
   text-align: center;
   margin-top: 1.5rem;
+  color: var(--dark);
+  background-color: var(--white);
 }
 
 .subtitle-adpet h1{
   font-size: 30px;
   padding: 5% 5% 0 5%;
+  color: var(--dark);
+  background-color: var(--white);
 }
 
 .content-adpet{
   padding: 3% 5%;
   overflow: hidden;
+  color: var(--dark);
+  background-color: var(--white);
 }
 
 .content-adpet h3{
@@ -291,13 +308,13 @@ input{
   margin-top: 4%;
   width: 23vw;
   border-radius: 12px;
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--dark);
 }
 
 .select-menu .select-btn {
   display: flex;
   height: 55px;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 20px;
   font-size: 18px;
   font-weight: 400;
@@ -313,8 +330,12 @@ input{
   transition: 0.3s;
 }
 
+.select-btn #icon-seta{
+  color: red;
+}
+
 #select-raca {
-  background: url(images/icon-dog.png) no-repeat 18px 14px;
+  background: url(images/dog-solid.svg) no-repeat 18px 14px;
   background-size: 28px 28px;
   padding-left: 20%;
 }
@@ -351,7 +372,7 @@ input{
   align-items: center;
   margin-top: 10px;
   background-color: var(--white);
-  color: var(--black);
+  color: var(--dark);
   font-size: 15px;
 }
 
@@ -367,13 +388,13 @@ input{
   margin-top: 4%;
   width: 23vw;
   border-radius: 12px;
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--dark);
 }
 
 .select-menu2 .select-btn2 {
   display: flex;
   height: 55px;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 20px;
   font-size: 18px;
   font-weight: 400;
@@ -390,7 +411,7 @@ input{
 }
 
 #select-tamanho {
-  background: url(images/porte_dog.png) no-repeat 18px 14px;
+  background: url(images/paw-solid.svg) no-repeat 18px 14px ;
   background-size: 28px 28px;
   padding-left: 20%;
 }
@@ -427,7 +448,7 @@ input{
   align-items: center;
   margin-top: 10px;
   background-color: var(--white);
-  color: var(--black);
+  color: var(--dark);
   font-size: 15px;
 }
 
@@ -633,7 +654,7 @@ input{
 
 footer {
   width: 100%;
-  color: var(--black);
+  color: var(--dark);
 }
 
 .footer-link {
@@ -663,7 +684,7 @@ footer {
   justify-content: center;
   height: 2.5rem;
   width: 2.5rem;
-  color: var(--black);
+  color: var(--dark);
   border-radius: 50%;
   transition: all 0.4s;
 }
@@ -697,7 +718,7 @@ footer {
 }
 
 .footer-list .footer-link {
-  color: var(--black);
+  color: var(--dark);
   transition: all 0.4s;
   font-size: 16px;
 }
@@ -718,7 +739,7 @@ footer {
 }
 
 #footer_subscribe p {
-  color: var(--black);
+  color: var(--dark);
   font-size: 16px;
 }
 
@@ -740,7 +761,7 @@ footer {
 #input_group button {
   background-color: var(--purple);
   border: none;
-  color: var(--black);
+  color: var(--dark);
   padding: 0px 1.25rem;
   font-size: 1.125rem;
   height: 100%;
@@ -762,11 +783,11 @@ footer {
 #footer_copyright {
   display: flex;
   justify-content: center;
-  background-color: rgb(208, 208, 208);
+  background-color: var(--lightgray);
   font-size: 0.8rem;
   padding: 1.5rem;
   font-weight: 400;
-  color: var(--black);
+  color: black;
 }
 
 ::-webkit-input-placeholder { /* Edge */

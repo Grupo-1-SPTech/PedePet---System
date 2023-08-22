@@ -53,16 +53,34 @@ const vacinaNaoSelect = document.getElementById('vacina-nao')
 const limparFilter = document.getElementById('limpar-filter')
 
 function limparFiltros() {
-    racaSelect.selectedOption = 0;
-    tamanhoSelect.selectedIndex = 0;
-    vacinaSimSelect.selectedIndex = 0;
-    vacinaNaoSelect.selectedIndex = 0;
-    // racaSelect.innerText = null;
-    // tamanhoSelect.innerText = null;
-    // vacinaSimSelect.innerText = null;
-    // vacinaNaoSelect.innerText = null;
-}
 
+    document.getElementById("select-raca").querySelector(".sBtn-text").textContent = "Escolha uma raça";
+
+    document.getElementById("select-tamanho").querySelector(".sBtn-text2").textContent = "Escolha um tamanho";
+
+    document.querySelector(".radioVacinado").checked = false;
+
+    document.querySelector(".radioVacinadoNao").checked = false;
+}
 limparFilter.addEventListener('click', limparFiltros);
 
+// troca de temar dark mode
 
+const btnDarkMode = document.getElementById('btn-dark-mode-toggle')
+const themeSystem = localStorage.getItem("themeSystem") || "light"
+
+btnDarkMode.addEventListener('click', () => {
+    let oldTheme = localStorage.getItem("themeSystem") || "light"
+    let newTheme = oldTheme === "light" ? "dark" : "light"
+
+    localStorage.setItem("themeSystem", newTheme)
+    defineCurrentTheme(newTheme)
+})
+
+function defineCurrentTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme)
+    if(theme == "light")
+    {
+
+    }
+}
