@@ -545,6 +545,10 @@ input[type="radio"]{
   border: 5px solid var(--darkpurple);
   border-radius: 8px;
   margin-top: 90px;
+  background-image: url(images/equipe-provianimal.JPG);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* Section metricas pedepet */ 

@@ -269,7 +269,7 @@ function validarCampoCad3() {
         } else if (cadastroUserOBJT.tipoUser == '1') {
             console.log("Inserindo dados de comprador")
             cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
-            window.location.href = "./index.html";
+            window.location.href = "./puppys_ad.html";
 
         }
     }
@@ -459,3 +459,7 @@ options4.forEach(option4 => {
         optionMenu4.classList.remove('active4')
     })
 });
+
+function entrar() {
+    window.location.href = "./login.html"
+}

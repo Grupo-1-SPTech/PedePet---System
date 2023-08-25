@@ -61,7 +61,7 @@
 
               <div class="btns">
                 <button onclick="location.href='./index.html'" class="cancelar">Cancelar</button>
-                <button class="prosseguir" onclick="location.href='./forgotpass_2.html'">Prosseguir</button>
+                <button type="button" class="prosseguir" onclick="validarEmail()">Prosseguir</button>
                 <div id="snackbar"></div>
               </div>
 
@@ -149,7 +149,8 @@
       2023 todos os direitos reservados.
     </div>
   </footer>
-  <script type="module">
+  <script src="js/forgotpass.js"></script>
+  <!-- <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
@@ -171,7 +172,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-  </script>
+  </script> -->
 </body>
 
 </html>

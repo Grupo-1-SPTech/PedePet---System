@@ -21,3 +21,7 @@ const neutralLineChart = new Chart(ctx, {
     }
   }
 });
+
+function entrar() {
+  window.location.href = "./login.html"
+}
