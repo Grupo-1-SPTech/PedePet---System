@@ -291,6 +291,7 @@ input:checked + .button::before{
   --radio-color: lightgray ; 
 }
 
+.tritanopia,
 :root:has(#tritanopia:checked){
   --orange: #f78da7;
   --darkblue: #024f45;
@@ -305,6 +306,7 @@ input:checked + .button::before{
   --shadow: 0px 2px 8px 0px var(--darkgray);
 }
 
+.protanopia,
 :root:has(#protanopia:checked){
   --orange: #957e04;
   --darkblue: #0e406b;
@@ -319,6 +321,7 @@ input:checked + .button::before{
   --shadow: 0px 2px 8px 0px var(--darkgray);
 }
 
+.deuteranopia,
 :root:has(#deuteranopia:checked){
   --orange: #bda007;
   --darkblue: #16609f;
@@ -333,6 +336,7 @@ input:checked + .button::before{
   --shadow: 0px 2px 8px 0px var(--darkgray);
 }
 
+.acromatico,
 :root:has(#acromatico:checked){
   --orange: #635d5d;
   --darkblue: #727275;
