@@ -1,23 +1,18 @@
 const neutralValue = 50; // Valor neutro (pode ser variado)
 const actualValue = 65; // Valor atual (pode ser variado)
 
-const ctx = document.getElementById('neutralLineChart').getContext('2d');
-const neutralLineChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ['Neutro', 'Atual'],
-    datasets: [{
-      data: [neutralValue, actualValue],
-      borderColor: '#36A2EB', // Cor da linha
-      borderWidth: 2, // Largura da linha
-      fill: false, // Preenchimento desligado para uma linha
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-      }
-    }
-  }
-});
+const maxCapacity = 7;
+const currentPersons = 3;
+
+const fillerBar = document.getElementById("filler-bar");
+const fillPercentage = (currentPersons / maxCapacity) * 100;
+const percentageText = document.getElementById("percentage-text");
+const qtdFilhotes = document.getElementById("qtdFilhotes");
+
+fillerBar.style.width = fillPercentage + "%";
+percentageText.textContent =  + Math.round(fillPercentage) +  "%";
+qtdFilhotes.textContent = maxCapacity 
+
+function entrar() {
+  window.location.href = "./login.html"
+}
