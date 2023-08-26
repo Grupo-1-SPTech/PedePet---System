@@ -23,7 +23,6 @@
 }
 
 *,
-/* *::before, */
 *::after {
   margin: 0;
   padding: 0;
@@ -92,9 +91,6 @@ main {
     position: relative;
 }
 
-
-
-
 /* Botão menu */
 
 .profile-dropdown{
@@ -132,7 +128,7 @@ main {
 .profile-dropdown-list {
   position: absolute;
   top: 68px;
-  width: 320px;
+  width: 350px;
   right: 0;
   margin-right: 60px;
   background-color: var(--white);
@@ -199,7 +195,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 68px;
+  margin-left: 84px;
 }
 
 .button{
@@ -237,6 +233,123 @@ input:checked + .button::before{
 }
 
 /* fim botão switch tema  */
+
+
+/* botão daltonismo */
+
+.visual-hidden{
+  clear: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.color-picker > fieldset{
+  border: 0;
+  display: flex;
+  align-items: center;
+  width: 9rem;
+  height: 3rem;
+  margin-left: .6rem;
+}
+
+.color-picker input[type="radio"] {
+  appearance: none;
+  width: .8rem;
+  height: .8rem;
+  outline: 2px solid var(--radio-color, currentColor);
+  outline-offset: 3px;
+  border-radius: 50%;
+  margin: 0 8px 0 9px;
+  cursor: pointer;
+}
+
+.color-picker input[type="radio"]:checked {
+  background-color: var(--radio-color);
+}
+
+.color-picker input[type="radio"]#light {
+  --radio-color: gray ; 
+}
+
+.color-picker input[type="radio"]#tritanopia {
+  --radio-color: pink ; 
+}
+
+.color-picker input[type="radio"]#protanopia {
+  --radio-color: lightblue ; 
+}
+
+.color-picker input[type="radio"]#deuteranopia {
+  --radio-color: yellow ; 
+}
+
+.color-picker input[type="radio"]#acromatico {
+  --radio-color: lightgray ; 
+}
+
+:root:has(#tritanopia:checked){
+  --orange: #f78da7;
+  --darkblue: #024f45;
+  --purple: #673203;
+  --darkpurple: #3f1e01;
+  --white: #fff;
+  --dark: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #f78da7, #3f1e01, #673203, #f78da7);
+  --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+
+:root:has(#protanopia:checked){
+  --orange: #957e04;
+  --darkblue: #0e406b;
+  --purple: #0e406b;
+  --darkpurple: #0e406b;
+  --white: #fff;
+  --dark: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #957e04, #0e406b, #0e406b, #957e04);
+  --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+
+:root:has(#deuteranopia:checked){
+  --orange: #bda007;
+  --darkblue: #16609f;
+  --purple: #16609f;
+  --darkpurple: #16609f;
+  --white: #fff;
+  --dark: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #bda007, #16609f, #16609f, #bda007);
+  --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+
+:root:has(#acromatico:checked){
+  --orange: #635d5d;
+  --darkblue: #727275;
+  --purple: #adadad;
+  --darkpurple: #1f1f1f;
+  --white: #fff;
+  --dark: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #635d5d, #727275, #adadad, #635d5d);
+  --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+
+
+
+/* fim botão daltonismo*/
 
 .btn-login {
     width: 50px;
