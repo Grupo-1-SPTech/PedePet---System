@@ -1017,4 +1017,60 @@ h4{
 .espacinho{
   margin-left: 1.2rem;
 }
+#progress-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 13px;
+  padding-left: 0px;
+}
 
+#progress-bar {
+  margin-right: 4%;
+  width: 98%;
+  height: 20px;
+  background-color: var(--orange);
+  position: relative;
+  border-radius: 6px;
+}
+
+#filler-bar {
+  height: 20px;
+  background-color: var(--darkpurple);
+  transition: width 0.5s;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#percentage-text{
+  font-size: large;
+  font-weight: 700;
+  color: var(--black);
+  width: auto;
+  display: flex;
+justify-content: center;
+
+}
+
+#nominho{
+  display: flex;
+justify-content: center;
+color: var(--darkgray);
+font-family: Montserrat;
+font-size: 15px;
+font-style: normal;
+width: auto;
+padding-top: 3px;
+
+}
+
+#qtdFilhotes{
+
+  padding-right: 2%;
+  font-weight: 700;
+color: var(--black);
+
+}

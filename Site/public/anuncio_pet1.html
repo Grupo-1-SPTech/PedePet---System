@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+  <body onload=buscarDados()>
 
   <nav>
     <div class="container-nav">
@@ -74,12 +74,21 @@
 
               <div class="containerInfo">
                 <div class="dashFilhote">
-                  
+                  <div id="progress-container">
+                    <div id="progress-bar">
+                      <div id="filler-bar"></div>   
+                    </div>
+                  </div>
+               
+                <div id="percentage-text" ></div>
+                <div id="nominho" >Filhotes adquiridos</div>
+         
+                  <br>
                 </div>
                 <div class="info">
                   <span id="frasesNegrito">Fila de espera</span>
                   <div class="informacoes">
-                    <span class="qtdFilhotes" id="espacinho" onload="qtdFilhote()" style="color: black; ">4 &nbsp; </span> filhotes disponíveis <br>
+                    <span class="qtdFilhotes"  id="qtdFilhotes" onload="qtdFilhote()" style="color: black; ">4 &nbsp; </span> filhotes disponíveis <br>
            
                     <span class="raca"id="espacinho" onload="raca()">Golden Retriever </span><br>
                
