@@ -1,12 +1,16 @@
 let profileDropdownList = document.querySelector('.profile-dropdown-list');
 let btn = document.querySelector('.profile-dropdown-btn');
-let modoBtn = document.querySelector('modo');
+let modoBtn = document.querySelector('dark-mode');
 let daltonismoBtn = document.querySelector('daltonismo');
+let configBtn = document.querySelector('config');
+let sairBtn = document.querySelector('logout');
 
 const toggle = () => profileDropdownList.classList.toggle('active');
 
 window.addEventListener('click', function(e){
-    if(!btn.contains(e.target)) profileDropdownList.classList.remove('active');
+    if (!btn.contains(e.target) && !profileDropdownList.contains(e.target)) {
+        profileDropdownList.classList.remove('active');
+    }
 });
 
 // função select raça
@@ -55,11 +59,7 @@ window.addEventListener('click', function(e){
 });
 
 
-// limpar filtros
-
-// crieate a function to clear the value select in the filter
-
-
+// limpar filtro
 const racaSelect = document.getElementById('select-raca')
 const tamanhoSelect = document.getElementById('select-tamanho')
 const vacinaSimSelect = document.getElementById('vacina-sim')
@@ -80,7 +80,6 @@ limparFilter.addEventListener('click', limparFiltros);
 
 
 // troca de temar dark mode
-
 const btnDarkMode = document.getElementById('btn-dark-mode-toggle')
 const themeSystem = localStorage.getItem("themeSystem") || "light"
 
@@ -105,7 +104,6 @@ function entrar() {
 }
 
 // tema ficar no localStorage
-
 const colorThemes = document.querySelectorAll('[name="theme"]');
 
 //store theme
