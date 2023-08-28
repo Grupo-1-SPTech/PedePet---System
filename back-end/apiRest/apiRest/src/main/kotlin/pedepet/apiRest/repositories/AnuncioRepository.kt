@@ -25,4 +25,16 @@ interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
     """)
     @RestResource(exported = true)
     fun findByRacaMae():List<AnuncioPet?>
+
+    // Função para buscar anúncios por descrição
+    fun findByDescricaoContaining(descricao: String): List<AnuncioPet>
+
+    // Função para buscar anúncios por idade da mãe
+    fun findByIdadeMae(idadeMae: Int): List<AnuncioPet>
+
+    // Função para buscar anúncios por idade do pai
+    fun findByIdadePai(idadePai: Int): List<AnuncioPet>
+
+    // Função para buscar anúncios por raça do pai
+    fun findByRacaPai(racaPai: Int): List<AnuncioPet>
 }

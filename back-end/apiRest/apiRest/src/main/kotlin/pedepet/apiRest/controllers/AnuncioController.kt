@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*
 import pedepet.apiRest.dto.AddAnuncioRequest
 import pedepet.apiRest.dto.AltDescricaoRequest
 import pedepet.apiRest.models.AnuncioPet
+import pedepet.apiRest.models.Filhote
 import pedepet.apiRest.repositories.AnuncioRepository
 import pedepet.apiRest.repositories.UsuarioRepository
 
@@ -51,6 +52,28 @@ class AnuncioController(
         return ResponseEntity.status(204).build()
     }
 
+    // LISTAR TODOS OS ANÚNCIOS
+    @GetMapping("/todos")
+    fun listarTodosAnuncios(): ResponseEntity<List<AnuncioPet>> {
+        val anuncios = anuncioRepository.findAll()
+        return ResponseEntity.status(200).body(anuncios)
+    }
 
+    // CADASTRAR UM NOVO ANÚNCIO
+    @PostMapping("/cadastrar")
+    fun cadastrarAnuncio(@RequestBody novoAnuncio: AnuncioPet): ResponseEntity<AnuncioPet> {
+        val anuncioSalvo = anuncioRepository.save(novoAnuncio)
+        return ResponseEntity.status(201).body(anuncioSalvo)
+    }
+
+    // EXCLUIR UM ANÚNCIO PELO ID
+    @DeleteMapping("/excluir/{id}")
+    fun excluirAnuncio(@PathVariable id: Int): ResponseEntity<Unit> {
+        if (anuncioRepository.existsById(id)) {
+            anuncioRepository.deleteById(id)
+            return ResponseEntity.noContent().build()
+        }
+        return ResponseEntity.notFound().build()
+    }
 
 }
