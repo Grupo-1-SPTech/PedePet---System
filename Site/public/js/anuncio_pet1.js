@@ -13,7 +13,7 @@ window.addEventListener('click', function(e){
 });
 
 //progress bar da fila 
-const maxCapacity = 7;
+const maxCapacity = 5;
 const currentPersons = 3;
 
 const fillerBar = document.getElementById("filler-bar");
