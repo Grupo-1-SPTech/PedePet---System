@@ -25,7 +25,69 @@
           <li><a href="./index.html#FAQ">FAQ</a></li>
           <li><a href="./index.html#Contato">Contato</a></li>
         </ul>
-        <button onclick="entrar()" href="./login.html" class="btn-login">Entrar</a></button>
+        <div class="profile-dropdown">
+          <div class="profile-dropdown-btn" onclick="toggle()">
+              <div class="profile-img">
+              </div>
+          </div>
+
+          <ul class="profile-dropdown-list">
+              <li class="profile-name">
+                     <h1>Fabio Moledo</h1>
+                     <span>Comprador</span>
+              </li>
+              <hr/>
+              <li class="profile-dropdown-list-item" id="config">
+                  <a href="">
+                      <i class="fa-regular fa-user"> </i>
+                      Configurações da conta
+                  </a>
+              </li>
+              <li class="profile-dropdown-list-item" id="mode">
+                  <a href="">
+                      <i class="fa-regular fa-moon"> </i>
+                      Tema
+                      <div class="switch-theme">
+                          <input type="checkbox" id="check" id=>
+                          <label for="check" class="button" id="btn-dark-mode-toggle"></label>
+                      </div>
+                  </a>
+              </li>
+              <li class="profile-dropdown-list-item" id="daltonismo">
+                  <a href="#">
+                      <i class="fa-regular fa-eye"> </i>
+                      Daltonismo
+                      <form class="color-picker" action="">
+                          <fieldset>
+                              <label class="visual-hidden" for="light"></label>
+                              <input type="radio" name="theme" id="light" checked>
+
+                              <label class="visual-hidden" for="tritanopia"></label>
+                              <input type="radio" name="theme" id="tritanopia" checked>
+
+                              <label class="visual-hidden" for="protanopia"></label>
+                              <input type="radio" name="theme" id="protanopia" checked>
+
+                              <label class="visual-hidden" for="deuteranopia"></label>
+                              <input type="radio" name="theme" id="deuteranopia" checked>
+
+                              <label class="visual-hidden" for="acromatico"></label>
+                              <input type="radio" name="theme" id="acromatico" checked>
+                          </fieldset>
+                      </form>
+                  </a>
+              </li>
+              <hr/>
+              <li class="profile-dropdown-list-item" id="sair">
+                  <a href="index.html">
+                      <i class="fa-solid fa-arrow-right-to-bracket"> </i>
+                      Sair
+                  </a>
+              </li>
+          </ul>
+      </div>
+
+       
       </div>
     </div>
   </nav>
