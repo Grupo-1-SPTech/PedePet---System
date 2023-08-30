@@ -3,8 +3,8 @@
     "nome": "Julia Barbosa",
     "email": "julia@gmail.com",
     "cpf": "22973980003",
-    "telefone": "(11) 92276-6147",
-    "senha": "sptech10@",
+    "telefone": "11922766147",
+    "senha": "Sptech10@",
     "tipoUsuario": 2,
     "autenticado": true
   },
