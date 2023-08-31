@@ -14,6 +14,7 @@ interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
 
     fun findByIdAndQtdFilhotes(id:Int, qtdFilhotes:Int):AnuncioPet?
 
+    // Função para contar quantas raças distintas estão cadastradas
     @Query("""
         SELECT 
         COUNT(DISTINCT c.racaMae) FROM AnuncioPet c
@@ -21,11 +22,19 @@ interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
     @RestResource(exported = true)
     fun countDistinctRacas():Long
 
+    // Função para buscar anúncios pela raça
     @Query("""
         SELECT c FROM AnuncioPet c WHERE c.racaMae = :racaMae
     """)
     @RestResource(exported = true)
     fun findByRacaMae():List<AnuncioPet?>
+
+    // Função para buscar anúncios pelo porte
+    @Query("""
+        SELECT c FROM AnuncioPet c WHERE c.porteMae = :porteMae
+    """)
+    @RestResource(exported = true)
+    fun findByPorte():List<AnuncioPet?>
 
     // Função para buscar o valor do anúncio por ID
     @Query("SELECT AVG(filhote.preco) FROM AnuncioPet anuncio JOIN anuncio.filhotes filhote WHERE anuncio.id = :id")
