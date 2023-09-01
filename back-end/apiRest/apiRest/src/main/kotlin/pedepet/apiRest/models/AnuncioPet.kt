@@ -61,5 +61,8 @@ data class AnuncioPet(
     @ManyToOne
     @JoinColumn(name = "fk_usuario", referencedColumnName = "id")
     var usuario: Usuario? = null,
+
+    @OneToMany(mappedBy = "anuncioPet")
+    var filhotes: MutableList<Filhote>?
 ) {
 }
