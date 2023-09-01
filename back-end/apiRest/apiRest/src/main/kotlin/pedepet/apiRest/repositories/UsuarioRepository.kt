@@ -17,7 +17,7 @@ interface UsuarioRepository: JpaRepository<Usuario, Int> {
 
     fun findByEmailAndTipoUsuario(email: String?, tipoUsuario:Int? = 1): Usuario?
 
-    fun findByEmailContainsAndAutenticadoTrue(email: String): List<Usuario>
+    fun findAutenticadoByEmailContainsAndAutenticadoTrue(email: String): Boolean
     
     fun findByEmail(email: String?): Optional<Usuario>
 
@@ -33,6 +33,9 @@ interface UsuarioRepository: JpaRepository<Usuario, Int> {
     @RestResource(exported = true)
     fun buscarTotalUsuarios():Long
 
+
+    @RestResource(exported = true)
+    fun findByEmailContainsAndAutenticadoTrue(email: String?):Usuario?
 
 
 

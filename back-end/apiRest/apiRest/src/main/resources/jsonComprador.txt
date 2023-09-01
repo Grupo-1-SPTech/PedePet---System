@@ -3,7 +3,7 @@
     "nome": "fabio moledo",
     "email": "fabio@gmail.com",
     "cpf": "38328401843",
-    "telefone": "(11) 99266-4464",
+    "telefone": "11992664464",
     "senha": "sptech10@",
     "tipoUsuario": 1,
     "autenticado": true
@@ -29,4 +29,3 @@
     }
   }
 }
-----------------------

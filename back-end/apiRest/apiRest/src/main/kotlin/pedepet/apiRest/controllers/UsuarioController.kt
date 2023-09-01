@@ -1,13 +1,12 @@
 package pedepet.apiRest.controllers
 
-import org.springframework.data.jpa.domain.AbstractPersistable_.id
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import pedepet.apiRest.dto.*
 import pedepet.apiRest.models.AnuncioPet
-import pedepet.apiRest.models.Filhote
 import pedepet.apiRest.models.Usuario
 import pedepet.apiRest.repositories.*
+import javax.validation.constraints.Email
 
 @RestController
 @RequestMapping("/usuarios")
@@ -139,6 +138,13 @@ class UsuarioController(
     fun buscarTotalUsuario():ResponseEntity<Long>{
         val usuarios = repository.buscarTotalUsuarios()
         return ResponseEntity.status(200).body(usuarios)
+    }
+
+    // VALIDA SE USUARIO ESTA AUTENTICADO
+    @GetMapping("/autenticado/{email}")
+    fun buscaUsuarioAutenticado(@PathVariable email: String): ResponseEntity<Usuario>{
+        val autenticado = repository.findByEmailContainsAndAutenticadoTrue(email)
+        return ResponseEntity.status(200).body(autenticado)
     }
 
 }

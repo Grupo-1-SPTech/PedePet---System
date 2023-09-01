@@ -1,3 +1,60 @@
+// validação caso estiver logado
+// Recuperando o email do usuario no localStorageconst emailArmazenado = localStorage.getItem("email");
+
+const emailArmazenado = sessionStorage.getItem("email");
+console.log(emailArmazenado);
+
+function validaLogin() {
+
+    if (emailArmazenado != null) {
+        getMessages();
+        const url = `http://localhost:8080/autenticado/${emailArmazenado}`;
+
+        fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json(); // Converte a resposta para JSON
+                } else {
+                    throw new Error("Erro na solicitação");
+                }
+            })
+            .then(data => {
+                // O objeto 'data' contém os dados retornados da API como um objeto JavaScript
+                console.log("Dados retornados:", data);
+                // Faça algo com os dados, como atualizar a interface do usuário
+            })
+            .catch(error => {
+                console.error("Erro ao fazer a solicitação:", error);
+            });
+    }
+}
+
+function getMessages() {
+        // Configurar o cabeçalho CORS para permitir solicitações do localhost:8080
+        const corsHeaders = new Headers({
+            "Access-Control-Allow-Origin": "http://localhost:8080"
+        });
+        fetch("http://localhost:3000", {
+            method: "GET",
+            headers: corsHeaders
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Dados recebidos:", data.messages);
+                // Faça algo com os dados, como exibir na interface do usuário
+                console.log("Funcionou");
+            
+            })
+            .catch(error => {
+                console.error("Erro na solicitação:", error);
+            });
+}
+
 // função select ASSUNTO 
 const optionMenu = document.querySelector('.select-menu');
 selectBtn = optionMenu.querySelector('.select-btn');
@@ -102,4 +159,5 @@ function buscarDados() {
     getRacasDisponiveis()
     getTotalVendedores()
     getUsuariosTotal()
+    validaLogin()
 }
