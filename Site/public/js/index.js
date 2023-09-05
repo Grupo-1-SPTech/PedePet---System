@@ -6,18 +6,20 @@ console.log(emailArmazenado);
 
 function validaLogin() {
 
+    console.log("1")
     if (emailArmazenado != null) {
-        getMessages();
-        const url = `http://localhost:8080/autenticado/${emailArmazenado}`;
+        const url = `http://localhost:8080/usuarios/autenticado/${emailArmazenado}`;
 
         fetch(url, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            timeout: 5000,
         })
             .then(response => {
                 if (response.ok) {
+                    console.log("foi")
                     return response.json(); // Converte a resposta para JSON
                 } else {
                     throw new Error("Erro na solicitação");
@@ -34,26 +36,8 @@ function validaLogin() {
     }
 }
 
-function getMessages() {
-        // Configurar o cabeçalho CORS para permitir solicitações do localhost:8080
-        const corsHeaders = new Headers({
-            "Access-Control-Allow-Origin": "http://localhost:8080"
-        });
-        fetch("http://localhost:3000", {
-            method: "GET",
-            headers: corsHeaders
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Dados recebidos:", data.messages);
-                // Faça algo com os dados, como exibir na interface do usuário
-                console.log("Funcionou");
-            
-            })
-            .catch(error => {
-                console.error("Erro na solicitação:", error);
-            });
-}
+
+
 
 // função select ASSUNTO 
 const optionMenu = document.querySelector('.select-menu');
@@ -161,3 +145,28 @@ function buscarDados() {
     getUsuariosTotal()
     validaLogin()
 }
+
+$(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+  
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+  
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });

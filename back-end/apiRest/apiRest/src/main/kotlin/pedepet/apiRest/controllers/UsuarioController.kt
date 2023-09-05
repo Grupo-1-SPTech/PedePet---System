@@ -1,12 +1,13 @@
 package pedepet.apiRest.controllers
 
+import org.springframework.http.HttpHeaders
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import pedepet.apiRest.dto.*
 import pedepet.apiRest.models.AnuncioPet
 import pedepet.apiRest.models.Usuario
 import pedepet.apiRest.repositories.*
-import javax.validation.constraints.Email
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -24,9 +25,12 @@ class UsuarioController(
     @PostMapping("/cadastrar/comprador")
     fun cadComprador(@RequestBody cadCompradorRequest: CompradorRequest): ResponseEntity<Usuario> {
 
-        val selectComprador = repository.findByEmailAndTipoUsuario(cadCompradorRequest.usuario.email, cadCompradorRequest.usuario.tipoUsuario)
+        val selectComprador = repository.findByEmailAndTipoUsuario(
+            cadCompradorRequest.usuario.email,
+            cadCompradorRequest.usuario.tipoUsuario
+        )
 
-        if(selectComprador == null) {
+        if (selectComprador == null) {
             val usuarioComprador: Usuario = repository.save(cadCompradorRequest.usuario)
             cadCompradorRequest.endereco.usuario = repository.findById(usuarioComprador.id).get()
             cadCompradorRequest.formulario.usuario = repository.findById(usuarioComprador.id).get()
@@ -44,7 +48,7 @@ class UsuarioController(
 
         val selectVendedor = repository.findByEmailAndTipoUsuario(cadVendedorRequest.usuario.email, tipoUsuario = 2)
 
-        if(selectVendedor == null) {
+        if (selectVendedor == null) {
             val usuarioVendedor: Usuario = repository.save(cadVendedorRequest.usuario)
             cadVendedorRequest.endereco.usuario = repository.findById(usuarioVendedor.id).get()
             cadVendedorRequest.anuncioPet.usuario = repository.findById(usuarioVendedor.id).get()
@@ -52,7 +56,7 @@ class UsuarioController(
             val saveAnuncio: AnuncioPet = anuncioRepository.save(cadVendedorRequest.anuncioPet)
             cadVendedorRequest.filhote.anuncioPet = anuncioRepository.findById(saveAnuncio.id).get()
             val qtdFilhote = saveAnuncio.qtdFilhotes
-            for (i in 1..qtdFilhote){
+            for (i in 1..qtdFilhote) {
                 val dog = cadVendedorRequest.filhote
                 filhoteRepository.save(dog).also {
                     cadVendedorRequest.filhote = cadVendedorRequest.filhote.copy(id = null)
@@ -69,11 +73,11 @@ class UsuarioController(
 
         val selectVendedor = repository.findById(id).get()
 
-        if(selectVendedor != null){
+        if (selectVendedor != null) {
             val anuncio: AnuncioPet = anuncioRepository.save(novoAnuncio.anuncioPet)
             novoAnuncio.filhote.anuncioPet?.id = anuncio.id
             val qtdFilhote = anuncio.qtdFilhotes
-            for (i in 1..qtdFilhote){
+            for (i in 1..qtdFilhote) {
                 val dog = novoAnuncio.filhote
                 filhoteRepository.save(dog).also {
                     novoAnuncio.filhote = novoAnuncio.filhote.copy(id = null)
@@ -87,7 +91,7 @@ class UsuarioController(
 
     // ALTERAR SENHA
     @PatchMapping("/alterarSenha/{email}")
-    fun alterarSenha(@RequestBody novaSenha: SenhaEntradaRequest):ResponseEntity<Usuario>{
+    fun alterarSenha(@RequestBody novaSenha: SenhaEntradaRequest): ResponseEntity<Usuario> {
         val usuario: Usuario =
             repository.findByEmail(novaSenha.email).get()
         usuario.senha = novaSenha.senha
@@ -100,10 +104,10 @@ class UsuarioController(
 
         val usuarioEncontrado = repository.findByEmail(usuarioLogin.email)
 
-        if(usuarioEncontrado.isEmpty){
+        if (usuarioEncontrado.isEmpty) {
             return ResponseEntity.status(204).build()
         } else {
-            if(usuarioEncontrado.get().senha == usuarioLogin.senha){
+            if (usuarioEncontrado.get().senha == usuarioLogin.senha) {
                 val usuarioLogado: Usuario = usuarioEncontrado.get()
                 usuarioLogado.autenticado = true
                 return ResponseEntity.status(200).body(repository.save(usuarioLogado))
@@ -115,7 +119,7 @@ class UsuarioController(
 
     // DESLOGAR
     @DeleteMapping("/logoff/{id}")
-    fun deslogar(@PathVariable id: Int):ResponseEntity<Usuario> {
+    fun deslogar(@PathVariable id: Int): ResponseEntity<Usuario> {
         if (repository.existsById(id)) {
             val usuarioLogin = repository.findById(id).get()
             usuarioLogin.autenticado = false
@@ -128,23 +132,28 @@ class UsuarioController(
 
     // TOTAL DE VENDEDORES CADASTRADOS
     @GetMapping("/vendedor/total")
-    fun buscarQtdVendedores():ResponseEntity<Long>{
+    fun buscarQtdVendedores(): ResponseEntity<Long> {
         val vendedores = repository.buscarQtdVendedores()
         return ResponseEntity.status(200).body(vendedores)
     }
 
     // TOTAL DE USUARIOS CADASTRADOS
     @GetMapping("/total")
-    fun buscarTotalUsuario():ResponseEntity<Long>{
+    fun buscarTotalUsuario(): ResponseEntity<Long> {
         val usuarios = repository.buscarTotalUsuarios()
         return ResponseEntity.status(200).body(usuarios)
     }
 
     // VALIDA SE USUARIO ESTA AUTENTICADO
-    @GetMapping("/autenticado/{email}")
-    fun buscaUsuarioAutenticado(@PathVariable email: String): ResponseEntity<Usuario>{
-        val autenticado = repository.findByEmailContainsAndAutenticadoTrue(email)
-        return ResponseEntity.status(200).body(autenticado)
-    }
 
+
+    @GetMapping("/autenticado/{email}")
+    fun buscaUsuarioAutenticado(@PathVariable email: String): ResponseEntity<Boolean> {
+        val autenticado = repository.findByEmailAndAutenticadoTrue(email)
+        if (autenticado != null) {
+            return ResponseEntity.ok().body(autenticado.autenticado)
+        } else {
+            return ResponseEntity.status(404).build()
+        }
+    }
 }
