@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de confiança</title>
+    <link rel="icon" href="./css/images/icon-pata.png">
+    <link rel="stylesheet" href="css/formulario_confianca.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="container-nav">
+        <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
+        <ul class="options">
+            <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
+            <li><a href="./index.html#SobreNos">Sobre nós</a></li>
+            <li><a href="./index.html#FAQ">FAQ</a></li>
+            <li><a href="./index.html#Contato">Contato</a></li>
+        </ul>
+        <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" onclick="toggle()">
+                <div class="profile-img">
+                </div>
+            </div>
+
+            <ul class="profile-dropdown-list">
+                <li class="profile-name">
+                       <h1>Fabio Moledo</h1>
+                       <span>Comprador</span>
+                </li>
+                <hr/>
+                <li class="profile-dropdown-list-item" id="config">
+                    <a href="">
+                        <i class="fa-regular fa-user"> </i>
+                        Configurações da conta
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item" id="mode">
+                    <a href="">
+                        <i class="fa-regular fa-moon"> </i>
+                        Tema
+                        <div class="switch-theme">
+                            <input type="checkbox" id="check" id=>
+                            <label for="check" class="button" id="btn-dark-mode-toggle"></label>
+                        </div>
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item" id="daltonismo">
+                    <a href="#">
+                        <i class="fa-regular fa-eye"> </i>
+                        Daltonismo
+                    </a>
+                </li>
+                <hr/>
+                <li class="profile-dropdown-list-item" id="sair">
+                    <a href="index.html">
+                        <i class="fa-solid fa-arrow-right-to-bracket"> </i>
+                        Sair
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <main>
+
+
+        <div class="container">
+
+            <div class="sidebar">
+                <button id="b1" class="opt">
+                    <img src="css/images/profileOrangeIcon.svg" alt="">
+                    <span>Perfil</span>
+                </button>
+
+                <button id="b2" class="opt">
+                    <img src="css/images/archiveIcon.svg" alt="">
+                    <span>Meus pedidos</span>
+                </button>
+
+                <button id="b3" class="opt">
+                    <img src="css/images/accessibilityIcon.svg" alt="">
+                    <span>Acessibilidade</span>
+                </button>
+
+                <button id="b4" class="opt">
+                    <img src="css/images/cardIcon.svg" alt="">
+                    <span>Pagamentos</span>
+                </button>
+
+                <button id="b5" class="opt">
+                    <img src="css/images/localOrangeIcon.svg" alt="">
+                    <span>Endereços</span>
+                </button>
+
+                <button id="b6" class="opt">
+                    <img src="css/images/logoutIcon.svg" alt="">
+                    <span>Sair</span>
+                </button>
+
+                <button class="logout" onclick="logoutUser()">Voltar ao inicio</button>
+            </div>
+
+
+            <div class="contentProf">
+                <h1 class="titleProfile">
+                    Aprovações
+                </h1>
+
+                <div class="containerProfile">
+                    <div class="banner">
+                        <h1>Formulário de confiança</h1>
+                    </div>
+
+                    <div class="contentProfile">
+                        <div class="midProfile">
+                            <div class="infoProfile">
+                                <h2>Nome</h2>
+                                <span>Marlon B. Coelho Silva</span>
+                                <br>
+                                <br>
+                                <h2>Telefone</h2>
+                                <span>+55 (11) 94670-6513</span>
+                                <br>
+                                <br>
+                                <h2>CEP</h2>
+                                <span>01844-080</span>
+                                <br>
+                                <br>
+                                <h2>Endereço</h2>
+                                <span>Rua francisco baldin 147, Guaianases, São Paulo - SP</span>
+                                <br>
+                                <br>
+                                <h2>Moradia</h2>
+                                <span>Apartamento</span>
+                                <br>
+                                <br>
+                                <h2>Cômodos</h2>
+                                <span>Tenho 5 cômodos</span>
+                                <br>
+                                <br>
+                                <h2>Quantas pessoas vivem contigo?</h2>
+                                <span>5 pessoas</span>
+                                <br>
+                                <br>
+                                <h2>Já teve pet?</h2>
+                                <span>Sim</span>
+                                <br>
+                                <br>
+                                <h2>Quantas horas fica em casa?</h2>
+                                <span>6 horas</span>
+                                <br>
+                                <br>
+                                <div class="botoes">
+                                    <button class="buttonRecusar">Recusar</button>
+                                    <button class="buttonAceitar">Aceitar</button>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        </div>
+
+
+    </main>
+</body>
+
+</html>
+<nav>
