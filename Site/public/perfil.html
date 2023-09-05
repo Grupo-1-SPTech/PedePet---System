@@ -29,10 +29,10 @@
 
             <ul class="profile-dropdown-list">
                 <li class="profile-name">
-                       <h1>Fabio Moledo</h1>
-                       <span>Comprador</span>
+                    <h1>Fabio Moledo</h1>
+                    <span>Comprador</span>
                 </li>
-                <hr/>
+                <hr />
                 <li class="profile-dropdown-list-item" id="config">
                     <a href="">
                         <i class="fa-regular fa-user"> </i>
@@ -55,7 +55,7 @@
                         Daltonismo
                     </a>
                 </li>
-                <hr/>
+                <hr />
                 <li class="profile-dropdown-list-item" id="sair">
                     <a href="index.html">
                         <i class="fa-solid fa-arrow-right-to-bracket"> </i>
@@ -84,7 +84,7 @@
 
                 <button id="b3" class="opt">
                     <img src="css/images/accessibilityIcon.svg" alt="">
-                    <a>Acessibilidade</a>
+                    <a href="./acessibilidade.html">Acessibilidade</a>
                 </button>
 
                 <button id="b4" class="opt">
@@ -174,6 +174,19 @@
 
 
     </main>
+
+    <div vw class="enabled" style="margin: 0px 0px 0px 0px;">
+        <div vw-access-button class="active" style="margin: 0px 0px 0px 0px;"></div>
+        <div vw-plugin-wrapper style="margin: 0px 0px 0px 0px;">
+            <div class="vw-plugin-top-wrapper" style="margin: 0px 0px 0px 0px;"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
 </body>
 
 </html>
