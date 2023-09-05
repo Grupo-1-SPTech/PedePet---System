@@ -338,7 +338,7 @@ input:checked + .button::before{
     font-weight: 900;
     font-family: 'Montserrat' sans-serif;
     color: var(--black);
-    margin-bottom: 5%;
+    margin-bottom: 20px;
 }
 
 .containerProfile {
@@ -354,7 +354,7 @@ input:checked + .button::before{
     background-color: var(--darkpurple);
     border-radius: 12px 12px 0px 0px;
     display: flex;
-    padding-top: 5%;
+    padding-top: 30px;
     padding-left: 5%;
 }
 
