@@ -152,9 +152,14 @@ class UsuarioController(
 
  // VALIDA SE USUARIO ESTA AUTENTICADO
  @GetMapping("/autenticado/{email}")
- fun buscaUsuarioAutenticado(@PathVariable email: String): ResponseEntity<Usuario>{
-     val autenticado = repository.findByEmailContainsAndAutenticadoTrue(email)
-     return ResponseEntity.status(200).body(autenticado)
+ fun buscaUsuarioAutenticado(@PathVariable email: String): ResponseEntity<Boolean>{
+     val autenticado = repository.findByEmailAndAutenticadoTrue(email)
+     if(autenticado != null) {
+         return ResponseEntity.ok().body(autenticado.autenticado)
+     } else{
+         return ResponseEntity.status(404).build()
+
+     }
  }
 
 }

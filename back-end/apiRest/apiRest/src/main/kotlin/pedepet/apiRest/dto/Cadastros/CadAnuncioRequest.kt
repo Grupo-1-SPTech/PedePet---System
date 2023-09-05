@@ -2,7 +2,7 @@ package pedepet.apiRest.dto.Cadastros
 
 import pedepet.apiRest.models.Filhote
 
-data class CadastroAnuncio(
+data class CadAnuncioRequest(
 
     val racaMae:Int,// RACA DO MA
     val idadeMae:Int, // IDADE MAE

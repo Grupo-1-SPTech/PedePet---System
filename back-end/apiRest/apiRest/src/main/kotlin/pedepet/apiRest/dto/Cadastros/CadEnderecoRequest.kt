@@ -1,6 +1,6 @@
 package pedepet.apiRest.dto.Cadastros
 
-data class CadastroEndereco(
+data class CadEnderecoRequest(
     val cep:String,
     val rua:String,
     val numero:Int,

@@ -39,7 +39,7 @@ interface UsuarioRepository: JpaRepository<Usuario, Int> {
 
 
     @RestResource(exported = true)
-    fun findByEmailContainsAndAutenticadoTrue(email: String?):Usuario?
+    fun findByEmailAndAutenticadoTrue(email: String?):Usuario?
 
 
 

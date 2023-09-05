@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import pedepet.apiRest.Service.UsuarioService
-import pedepet.apiRest.dto.Cadastros.CadastrarFormulario
-import pedepet.apiRest.dto.Cadastros.CadastrarUserRequest
-import pedepet.apiRest.dto.Cadastros.CadastroAnuncio
-import pedepet.apiRest.dto.Cadastros.CadastroEndereco
+import pedepet.apiRest.dto.Cadastros.CadFormularioRequest
+import pedepet.apiRest.dto.Cadastros.CadUserRequest
+import pedepet.apiRest.dto.Cadastros.CadAnuncioRequest
+import pedepet.apiRest.dto.Cadastros.CadEnderecoRequest
 
 @RestController
 @RequestMapping("cadastros")
@@ -22,23 +22,23 @@ class CadastroController(
 ) {
 
     @PostMapping("/usuario")
-    fun cadUser(@RequestBody cadastroUser: CadastrarUserRequest): ResponseEntity<Int> {
+    fun cadUser(@RequestBody cadastroUser: CadUserRequest): ResponseEntity<Int> {
         return usuarioService.cadUsuario(cadastroUser)
     }
 
     @PutMapping("/endereco/{id}")
-    fun cadEndereco(@PathVariable id:Int, @RequestBody cadastroEndereco: CadastroEndereco): ResponseEntity<String> {
-        return usuarioService.cadEndereco(id, cadastroEndereco)
+    fun cadEndereco(@PathVariable id:Int, @RequestBody cadEnderecoRequest: CadEnderecoRequest): ResponseEntity<String> {
+        return usuarioService.cadEndereco(id, cadEnderecoRequest)
     }
 
     @PutMapping("/formulario/{id}")
-    fun cadFormulario(@PathVariable id:Int, @RequestBody cadastroFormulario: CadastrarFormulario): ResponseEntity<String> {
+    fun cadFormulario(@PathVariable id:Int, @RequestBody cadastroFormulario: CadFormularioRequest): ResponseEntity<String> {
         return usuarioService.cadFormulario(id, cadastroFormulario)
     }
 
     @PutMapping("/anuncio/{id}")
-    fun cadAnuncio(@PathVariable id:Int, @RequestBody cadastroAnuncio: CadastroAnuncio): ResponseEntity<String> {
-        return usuarioService.cadAnuncio(id, cadastroAnuncio)
+    fun cadAnuncio(@PathVariable id:Int, @RequestBody cadAnuncioRequest: CadAnuncioRequest): ResponseEntity<String> {
+        return usuarioService.cadAnuncio(id, cadAnuncioRequest)
     }
 
 }

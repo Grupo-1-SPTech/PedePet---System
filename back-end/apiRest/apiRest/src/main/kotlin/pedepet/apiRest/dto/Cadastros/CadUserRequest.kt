@@ -7,7 +7,7 @@ import javax.validation.constraints.Max
 import javax.validation.constraints.Min
 import javax.validation.constraints.Size
 
-data class CadastrarUserRequest(
+data class CadUserRequest(
 
     //@field:NotBlank
     val nome:String,

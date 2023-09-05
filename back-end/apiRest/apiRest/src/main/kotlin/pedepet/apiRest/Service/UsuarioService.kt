@@ -2,10 +2,10 @@ package pedepet.apiRest.Service
 
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
-import pedepet.apiRest.dto.Cadastros.CadastrarFormulario
-import pedepet.apiRest.dto.Cadastros.CadastrarUserRequest
-import pedepet.apiRest.dto.Cadastros.CadastroAnuncio
-import pedepet.apiRest.dto.Cadastros.CadastroEndereco
+import pedepet.apiRest.dto.Cadastros.CadFormularioRequest
+import pedepet.apiRest.dto.Cadastros.CadUserRequest
+import pedepet.apiRest.dto.Cadastros.CadAnuncioRequest
+import pedepet.apiRest.dto.Cadastros.CadEnderecoRequest
 import pedepet.apiRest.models.*
 import pedepet.apiRest.repositories.*
 
@@ -19,7 +19,7 @@ class UsuarioService(
 ) {
 
     // CADASTR USUARIO
-    fun cadUsuario(cadastroUser: CadastrarUserRequest): ResponseEntity<Int> {
+    fun cadUsuario(cadastroUser: CadUserRequest): ResponseEntity<Int> {
 
         val tipoUsuario = when (cadastroUser.tipoUsuario) {
             1 -> Comprador::class.java
@@ -55,7 +55,7 @@ class UsuarioService(
     }
 
     // CADASTRO ENDERECO
-    fun cadEndereco(id:Int, cadastroEndereco: CadastroEndereco): ResponseEntity<String> {
+    fun cadEndereco(id:Int, cadEnderecoRequest: CadEnderecoRequest): ResponseEntity<String> {
 
         val user = usuarioRepository.findById(id)
         if (user.isEmpty) {
@@ -67,20 +67,20 @@ class UsuarioService(
         } else {
             val endereco = Endereco()
             endereco.usuario = user.get()
-            endereco.cep = cadastroEndereco.cep
-            endereco.rua = cadastroEndereco.rua
-            endereco.numero = cadastroEndereco.numero
-            endereco.complemento = cadastroEndereco.complemento
-            endereco.bairro = cadastroEndereco.bairro
-            endereco.cidade = cadastroEndereco.cidade
-            endereco.estado = cadastroEndereco.estado
+            endereco.cep = cadEnderecoRequest.cep
+            endereco.rua = cadEnderecoRequest.rua
+            endereco.numero = cadEnderecoRequest.numero
+            endereco.complemento = cadEnderecoRequest.complemento
+            endereco.bairro = cadEnderecoRequest.bairro
+            endereco.cidade = cadEnderecoRequest.cidade
+            endereco.estado = cadEnderecoRequest.estado
             enderecoRepository.save(endereco)
             ResponseEntity.status(201).body(cadEndereco)
         }
     }
 
     // CADASTRO FORMS
-    fun cadFormulario(id: Int, cadastrarFormulario: CadastrarFormulario): ResponseEntity<String> {
+    fun cadFormulario(id: Int, cadFormulario: CadFormularioRequest): ResponseEntity<String> {
 
         val user = usuarioRepository.findById(id)
         if (user.isEmpty) {
@@ -96,18 +96,18 @@ class UsuarioService(
         } else {
             val form = Formulario()
             form.usuario = user.get()
-            form.tipoMoradia = cadastrarFormulario.tipoMoradia
-            form.qtdComodos = cadastrarFormulario.qtdComodos
-            form.qtdMoradores = cadastrarFormulario.qtdMoradores
-            form.qtdHorasCasa = cadastrarFormulario.qtdHorasCasa
-            form.possuiPet = cadastrarFormulario.possuiPet
-            form.statusForms = cadastrarFormulario.statusForms
+            form.tipoMoradia = cadFormulario.tipoMoradia
+            form.qtdComodos = cadFormulario.qtdComodos
+            form.qtdMoradores = cadFormulario.qtdMoradores
+            form.qtdHorasCasa = cadFormulario.qtdHorasCasa
+            form.possuiPet = cadFormulario.possuiPet
+            form.statusForms = cadFormulario.statusForms
             formularioRepository.save(form)
             return ResponseEntity.status(201).body("Formulario Cadastrado")
         }
     }
 
-    fun cadAnuncio(id:Int, cadastrarAnuncio: CadastroAnuncio): ResponseEntity<String> {
+    fun cadAnuncio(id:Int, cadastrarAnuncio: CadAnuncioRequest): ResponseEntity<String> {
 
         val user = usuarioRepository.findById(id)
         if (user.isEmpty) {

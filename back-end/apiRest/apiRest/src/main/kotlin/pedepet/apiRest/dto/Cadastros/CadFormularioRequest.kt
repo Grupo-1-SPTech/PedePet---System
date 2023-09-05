@@ -1,6 +1,6 @@
 package pedepet.apiRest.dto.Cadastros
 
-data class CadastrarFormulario(
+data class CadFormularioRequest(
     val tipoMoradia:String,
     val qtdComodos:String,
     val qtdMoradores:String,
