@@ -7,11 +7,13 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource
 import org.springframework.data.rest.core.annotation.RestResource
 import org.springframework.web.bind.annotation.CrossOrigin
 import pedepet.apiRest.models.AnuncioPet
+import pedepet.apiRest.models.Endereco
 
 @CrossOrigin("http://localhost:3000")
 @RepositoryRestResource(path = "ninhadas")
 interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
 
+    fun findByUsuarioId(id: Int): AnuncioPet?
     fun findByIdAndQtdFilhotes(id:Int, qtdFilhotes:Int):AnuncioPet?
 
     // Função para contar quantas raças distintas estão cadastradas
@@ -62,7 +64,11 @@ interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
     fun findRacaMaeById(@Param("id") id: Int): AnuncioPet?
 
     // Função para buscar a quantidade de filhotes disponíveis por ID do anúncio
-    @Query("SELECT COUNT(filhote) FROM AnuncioPet anuncio JOIN anuncio.filhotes filhote WHERE anuncio.id = :id AND filhote.disponivel = true")
+   @Query("SELECT COUNT(filhote) FROM AnuncioPet anuncio JOIN anuncio.filhotes filhote WHERE anuncio.id = :id AND filhote.disponivel = true")
     @RestResource(exported = true)
     fun findQuantidadeFilhotesDisponiveisById(@Param("id") id: Int): Long
+
+
+
+
 }

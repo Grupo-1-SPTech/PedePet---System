@@ -1,13 +1,11 @@
 package pedepet.apiRest.dto
 
-import pedepet.apiRest.models.AnuncioPet
-import pedepet.apiRest.models.Endereco
-import pedepet.apiRest.models.Filhote
-import pedepet.apiRest.models.Usuario
+import pedepet.apiRest.models.*
 
 data class VendedorRequest (
-    val usuario: Usuario,
+    val usuario: Vendedor,
     val endereco: Endereco,
     val anuncioPet: AnuncioPet,
-    var filhote: Filhote
+    var filhote: Filhote,
+    var tipoUsuario:Int? = null,
 )

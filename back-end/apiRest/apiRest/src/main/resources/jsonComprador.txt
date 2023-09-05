@@ -2,9 +2,9 @@
   "usuario": {
     "nome": "fabio moledo",
     "email": "fabio@gmail.com",
-    "cpf": "38328401843",
-    "telefone": "(11) 99266-4464",
-    "senha": "sptech10@",
+    "cpf": "42322226424",
+    "telefone": "11925387786",
+    "senha": "Sptech10@",
     "tipoUsuario": 1,
     "autenticado": true
   },
@@ -29,4 +29,30 @@
     }
   }
 }
-----------------------
+------------------------------
+{
+  "nome": "fabo",
+  "email": "fabo@gmail.com",
+  "cpf": "42322226424",
+  "telefone": "11925387786",
+  "senha": "Sptech10@",
+  "tipoUsuario": 1,
+  "autenticado": true
+}
+{
+  "cep": "04143010",
+  "rua": "Avenida 1",
+  "numero": 43,
+  "complemento": "Perto da drogaria",
+  "bairro": "string",
+  "cidade": "string",
+  "estado": "SP"
+}
+{
+  "tipoMoradia": "Casa",
+  "qtdComodos": "1 a 5",
+  "qtdMoradores": "6 ou mais",
+  "qtdHorasCasa": "7 a 12",
+  "possuiPet": 1,
+  "statusForms": 1
+}

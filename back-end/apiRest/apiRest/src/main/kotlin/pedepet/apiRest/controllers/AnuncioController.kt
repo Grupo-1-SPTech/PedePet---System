@@ -92,10 +92,12 @@ class AnuncioController(
     }
 
     // QUANT FILHOTES DISPONÍVEIS POR ID
-    @GetMapping("/{id}/quantidade-filhotes-disponiveis")
+  @GetMapping("/{id}/quantidade-filhotes-disponiveis")
     fun buscarQuantidadeFilhotesDisponiveisPorId(@PathVariable id: Int): ResponseEntity<Long> {
         val quantidade = anuncioRepository.findQuantidadeFilhotesDisponiveisById(id)
         return ResponseEntity.ok(quantidade)
     }
+
+
 
 }
