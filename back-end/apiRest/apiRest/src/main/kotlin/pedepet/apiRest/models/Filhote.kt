@@ -1,9 +1,7 @@
 package pedepet.apiRest.models
 
 import java.time.LocalDateTime
-import java.util.Date
 import javax.persistence.*
-import javax.validation.constraints.Pattern
 
 @Entity
 @Table(name = "filhote")
@@ -24,6 +22,9 @@ data class Filhote(
 
     @Column(name = "disponivel")
     var disponivel:Boolean? = true,
+
+    @Column(name = "vacina_filhote")
+    var vacinaFilhote:Int? = null, // SIM = 1, NÃO = 0
 
     @ManyToOne
     @JoinColumn(name = "fk_ninhada", referencedColumnName = "id")

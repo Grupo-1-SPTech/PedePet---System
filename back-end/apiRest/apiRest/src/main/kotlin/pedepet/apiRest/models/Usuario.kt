@@ -8,8 +8,10 @@ import javax.validation.constraints.Pattern
 import javax.validation.constraints.Size
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_usuario", discriminatorType = DiscriminatorType.INTEGER)
 @Table(name = "usuario")
-data class Usuario(
+abstract class Usuario(
 
     @Column(name = "id")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,10 +39,8 @@ data class Usuario(
     @field:NotBlank @field:Size(min = 8, max = 30)
     var senha:String?,
 
-    @Column(name = "tipo_usuario")
-    var tipoUsuario:Int? = null, // COMPRADOR = 1, VENDEDOR = 2
-
     @Column(name = "autenticado")
     var autenticado:Boolean? = true,
+
     ) {
 }

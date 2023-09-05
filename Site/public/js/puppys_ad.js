@@ -88,3 +88,34 @@ function defineCurrentTheme(theme) {
 function entrar() {
     window.location.href = "./login.html"
 }
+
+//insert de anuncios pet
+// async function buscarAnuncios(){
+//     const resposta = await fetch("endpoint");
+
+//     const getResposta = await resposta.json();
+//     console.log(getResposta);
+
+//     const boxAnuncio = document.getElementById('box_anuncio');
+
+//     boxAnuncio.innerHTML = getResposta.map(function(anuncio){
+
+//         return `<div class="ex-card" id="box_anuncio">
+//                     <div class="img-pet"><img class="img-puppy" src="./css/images/spitz-filhote.jpg" alt=""></div>
+//                     <div class="content-card">
+//                         <h3>${anuncio.nomePet}</h3>
+//                         <p id="mes">${anuncio.diaNascimento} dias</p>
+//                         <p id="preco">R$ ${anuncio.precoPet}</p>
+//                         <div class="fila-local">
+//                             <p id="fila">6/10 Fila de espera</p>
+//                             <p id="local">${anuncio.estadoLocal}</p>
+//                         </div>
+//                     </div>
+//                     <div class="btn-fila">
+//                         <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
+//                     </div>
+//                 </div>`;
+//     })
+// }
+
+// buscarAnuncios();

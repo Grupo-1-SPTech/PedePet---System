@@ -4,35 +4,35 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "endereco")
-data class Endereco(
+class Endereco {
 
     @Column(name = "id")
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id:Int,
+    var id:Int = 0
 
     @Column(name = "cep", length = 8)
-    val cep:String? = null,
+    var cep:String? = null
 
     @Column(name = "rua")
-    val rua:String? = null,
+    var rua:String? = null
 
     @Column(name = "numero")
-    val numero:Int? = null,
+    var numero:Int? = null
 
     @Column(name = "complemento")
-    val complemento:String? = null,
+    var complemento:String? = null
 
     @Column(name = "bairro")
-    val bairro:String? = null,
+    var bairro:String? = null
 
     @Column(name = "cidade")
-    val cidade:String? = null,
+    var cidade:String? = null
 
     @Column(name = "estado")
-    val estado:String? = null,
+    var estado:String? = null
 
     @OneToOne
     @JoinColumn(name = "fk_usuario", referencedColumnName = "id")
-    var usuario: Usuario? = null,
-) {
+    var usuario: Usuario? = null
+
 }

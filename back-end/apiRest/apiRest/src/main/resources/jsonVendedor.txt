@@ -41,6 +41,7 @@
     "tempoEspera": 7,
     "preco": 2000.00,
     "disponivel": true,
+     "vacinaFilhote": 1,
     "anuncioPet": {
     }
   }
@@ -74,6 +75,52 @@
     "anuncioPet": {
       "usuario": {
       }
+    }
+  }
+}
+-------------------------
+{
+  "nome": "ruy",
+  "email": "ruy@gmail.com",
+  "cpf": "22973980003",
+  "telefone": "11922766147",
+  "senha": "Sptech10@",
+  "tipoUsuario": 2,
+  "autenticado": true
+}
+{
+  "cep": "04143010",
+  "rua": "Avenida 1",
+  "numero": 43,
+  "complemento": "Perto da drogaria",
+  "bairro": "Saude",
+  "cidade": "Sao paulo",
+  "estado": "SP"
+}
+
+{
+  "racaMae": 4,
+  "idadeMae": 5,
+  "porteMae": "Pequeno",
+  "pedigreeMae": 1,
+  "vacinadoMae": 1,
+  "racaPai": 1,
+  "idadePai": 4,
+  "portePai": "Pequeno",
+  "pedigreePai": 1,
+  "vacinadoPai": 1,
+  "fotoPet": "dlaskdç",
+  "visualizacoes": 1,
+  "qtdFilhotes": 4,
+  "descricao": "Teste Test",
+  "filhote": {
+    "tempoEspera": 5,
+    "preco": 1200.00,
+    "disponivel": true,
+    "vacinaFilhote": 1,
+      "filhotes": [
+        "string"
+      ]
     }
   }
 }
