@@ -52,6 +52,17 @@ class AnuncioController(
         return ResponseEntity.status(204).build()
     }
 
+    // FILTRO PORTE
+    @GetMapping("filtro/porte")
+    fun buscarCachorroPorPorte():ResponseEntity<List<AnuncioPet?>>{
+        val portes = anuncioRepository.findByPorte()
+
+        if(portes.isNotEmpty()) {
+            return ResponseEntity.status(200).body(portes)
+        }
+        return ResponseEntity.status(204).build()
+    }
+
     // VALOR POR ID
     @GetMapping("/{id}/valor")
     fun buscarValorAnuncioPorId(@PathVariable id: Int): ResponseEntity<Double?> {
@@ -66,18 +77,21 @@ class AnuncioController(
         return ResponseEntity.ok(tempo)
     }
 
+    // DESCRICAO POR ID
     @GetMapping("/{id}/descricao")
     fun buscarDescricaoAnuncioPorId(@PathVariable id: Int): ResponseEntity<String?> {
         val descricao = anuncioRepository.findDescricaoById(id)
         return ResponseEntity.ok(descricao)
     }
 
+    // RAÇA POR ID
     @GetMapping("/{id}/raca-mae")
     fun buscarRacaMaePorId(@PathVariable id: Int): ResponseEntity<Int?> {
         val racaMae = anuncioRepository.findRacaMaeById(id)
         return ResponseEntity.ok(racaMae?.racaMae)
     }
 
+    // QUANT FILHOTES DISPONÍVEIS POR ID
     @GetMapping("/{id}/quantidade-filhotes-disponiveis")
     fun buscarQuantidadeFilhotesDisponiveisPorId(@PathVariable id: Int): ResponseEntity<Long> {
         val quantidade = anuncioRepository.findQuantidadeFilhotesDisponiveisById(id)
