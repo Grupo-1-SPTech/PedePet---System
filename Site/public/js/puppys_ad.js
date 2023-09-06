@@ -90,32 +90,64 @@ function entrar() {
 }
 
 //insert de anuncios pet
-// async function buscarAnuncios(){
-//     const resposta = await fetch("endpoint");
+async function buscarAnuncios(){
+    const resposta = await fetch("http://localhost:8080/anuncios/total");
 
-//     const getResposta = await resposta.json();
-//     console.log(getResposta);
+    const getResposta = await resposta.json();
+    console.log(getResposta);
 
-//     const boxAnuncio = document.getElementById('box_anuncio');
+    const boxAnuncio = document.getElementById('box_anuncio');
 
-//     boxAnuncio.innerHTML = getResposta.map(function(anuncio){
+    boxAnuncio.innerHTML += getResposta.map(function(anuncio){
 
-//         return `<div class="ex-card" id="box_anuncio">
-//                     <div class="img-pet"><img class="img-puppy" src="./css/images/spitz-filhote.jpg" alt=""></div>
-//                     <div class="content-card">
-//                         <h3>${anuncio.nomePet}</h3>
-//                         <p id="mes">${anuncio.diaNascimento} dias</p>
-//                         <p id="preco">R$ ${anuncio.precoPet}</p>
-//                         <div class="fila-local">
-//                             <p id="fila">6/10 Fila de espera</p>
-//                             <p id="local">${anuncio.estadoLocal}</p>
-//                         </div>
-//                     </div>
-//                     <div class="btn-fila">
-//                         <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
-//                     </div>
-//                 </div>`;
+        return `<div class="ex-card">
+                    <div class="img-pet"><img class="img-puppy" src="./css/images/spitz-filhote.jpg" alt=""></div>
+                    <div class="content-card">
+                        <h3>${anuncio.nomePet}</h3>
+                        <p id="mes">${anuncio.diaNascimento} dias</p>
+                        <p id="preco">R$ ${anuncio.precoPet}</p>
+                        <div class="fila-local">
+                            <p id="fila">6/10 Fila de espera</p>
+                            <p id="local">SP</p>
+                        </div>
+                    </div>
+                    <div class="btn-fila">
+                        <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
+                    </div>
+                </div>`
+    });
+}
+
+// function getAnuncio() {
+//     fetch("http://localhost:8080/ninhadas", {
+//         method: "GET"
 //     })
+//         .then(res => res.json())
+//         .then((anuncio) => {
+//             boxAnuncio.innerHTML += getResposta.map(function(anuncio){
+
+//                 return `<div class="ex-card" id="box_anuncio">
+//                             <div class="img-pet"><img class="img-puppy" src="./css/images/spitz-filhote.jpg" alt=""></div>
+//                             <div class="content-card">
+//                                 <h3>${anuncio.nomePet}</h3>
+//                                 <p id="mes">${anuncio.diaNascimento} dias</p>
+//                                 <p id="preco">R$ ${anuncio.precoPet}</p>
+//                                 <div class="fila-local">
+//                                     <p id="fila">6/10 Fila de espera</p>
+//                                     <p id="local">SP</p>
+//                                 </div>
+//                             </div>
+//                             <div class="btn-fila">
+//                                 <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
+//                             </div>
+//                         </div>`;
+//             })
+//         }).catch((err) => {
+//             console.error(err);
+//         })
 // }
 
-// buscarAnuncios();
+function buscarDados() {
+    buscarAnuncios();
+    // getAnuncio();
+}

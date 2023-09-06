@@ -12,7 +12,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="buscarDados()">
     <nav>
         <div class="container-nav">
             <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
@@ -134,6 +134,8 @@
                     </div>
                 </div>
                 <div class="card-adpet" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">
+
+                    <span id="box_anuncio" onload="buscarAnuncios()"></span>
 
                     <div class="ex-card" id="box_anuncio">
                         <div class="img-pet"><img class="img-puppy" src="./css/images/spitz-filhote.jpg" alt=""></div>

@@ -279,7 +279,7 @@ function validarCampoCad3() {
 function cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2) {
 
     // Cadastro de usuario (vendedor)
-    fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
+    fetch("http://localhost:8080/cadastro/usuario", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -294,15 +294,15 @@ function cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2) {
                   "tipoUsuario": cadastroUserOBJT.tipoUser,
                   "autenticado": true
                 },
-                "endereco": {
-                  "cep": cadastroUserOBJT2.cep,
-                  "rua": cadastroUserOBJT2.rua,
-                  "numero": cadastroUserOBJT2.numero,
-                  "complemento": cadastroUserOBJT2.complemento,
-                  "bairro": cadastroUserOBJT2.bairro,
-                  "cidade": cadastroUserOBJT2.cidade,
-                  "estado": cadastroUserOBJT2.uf
-                }
+                // "endereco": {
+                //   "cep": cadastroUserOBJT2.cep,
+                //   "rua": cadastroUserOBJT2.rua,
+                //   "numero": cadastroUserOBJT2.numero,
+                //   "complemento": cadastroUserOBJT2.complemento,
+                //   "bairro": cadastroUserOBJT2.bairro,
+                //   "cidade": cadastroUserOBJT2.cidade,
+                //   "estado": cadastroUserOBJT2.uf
+                // }
         })
     })
         .then(res => res.json())
@@ -322,7 +322,7 @@ function cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT
     console.log(cadastroUserOBJT3);
 
 
-    fetch("http://localhost:8080/usuarios/cadastrar/comprador", {
+    fetch("http://localhost:8080/cadastros/usuario", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -337,22 +337,22 @@ function cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT
                 "tipoUsuario": cadastroUserOBJT.tipoUser,
                 "autenticado": true
             },
-            "endereco": {
-                "cep": cadastroUserOBJT2.cep,
-                "rua": cadastroUserOBJT2.endereco,
-                "numero": cadastroUserOBJT2.numero,
-                "complemento": cadastroUserOBJT2.complemento,
-                "bairro": cadastroUserOBJT2.bairro,
-                "cidade": cadastroUserOBJT2.cidade,
-                "estado": cadastroUserOBJT2.uf
-            },
-            "formulario": {
-                "tipoMoradia": cadastroUserOBJT3.moradia,
-                "qtdComodos": cadastroUserOBJT3.comodos,
-                "qtdMoradores": cadastroUserOBJT3.residentes,
-                "qtdHorasCasa": cadastroUserOBJT3.horasCasa,
-                "possuiPet": cadastroUserOBJT3.tevePet
-            }
+            // "endereco": {
+            //     "cep": cadastroUserOBJT2.cep,
+            //     "rua": cadastroUserOBJT2.endereco,
+            //     "numero": cadastroUserOBJT2.numero,
+            //     "complemento": cadastroUserOBJT2.complemento,
+            //     "bairro": cadastroUserOBJT2.bairro,
+            //     "cidade": cadastroUserOBJT2.cidade,
+            //     "estado": cadastroUserOBJT2.uf
+            // },
+            // "formulario": {
+            //     "tipoMoradia": cadastroUserOBJT3.moradia,
+            //     "qtdComodos": cadastroUserOBJT3.comodos,
+            //     "qtdMoradores": cadastroUserOBJT3.residentes,
+            //     "qtdHorasCasa": cadastroUserOBJT3.horasCasa,
+            //     "possuiPet": cadastroUserOBJT3.tevePet
+            // }
         })
     })
         .then(res => res.json())

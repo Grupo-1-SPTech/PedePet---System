@@ -24,6 +24,11 @@ class AnuncioController(
         return anuncioRepository.findById(id).get()
     }
 
+    @GetMapping("/total")
+    fun getTotalAnuncios():List<AnuncioPet?>{
+        return anuncioRepository.getTodosAnuncios()
+    }
+
     // ALTERAR DESCRICAO
     @PatchMapping("/alterarDescri/{id}")
     fun atualizarDescricao(@RequestBody alterarDescricao: AltDescricaoRequest): ResponseEntity<AnuncioPet?> {
