@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de confiança</title>
+    <title>Formulário de confiança - PedePet</title>
     <link rel="icon" href="./css/images/icon-pata.png">
     <link rel="stylesheet" href="css/formulario_confianca.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
@@ -13,12 +13,14 @@
 <body>
     <nav class="container-nav">
         <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
-        <ul class="options">
-            <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
-            <li><a href="./index.html#SobreNos">Sobre nós</a></li>
-            <li><a href="./index.html#FAQ">FAQ</a></li>
-            <li><a href="./index.html#Contato">Contato</a></li>
-        </ul>
+        <div class="optionsNav">
+            <ul>
+                <li><a href="#ComoFunciona">Como funciona</a></li>
+                <li><a href="#SobreNos">Sobre nós</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+                <li><a href="#Contato">Contato</a></li>
+            </ul>
+        </div>
         <div class="profile-dropdown">
             <div class="profile-dropdown-btn" onclick="toggle()">
                 <div class="profile-img">
@@ -27,10 +29,10 @@
 
             <ul class="profile-dropdown-list">
                 <li class="profile-name">
-                       <h1>Fabio Moledo</h1>
-                       <span>Comprador</span>
+                    <h1>Fabio Moledo</h1>
+                    <span>Comprador</span>
                 </li>
-                <hr/>
+                <hr />
                 <li class="profile-dropdown-list-item" id="config">
                     <a href="">
                         <i class="fa-regular fa-user"> </i>
@@ -53,7 +55,7 @@
                         Daltonismo
                     </a>
                 </li>
-                <hr/>
+                <hr />
                 <li class="profile-dropdown-list-item" id="sair">
                     <a href="index.html">
                         <i class="fa-solid fa-arrow-right-to-bracket"> </i>
@@ -72,32 +74,37 @@
             <div class="sidebar">
                 <button id="b1" class="opt">
                     <img src="css/images/profileOrangeIcon.svg" alt="">
-                    <span>Perfil</span>
+                    <a href="./perfil.html">Perfil</a>
                 </button>
 
                 <button id="b2" class="opt">
                     <img src="css/images/archiveIcon.svg" alt="">
-                    <span>Meus pedidos</span>
+                    <a href="./menupedidos.html">Meus pedidos</a>
                 </button>
 
                 <button id="b3" class="opt">
                     <img src="css/images/accessibilityIcon.svg" alt="">
-                    <span>Acessibilidade</span>
+                    <a href="./acessibilidade.html">Acessibilidade</a>
                 </button>
 
                 <button id="b4" class="opt">
                     <img src="css/images/cardIcon.svg" alt="">
-                    <span>Pagamentos</span>
+                    <a>Pagamentos</a>
                 </button>
 
                 <button id="b5" class="opt">
                     <img src="css/images/localOrangeIcon.svg" alt="">
-                    <span>Endereços</span>
+                    <a>Endereços</a>
                 </button>
 
                 <button id="b6" class="opt">
+                    <img src="css/images/verified-svgrepo-com.svg" alt="">
+                    <a href="./formulario_confianca.html">Aprovações</a>
+                </button>
+
+                <button id="b7" class="opt">
                     <img src="css/images/logoutIcon.svg" alt="">
-                    <span>Sair</span>
+                    <a>Sair</a>
                 </button>
 
                 <button class="logout" onclick="logoutUser()">Voltar ao inicio</button>
@@ -158,7 +165,7 @@
                                     <button class="buttonAceitar">Aceitar</button>
                                 </div>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -168,9 +175,19 @@
         </div>
         </div>
         </div>
-
-
     </main>
+
+    <div vw class="enabled" style="margin: 0px 0px 0px 0px;">
+        <div vw-access-button class="active" style="margin: 0px 0px 0px 0px;"></div>
+        <div vw-plugin-wrapper style="margin: 0px 0px 0px 0px;">
+            <div class="vw-plugin-top-wrapper" style="margin: 0px 0px 0px 0px;"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
 
 </html>
