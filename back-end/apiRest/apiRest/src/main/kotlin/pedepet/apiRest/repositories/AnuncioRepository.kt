@@ -71,9 +71,9 @@ interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
 
     // Função pegar todos anuncios
     @Query("""
-        SELECT a FROM AnuncioPet a
+        SELECT DISTINCT a FROM AnuncioPet a LEFT JOIN FETCH a.filhotes
     """)
     @RestResource(exported = true)
-    fun getTodosAnuncios():List<AnuncioPet?>
+    fun getTodosAnuncios():List<AnuncioPet>
 
 }

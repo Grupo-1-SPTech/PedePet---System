@@ -12,7 +12,7 @@ data class Filhote(
     var id:Int?,
 
     @Column(name = "tempo_espera")
-    var tempoEspera: Int? = null,
+    var tempoEspera: String? = null,
 
     @Column(name = "preco")
     val preco:Double? = null,

@@ -1,5 +1,6 @@
 package pedepet.apiRest.models
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import javax.persistence.*
 import javax.validation.constraints.Size
 
@@ -63,5 +64,7 @@ class AnuncioPet{
     var usuario: Usuario? = null
 
     @OneToMany(mappedBy = "anuncioPet")
+    @JsonIgnoreProperties("anuncioPet")
     var filhotes: MutableList<Filhote> = mutableListOf()
+
 }

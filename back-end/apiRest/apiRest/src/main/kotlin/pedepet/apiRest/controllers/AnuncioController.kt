@@ -25,12 +25,13 @@ class AnuncioController(
     }
 
     @GetMapping("/total")
-    fun getTotalAnuncios():ResponseEntity<List<AnuncioPet?>>{
+    fun getTotalAnuncios():ResponseEntity<List<AnuncioPet>>{
         val anuncioPet = anuncioRepository.getTodosAnuncios()
-        if (anuncioPet.isNotEmpty()){
-            return ResponseEntity.status(200).body(anuncioPet)
+        return if (anuncioPet.isNotEmpty()) {
+            ResponseEntity.status(200).body(anuncioPet)
+        } else {
+            ResponseEntity.status(404).build()
         }
-        return ResponseEntity.status(204).build()
     }
 
     // ALTERAR DESCRICAO
