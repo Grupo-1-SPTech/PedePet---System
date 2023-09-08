@@ -43,7 +43,7 @@ class UsuarioControllerTest {
     @Test1
     fun `cadComprador() deve estar anotado com @PostMapping('cadastrar-comprador')`() {
 
-        val metodo = UsuarioController::cadComprador
+        val metodo = CadastroController::cadUser
         val anotacao = metodo.annotations[0] as PostMapping
 
         val resultMetodo = assertNotNull(anotacao)
@@ -54,7 +54,7 @@ class UsuarioControllerTest {
 
     @Test1
     fun `Os parâmetros de cadComprador() devem estar anotados com @RequestBody`() {
-        val metodo = UsuarioController::cadComprador
+        val metodo = CadastroController::cadUser
 
         val result = (metodo.parameters[1].hasAnnotation<RequestBody>())
         print("O parametro está presente? $result")
@@ -66,7 +66,7 @@ class UsuarioControllerTest {
 
     @Test1
     fun `Os parâmetros de cadVendedor() devem estar anotados com @RequestBody`() {
-        val metodo = UsuarioController::cadVendedor
+        val metodo = CadastroController::cadUser
 
         val result = (metodo.parameters[1].hasAnnotation<RequestBody>())
         print("O parametro está presente? $result")
@@ -75,7 +75,7 @@ class UsuarioControllerTest {
     @Test
     fun `cadVendedor() deve estar anotado com @PostMapping('cadastrar-vendedor')`() {
 
-        val metodo = UsuarioController::cadVendedor
+        val metodo = CadastroController::cadUser
         val anotacao = metodo.annotations[0] as PostMapping
 
         val resultMetodo = assertNotNull(anotacao)
@@ -102,7 +102,7 @@ class UsuarioControllerTest {
 
     @Test1
     fun `Os parâmetros de alterarsenha() devem estar anotados com @RequestBody`() {
-        val metodo = UsuarioController::cadComprador
+        val metodo = CadastroController::cadUser
 
         val result = (metodo.parameters[1].hasAnnotation<RequestBody>())
         print("O parametro está presente? $result")

@@ -91,7 +91,7 @@ function entrar() {
 
 //insert de anuncios pet
 async function buscarAnuncios(){
-    const resposta = await fetch("http://localhost:8080/anuncios/total");
+    const resposta = await fetch("http://localhost:8080/ninhadas/search/getTodosAnuncios");
 
     const getResposta = await resposta.json();
     console.log(getResposta);

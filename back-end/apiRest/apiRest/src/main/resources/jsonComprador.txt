@@ -33,7 +33,7 @@
 {
   "nome": "fabo",
   "email": "fabo@gmail.com",
-  "cpf": "42322226424",
+  "cpf": "22973980003",
   "telefone": "11925387786",
   "senha": "Sptech10@",
   "tipoUsuario": 1,
