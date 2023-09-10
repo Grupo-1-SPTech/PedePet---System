@@ -323,7 +323,7 @@ body {
 }
 
 .titleProfile {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 900;
     margin-top: 30px;
     font-family: 'Montserrat' sans-serif;
@@ -379,7 +379,7 @@ body {
 }
 
 .Tittle2 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     color: var(--black);
@@ -387,7 +387,7 @@ body {
 }
 
 .Tittle3 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     color: var(--black);
@@ -395,21 +395,21 @@ body {
 }
 
 .subtitle1 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
     padding-left: 45px;
     padding-top: 15px;
 }
 
 .subtitle2 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
     padding-left: 45px;
     padding-top: 15px;
 }
 
 .OrangeText {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
     color: var(--orange);
 }
@@ -437,7 +437,7 @@ body {
 }
 
 .Infos {
-    width: 85%;
+    width: 95%;
     height: 5vh;
     display: flex;
     border: none;
@@ -519,7 +519,7 @@ body {
 }
  
 .Status span {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     color: var(--darkpurple);
@@ -586,7 +586,7 @@ body {
 }
 
 .titleProfile2 {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 900;
     padding-top: 30px;
     font-family: 'Montserrat' sans-serif;
@@ -613,7 +613,7 @@ body {
 }
  
 .Infos2 span {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 900;
     font-family: 'Montserrat', sans-serif;
     color: var(--black);
@@ -647,7 +647,7 @@ body {
 }
 
 .Texto {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--darkpurple);
 }
@@ -675,6 +675,9 @@ body {
     font-size: 16px;
     font-weight: 700;
     color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .corConcluido {
@@ -692,6 +695,9 @@ body {
     font-size: 16px;
     font-weight: 700;
     color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .corCancelado {
@@ -709,6 +715,9 @@ body {
     font-size: 16px;
     font-weight: 700;
     color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .containerVerMais {

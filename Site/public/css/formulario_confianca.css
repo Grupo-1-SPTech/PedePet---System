@@ -334,7 +334,7 @@ input:checked + .button::before{
 }
 
 .contentProf h1 {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 900;
     font-family: 'Montserrat' sans-serif;
     color: var(--black);

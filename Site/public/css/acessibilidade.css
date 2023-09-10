@@ -334,11 +334,11 @@ input:checked + .button::before{
 }
 
 .contentAc h1 {
-    font-size: 28px;
+    font-size: 44px;
     font-weight: 900;
     font-family: 'Montserrat' sans-serif;
     color: var(--black);
-    margin-bottom: 5%;
+    margin-bottom: 20px;
 }
 
 .containerAc {
@@ -394,5 +394,5 @@ h2 {
     padding-top: 2%;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
 }
