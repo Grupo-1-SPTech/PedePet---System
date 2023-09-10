@@ -334,7 +334,7 @@ input:checked + .button::before{
 }
 
 .contentProf h1 {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 900;
     font-family: 'Montserrat' sans-serif;
     color: var(--black);
@@ -375,7 +375,7 @@ input:checked + .button::before{
     margin-left: 5%;
     outline: 6px solid var(--orange);
     background-color: var(--white);
-    background-image: url(images/malandroEhMalandroManehEhManeh.jpg);
+    background-image: url(images/icon-user.svg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
