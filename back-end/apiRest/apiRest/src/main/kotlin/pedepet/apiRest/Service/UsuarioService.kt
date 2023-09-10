@@ -20,17 +20,19 @@ class UsuarioService(
 
     // CADASTR USUARIO
     fun cadUsuario(cadastroUser: CadUserRequest): ResponseEntity<Int> {
-
+        println("1")
         val tipoUsuario = when (cadastroUser.tipoUsuario) {
             1 -> Comprador::class.java
             2 -> Vendedor::class.java
             else -> Comprador::class.java
         }
+
         val selectUser = usuarioRepository.findByEmailAndTipoUsuario(cadastroUser.email)
         if (selectUser.isPresent){
+            println("Usuário já existe")
             return ResponseEntity.status(404).build()
         } else {
-
+            println("2")
             val usuario = if (cadastroUser.tipoUsuario == 1){
                 val comprador = Comprador()
                 comprador.nome = cadastroUser.nome
@@ -41,6 +43,7 @@ class UsuarioService(
                 comprador.autenticado = cadastroUser.autenticado
                 usuarioRepository.save(comprador).id
             } else {
+                println("3")
                 val vendedor = Vendedor()
                 vendedor.nome = cadastroUser.nome
                 vendedor.email = cadastroUser.email
@@ -50,6 +53,7 @@ class UsuarioService(
                 vendedor.autenticado = cadastroUser.autenticado
                 usuarioRepository.save(vendedor).id
             }
+            println("4")
             return ResponseEntity.status(201).body(usuario)
         }
     }

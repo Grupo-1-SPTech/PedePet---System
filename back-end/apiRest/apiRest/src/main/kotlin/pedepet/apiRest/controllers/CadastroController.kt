@@ -23,6 +23,7 @@ class CadastroController(
 
     @PostMapping("/usuario")
     fun cadUser(@RequestBody cadastroUser: CadUserRequest): ResponseEntity<Int> {
+        println("no endpoint")
         return usuarioService.cadUsuario(cadastroUser)
     }
 

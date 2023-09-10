@@ -5,7 +5,7 @@ data class CadFormularioRequest(
     val qtdComodos:String,
     val qtdMoradores:String,
     val qtdHorasCasa:String,
-    val possuiPet:Int,
+    val possuiPet:Boolean,
     val statusForms:Int?,
 ) {
 }

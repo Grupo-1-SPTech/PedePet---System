@@ -23,7 +23,7 @@ class Formulario{
     var qtdHorasCasa:String? = null // QTD HORAS QUE PASSA EM CASA
 
     @Column(name = "possui_pet")
-    var possuiPet:Int? = null // SIM = 1, NÃO = 0
+    var possuiPet:Boolean? = null // SIM = 1, NÃO = 0
 
     @Column(name = "status_forms")  //  não aprovado = 0, aprovado = 1, pendente = 2
     var statusForms:Int? = null
