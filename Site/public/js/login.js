@@ -13,7 +13,7 @@ function showSnackBar(message) {
 }
 
 // função de validação dos campos de login
-/*function validarLogin() {
+function validarLogin() {
   // declarando variaveis que recebem o valor dos inputs
   const in_email = document.getElementById('input_email').value;
   const in_senha = document.getElementById('input_senha').value;
@@ -30,7 +30,6 @@ function showSnackBar(message) {
 
   fazerLogin(in_email, in_senha);
 }
-*/
 
 // Função para fazer a requisição de login
 function fazerLogin(email, senha) {

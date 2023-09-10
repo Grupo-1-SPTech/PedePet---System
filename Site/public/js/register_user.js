@@ -1,3 +1,6 @@
+// const { resp } = require("express");
+
+
 // aviso de algum erro nas validações
 function showSnackBar() {
     var x = document.getElementById("snackbar");
@@ -8,19 +11,19 @@ function showSnackBar() {
 // regex de verificações (verifica os caracteres de uma variavel)
 const regexLetra = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
 const regexNumero = /^[0-9]+$/;
-const regexEmail = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const regexSenha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
 
 // objeto que recebe valores do Cadastro de usuário Pt1
 class formCadPt1 {
-    constructor(nome, email, cpf, telefone, senha, tipoUser) {
+    constructor(nome, email, cpf, telefone, senha, tipoUser, idUsuario) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.telefone = telefone;
         this.senha = senha;
         this.tipoUser = tipoUser;
+        this.idUsuario = idUsuario;
     }
 }
 
@@ -87,6 +90,7 @@ function validarCampoCad1() {
         cadastroUserOBJT.email = email;
     } else {
         snackbar.innerHTML = "Email inválido!";
+        console.log("erro aqui")
         showSnackBar();
         return
     }
@@ -134,15 +138,29 @@ function validarCampoCad1() {
         return
     }
 
-    localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
-    window.location.href = "./register_user2.html";
+    if (cadastroUserOBJT.tipoUser == 'Vendedor') {
+
+        // Para armazenar o objeto na localStorage
+
+        cadastroVendedor(cadastroUserOBJT);
+        window.location.href = "./register_user2.html";
+    } else if (cadastroUserOBJT.tipoUser == 'Comprador') {
+
+        // Para armazenar o objeto na sessionStorage
+        cadastroComprador(cadastroUserOBJT);
+        window.location.href = "./register_user2.html";
+    }
 }
+
+
+
 
 
 // função d evalidação dos campos do cadastro pt2
 function validarCampoCad2() {
 
     const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
+    console.log(cadastroUserOBJT);
 
     //declarando variaveis que recebem o valor dos inputs
     const cep = document.getElementById("input_cep").value;
@@ -218,25 +236,29 @@ function validarCampoCad2() {
         cadastroUserOBJT2.complemento = complemento;
     }
 
-    if (cadastroUserOBJT.tipoUser == "Comprador") {
-        cadastroUserOBJT.tipoUser = 1;
-        localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
-        localStorage.setItem('cadastroUserOBJT2', JSON.stringify(cadastroUserOBJT2));
-        window.location.href = "./register_user3.html";
+    if (cadastroUserOBJT.idUsuario != null) {
+        if (cadastroUserOBJT.tipoUser == "Vendedor") {
+
+            console.log(cadastroUserOBJT);
+            cadastroEndereco(cadastroUserOBJT2, cadastroUserOBJT);
+            // window.location.href = "./register_pet1.html";
+
+        } else if (cadastroUserOBJT.tipoUser == "Comprador") {
+
+            console.log(cadastroUserOBJT);
+            cadastroEndereco(cadastroUserOBJT2, cadastroUserOBJT);
+            // window.location.href = "./register_user3.html";
+        }
     } else {
-        cadastroUserOBJT.tipoUser = 2;
-        cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2);
-        window.location.href = "./register_pet1.html";
-        console.log("cadastrando vendedor");
+        console.log("não obteve id na primeira etapa");
+        snackbar.innerHTML = "Houve um erro no cadastro"
     }
 }
-
 
 
 function validarCampoCad3() {
 
     const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
-    const cadastroUserOBJT2 = JSON.parse(localStorage.getItem('cadastroUserOBJT2'));
 
     const radioTevePet = document.querySelector('.radioTevePet');
     const radioNaoTevePet = document.querySelector('.radioNaoTevePet');
@@ -244,123 +266,147 @@ function validarCampoCad3() {
     // Verificar qual radio button foi selecionado
     if (radioTevePet.checked) {
         // O usuário selecionou o radio button "Sim"
-        cadastroUserOBJT3.tevePet = 1;
+        cadastroUserOBJT3.tevePet = true;
         console.log("Opção selecionada: Sim");
     } else if (radioNaoTevePet.checked) {
         // O usuário selecionou o radio button "Não"
-        cadastroUserOBJT3.tevePet = 0;
+        cadastroUserOBJT3.tevePet = false;
         console.log("Opção selecionada: Não");
     }
 
-    console.log(cadastroUserOBJT);
-    console.log(cadastroUserOBJT2);
-    console.log(cadastroUserOBJT3);
 
-    if (cadastroUserOBJT3.tevePet == undefined  || cadastroUserOBJT3.moradia == undefined || cadastroUserOBJT3.comodos == undefined || cadastroUserOBJT3.residentes == undefined || cadastroUserOBJT3.horasCasa == undefined) {
+    if (cadastroUserOBJT3.tevePet == undefined || cadastroUserOBJT3.moradia == undefined || cadastroUserOBJT3.comodos == undefined || cadastroUserOBJT3.residentes == undefined || cadastroUserOBJT3.horasCasa == undefined) {
         snackbar.innerHTML = "É necessário preencher todos os campos";
         showSnackBar();
         return
     } else {
-        if (cadastroUserOBJT.tipoUser == '2') {
-            console.log("Inserindo dados de vendedor")
-            cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
-            window.location.href = "./register_pet1.html";
-
-        } else if (cadastroUserOBJT.tipoUser == '1') {
-            console.log("Inserindo dados de comprador")
-            cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3);
-            window.location.href = "./puppys_ad.html";
-
-        }
+        cadastroFormulario(cadastroUserOBJT, cadastroUserOBJT3);
     }
 }
 
 
-function cadastroVendedor(cadastroUserOBJT, cadastroUserOBJT2) {
+function cadastroVendedor(cadastroUserOBJT) {
+
+    console.log(cadastroUserOBJT);
 
     // Cadastro de usuario (vendedor)
-    fetch("http://localhost:8080/cadastro/usuario", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-                "usuario": {
-                  "nome": cadastroUserOBJT.nome,
-                  "email": cadastroUserOBJT.email,
-                  "cpf": cadastroUserOBJT.cpf,
-                  "telefone": cadastroUserOBJT.numero,
-                  "senha": cadastroUserOBJT.senha,
-                  "tipoUsuario": cadastroUserOBJT.tipoUser,
-                  "autenticado": true
-                },
-                // "endereco": {
-                //   "cep": cadastroUserOBJT2.cep,
-                //   "rua": cadastroUserOBJT2.rua,
-                //   "numero": cadastroUserOBJT2.numero,
-                //   "complemento": cadastroUserOBJT2.complemento,
-                //   "bairro": cadastroUserOBJT2.bairro,
-                //   "cidade": cadastroUserOBJT2.cidade,
-                //   "estado": cadastroUserOBJT2.uf
-                // }
-        })
-    })
-        .then(res => res.json())
-        .then((res) => {
-            console.log(res)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-}
-
-function cadastroComprador(cadastroUserOBJT, cadastroUserOBJT2, cadastroUserOBJT3) {
-
-    console.log('entrando no fetch comprador');
-    console.log(cadastroUserOBJT);
-    console.log(cadastroUserOBJT2);
-    console.log(cadastroUserOBJT3);
-
-
     fetch("http://localhost:8080/cadastros/usuario", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            "usuario": {
-                "nome": cadastroUserOBJT.nome,
-                "email": cadastroUserOBJT.email,
-                "cpf": cadastroUserOBJT.cpf,
-                "telefone": cadastroUserOBJT.telefone,
-                "senha": cadastroUserOBJT.senha,
-                "tipoUsuario": cadastroUserOBJT.tipoUser,
-                "autenticado": true
-            },
-            // "endereco": {
-            //     "cep": cadastroUserOBJT2.cep,
-            //     "rua": cadastroUserOBJT2.endereco,
-            //     "numero": cadastroUserOBJT2.numero,
-            //     "complemento": cadastroUserOBJT2.complemento,
-            //     "bairro": cadastroUserOBJT2.bairro,
-            //     "cidade": cadastroUserOBJT2.cidade,
-            //     "estado": cadastroUserOBJT2.uf
-            // },
-            // "formulario": {
-            //     "tipoMoradia": cadastroUserOBJT3.moradia,
-            //     "qtdComodos": cadastroUserOBJT3.comodos,
-            //     "qtdMoradores": cadastroUserOBJT3.residentes,
-            //     "qtdHorasCasa": cadastroUserOBJT3.horasCasa,
-            //     "possuiPet": cadastroUserOBJT3.tevePet
-            // }
+            "nome": cadastroUserOBJT.nome,
+            "email": cadastroUserOBJT.email,
+            "cpf": cadastroUserOBJT.cpf,
+            "telefone": cadastroUserOBJT.telefone,
+            "senha": cadastroUserOBJT.senha,
+            "tipoUsuario": 2,
+            "autenticado": true
+        })
+    })
+        .then(res => res.json())
+        .then((response) => {
+            cadastroUserOBJT.idUsuario = response;
+            console.log(cadastroUserOBJT.idUsuario);
+            localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+        })
+        .catch((err) => {
+            console.log(err);
+            console.log(response);
+            console.log("erro fetch pagina 1 - comprador");
+        })
+}
+
+function cadastroComprador(cadastroUserOBJT) {
+
+    console.log(cadastroUserOBJT);
+
+    // Cadastro de usuario (comprador)
+    fetch("http://localhost:8080/cadastros/usuario", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "nome": cadastroUserOBJT.nome,
+            "email": cadastroUserOBJT.email,
+            "cpf": cadastroUserOBJT.cpf,
+            "telefone": cadastroUserOBJT.telefone,
+            "senha": cadastroUserOBJT.senha,
+            "tipoUsuario": 1,
+            "autenticado": true
+        })
+    })
+        .then(res => res.json())
+        .then((response) => {
+            cadastroUserOBJT.idUsuario = response;
+            console.log(cadastroUserOBJT.idUsuario);
+            localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+        })
+        .catch((err) => {
+            console.log(err);
+            console.log(response);
+            console.log("erro fetch pagina 1 - comprador");
+        })
+}
+
+function cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2) {
+
+    console.log(cadastroUserOBJT);
+    console.log(cadastroUserOBJT2);
+
+    // cadastro usuario pt2 (endereço)
+    fetch(`http://localhost:8080/cadastros/endereco/${cadastroUserOBJT.idUsuario}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "cep": cadastroUserOBJT2.cep,
+            "rua": cadastroUserOBJT2.endereco,
+            "numero": cadastroUserOBJT2.numero,
+            "complemento": cadastroUserOBJT2.complemento,
+            "bairro": cadastroUserOBJT2.bairro,
+            "cidade": cadastroUserOBJT2.cidade,
+            "estado": cadastroUserOBJT2.estado
         })
     })
         .then(res => res.json())
         .then((res) => {
-            console.log(res)
+            console.log("id retornado", res);
         })
         .catch((err) => {
             console.log(err)
+            console.log("erro fetch pagina 2");
+        })
+}
+
+function cadastroFormulario(cadastroUserOBJT, cadastroUserOBJT3) {
+
+    // cadastro usuario pt2 (endereço)
+    fetch(`http://localhost:8080/cadastros/formulario/${cadastroUserOBJT.idUsuario}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "tipoMoradia": cadastroUserOBJT3.moradia,
+            "qtdComodos": cadastroUserOBJT3.comodos,
+            "qtdMoradores": cadastroUserOBJT3.residentes,
+            "qtdHorasCasa": cadastroUserOBJT3.horasCasa,
+            "possuiPet": cadastroUserOBJT3.tevePet,
+            "statusForms": 0
+        })
+    })
+        .then(res => res.json())
+        .then((res) => {
+            console.log("id retornado", res);
+            window.location.href = "./puppys_ad.html";
+        })
+        .catch((err) => {
+            console.log(err)
+            console.log("erro fetch pagina 3");
         })
 }
 
@@ -378,9 +424,10 @@ if (document.querySelector('.select-menu') != null) {
             sBtn_text.innerText = selectedOption;
             optionMenu.classList.remove('active')
             cadastroUserOBJT.tipoUser = selectedOption; // "selectedOption" representa a variavel que recebe a opção que o usuário escolheu
+            console.log(selectedOption);
             // nesse caso, a função é utilizada na pt1, e armazenada no objeto 1
 
-            if (cadastroUserOBJT.tipoUser !== null) { // aqui valido, se a função já foi usada na pt1, significa qu estamos na segunda
+            if (cadastroUserOBJT.tipoUser != null) { // aqui valido, se a função já foi usada na pt1, significa qu estamos na segunda
                 cadastroUserOBJT2.uf = selectedOption; // sendo assim, inserimos oque foi selecionado na pt2 no objeto 2
             }
         })
@@ -389,76 +436,79 @@ if (document.querySelector('.select-menu') != null) {
 
 // as constantes e for each abaixo se destina aos dropdowns da pt3 respectivamente, é necessario duplicar uma função para cada por estarem na mesma pagina
 // dropdown moradia
-const optionMenu1 = document.querySelector('.select-menu1');
-selectBtn1 = optionMenu1.querySelector('.select-btn1');
-options1 = optionMenu1.querySelectorAll('.option1');
-sBtn_text1 = optionMenu1.querySelector('.sBtn-text1');
+if (window.location.pathname === "/register_user3.html") {
+    const optionMenu1 = document.querySelector('.select-menu1');
+    selectBtn1 = optionMenu1.querySelector('.select-btn1');
+    options1 = optionMenu1.querySelectorAll('.option1');
+    sBtn_text1 = optionMenu1.querySelector('.sBtn-text1');
 
-selectBtn1.addEventListener('click', () => optionMenu1.classList.toggle('active1'))
+    selectBtn1.addEventListener('click', () => optionMenu1.classList.toggle('active1'))
 
-options1.forEach(option1 => {
-    option1.addEventListener('click', () => {
-        let selectedOption1 = option1.querySelector(".option-text1").innerText;
-        sBtn_text1.innerText = selectedOption1;
-        cadastroUserOBJT3.moradia = selectedOption1; // valor selecionado pelo usuário
+    options1.forEach(option1 => {
+        option1.addEventListener('click', () => {
+            let selectedOption1 = option1.querySelector(".option-text1").innerText;
+            sBtn_text1.innerText = selectedOption1;
+            cadastroUserOBJT3.moradia = selectedOption1; // valor selecionado pelo usuário
 
-        optionMenu1.classList.remove('active1')
-    })
-});
+            optionMenu1.classList.remove('active1')
+        })
+    });
 
-// dropdown comodos da casa
-const optionMenu2 = document.querySelector('.select-menu2');
-selectBtn2 = optionMenu2.querySelector('.select-btn2');
-options2 = optionMenu2.querySelectorAll('.option2');
-sBtn_text2 = optionMenu2.querySelector('.sBtn-text2');
+    // dropdown comodos da casa
+    const optionMenu2 = document.querySelector('.select-menu2');
+    selectBtn2 = optionMenu2.querySelector('.select-btn2');
+    options2 = optionMenu2.querySelectorAll('.option2');
+    sBtn_text2 = optionMenu2.querySelector('.sBtn-text2');
 
-selectBtn2.addEventListener('click', () => optionMenu2.classList.toggle('active2'))
+    selectBtn2.addEventListener('click', () => optionMenu2.classList.toggle('active2'))
 
-options2.forEach(option2 => {
-    option2.addEventListener('click', () => {
-        let selectedOption2 = option2.querySelector(".option-text2").innerText;
-        sBtn_text2.innerText = selectedOption2;
-        cadastroUserOBJT3.comodos = selectedOption2; // valor selecionado pelo usuário
+    options2.forEach(option2 => {
+        option2.addEventListener('click', () => {
+            let selectedOption2 = option2.querySelector(".option-text2").innerText;
+            sBtn_text2.innerText = selectedOption2;
+            cadastroUserOBJT3.comodos = selectedOption2; // valor selecionado pelo usuário
 
-        optionMenu2.classList.remove('active2')
-    })
-});
+            optionMenu2.classList.remove('active2')
+        })
+    });
 
-// dropdown residentes
-const optionMenu3 = document.querySelector('.select-menu3');
-selectBtn3 = optionMenu3.querySelector('.select-btn3');
-options3 = optionMenu3.querySelectorAll('.option3');
-sBtn_text3 = optionMenu3.querySelector('.sBtn-text3');
+    // dropdown residentes
+    const optionMenu3 = document.querySelector('.select-menu3');
+    selectBtn3 = optionMenu3.querySelector('.select-btn3');
+    options3 = optionMenu3.querySelectorAll('.option3');
+    sBtn_text3 = optionMenu3.querySelector('.sBtn-text3');
 
-selectBtn3.addEventListener('click', () => optionMenu3.classList.toggle('active3'))
+    selectBtn3.addEventListener('click', () => optionMenu3.classList.toggle('active3'))
 
-options3.forEach(option3 => {
-    option3.addEventListener('click', () => {
-        let selectedOption3 = option3.querySelector(".option-text3").innerText;
-        sBtn_text3.innerText = selectedOption3;
-        cadastroUserOBJT3.residentes = selectedOption3; // valor selecionado pelo usuário
+    options3.forEach(option3 => {
+        option3.addEventListener('click', () => {
+            let selectedOption3 = option3.querySelector(".option-text3").innerText;
+            sBtn_text3.innerText = selectedOption3;
+            cadastroUserOBJT3.residentes = selectedOption3; // valor selecionado pelo usuário
 
-        optionMenu3.classList.remove('active3')
-    })
-});
+            optionMenu3.classList.remove('active3')
+        })
+    });
 
-// dropdown horas em casa
-const optionMenu4 = document.querySelector('.select-menu4');
-selectBtn4 = optionMenu4.querySelector('.select-btn4');
-options4 = optionMenu4.querySelectorAll('.option4');
-sBtn_text4 = optionMenu4.querySelector('.sBtn-text4');
+    // dropdown horas em casa
+    const optionMenu4 = document.querySelector('.select-menu4');
+    selectBtn4 = optionMenu4.querySelector('.select-btn4');
+    options4 = optionMenu4.querySelectorAll('.option4');
+    sBtn_text4 = optionMenu4.querySelector('.sBtn-text4');
 
-selectBtn4.addEventListener('click', () => optionMenu4.classList.toggle('active4'))
+    selectBtn4.addEventListener('click', () => optionMenu4.classList.toggle('active4'))
 
-options4.forEach(option4 => {
-    option4.addEventListener('click', () => {
-        let selectedOption4 = option4.querySelector(".option-text4").innerText;
-        sBtn_text4.innerText = selectedOption4;
-        cadastroUserOBJT3.horasCasa = selectedOption4; // valor selecionado pelo usuário
+    options4.forEach(option4 => {
+        option4.addEventListener('click', () => {
+            let selectedOption4 = option4.querySelector(".option-text4").innerText;
+            sBtn_text4.innerText = selectedOption4;
+            cadastroUserOBJT3.horasCasa = selectedOption4; // valor selecionado pelo usuário
 
-        optionMenu4.classList.remove('active4')
-    })
-});
+            optionMenu4.classList.remove('active4')
+        })
+    });
+
+}
 
 function entrar() {
     window.location.href = "./login.html"

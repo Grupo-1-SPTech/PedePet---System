@@ -215,7 +215,11 @@ function validarCampoCad3() {
         cadastroPetOBJT3.preco = preco
     }
 
+
     cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3);
+    console.log(cadastroPetOBJT)
+    console.log(cadastroPetOBJT2)
+    console.log(cadastroPetOBJT3)
     window.location.href = "./puppys_ad.html";
 }
 
@@ -223,45 +227,9 @@ function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
 
     const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
     const cadastroUserOBJT2 = JSON.parse(localStorage.getItem('cadastroUserOBJT2'));
-    console.log({
-        "usuario": {
-            "nome": cadastroUserOBJT.nome,
-            "email": cadastroUserOBJT.email,
-            "cpf": cadastroUserOBJT.cpf,
-            "telefone": cadastroUserOBJT.telefone,
-            "senha": cadastroUserOBJT.senha,
-            "tipoUsuario": 2,
-            "autenticado": true
-        },
-        "endereco": {
-            "cep": cadastroUserOBJT2.cep,
-            "rua": cadastroUserOBJT2.endereco,
-            "numero": cadastroUserOBJT2.numero,
-            "complemento": cadastroUserOBJT2.complemento,
-            "bairro": cadastroUserOBJT2.bairro,
-            "cidade": cadastroUserOBJT2.cidade,
-            "estado": cadastroUserOBJT2.uf
-        },
-            "anuncioPet": {
-                "racaMae": cadastroPetOBJT.racaMae,
-                "idadeMae": cadastroPetOBJT.idadeMae,
-                "porteMae": cadastroPetOBJT.porteMae,
-                "vacinaMae": cadastroPetOBJT.vacinaMae,
-                "pedigreeMae": cadastroPetOBJT.pedigreeMae,
-                "racaPai": cadastroPetOBJT2.racaPai,
-                "idadePai": cadastroPetOBJT2.idadePai,
-                "portePai": cadastroPetOBJT2.portePai,
-                "vacinadoPai": cadastroPetOBJT2.vacinaPai,
-                "pedigreePai": cadastroPetOBJT2.pedigreePai,
-                "qtdFilhotes": cadastroPetOBJT3.quant,
-                "fotoPet": cadastroPetOBJT3.foto,
-                "descricao": cadastroPetOBJT3.descric
-            },
-            "filhote": {
-                "tempoEspera": cadastroPetOBJT3.nasc,
-                "preco": cadastroPetOBJT3.preco
-            }
-    })
+    console.log(cadastroUserOBJT2);
+    console.log(cadastroUserOBJT);
+
     // Cadastro de usuario (vendedor)
     fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
         method: "POST",
