@@ -957,10 +957,12 @@ footer {
 
 .filhotesTeste{
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .informacoes span {
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 #sub-title  {	
