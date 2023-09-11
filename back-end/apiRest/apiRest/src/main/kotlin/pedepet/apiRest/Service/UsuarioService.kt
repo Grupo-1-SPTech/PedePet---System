@@ -20,7 +20,6 @@ class UsuarioService(
 
     // CADASTR USUARIO
     fun cadUsuario(cadastroUser: CadUserRequest): ResponseEntity<Int> {
-        println("1")
         val tipoUsuario = when (cadastroUser.tipoUsuario) {
             1 -> Comprador::class.java
             2 -> Vendedor::class.java
@@ -32,7 +31,6 @@ class UsuarioService(
             println("Usuário já existe")
             return ResponseEntity.status(404).build()
         } else {
-            println("2")
             val usuario = if (cadastroUser.tipoUsuario == 1){
                 val comprador = Comprador()
                 comprador.nome = cadastroUser.nome
@@ -43,7 +41,6 @@ class UsuarioService(
                 comprador.autenticado = cadastroUser.autenticado
                 usuarioRepository.save(comprador).id
             } else {
-                println("3")
                 val vendedor = Vendedor()
                 vendedor.nome = cadastroUser.nome
                 vendedor.email = cadastroUser.email
@@ -53,14 +50,12 @@ class UsuarioService(
                 vendedor.autenticado = cadastroUser.autenticado
                 usuarioRepository.save(vendedor).id
             }
-            println("4")
             return ResponseEntity.status(201).body(usuario)
         }
     }
 
     // CADASTRO ENDERECO
     fun cadEndereco(id:Int, cadEnderecoRequest: CadEnderecoRequest): ResponseEntity<String> {
-
         val user = usuarioRepository.findById(id)
         if (user.isEmpty) {
             return ResponseEntity.status(404).build()
@@ -87,17 +82,22 @@ class UsuarioService(
     fun cadFormulario(id: Int, cadFormulario: CadFormularioRequest): ResponseEntity<String> {
 
         val user = usuarioRepository.findById(id)
+        println("1")
         if (user.isEmpty) {
+            println("2")
             return ResponseEntity.status(404).build()
         }
         val selectForm = formularioRepository.findByUsuarioId(id)
         if(selectForm != null) {
+            println("3")
             ResponseEntity.status(404).body("Formulario exisente")
         }
         val comprador = user.get()
         if(comprador is Vendedor){
+            println("4")
             return ResponseEntity.status(404).build()
         } else {
+            println("5")
             val form = Formulario()
             form.usuario = user.get()
             form.tipoMoradia = cadFormulario.tipoMoradia

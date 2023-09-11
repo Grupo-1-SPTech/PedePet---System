@@ -27,12 +27,12 @@ class CadastroController(
         return usuarioService.cadUsuario(cadastroUser)
     }
 
-    @PutMapping("/endereco/{id}")
+    @PostMapping("/endereco/{id}")
     fun cadEndereco(@PathVariable id:Int, @RequestBody cadEnderecoRequest: CadEnderecoRequest): ResponseEntity<String> {
         return usuarioService.cadEndereco(id, cadEnderecoRequest)
     }
 
-    @PutMapping("/formulario/{id}")
+    @PostMapping("/formulario/{id}")
     fun cadFormulario(@PathVariable id:Int, @RequestBody cadastroFormulario: CadFormularioRequest): ResponseEntity<String> {
         return usuarioService.cadFormulario(id, cadastroFormulario)
     }

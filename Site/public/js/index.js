@@ -6,7 +6,6 @@ console.log(emailArmazenado);
 
 function validaLogin() {
 
-    console.log("1")
     if (emailArmazenado != null) {
         const url = `http://localhost:8080/usuarios/autenticado/${emailArmazenado}`;
 

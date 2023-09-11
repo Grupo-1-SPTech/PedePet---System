@@ -143,12 +143,10 @@ function validarCampoCad1() {
         // Para armazenar o objeto na localStorage
 
         cadastroVendedor(cadastroUserOBJT);
-        window.location.href = "./register_user2.html";
     } else if (cadastroUserOBJT.tipoUser == 'Comprador') {
-
         // Para armazenar o objeto na sessionStorage
         cadastroComprador(cadastroUserOBJT);
-        window.location.href = "./register_user2.html";
+
     }
 }
 
@@ -236,18 +234,17 @@ function validarCampoCad2() {
         cadastroUserOBJT2.complemento = complemento;
     }
 
-    if (cadastroUserOBJT.idUsuario != null) {
+    if (cadastroUserOBJT.idUsuario) {
         if (cadastroUserOBJT.tipoUser == "Vendedor") {
 
             console.log(cadastroUserOBJT);
-            cadastroEndereco(cadastroUserOBJT2, cadastroUserOBJT);
-            // window.location.href = "./register_pet1.html";
+            cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2);
+
 
         } else if (cadastroUserOBJT.tipoUser == "Comprador") {
 
             console.log(cadastroUserOBJT);
-            cadastroEndereco(cadastroUserOBJT2, cadastroUserOBJT);
-            // window.location.href = "./register_user3.html";
+            cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2);
         }
     } else {
         console.log("não obteve id na primeira etapa");
@@ -259,6 +256,8 @@ function validarCampoCad2() {
 function validarCampoCad3() {
 
     const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
+
+    console.log(cadastroUserOBJT);
 
     const radioTevePet = document.querySelector('.radioTevePet');
     const radioNaoTevePet = document.querySelector('.radioNaoTevePet');
@@ -310,6 +309,7 @@ function cadastroVendedor(cadastroUserOBJT) {
             cadastroUserOBJT.idUsuario = response;
             console.log(cadastroUserOBJT.idUsuario);
             localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+            window.location.href = "./register_user2.html";
         })
         .catch((err) => {
             console.log(err);
@@ -321,7 +321,6 @@ function cadastroVendedor(cadastroUserOBJT) {
 function cadastroComprador(cadastroUserOBJT) {
 
     console.log(cadastroUserOBJT);
-
     // Cadastro de usuario (comprador)
     fetch("http://localhost:8080/cadastros/usuario", {
         method: "POST",
@@ -343,6 +342,7 @@ function cadastroComprador(cadastroUserOBJT) {
             cadastroUserOBJT.idUsuario = response;
             console.log(cadastroUserOBJT.idUsuario);
             localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+            window.location.href = "./register_user2.html";
         })
         .catch((err) => {
             console.log(err);
@@ -353,6 +353,8 @@ function cadastroComprador(cadastroUserOBJT) {
 
 function cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2) {
 
+
+    console.log(JSON.parse(JSON.stringify(cadastroUserOBJT)));
     console.log(cadastroUserOBJT);
     console.log(cadastroUserOBJT2);
 
@@ -375,6 +377,13 @@ function cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2) {
         .then(res => res.json())
         .then((res) => {
             console.log("id retornado", res);
+
+            if (cadastroUserOBJT.tipoUser == "Vendedor") {
+                window.location.href = "./register_pet1.html";
+
+            } else if (cadastroUserOBJT.tipoUser == "Comprador") {
+                window.location.href = "./register_user3.html";
+            }
         })
         .catch((err) => {
             console.log(err)
@@ -383,6 +392,9 @@ function cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2) {
 }
 
 function cadastroFormulario(cadastroUserOBJT, cadastroUserOBJT3) {
+
+    console.log("estou no 3 func");
+    console.log(cadastroUserOBJT);
 
     // cadastro usuario pt2 (endereço)
     fetch(`http://localhost:8080/cadastros/formulario/${cadastroUserOBJT.idUsuario}`, {
@@ -399,9 +411,7 @@ function cadastroFormulario(cadastroUserOBJT, cadastroUserOBJT3) {
             "statusForms": 0
         })
     })
-        .then(res => res.json())
         .then((res) => {
-            console.log("id retornado", res);
             window.location.href = "./puppys_ad.html";
         })
         .catch((err) => {
@@ -424,7 +434,7 @@ if (document.querySelector('.select-menu') != null) {
             sBtn_text.innerText = selectedOption;
             optionMenu.classList.remove('active')
             cadastroUserOBJT.tipoUser = selectedOption; // "selectedOption" representa a variavel que recebe a opção que o usuário escolheu
-            console.log(selectedOption);
+
             // nesse caso, a função é utilizada na pt1, e armazenada no objeto 1
 
             if (cadastroUserOBJT.tipoUser != null) { // aqui valido, se a função já foi usada na pt1, significa qu estamos na segunda
