@@ -13,19 +13,76 @@
 </head>
 
 <body onload="buscarDados()">
-    <nav>
-        <div class="container-nav">
-            <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
-            <div class="options">
-                <ul>
-                    <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
-                    <li><a href="./index.html#SobreNos">Sobre nós</a></li>
-                    <li><a href="./index.html#FAQ">FAQ</a></li>
-                    <li><a href="./index.html#Contato">Contato</a></li>
-                </ul>
-                <button onclick="entrar()" href="./login.html" class="btn-login">Entrar</a></button>
+    <nav class="container-nav">
+        <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
+        <ul class="options">
+            <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
+            <li><a href="./index.html#SobreNos">Sobre nós</a></li>
+            <li><a href="./index.html#FAQ">FAQ</a></li>
+            <li><a href="./index.html#Contato">Contato</a></li>
+        </ul>
+        <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" onclick="toggle()">
+                <div class="profile-img">
+                </div>
             </div>
+
+            <ul class="profile-dropdown-list">
+                <li class="profile-name">
+                       <h1>Fabio Moledo</h1>
+                       <span>Comprador</span>
+                </li>
+                <hr/>
+                <li class="profile-dropdown-list-item" id="config">
+                    <a href="perfil.html">
+                        <i class="fa-regular fa-user"> </i>
+                        Configurações da conta
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item" id="dark-mode">
+                    <a href="">
+                        <i class="fa-regular fa-moon"> </i>
+                        Tema
+                        <div class="switch-theme">
+                            <input type="checkbox" id="check" id=>
+                            <label for="check" class="button" id="btn-dark-mode-toggle"></label>
+                        </div>
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item" id="daltonismo">
+                    <a href="#">
+                        <i class="fa-regular fa-eye"> </i>
+                        Daltonismo
+                        <form class="color-picker" action="">
+                            <fieldset>
+                                <label class="visual-hidden" for="light"></label>
+                                <input type="radio" name="theme" id="light" checked>
+
+                                <label class="visual-hidden" for="tritanopia"></label>
+                                <input type="radio" name="theme" id="tritanopia" checked>
+
+                                <label class="visual-hidden" for="protanopia"></label>
+                                <input type="radio" name="theme" id="protanopia" checked>
+
+                                <label class="visual-hidden" for="deuteranopia"></label>
+                                <input type="radio" name="theme" id="deuteranopia" checked>
+
+                                <label class="visual-hidden" for="acromatico"></label>
+                                <input type="radio" name="theme" id="acromatico" checked>
+                            </fieldset>
+                        </form>
+                    </a>
+                </li>
+                <hr/>
+                <li class="profile-dropdown-list-item" id="logout">
+                    <a href="index.html">
+                        <i class="fa-solid fa-arrow-right-to-bracket"> </i>
+                        Sair
+                    </a>
+                </li>
+            </ul>
         </div>
+
     </nav>
     <main>
         <!-- IMAGE -->
@@ -98,13 +155,13 @@
                                 <img src="./css/images/arrowDrop.svg" alt="">
                             </div>
                             <ul class="options2">
-                                <li class="option2" value="1">
+                                <li class="option2" value="Pequeno">
                                     <span class="option-text2">Pequeno</span>
                                 </li>
-                                <li class="option2" value="2">
+                                <li class="option2" value="Médio">
                                     <span class="option-text2">Médio</span>
                                 </li>
-                                <li class="option2" value="3">
+                                <li class="option2" value="Grande">
                                     <span class="option-text2">Grande</span>
                                 </li>
                             </ul>
@@ -117,14 +174,14 @@
                               <input type="radio" class="radioVacinado" id="vacina-sim" name="vacinado"/>
                               Sim
                             </label>
-                          </div>
+                        </div>
               
-                          <div>
-                            <label class="form-control2" value="2" id="vacina-nao">
+                        <div>
+                            <label class="form-control2" value="0" id="vacina-nao">
                               <input type="radio" class="radioVacinadoNao" id="vacina-nao" name="vacinado"/>
                               Não
                             </label>
-                          </div>
+                        </div>
                     </div>
                     <div class="btn-clear">
                         <button onclick="limparFiltros()" class="limpar" id="limpar-filter">Limpar</button>

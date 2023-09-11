@@ -1,4 +1,4 @@
-package pedepet.apiRest.dto.Cadastros
+package pedepet.apiRest.dto.cadastros
 
 import java.time.LocalDateTime
 

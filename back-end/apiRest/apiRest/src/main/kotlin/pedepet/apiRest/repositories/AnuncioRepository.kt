@@ -59,10 +59,11 @@ interface AnuncioRepository: JpaRepository<AnuncioPet, Int> {
     @RestResource(exported = true)
     fun findNomeVendedorById(@Param("id") id: Int): String?
 
-    // Função para buscar a raça da mãe por ID do anúncio
-    @Query("SELECT ap FROM AnuncioPet ap WHERE ap.id = :id")
+    // Função para buscar o nome da raça da mãe pelo nome da raça da mãe
+    @Query("SELECT ap.racaMae FROM AnuncioPet ap WHERE ap.racaMae = :racaMae")
     @RestResource(exported = true)
-    fun findRacaMaeById(@Param("id") id: Int): AnuncioPet?
+    fun findRacaMae(@Param("racaMae") racaMae: String): List<String>
+
 
     // Função para buscar a quantidade de filhotes disponíveis por ID do anúncio
     @Query("SELECT COUNT(filhote) FROM AnuncioPet anuncio JOIN anuncio.filhotes filhote WHERE anuncio.id = :id AND filhote.disponivel = true")

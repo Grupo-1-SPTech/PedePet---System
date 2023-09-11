@@ -14,10 +14,12 @@ insert into formulario (tipo_moradia, qtd_comodos, qtd_moradores, qtd_horas_casa
 values
 ('Casa', '1 a 5', '6 ou mais', '7 a 12', 1, 1, 2);
 
-insert into ninhada (raca_mae, idade_mae, porte_mae, pedigree_mae, vacina_mae, raca_pai, idade_pai, porte_pai, pedigree_pai, vacina_pai, foto_pet, visualizacoes, qtd_filhotes, descricao, fk_usuario)
+insert into ninhada (titulo, raca_mae, idade_mae, porte_mae, pedigree_mae, vacina_mae, raca_pai, idade_pai, porte_pai, pedigree_pai, vacina_pai, foto_pet, visualizacoes, qtd_filhotes, descricao, fk_usuario)
 values
-(4, 5, 'Pequeno', 1, 1, 4, 4, 'Pequeno', 1, 1,'fotoPet', 1, 6, '6 lindos filhotes', 1),
-(18, 8, 'Grande', 1, 1, 18, 9, 'Grande', 1, 1,'fotoPet', 1, 3, '3 lindos filhotes', 3);
+('Lulu da pomerânia os mais queridos','Pomerânia (Spitz Alemão)', 5, 'Pequeno', 1, 1, 'Pomerânia (Spitz Alemão)', 4, 'Pequeno', 1, 1,'https://canilfittipaldi.com.br/Spitz-Alemão/spitz-03.jpg', 1, 6, '6 lindos filhotes', 1),
+('Corgi o cachoro que anda rebolando','Corgi', 5, 'Pequeno', 1, 1, 'Corgi', 4, 'Pequeno', 1, 1,'https://img.olx.com.br/images/83/835384198879135.webp', 1, 2, '2 lindos filhotes', 1),
+('Os mais fofos Samoiedas','Samoieda', 8, 'Grande', 1, 1, 'Samoieda', 9, 'Grande', 1, 1,'https://gestoranimal.com.br/uploads/2019/12/content/pequeno-filhote-de-samoieda.jpg', 1, 1, '1 lindos filhotes', 3),
+('Lindos Shibas','Shiba Inu', 8, 'Grande', 1, 1, 'Shiba Inu', 9, 'Grande', 1, 1,'https://centralparkpuppies.com/wp-content/uploads/2022/06/shiba-inu-dogs.png', 1, 3, '3 lindos filhotes', 3);
 
 insert into filhote (tempo_espera, preco, disponivel, vacina_filhote, data_criacao, fk_ninhada)
 values
@@ -27,6 +29,9 @@ values
 ('9 semanas (63 dias)', 1199.99, true, 1, NOW(), 1),
 ('9 semanas (63 dias)', 1199.99, true, 1, NOW(), 1),
 ('9 semanas (63 dias)', 1199.99, true, 1, NOW(), 1),
-('9 semanas (63 dias)', 2000.99, true, 1, NOW(), 2),
-('9 semanas (63 dias)', 2000.99, true, 1, NOW(), 2),
-('9 semanas (63 dias)', 2000.99, true, 1, NOW(), 2);
+('9 semanas (63 dias)', 900.00, true, 1, NOW(), 2),
+('9 semanas (63 dias)', 900.00, true, 1, NOW(), 2),
+('9 semanas (63 dias)', 1500.00, true, 1, NOW(),3),
+('9 semanas (63 dias)', 2000.00, true, 1, NOW(), 4),
+('9 semanas (63 dias)', 2000.00, true, 1, NOW(), 4),
+('9 semanas (63 dias)', 2000.00, true, 1, NOW(), 4);

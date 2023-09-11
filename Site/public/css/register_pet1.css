@@ -337,11 +337,20 @@
 }
 
 .alinhamento {
-  display: flex;
   flex-direction: row;
   width: 100%;
   align-items: left;
   padding-bottom: 2%;
+}
+
+.alinhamento input {
+  margin-top: 5px;
+  width: 100%;
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.6); 
+  padding-left: 4%;
+  background-size: 20px;
 }
 
 .alinhamento h1 {
@@ -430,6 +439,10 @@
   background: url(images/calendar-svgrepo-com.svg) no-repeat 20px 7px;
   padding-left: 22%;
   background-size: 20px;
+}
+
+.selectPorte {
+  height: 40px;
 }
 
 .alinhamento2_pt2 {

@@ -1,11 +1,11 @@
-package pedepet.apiRest.Service
+package pedepet.apiRest.service
 
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
-import pedepet.apiRest.dto.Cadastros.CadFormularioRequest
-import pedepet.apiRest.dto.Cadastros.CadUserRequest
-import pedepet.apiRest.dto.Cadastros.CadAnuncioRequest
-import pedepet.apiRest.dto.Cadastros.CadEnderecoRequest
+import pedepet.apiRest.dto.cadastros.CadAnuncioRequest
+import pedepet.apiRest.dto.cadastros.CadEnderecoRequest
+import pedepet.apiRest.dto.cadastros.CadFormularioRequest
+import pedepet.apiRest.dto.cadastros.CadUserRequest
 import pedepet.apiRest.models.*
 import pedepet.apiRest.repositories.*
 
@@ -127,6 +127,7 @@ class UsuarioService(
         } else {
             val anuncio = AnuncioPet()
             anuncio.usuario = user.get()
+            anuncio.titulo = cadastrarAnuncio.titulo
             anuncio.racaMae = cadastrarAnuncio.racaMae
             anuncio.idadeMae = cadastrarAnuncio.idadeMae
             anuncio.porteMae = cadastrarAnuncio.porteMae

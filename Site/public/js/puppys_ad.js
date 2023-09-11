@@ -64,8 +64,24 @@ function limparFiltros() {
 }
 limparFilter.addEventListener('click', limparFiltros);
 
-// troca de temar dark mode
 
+// botao perfil
+let profileDropdownList = document.querySelector('.profile-dropdown-list');
+let btn = document.querySelector('.profile-dropdown-btn');
+let modoBtn = document.querySelector('dark-mode');
+let daltonismoBtn = document.querySelector('daltonismo');
+let configBtn = document.querySelector('config');
+let sairBtn = document.querySelector('logout');
+
+const toggle = () => profileDropdownList.classList.toggle('active');
+
+window.addEventListener('click', function(e){
+    if (!btn.contains(e.target) && !profileDropdownList.contains(e.target)) {
+        profileDropdownList.classList.remove('active');
+    }
+});
+
+// troca de temar dark mode
 const btnDarkMode = document.getElementById('btn-dark-mode-toggle')
 const themeSystem = localStorage.getItem("themeSystem") || "light"
 
@@ -89,6 +105,32 @@ function entrar() {
     window.location.href = "./login.html"
 }
 
+// tema ficar no localStorage
+const colorThemes = document.querySelectorAll('[name="theme"]');
+
+//store theme
+const storeTheme = function(theme) {
+    localStorage.setItem("theme", theme);
+}
+
+const setTheme = function() {
+    const activeTheme = localStorage.getItem("theme");
+    colorThemes.forEach((themeOption) => {
+        if(themeOption.id === activeTheme){
+            themeOption.checked = true;
+        }
+    });
+    document.documentElement.className = theme;
+};
+
+colorThemes.forEach(themeOption => {
+    themeOption.addEventListener('click', () => {
+        storeTheme(themeOption.id);    
+    });
+});
+
+document.onload = setTheme();
+
 //insert de anuncios pet
 async function buscarAnuncios(){
     const resposta = await fetch("http://localhost:8080/anuncios/total");
@@ -103,7 +145,7 @@ async function buscarAnuncios(){
         const tempoEsperaFilhote = anuncio.filhotes[0].tempoEspera;
 
         return `<div class="ex-card">
-                    <div class="img-pet"><img class="img-puppy" src="./css/images/spitz-filhote.jpg" alt=""></div>
+                    <div class="img-pet"><img class="img-puppy" src="${anuncio.fotoPet}" alt=""></div>
                     <div class="content-card">
                         <h3>${anuncio.racaMae}</h3>
                         <p id="mes">${tempoEsperaFilhote} dias</p>
