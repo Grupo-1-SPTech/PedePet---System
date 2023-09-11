@@ -8,19 +8,21 @@
     <title>Anúncio Pet - PedePet</title>
     <link rel="icon" href="./css/images/icon-pata.png">
     <link rel="stylesheet" href="./css/puppys_ad.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body onload="buscarDados()">
     <nav class="container-nav">
         <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
-        <ul class="options">
-            <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
-            <li><a href="./index.html#SobreNos">Sobre nós</a></li>
-            <li><a href="./index.html#FAQ">FAQ</a></li>
-            <li><a href="./index.html#Contato">Contato</a></li>
-        </ul>
+        <div class="options">
+            <ul>
+              <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
+              <li><a href="./index.html#SobreNos">Sobre nós</a></li>
+              <li><a href="./index.html#FAQ">FAQ</a></li>
+              <li><a href="./index.html#Contato">Contato</a></li>
+            </ul>
+          </div>
         <div class="profile-dropdown">
             <div class="profile-dropdown-btn" onclick="toggle()">
                 <div class="profile-img">
@@ -29,10 +31,10 @@
 
             <ul class="profile-dropdown-list">
                 <li class="profile-name">
-                       <h1>Fabio Moledo</h1>
-                       <span>Comprador</span>
+                    <h1>Fabio Moledo</h1>
+                    <span>Comprador</span>
                 </li>
-                <hr/>
+                <hr />
                 <li class="profile-dropdown-list-item" id="config">
                     <a href="perfil.html">
                         <i class="fa-regular fa-user"> </i>
@@ -73,7 +75,7 @@
                         </form>
                     </a>
                 </li>
-                <hr/>
+                <hr />
                 <li class="profile-dropdown-list-item" id="logout">
                     <a href="index.html">
                         <i class="fa-solid fa-arrow-right-to-bracket"> </i>
@@ -151,7 +153,7 @@
                         <h3>Porte do cachorro</h3>
                         <div class="select-menu2">
                             <div class="select-btn2" id="select-tamanho">
-                                <span class="sBtn-text2" >Escolha um tamanho</span>
+                                <span class="sBtn-text2">Escolha um tamanho</span>
                                 <img src="./css/images/arrowDrop.svg" alt="">
                             </div>
                             <ul class="options2">
@@ -171,15 +173,15 @@
                         <h3>Vacinado</h3>
                         <div>
                             <label class="form-control2" value="1" id="vacina-sim">
-                              <input type="radio" class="radioVacinado" id="vacina-sim" name="vacinado"/>
-                              Sim
+                                <input type="radio" class="radioVacinado" id="vacina-sim" name="vacinado" />
+                                Sim
                             </label>
                         </div>
-              
+
                         <div>
                             <label class="form-control2" value="0" id="vacina-nao">
-                              <input type="radio" class="radioVacinadoNao" id="vacina-nao" name="vacinado"/>
-                              Não
+                                <input type="radio" class="radioVacinadoNao" id="vacina-nao" name="vacinado" />
+                                Não
                             </label>
                         </div>
                     </div>

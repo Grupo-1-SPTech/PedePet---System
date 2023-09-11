@@ -57,11 +57,13 @@ main {
 
 .container-nav {
   display: flex;
-  align-items: center;
   width: 100vw;
   height: 8vh;
+  flex-direction: row;
   padding: 2px 4%;
   background-color: var(--white);
+  align-items: center;
+  overflow-y: hidden;
 }
 
 #logo {
@@ -70,24 +72,36 @@ main {
 }
 
 .options {
-width: 100%;
-padding-left: 37%;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 30%;
+  align-items: center;
 }
 
-.container-nav .options li {
-display: inline-block;
-text-align: center;
-margin: 0 1.8rem;
-}
-
-.options li a {
+.options a {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  color: var(--dark);
+  color: var(--black);
   font-weight: 800;
   font-size: 16px;
-  position: relative;
+}
+
+.options a:hover {
+  transition: 0.4s;
+  color: var(--darkpurple)
+}
+
+.options ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+}
+
+.options li {
+  text-align: center;
 }
 
 /* Botão menu */
@@ -382,7 +396,7 @@ background-color: var(--radio-color);
 }
 
 .title-adpet h1{
-  font-size: 45px;
+  font-size: 44px;
   text-align: center;
   margin-top: 1.5rem;
 }

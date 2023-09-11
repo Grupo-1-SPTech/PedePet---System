@@ -85,7 +85,7 @@ body {
 .optionsNav a:hover {
     transition: 0.4s;
     color: var(--darkpurple)
-  }
+}
 
 .optionsNav ul {
     display: flex;
@@ -271,7 +271,7 @@ body {
     background-color: var(--white);
 }
 
-#b1 {
+#b2 {
     background-color: rgba(68, 32, 126, 0.2);
 }
 
@@ -323,7 +323,7 @@ body {
 .content h1 {
     width: 600px;
     height: 59px;
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 900;
     font-family: 'Montserrat' sans-serif;
     color: var(--black);
