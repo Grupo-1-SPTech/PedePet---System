@@ -397,15 +397,15 @@
 
 .extras #esqueci {
   color: var(--orange);
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .extras #register {
   color: var(--black);
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   font-weight: 500;
@@ -413,7 +413,7 @@
 
 .extras #newAcc {
   color: var(--orange);
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   font-weight: 600;

@@ -1,4 +1,4 @@
-package pedepet.apiRest.dto.Cadastros
+package pedepet.apiRest.dto.cadastros
 
 data class CadFormularioRequest(
     val tipoMoradia:String,

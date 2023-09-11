@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import pedepet.apiRest.Service.UsuarioService
-import pedepet.apiRest.dto.Cadastros.CadFormularioRequest
-import pedepet.apiRest.dto.Cadastros.CadUserRequest
-import pedepet.apiRest.dto.Cadastros.CadAnuncioRequest
-import pedepet.apiRest.dto.Cadastros.CadEnderecoRequest
+import pedepet.apiRest.dto.cadastros.CadAnuncioRequest
+import pedepet.apiRest.dto.cadastros.CadEnderecoRequest
+import pedepet.apiRest.dto.cadastros.CadFormularioRequest
+import pedepet.apiRest.dto.cadastros.CadUserRequest
+import pedepet.apiRest.service.UsuarioService
+
 
 @RestController
 @RequestMapping("cadastros")

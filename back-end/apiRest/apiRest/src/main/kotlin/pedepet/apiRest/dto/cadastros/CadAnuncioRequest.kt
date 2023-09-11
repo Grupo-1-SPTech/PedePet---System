@@ -1,15 +1,16 @@
-package pedepet.apiRest.dto.Cadastros
+package pedepet.apiRest.dto.cadastros
 
 import pedepet.apiRest.models.Filhote
 
 data class CadAnuncioRequest(
 
-    val racaMae:Int,// RACA DO MA
+    val titulo:String,
+    val racaMae:String,// RACA DO MA
     val idadeMae:Int, // IDADE MAE
     val porteMae:String, // TAMANHO MAE (GRANDE, MEDIO, PEQUENO)
     val pedigreeMae:Int, // SIM = 1, NÃO = 0
     val vacinadoMae:Int, // SIM = 1, NÃO = 0
-    val racaPai:Int, // RACA DO PAI
+    val racaPai:String, // RACA DO PAI
     val idadePai:Int, // IDADE PAI
     val portePai:String, // TAMANHO PAI (GRANDE, MEDIO, PEQUENO)
     val pedigreePai:Int, // SIM = 1, NÃO =

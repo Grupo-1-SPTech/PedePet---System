@@ -22,8 +22,7 @@
   --darkpurple: #7c4bc8;
 }
 
-*,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -350,9 +349,6 @@ input:checked + .button::before{
   --background: linear-gradient(70deg, #635d5d, #727275, #adadad, #635d5d);
   --shadow: 0px 2px 8px 0px var(--darkgray);
 }
-
-
-
 /* fim botão daltonismo*/
 
 .btn-login {
@@ -371,6 +367,8 @@ input:checked + .button::before{
     font-weight: 600;
     cursor: pointer;
 }
+
+/* FIM NAVBAR*/
 
 
 /* INICIO MAIN ADPET */

@@ -95,10 +95,10 @@ class AnuncioController(
     }
 
     // RAÇA POR ID
-    @GetMapping("/{id}/raca-mae")
-    fun buscarRacaMaePorId(@PathVariable id: Int): ResponseEntity<Int?> {
-        val racaMae = anuncioRepository.findRacaMaeById(id)
-        return ResponseEntity.ok(racaMae?.racaMae)
+    @GetMapping("/{racaMae}/raca-mae")
+    fun buscarRacaMae(@PathVariable racaMae: String): ResponseEntity<String?> {
+        val racaMae = anuncioRepository.findRacaMae(racaMae)
+        return ResponseEntity.ok(racaMae?.firstOrNull())
     }
 
     // QUANT FILHOTES DISPONÍVEIS POR ID

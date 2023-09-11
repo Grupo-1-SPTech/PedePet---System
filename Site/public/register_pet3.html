@@ -38,9 +38,8 @@
         <div class="contentCad">
 
           <div class="alinhamento">
-            <h1>Cadastre o casal</h1>
+            <h1>Cadastrando o casal</h1>
           </div>
-
 
           <div class="contentTop">
 
@@ -63,41 +62,54 @@
               <div class="alinhamento2_pt1">
                 <span class="title" id="span_preco">Preço unitário</span>
                 <input class="inputPreco" id="input_preco" type="number_format" placeholder="0,00">
-
+                
+                <span class="title" id="span_vacina">É vacinado?</span>
+                <div class="alinhamento_vacina">
+                  <div>
+                    <label class="form-control" value="1">
+                      <input type="radio" name="radioVacinado" />
+                      Sim
+                    </label>
+                  </div>
+                  <div>
+                    <label class="form-control" value="0">
+                      <input type="radio" name="radioVacinadoNao" />
+                      Não
+                    </label>
+                  </div>
+                </div>
               </div>
-
 
               <div class="alinhamento2_pt2">
                 <span class="title" id="span_nasc">Nascem em (+/-)</span>
 
-
                 <div class="container_box">
                   <select name="select_semana" id="select_semana">
                     <option value="" selected disabled>Escolha</option>
-                    <option value="1">1 semana (7 dias)</option>
-                    <option value="2">2 semanas (14 dias)</option>
-                    <option value="3">3 semanas (21 dias)</option>
-                    <option value="4">4 semanas (28 dias)</option>
-                    <option value="5">5 semanas (35 dias)</option>
-                    <option value="6">6 semanas (42 dias)</option>
-                    <option value="7">7 semanas (49 dias)</option>
-                    <option value="8">8 semanas (56 dias)</option>
-                    <option value="9">9 semanas (63 dias)</option>
+                    <option value="1 semana (7 dias)">1 semana (7 dias)</option>
+                    <option value="2 semanas (14 dias)">2 semanas (14 dias)</option>
+                    <option value="3 semanas (21 dias)">3 semanas (21 dias)</option>
+                    <option value="4 semanas (28 dias)">4 semanas (28 dias)</option>
+                    <option value="5 semanas (35 dias)">5 semanas (35 dias)</option>
+                    <option value="6 semanas (42 dias)">6 semanas (42 dias)</option>
+                    <option value="7 semanas (49 dias)">7 semanas (49 dias)</option>
+                    <option value="8 semanas (56 dias)">8 semanas (56 dias)</option>
+                    <option value="9 semanas (63 dias)">9 semanas (63 dias)</option>
                   </select>
                 </div>
-
               </div>
-
             </div>
 
             <div>
               <div class="alinhamento2_pt3">
                 <span class="title" id="span_foto">Fotos do casal de pais</span>
-                <input class="box_observacao" id="input_imagem" placeholder="Digite o URL da imagem do casal">
+                <input class="box_foto" id="input_imagem" placeholder="Digite o URL da imagem do casal">
 
                 <span class="title" id="span_foto">Descrição do casal de pais</span>
-                <input class="box_observacao" id="span_observacao"
-                  placeholder="Escreva uma descrição para os pets"></input>
+
+                <div class="textarea">
+                  <textarea placeholder="Escreva uma descrição para os pets"></textarea>
+                </div>
 
                 <div class="btns">
                   <button onclick="location.href='./register_pet2.html'" class="cancelar">Voltar</button>

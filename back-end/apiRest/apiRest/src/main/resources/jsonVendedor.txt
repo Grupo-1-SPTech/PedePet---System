@@ -20,6 +20,7 @@
     }
   },
   "anuncioPet": {
+    "titulo": "6 Filhotes lindos de Spitz alemão"
     "racaMae": 1,
     "idadeMae": 5,
     "porteMae": "Pequeno",
@@ -99,6 +100,7 @@
 }
 
 {
+  "titulo": "6 Filhotes lindos de Spitz alemão"
   "racaMae": 4,
   "idadeMae": 5,
   "porteMae": "Pequeno",
