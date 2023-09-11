@@ -24,6 +24,49 @@
                     <li><a href="#Contato">Contato</a></li>
                 </ul>
                 <button onclick="entrar()" href="./login.html" class="btn-login">Entrar</button>
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <div class="profile-dropdown-btn" onclick="toggle()">
+                        <div class="profile-img">
+                        </div>
+                    </div>
+        
+                    <ul class="profile-dropdown-list">
+                        <li class="profile-name">
+                            <h1>Fabio Moledo</h1>
+                            <span>Comprador</span>
+                        </li>
+                        <hr />
+                        <li class="profile-dropdown-list-item" id="config">
+                            <a href="">
+                                <i class="fa-regular fa-user"> </i>
+                                Configurações da conta
+                            </a>
+                        </li>
+                        <li class="profile-dropdown-list-item" id="mode">
+                            <a href="">
+                                <i class="fa-regular fa-moon"> </i>
+                                Tema
+                                <div class="switch-theme">
+                                    <input type="checkbox" id="check" id=>
+                                    <label for="check" class="button" id="btn-dark-mode-toggle"></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="profile-dropdown-list-item" id="daltonismo">
+                            <a href="#">
+                                <i class="fa-regular fa-eye"> </i>
+                                Daltonismo
+                            </a>
+                        </li>
+                        <hr />
+                        <li class="profile-dropdown-list-item" id="sair">
+                            <a href="index.html">
+                                <i class="fa-solid fa-arrow-right-to-bracket"> </i>
+                                Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>

@@ -4,7 +4,10 @@
 const emailArmazenado = sessionStorage.getItem("email");
 console.log(emailArmazenado);
 
+// Função para verificar o estado de login
 function validaLogin() {
+    // Recuperando o email do usuário no localStorage ou sessionStorage, conforme necessário
+    const emailArmazenado = localStorage.getItem("email") || sessionStorage.getItem("email");
 
     if (emailArmazenado != null) {
         const url = `http://localhost:8080/usuarios/autenticado/${emailArmazenado}`;
@@ -27,16 +30,28 @@ function validaLogin() {
             .then(data => {
                 // O objeto 'data' contém os dados retornados da API como um objeto JavaScript
                 console.log("Dados retornados:", data);
-                // Faça algo com os dados, como atualizar a interface do usuário
+
+                // Adicione esta parte para mostrar o botão de login ou a div do perfil com base no estado de login
+                const profileDropdown = document.querySelector('.profile-dropdown');
+                const btnLogin = document.querySelector('.btn-login');
+
+                if (emailArmazenado !== null) {
+                    // O usuário está logado, mostrar a div do perfil
+                    console.log("aaaaaa", url)
+                    profileDropdown.style.display = 'block';
+                    btnLogin.style.display = 'none'; // Esconda o botão de login
+                } else {
+                    // O usuário não está logado, mostrar o botão de login
+                    console.log("bbbb", url)
+                    btnLogin.style.display = 'block';
+                    profileDropdown.style.display = 'none'; // Esconda a div do perfil
+                }
             })
             .catch(error => {
                 console.error("Erro ao fazer a solicitação:", error);
             });
     }
 }
-
-
-
 
 // função select ASSUNTO 
 const optionMenu = document.querySelector('.select-menu');
