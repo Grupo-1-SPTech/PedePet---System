@@ -88,4 +88,14 @@ class UsuarioController(
      }
  }
 
+    @GetMapping("/existente/{email}")
+    fun buscarEmailExistente (@PathVariable email: String): ResponseEntity<Boolean> {
+        val emailExistente = repository.findByEmail(email)
+        if (emailExistente.isEmpty) {
+            return ResponseEntity.ok().build()
+        } else {
+            return ResponseEntity.status(404).build()
+        }
+    }
+
 }

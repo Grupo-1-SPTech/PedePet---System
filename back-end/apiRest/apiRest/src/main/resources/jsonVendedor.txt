@@ -100,7 +100,7 @@
 }
 
 {
-  "titulo": "6 Filhotes lindos de Spitz alemão"
+  "titulo": "6 Filhotes lindos de Spitz alemão",
   "racaMae": 4,
   "idadeMae": 5,
   "porteMae": "Pequeno",

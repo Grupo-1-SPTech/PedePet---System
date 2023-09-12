@@ -290,7 +290,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 40vw;
+  width: 46vw;
   height: 90%;
   border-radius: 8px;
 }
@@ -397,26 +397,26 @@
 
 .extras #esqueci {
   color: var(--orange);
-  font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.extras #register {
-  color: var(--black);
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   font-weight: 500;
 }
 
-.extras #newAcc {
-  color: var(--orange);
-  font-size: 14px;
+.extras #register {
+  color: var(--black);
+  font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
+}
+
+.extras #newAcc {
+  color: var(--orange);
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-weight: 400;
 }
 
 input:focus {

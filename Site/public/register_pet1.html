@@ -60,7 +60,7 @@
           <div class="inputs">
 
             <span class="title">Título</span>
-            <input type="text" name="titulo" id="input_titulo" placeholder="Título para o anúnucio">
+            <input type="text" name="titulo" id="input_titulo" placeholder="Título para o anúnucio" value="teste">
 
             <span class="title">Raça</span>
             <select name="selectRaca" class="selectRaca" id="select_raca">
@@ -96,7 +96,7 @@
             <div class="alinhamento2">
               <div class="alinhamento2_pt1">
                 <span class="title" id="span_idade">Idade</span>
-                <input class="inputIdade" id="input_idade" type="number_format" placeholder="Idade do pet">
+                <input class="inputIdade" id="input_idade" type="text" placeholder="Idade do pet" value="10">
               </div>
 
 
@@ -106,8 +106,8 @@
                 <div class="container_box">
                   <select name="selectPorte" class="selectPorte" id="select_porte">
                     <option value="" selected disabled>Escolha</option>
-                    <option value="Pequenoo">Pequeno</option>
-                    <option value="Médio">Médio</option>
+                    <option value="Pequeno">Pequeno</option>
+                    <option value="Medio">Médio</option>
                     <option value="Grande">Grande</option>
                   </select>
                 </div>
@@ -119,15 +119,15 @@
             <span class="title" id="span_pedigree">Possui certificado de pedigree?</span>
 
             <div>
-              <label class="form-control" value="1">
+              <label class="form-control" value="true">
                 <input type="radio" class="radioCertificado" name="certificado" />
                 Sim
               </label>
             </div>
 
             <div>
-              <label class="form-control" value="2">
-                <input type="radio" class="radioCertificadoNao" name="certificado" />
+              <label class="form-control" value="false">
+                <input type="radio" class="radionCertificadoNao" name="certificado" />
                 Não
               </label>
             </div>
@@ -135,14 +135,14 @@
             <span class="title" id="span_vacina">É vacinado?</span>
 
             <div>
-              <label class="form-control2" value="3">
+              <label class="form-control2" value="true">
                 <input type="radio" class="radioVacinado" name="vacinado" />
                 Sim
               </label>
             </div>
 
             <div>
-              <label class="form-control2" value="4">
+              <label class="form-control2" value="true">
                 <input type="radio" class="radioVacinadoNao" name="vacinado" />
                 Não
               </label>
@@ -150,6 +150,7 @@
 
             <div class="btns">
               <button onclick="location.href='./index.html'" class="cancelar">Cancelar</button>
+
               <button onclick="validarCampoCad1()" class="prosseguir">Prosseguir</button>
               <div id="snackbar"></div>
             </div>

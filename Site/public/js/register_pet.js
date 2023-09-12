@@ -5,43 +5,57 @@ function showSnackBar() {
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
 
+function entrar() {
+    window.location.href = "./login.html"
+}
+
 // regex de verificações (verifica os caracteres de uma variavel)
 const regexNumero = /^[0-9]+$/;
 
+class formCadUser {
+    constructor(nome, email, cpf, telefone, senha, tipoUser, idUsuario) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.senha = senha;
+        this.tipoUser = tipoUser;
+        this.idUsuario = idUsuario;
+    }
+}
+
 // objeto que recebe valores do cadastro de pet pt. 1
 class formCadPet1 {
-    constructor(racaMae, idadeMae, porteMae, pedigreeMae, pedigreeNaoMae, vacinaMae, vacinaNaoMae) {
+    constructor(titulo, racaMae, idadeMae, porteMae, pedigreeMae, vacinaMae) {
+        this.titulo = titulo;
         this.racaMae = racaMae;
         this.idadeMae = idadeMae;
         this.porteMae = porteMae;
         this.pedigreeMae = pedigreeMae;
-        this.pedigreeNaoMae = pedigreeNaoMae;
         this.vacinaMae = vacinaMae;
-        this.vacinaNaoMae = vacinaNaoMae;
     }
 }
 
 // objeto que recebe valores do cadastro de pet pt. 2
 class formCadPet2 {
-    constructor(racaPai, idadePai, portePai, pedigreePai, pedigreeNaoPai, vacinaPai, vacinaNaoPai) {
+    constructor(racaPai, idadePai, portePai, pedigreePai, vacinaPai) {
         this.racaPai = racaPai;
         this.idadePai = idadePai;
         this.portePai = portePai;
         this.pedigreePai = pedigreePai;
-        this.pedigreeNaoPai = pedigreeNaoPai;
         this.vacinaPai = vacinaPai;
-        this.vacinaNaoPai = vacinaNaoPai
     }
 }
 
 // objeto que recebe valores do cadastro de pet pt. 3
 class formCadPet3 {
-    constructor(quant, preco, nasc, foto, descric) {
-        this.quant = quant;
+    constructor(qtd, preco, nasc, vacinado, foto, desc) {
+        this.qtd = qtd;
         this.preco = preco;
         this.nasc = nasc;
+        this.vacinado = vacinado;
         this.foto = foto;
-        this.descric = descric;
+        this.desc = desc;
     }
 }
 
@@ -49,11 +63,15 @@ class formCadPet3 {
 const cadastroPetOBJT = new formCadPet1();
 const cadastroPetOBJT2 = new formCadPet2();
 const cadastroPetOBJT3 = new formCadPet3();
+let cadastroUserOBJT = new formCadUser();
+
+cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
 
 // função de validação dos campos do cadastro pet pt. 1
 function validarCampoCad1() {
 
     //declarando variaveis que recebem o valor dos inputs
+    const titulo = document.getElementById('input_titulo').value;
     const racaMae = document.getElementById('select_raca').value;
     const idadeMae = document.getElementById('input_idade').value;
     const porteMae = document.getElementById('select_porte').value;
@@ -62,23 +80,29 @@ function validarCampoCad1() {
     const vacinaMae = document.querySelector('.radioVacinado');
     const vacinaNaoMae = document.querySelector('.radioVacinadoNao');
 
-    if (racaMae == "" || idadeMae == "" || porteMae == "" || pedigreeMae == "" || pedigreeNaoMae == "" || vacinaMae == "" || vacinaNaoMae == "") {
+    if (titulo == "", racaMae == "" || idadeMae == "" || porteMae == "" || pedigreeMae == "" || pedigreeNaoMae == "" || vacinaMae == "" || vacinaNaoMae == "") {
         snackbar.innerHTML = "É necessário preencher todos os campos!";
         showSnackBar();
         //snackbar é o elemento que recebe uma mensagem a ser exibida ao usuário
         return
-    }
+    } 
+
+    cadastroPetOBJT.titulo = titulo;
 
     if (cadastroPetOBJT.racaMae == "") {
         snackbar.innerHTML = "É necessário escolher a raça da mãe!";
         showSnackBar();
         return
     } else {
-        cadastroPetOBJT.racaMae = idadeMae
+        cadastroPetOBJT.racaMae = racaMae;
     }
 
-    if (regexNumero.test(idadeMae) && idadeMae.length == 1 || idadeMae.length == 2) {
+    if (regexNumero.test(idadeMae) && idadeMae.length <= 2) {
         cadastroPetOBJT.idadeMae = idadeMae;
+    } else if (idadeMae > 20) {
+        snackbar.innerHTML = "Idade alta demais!";
+        showSnackBar();
+        return
     } else {
         snackbar.innerHTML = "Idade da mãe inválida!";
         showSnackBar();
@@ -90,42 +114,55 @@ function validarCampoCad1() {
         showSnackBar();
         return
     } else {
-        cadastroPetOBJT.porteMae = porteMae
+        cadastroPetOBJT.porteMae = porteMae;
     }
 
-    if (cadastroPetOBJT.pedigreeMae == "" && cadastroPetOBJT.pedigreeNaoMae == "") {
-        snackbar.innerHTML = "É necessário assinalar se a mãe possui pedigree!";
+    if (pedigreeMae.checked) {
+        cadastroPetOBJT.pedigreeMae = true;
+    } else if (pedigreeNaoMae.checked) {
+        cadastroPetOBJT.pedigreeMae = false;
+    } else {
+        snackbar.innerHTML = "Vacina imcompleto";
         showSnackBar();
         return
-    } else {
-        cadastroPetOBJT.pedigreeMae = pedigreeMae
     }
 
-    if (cadastroPetOBJT.vacinaMae == "" && cadastroPetOBJT.vacinaNaoMae == "") {
+
+    if (vacinaMae.checked) {
+        cadastroPetOBJT.vacinaMae = true;
+    } else if (vacinaNaoMae.checked) {
+        cadastroPetOBJT.vacinaMae = false;
+    } else {
         snackbar.innerHTML = "É necessário escolher se a mãe é vacinada ou não!";
         showSnackBar();
         return
-    } else {
-        cadastroPetOBJT.vacinaMae = vacinaMae
     }
 
     localStorage.setItem('cadastroPetOBJT', JSON.stringify(cadastroPetOBJT));
+    localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+    console.log(cadastroPetOBJT);
+    console.log(cadastroUserOBJT);
     window.location.href = "./register_pet2.html";
 }
+
 
 // função de validação dos campos do cadastro pet pt. 2
 function validarCampoCad2() {
 
     const cadastroPetOBJT = JSON.parse(localStorage.getItem('cadastroPetOBJT'));
+    const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
+    console.log("recuperado");
+    console.log(cadastroPetOBJT);
+    console.log(cadastroPetOBJT);
 
     //declarando variaveis que recebem o valor dos inputs
     const racaPai = document.getElementById('select_raca').value;
     const idadePai = document.getElementById('input_idade').value;
     const portePai = document.getElementById('select_porte').value;
-    const pedigreePai = document.querySelector('.radioCertificado');
-    const pedigreeNaoPai = document.querySelector('.radioCertificadoNao');
-    const vacinaPai = document.querySelector('.radioVacinado');
-    const vacinaNaoPai = document.querySelector('.radioVacinadoNao');
+    const pedigreePai = document.querySelector('.radioCertificado2');
+    const pedigreeNaoPai = document.querySelector('.radioCertificadoNao2');
+    const vacinaPai = document.querySelector('.radioVacinado2');
+    const vacinaNaoPai = document.querySelector('.radioVacinadoNao2');
 
     if (racaPai == "" || idadePai == "" || portePai == "" || pedigreePai == "" || pedigreeNaoPai == "" || vacinaPai == "" || vacinaNaoPai == "") {
         snackbar.innerHTML = "É necessário preencher todos os campos!";
@@ -139,12 +176,16 @@ function validarCampoCad2() {
         showSnackBar();
         return
     } else {
-        cadastroPetOBJT2.racaPai = racaPai
+        cadastroPetOBJT2.racaPai = racaPai;
     }
 
-    if (regexNumero.test(idadePai) && idadePai.length == 1 || idadePai.length == 2) {
+    if (regexNumero.test(idadePai) && idadePai.length <= 2) {
         cadastroPetOBJT2.idadePai = idadePai;
-    } else {
+    } else if (idadePai >20) {
+        snackbar.innerHTML = "Idade muito alta!";
+        showSnackBar();
+        return
+     } else {
         snackbar.innerHTML = "Idade do pai inválida!";
         showSnackBar();
         return
@@ -155,27 +196,32 @@ function validarCampoCad2() {
         showSnackBar();
         return
     } else {
-        cadastroPetOBJT2.portePai = portePai
+        cadastroPetOBJT2.portePai = portePai;
     }
 
-    if (cadastroPetOBJT2.pedigreePai == "" && cadastroPetOBJT2.pedigreeNaoPai == "") {
-        snackbar.innerHTML = "É necessário assinalar se o pai possui pedigree!";
+    if (pedigreePai.checked) {
+        cadastroPetOBJT2.pedigreePai = true;
+    } else if (pedigreeNaoPai.checked) {
+        cadastroPetOBJT2.pedigreePai = false;
+    } else {
+        snackbar.innerHTML = "Vacina imcompleto";
         showSnackBar();
         return
-    } else {
-        cadastroPetOBJT2.pedigreePai = pedigreePai
     }
 
-    if (cadastroPetOBJT.vacinaPai == "" && cadastroPetOBJT.vacinaNaoPai == "") {
+    if (vacinaPai.checked) {
+        cadastroPetOBJT2.vacinaMae = true;
+    } else if (vacinaNaoPai.checked) {
+        cadastroPetOBJT2.vacinaMae = false;
+    } else {
         snackbar.innerHTML = "É necessário escolher se o pai é vacinado ou não!";
         showSnackBar();
         return
-    } else {
-        cadastroPetOBJT2.vacinaPai = vacinaPai
     }
 
     localStorage.setItem('cadastroPetOBJT', JSON.stringify(cadastroPetOBJT));
     localStorage.setItem('cadastroPetOBJT2', JSON.stringify(cadastroPetOBJT2));
+    localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
     window.location.href = "./register_pet3.html";
 }
 
@@ -184,6 +230,11 @@ function validarCampoCad3() {
 
     const cadastroPetOBJT = JSON.parse(localStorage.getItem('cadastroPetOBJT'));
     const cadastroPetOBJT2 = JSON.parse(localStorage.getItem('cadastroPetOBJT2'));
+    const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
+
+    console.log(cadastroPetOBJT);
+    console.log(cadastroPetOBJT2);
+    console.log(cadastroUserOBJT);
 
     //declarando variaveis que recebem o valor dos inputs
     const quant = document.getElementById('input_quant').value;
@@ -216,77 +267,60 @@ function validarCampoCad3() {
     }
 
 
-    cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3);
-    console.log(cadastroPetOBJT)
-    console.log(cadastroPetOBJT2)
-    console.log(cadastroPetOBJT3)
     window.location.href = "./puppys_ad.html";
 }
 
-function cadastroVendedor(cadastroPetOBJT, cadastroPetOBJT2, cadastroPetOBJT3) {
+function cadastroAnuncio(cadastroUserOBJT, cadastroPetOBJT) {
 
-    const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
-    const cadastroUserOBJT2 = JSON.parse(localStorage.getItem('cadastroUserOBJT2'));
-    console.log(cadastroUserOBJT2);
     console.log(cadastroUserOBJT);
 
     // Cadastro de usuario (vendedor)
-    fetch("http://localhost:8080/usuarios/cadastrar/vendedor", {
+    fetch(`http://localhost:8080/cadastros/anuncio/${cadastroUserOBJT.idUsuario}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(
-            {
-                "usuario": {
-                    "nome": cadastroUserOBJT.nome,
-                    "email": cadastroUserOBJT.email,
-                    "cpf": cadastroUserOBJT.cpf,
-                    "telefone": cadastroUserOBJT.telefone,
-                    "senha": cadastroUserOBJT.senha,
-                    "tipoUsuario": 2,
-                    "autenticado": true
-                },
-                "endereco": {
-                    "cep": cadastroUserOBJT2.cep,
-                    "rua": cadastroUserOBJT2.endereco,
-                    "numero": cadastroUserOBJT2.numero,
-                    "complemento": cadastroUserOBJT2.complemento,
-                    "bairro": cadastroUserOBJT2.bairro,
-                    "cidade": cadastroUserOBJT2.cidade,
-                    "estado": cadastroUserOBJT2.uf
-                },
-                "anuncioPet": {
-                    "racaMae": cadastroPetOBJT.racaMae,
-                    "idadeMae": cadastroPetOBJT.idadeMae,
-                    "porteMae": cadastroPetOBJT.porteMae,
-                    "vacinaMae": cadastroPetOBJT.vacinaMae,
-                    "pedigreeMae": 1,
-                    "racaPai": cadastroPetOBJT2.racaPai,
-                    "idadePai": cadastroPetOBJT2.idadePai,
-                    "portePai": cadastroPetOBJT2.portePai,
-                    "vacinadoPai": cadastroPetOBJT2.vacinaPai,
-                    "pedigreePai": 1,
-                    "qtdFilhotes": cadastroPetOBJT3.quant,
-                    "fotoPet": cadastroPetOBJT3.foto,
-                    "descricao": cadastroPetOBJT3.descric
-                },
-                "filhote": {
-                    "tempoEspera": cadastroPetOBJT3.nasc,
-                    "preco": cadastroPetOBJT3.preco
-                }
+        body: JSON.stringify({
+            "titulo": cadastroPetOBJT.titulo,
+            "racaMae": cadastroPetOBJT.racaMae,
+            "idadeMae": cadastroPetOBJT.idadeMae,
+            "porteMae": cadastroPetOBJT.porteMae,
+            "pedigreeMae": cadastroPetOBJT.pedigreeMae,
+            "vacinadoMae": cadastroPetOBJT.vacinaMae,
+            "racaPai": 4,
+            "idadePai": 4,
+            "portePai": "Pequeno",
+            "pedigreePai": 1,
+            "vacinadoPai": 1,
+            "fotoPet": "dlaskdç",
+            "visualizacoes": 1,
+            "qtdFilhotes": 4,
+            "descricao": "Teste Test",
+            "filhote": {
+                "tempoEspera": 5,
+                "preco": 1200.00,
+                "disponivel": true,
+                "vacinaFilhote": 1,
+                "filhotes": [
+                    "string"
+                ]
             }
-        )
+        })
     })
         .then(res => res.json())
-        .then((res) => {
-            console.log(res);
+        .then((response) => {
+            cadastroUserOBJT.idUsuario = response;
+            console.log(cadastroUserOBJT.idUsuario);
+            localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+            window.location.href = "./register_user2.html";
         })
         .catch((err) => {
             console.log(err);
-        });
-}
-
-function entrar() {
-    window.location.href = "./login.html"
+            console.log("email existe");
+            snackbar.innerHTML = "Email existente! Redirecionando para login";
+            showSnackBar();
+            setTimeout(function () {
+                window.location.href = "./login.html";
+            }, 3500);
+        })
 }

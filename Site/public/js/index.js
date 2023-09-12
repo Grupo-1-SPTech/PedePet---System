@@ -1,5 +1,49 @@
-// validação caso estiver logado
-// Recuperando o email do usuario no localStorageconst emailArmazenado = localStorage.getItem("email");
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function startCounterWhenVisible(element, endValue, duration) {
+    let startValue = 0;
+    let interval = duration / endValue;
+
+    function updateCounter() {
+        element.textContent = startValue;
+        startValue++;
+        if (startValue <= endValue) {
+            requestAnimationFrame(updateCounter);
+            setTimeout(() => {
+            }, duration);
+        }
+    }
+
+    requestAnimationFrame(updateCounter);
+}
+
+const countedElements = new Set();
+
+function checkElementVisibility() {
+    const elements = document.querySelectorAll(".value_metrica");
+
+    elements.forEach((element) => {
+        if (isElementInViewport(element) && !countedElements.has(element)) {
+            const endValue = parseInt(element.getAttribute("data-val"), 10);
+            const duration = Math.min(5000, endValue * 1000); // Limita a duração a 5000ms ou ao valor máximo necessário
+            startCounterWhenVisible(element, endValue, duration);
+            countedElements.add(element);
+        }
+    });
+}
+
+window.addEventListener("scroll", checkElementVisibility);
+
+checkElementVisibility();
+
 
 const emailArmazenado = sessionStorage.getItem("email");
 console.log(emailArmazenado);
@@ -95,7 +139,8 @@ function getFilhotesAdquiridos() {
     })
         .then(res => res.json())
         .then((data) => {
-            filhotes_adquiridos.innerHTML = data
+            const filhotes_adquiridos = document.getElementById("filhotes_adquiridos");
+            filhotes_adquiridos.setAttribute("data-val", data); // Define o atributo "data-val"
         }).catch((err) => {
             console.error(err);
         })
@@ -107,7 +152,8 @@ function getTotalVendedores() {
     })
         .then(res => res.json())
         .then((data) => {
-            profissionais_cad.innerHTML = data
+            const profissionais_cad = document.getElementById("profissionais_cad");
+            profissionais_cad.setAttribute("data-val", data); // Define o atributo "data-val"
         }).catch((err) => {
             console.error(err);
         })
@@ -119,7 +165,8 @@ function getRacasDisponiveis() {
     })
         .then(res => res.json())
         .then((data) => {
-            racas_disp.innerHTML = data
+            const racas_disp = document.getElementById("racas_disp");
+            racas_disp.setAttribute("data-val", data); // Define o atributo "data-val"
         }).catch((err) => {
             console.error(err);
         })
@@ -131,7 +178,8 @@ function getUsuariosTotal() {
     })
         .then(res => res.json())
         .then((data) => {
-            users_registrados.innerHTML = data
+            const users_registrados = document.getElementById("users_registrados");
+            users_registrados.setAttribute("data-val", data); // Define o atributo "data-val"
         }).catch((err) => {
             console.error(err);
         })
@@ -145,27 +193,27 @@ function buscarDados() {
     validaLogin()
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-  
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-  
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 900, function(){
-  
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
+    $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 900, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
     });
-  });
+});
