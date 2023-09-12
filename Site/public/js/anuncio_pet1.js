@@ -13,8 +13,8 @@ window.addEventListener('click', function(e){
 });
 
 //progress bar da fila 
-const maxCapacity = 5;
-const currentPersons = 3;
+const maxCapacity = 6;
+const currentPersons = 0;
 
 const fillerBar = document.getElementById("filler-bar");
 const fillPercentage = (currentPersons / maxCapacity) * 100;

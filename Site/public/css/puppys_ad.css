@@ -56,12 +56,12 @@ main {
 /* menu */
 
 .container-nav {
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    height: 8vh;
-    padding: 2px 4%;
-    background-color: var(--white);
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 8vh;
+  padding: 2px 4%;
+  background-color: var(--white);
 }
 
 #logo {
@@ -70,8 +70,10 @@ main {
 }
 
 .options {
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  padding-left: 37%;
+  padding-left: 30%;
   align-items: center;
 }
 
@@ -82,12 +84,12 @@ main {
 }
 
 .options li a {
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--dark);
-    font-weight: 800;
-    font-size: 16px;
-    position: relative;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark);
+  font-weight: 800;
+  font-size: 16px;
+  position: relative;
 }
 
 /* Botão menu */

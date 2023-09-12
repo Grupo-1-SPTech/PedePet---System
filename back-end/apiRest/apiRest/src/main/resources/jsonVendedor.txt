@@ -116,7 +116,7 @@
   "qtdFilhotes": 4,
   "descricao": "Teste Test",
   "filhote": {
-    "tempoEspera": 5,
+    "tempoEspera": "9 semanas (63 dias)",
     "preco": 1200.00,
     "disponivel": true,
     "vacinaFilhote": 1,
