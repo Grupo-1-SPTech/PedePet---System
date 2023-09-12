@@ -271,7 +271,7 @@ input:checked + .button::before{
 }
 
 .color-picker input[type="radio"]#light {
-  --radio-color: gray ; 
+  --radio-color: #fb3f08 ; 
 }
 
 .color-picker input[type="radio"]#tritanopia {
