@@ -139,14 +139,9 @@ function validarCampoCad1() {
     }
 
     if (cadastroUserOBJT.tipoUser == 'Vendedor') {
-
-        // Para armazenar o objeto na localStorage
-
         cadastroVendedor(cadastroUserOBJT);
     } else if (cadastroUserOBJT.tipoUser == 'Comprador') {
-        // Para armazenar o objeto na sessionStorage
         cadastroComprador(cadastroUserOBJT);
-
     }
 }
 
@@ -313,8 +308,12 @@ function cadastroVendedor(cadastroUserOBJT) {
         })
         .catch((err) => {
             console.log(err);
-            console.log(response);
-            console.log("erro fetch pagina 1 - comprador");
+            console.log("email existe");
+            snackbar.innerHTML = "Email existente! Redirecionando para login";
+            showSnackBar();
+            setTimeout(function () {
+                window.location.href = "./login.html";
+            }, 3500);
         })
 }
 
@@ -346,17 +345,16 @@ function cadastroComprador(cadastroUserOBJT) {
         })
         .catch((err) => {
             console.log(err);
-            console.log(response);
-            console.log("erro fetch pagina 1 - comprador");
+            console.log("email existe");
+            snackbar.innerHTML = "Email existente! Redirecionando para login";
+            showSnackBar();
+            setTimeout(function () {
+                window.location.href = "./login.html";
+            }, 3500);
         })
 }
 
 function cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2) {
-
-
-    console.log(JSON.parse(JSON.stringify(cadastroUserOBJT)));
-    console.log(cadastroUserOBJT);
-    console.log(cadastroUserOBJT2);
 
     // cadastro usuario pt2 (endereço)
     fetch(`http://localhost:8080/cadastros/endereco/${cadastroUserOBJT.idUsuario}`, {
@@ -371,10 +369,9 @@ function cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2) {
             "complemento": cadastroUserOBJT2.complemento,
             "bairro": cadastroUserOBJT2.bairro,
             "cidade": cadastroUserOBJT2.cidade,
-            "estado": cadastroUserOBJT2.estado
+            "estado": cadastroUserOBJT2.uf
         })
     })
-        .then(res => res.json())
         .then((res) => {
             console.log("id retornado", res);
 

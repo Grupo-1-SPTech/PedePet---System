@@ -25,6 +25,7 @@ interface UsuarioRepository: JpaRepository<Usuario, Int> {
 
     fun findByEmail(email: String?): Optional<Usuario>
 
+
     @Query("""
         SELECT COUNT(u) FROM Usuario u WHERE TYPE(u) = Vendedor
     """)

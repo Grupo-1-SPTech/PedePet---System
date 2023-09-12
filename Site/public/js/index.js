@@ -1,13 +1,124 @@
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function startCounterWhenVisible(element, endValue, duration) {
+    let startValue = 0;
+    let interval = duration / endValue;
+
+    function updateCounter() {
+        element.textContent = startValue;
+        startValue++;
+        if (startValue <= endValue) {
+            requestAnimationFrame(updateCounter);
+            setTimeout(() => {
+            }, duration);
+        }
+    }
+
+    requestAnimationFrame(updateCounter);
+}
+
+const countedElements = new Set();
+
+function checkElementVisibility() {
+    const elements = document.querySelectorAll(".value_metrica");
+
+    elements.forEach((element) => {
+        if (isElementInViewport(element) && !countedElements.has(element)) {
+            const endValue = parseInt(element.getAttribute("data-val"), 10);
+            const duration = Math.min(5000, endValue * 1000); // Limita a duração a 5000ms ou ao valor máximo necessário
+            startCounterWhenVisible(element, endValue, duration);
+            countedElements.add(element);
+        }
+    });
+}
+
+window.addEventListener("scroll", checkElementVisibility);
+
+checkElementVisibility();
+
+  
+  // botao perfil
+  let profileDropdownList = document.querySelector('.profile-dropdown-list');
+  let btn = document.querySelector('.profile-dropdown-btn');
+  let modoBtn = document.querySelector('dark-mode');
+  let daltonismoBtn = document.querySelector('daltonismo');
+  let configBtn = document.querySelector('config');
+  let sairBtn = document.querySelector('logout');
+  
+  const toggle = () => profileDropdownList.classList.toggle('active');
+  
+  window.addEventListener('click', function(e){
+      if (!btn.contains(e.target) && !profileDropdownList.contains(e.target)) {
+          profileDropdownList.classList.remove('active');
+      }
+  });
+  
+  // troca de temar dark mode
+  const btnDarkMode = document.getElementById('btn-dark-mode-toggle')
+  const themeSystem = localStorage.getItem("themeSystem") || "light"
+  
+  btnDarkMode.addEventListener('click', () => {
+      let oldTheme = localStorage.getItem("themeSystem") || "light"
+      let newTheme = oldTheme === "light" ? "dark" : "light"
+  
+      localStorage.setItem("themeSystem", newTheme)
+      defineCurrentTheme(newTheme)
+  })
+  
+  function defineCurrentTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme)
+      if(theme == "light")
+      {
+  
+      }
+  }
+  
+  function entrar() {
+      window.location.href = "./login.html"
+  }
+  
+  // tema ficar no localStorage
+  const colorThemes = document.querySelectorAll('[name="theme"]');
+  
+  //store theme
+  const storeTheme = function(theme) {
+      localStorage.setItem("theme", theme);
+  }
+  
+  const setTheme = function() {
+      const activeTheme = localStorage.getItem("theme");
+      colorThemes.forEach((themeOption) => {
+          if(themeOption.id === activeTheme){
+              themeOption.checked = true;
+          }
+      });
+      document.documentElement.className = theme;
+  };
+
+
 // validação caso estiver logado
 // Recuperando o email do usuario no localStorageconst emailArmazenado = localStorage.getItem("email");
+
 
 const emailArmazenado = sessionStorage.getItem("email");
 console.log(emailArmazenado);
 
+// Função para verificar o estado de login
 function validaLogin() {
+    // Recuperando o email do usuário no localStorage ou sessionStorage, conforme necessário
+    const emailArmazenado = localStorage.getItem("email") || sessionStorage.getItem("email");
 
     if (emailArmazenado != null) {
         const url = `http://localhost:8080/usuarios/autenticado/${emailArmazenado}`;
+        console.log(url)
 
         fetch(url, {
             method: "GET",
@@ -27,15 +138,28 @@ function validaLogin() {
             .then(data => {
                 // O objeto 'data' contém os dados retornados da API como um objeto JavaScript
                 console.log("Dados retornados:", data);
-                // Faça algo com os dados, como atualizar a interface do usuário
+
+                // Adicione esta parte para mostrar o botão de login ou a div do perfil com base no estado de login
+                const profileDropdown = document.querySelector('.profile-dropdown');
+                const btnLogin = document.querySelector('.btn-login');
+
+                if (emailArmazenado !== null) {
+                    // O usuário está logado, mostrar a div do perfil
+                    console.log("aaaaaa", url)
+                    profileDropdown.style.display = 'block';
+                    btnLogin.style.display = 'none'; // Esconda o botão de login
+                } else {
+                    // O usuário não está logado, mostrar o botão de login
+                    console.log("bbbb", url)
+                    btnLogin.style.display = 'block';
+                    profileDropdown.style.display = 'none'; // Esconda a div do perfil
+                }
             })
             .catch(error => {
                 console.error("Erro ao fazer a solicitação:", error);
             });
     }
 }
-
-
 
 
 // função select ASSUNTO 
@@ -95,7 +219,8 @@ function getFilhotesAdquiridos() {
     })
         .then(res => res.json())
         .then((data) => {
-            filhotes_adquiridos.innerHTML = data
+            const filhotes_adquiridos = document.getElementById("filhotes_adquiridos");
+            filhotes_adquiridos.setAttribute("data-val", data); // Define o atributo "data-val"
         }).catch((err) => {
             console.error(err);
         })
@@ -107,7 +232,8 @@ function getTotalVendedores() {
     })
         .then(res => res.json())
         .then((data) => {
-            profissionais_cad.innerHTML = data
+            const profissionais_cad = document.getElementById("profissionais_cad");
+            profissionais_cad.setAttribute("data-val", data); // Define o atributo "data-val"
         }).catch((err) => {
             console.error(err);
         })
@@ -119,7 +245,8 @@ function getRacasDisponiveis() {
     })
         .then(res => res.json())
         .then((data) => {
-            racas_disp.innerHTML = data
+            const racas_disp = document.getElementById("racas_disp");
+            racas_disp.setAttribute("data-val", data); // Define o atributo "data-val"
         }).catch((err) => {
             console.error(err);
         })
@@ -131,19 +258,13 @@ function getUsuariosTotal() {
     })
         .then(res => res.json())
         .then((data) => {
-            users_registrados.innerHTML = data
+            const users_registrados = document.getElementById("users_registrados");
+            users_registrados.setAttribute("data-val", data); // Define o atributo "data-val"
         }).catch((err) => {
             console.error(err);
         })
 }
 
-function buscarDados() {
-    getFilhotesAdquiridos()
-    getRacasDisponiveis()
-    getTotalVendedores()
-    getUsuariosTotal()
-    validaLogin()
-}
 
 $(document).ready(function(){
     // Add smooth scrolling to all links
@@ -169,3 +290,39 @@ $(document).ready(function(){
       } // End if
     });
   });
+
+
+
+
+function buscarDados() {
+    getFilhotesAdquiridos()
+    getRacasDisponiveis()
+    getTotalVendedores()
+    getUsuariosTotal()
+    // validaLogin()
+}
+
+$(document).ready(function () {
+    // Add smooth scrolling to all links
+    $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 900, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
+    });
+});
