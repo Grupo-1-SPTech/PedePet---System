@@ -38,7 +38,7 @@ class CadastroController(
         return usuarioService.cadFormulario(id, cadastroFormulario)
     }
 
-    @PutMapping("/anuncio/{id}")
+    @PostMapping("/anuncio/{id}")
     fun cadAnuncio(@PathVariable id:Int, @RequestBody cadAnuncioRequest: CadAnuncioRequest): ResponseEntity<String> {
         return usuarioService.cadAnuncio(id, cadAnuncioRequest)
     }

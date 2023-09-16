@@ -56,24 +56,24 @@
           <div class="inputs">
 
             <span class="title" id="span_quant">Quantidade de filhotes</span>
-            <input class="inputQuant" id="input_quant" type="number" placeholder="0">
+            <input class="inputQuant" id="input_quant" name="qtd filhotes" type="number" placeholder="quantidade">
 
             <div class="alinhamento2">
               <div class="alinhamento2_pt1">
                 <span class="title" id="span_preco">Preço unitário</span>
-                <input class="inputPreco" id="input_preco" type="number_format" placeholder="0,00">
+                <input class="inputPreco" id="input_preco" type="text" placeholder="R$ 0,00">
                 
                 <span class="title" id="span_vacina">É vacinado?</span>
                 <div class="alinhamento_vacina">
                   <div>
                     <label class="form-control" value="1">
-                      <input type="radio" name="radioVacinado" />
+                      <input type="radio" id="radioVacinado" />
                       Sim
                     </label>
                   </div>
                   <div>
                     <label class="form-control" value="0">
-                      <input type="radio" name="radioVacinadoNao" />
+                      <input type="radio" id="radioVacinadoNao" />
                       Não
                     </label>
                   </div>
@@ -108,7 +108,7 @@
                 <span class="title" id="span_foto">Descrição do anúncio</span>
 
                 <div class="textarea">
-                  <textarea placeholder="Escreva uma descrição para os pets"></textarea>
+                  <textarea id="txt_desc" placeholder="Escreva uma descrição para os pets"></textarea>
                 </div>
 
                 <div class="btns">
