@@ -6,7 +6,8 @@
     "scripts": {
         "start": "nodemon app.js",
         "dev": "nodemon --exec node app.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "babel src -d dist"
     },
     "author": "Feito pelos alunos da SPTech: Fábio Moledo, Isabela Hantke, Julia Barboza, Luigi Ceolin, Ruy Barbosa e Vitor Macauba",
     "license": "MIT",
@@ -20,5 +21,10 @@
         "mysql2": "^2.2.5",
         "nodemon": "^3.0.1",
         "path": "^0.12.7"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.22.15",
+        "@babel/core": "^7.22.20",
+        "@babel/preset-env": "^7.22.20"
     }
 }

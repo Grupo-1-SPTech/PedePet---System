@@ -1,5 +1,20 @@
-// const { resp } = require("express");
+// Importe o Firebase
+// import firebase from "/Aulas-SPTech-2023-2/Sprint-2023-2/PedePet---System/Site/node_modules/@firebase/app";
+// import "firebase/auth";
 
+// const firebaseConfig = {
+//     apiKey: "AIzaSyCZzk3i4ltw3RCjkXWK1jcB26gjV9kgJSA",
+//     authDomain: "pedepet-7e1d7.firebaseapp.com",
+//     projectId: "pedepet-7e1d7",
+//     storageBucket: "pedepet-7e1d7.appspot.com",
+//     messagingSenderId: "1030631391810",
+//     appId: "1:1030631391810:web:4758e52101c3dff61da3db",
+//     measurementId: "G-7L4545M83R"
+//   };
+
+//   firebase.initializeApp(firebaseConfig);
+
+// const { resp } = require("express");
 
 // aviso de algum erro nas validações
 function showSnackBar() {
@@ -146,10 +161,7 @@ function validarCampoCad1() {
 }
 
 
-
-
-
-// função d evalidação dos campos do cadastro pt2
+// função de validação dos campos do cadastro pt2
 function validarCampoCad2() {
 
     const cadastroUserOBJT = JSON.parse(localStorage.getItem('cadastroUserOBJT'));
@@ -278,7 +290,6 @@ function validarCampoCad3() {
     }
 }
 
-
 function cadastroVendedor(cadastroUserOBJT) {
 
     console.log(cadastroUserOBJT);
@@ -353,6 +364,85 @@ function cadastroComprador(cadastroUserOBJT) {
             }, 3500);
         })
 }
+
+// // Função para cadastrar usuário no Firebase Authentication
+// function cadastrarUsuarioNoFirebase(email, senha, tipoUsuario) {
+//     return firebase.auth().createUserWithEmailAndPassword(email, senha)
+//         .then((userCredential) => {
+//             const user = userCredential.user;
+//             console.log("Usuário do Firebase criado com sucesso:", user);
+//             // Você pode adicionar mais ações aqui, se necessário
+
+//             // Cadastro de usuário local (com tipo de usuário definido)
+//             return fetch("http://localhost:8080/cadastros/usuario", {
+//                 method: "POST",
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+//                 body: JSON.stringify({
+//                     "nome": cadastroUserOBJT.nome,
+//                     "email": cadastroUserOBJT.email,
+//                     "cpf": cadastroUserOBJT.cpf,
+//                     "telefone": cadastroUserOBJT.telefone,
+//                     "senha": cadastroUserOBJT.senha,
+//                     "tipoUsuario": tipoUsuario, // Define o tipo de usuário aqui
+//                     "autenticado": true
+//                 })
+//             });
+//         })
+//         .catch((error) => {
+//             // Ocorreu um erro ao criar o usuário no Firebase
+//             const errorCode = error.code;
+//             const errorMessage = error.message;
+//             console.error("Erro ao criar usuário no Firebase:", errorCode, errorMessage);
+//             // Lide com o erro aqui, se necessário
+//             throw error; // Propaga o erro para que ele possa ser tratado na chamada da função
+//         });
+// }
+
+// // Função para cadastro de vendedor (local e no Firebase)
+// function cadastroVendedor(cadastroUserOBJT) {
+//     cadastrarUsuarioNoFirebase(cadastroUserOBJT.email, cadastroUserOBJT.senha, 2) // 2 representa o tipo de usuário vendedor
+//         .then((response) => {
+//             cadastroUserOBJT.idUsuario = response;
+//             console.log(cadastroUserOBJT.idUsuario);
+//             localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+
+//             // Redireciona para a próxima página após o cadastro bem-sucedido
+//             window.location.href = "./register_user2.html";
+//         })
+//         .catch((err) => {
+//             console.log(err);
+//             console.log("email existe");
+//             snackbar.innerHTML = "Email existente! Redirecionando para login";
+//             showSnackBar();
+//             setTimeout(function () {
+//                 window.location.href = "./login.html";
+//             }, 3500);
+//         });
+// }
+
+// // Função para cadastro de comprador (local e no Firebase)
+// function cadastroComprador(cadastroUserOBJT) {
+//     cadastrarUsuarioNoFirebase(cadastroUserOBJT.email, cadastroUserOBJT.senha, 1) // 1 representa o tipo de usuário comprador
+//         .then((response) => {
+//             cadastroUserOBJT.idUsuario = response;
+//             console.log(cadastroUserOBJT.idUsuario);
+//             localStorage.setItem('cadastroUserOBJT', JSON.stringify(cadastroUserOBJT));
+
+//             // Redireciona para a próxima página após o cadastro bem-sucedido
+//             window.location.href = "./register_user2.html";
+//         })
+//         .catch((err) => {
+//             console.log(err);
+//             console.log("email existe");
+//             snackbar.innerHTML = "Email existente! Redirecionando para login";
+//             showSnackBar();
+//             setTimeout(function () {
+//                 window.location.href = "./login.html";
+//             }, 3500);
+//         });
+// }
 
 function cadastroEndereco(cadastroUserOBJT, cadastroUserOBJT2) {
 
