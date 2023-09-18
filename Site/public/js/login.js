@@ -48,7 +48,7 @@ function fazerLogin(email, senha) {
         // Login bem-sucedido, redirecionar para a próxima página
         // guardando email logado em local storage 
         sessionStorage.setItem("email", email);
-        window.location.href = './index.html'
+        window.location.href = './puppys_ad.html'
       } else if (response.status === 204 || response.status === 404) {
         // E-mail não encontrado ou senha incorreta
         showSnackBar("Senha ou e-mail inválido!");

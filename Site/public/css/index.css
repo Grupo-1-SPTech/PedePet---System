@@ -781,7 +781,7 @@ label::before {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  padding-top: 20%;
+  padding-top: 30%;
   padding-left: 4%;
   padding-right: 4%;
 }

@@ -148,7 +148,7 @@ async function buscarAnuncios(){
                     <div class="img-pet"><img class="img-puppy" src="${anuncio.fotoPet}" alt=""></div>
                     <div class="content-card">
                         <h3>${anuncio.racaMae}</h3>
-                        <p id="mes">${tempoEsperaFilhote} dias</p>
+                        <p id="mes">${tempoEsperaFilhote}</p>
                         <p id="preco">R$ ${precoFilhote}</p>
                         <div class="fila-local">
                             <p id="fila">${anuncio.qtdFilhotes}/${anuncio.qtdFilhotes} Fila de espera</p>
@@ -160,6 +160,10 @@ async function buscarAnuncios(){
                     </div>
                 </div>`
     }).join('');
+}
+
+function entrarFila() {
+    window.location.href = "./anuncio_pet1.html"
 }
 
 
