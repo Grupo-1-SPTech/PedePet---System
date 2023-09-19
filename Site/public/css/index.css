@@ -74,10 +74,17 @@ body {
   cursor: pointer;
 }
 
-.options {
+.container-nav .options {
   display: flex;
   flex-direction: row;
   width: 100%;
+  padding-left: 30%;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
   padding-left: 30%;
   align-items: center;
 }

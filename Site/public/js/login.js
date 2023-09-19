@@ -1,19 +1,3 @@
-// Importe o Firebase
-// import firebase from "firebase/app";
-// import "firebase/auth";
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCZzk3i4ltw3RCjkXWK1jcB26gjV9kgJSA",
-//   authDomain: "pedepet-7e1d7.firebaseapp.com",
-//   projectId: "pedepet-7e1d7",
-//   storageBucket: "pedepet-7e1d7.appspot.com",
-//   messagingSenderId: "1030631391810",
-//   appId: "1:1030631391810:web:4758e52101c3dff61da3db",
-//   measurementId: "G-7L4545M83R"
-// };
-
-// firebase.initializeApp(firebaseConfig);
-
 // Adicionar evento de clique no botão de login
 document.getElementById('btn-entrar').addEventListener('click', validarLogin);
 
@@ -75,20 +59,6 @@ function fazerLogin(email, senha) {
       console.error('Erro ao fazer login:', error);
     });
 }
-
-// // Função para fazer login usando o Firebase Authentication
-// function fazerLogin(email, senha) {
-//   firebase.auth().signInWithEmailAndPassword(email, senha)
-//     .then(function() {
-//       // Login bem-sucedido
-//       sessionStorage.setItem("email", email);
-//       window.location.href = './puppys_ad.html';
-//     })
-//     .catch(function(error) {
-//       // Lidar com erros, por exemplo, se as credenciais estiverem incorretas
-//       showSnackBar("Erro ao fazer login: " + error.message);
-//     });
-// }
 
 function entrar() {
   window.location.href = "./login.html"
