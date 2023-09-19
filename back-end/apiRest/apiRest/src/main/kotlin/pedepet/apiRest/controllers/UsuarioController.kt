@@ -3,11 +3,9 @@ package pedepet.apiRest.controllers
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import pedepet.apiRest.dto.*
-import pedepet.apiRest.models.AnuncioPet
-import pedepet.apiRest.models.Comprador
-import pedepet.apiRest.models.Usuario
-import pedepet.apiRest.models.Vendedor
+import pedepet.apiRest.models.*
 import pedepet.apiRest.repositories.*
+import java.util.*
 import javax.validation.constraints.Email
 
 @RestController
@@ -96,6 +94,16 @@ class UsuarioController(
         } else {
             return ResponseEntity.status(404).build()
         }
+    }
+
+    @GetMapping("/info/{email}")
+    fun buscarInfoUser (@PathVariable email: String): ResponseEntity<EnderecoDto> {
+        val infoUser: Usuario = repository.findByEmail(email).get()
+
+        val enderecoUser: Endereco? = enderecoRepository.findByUsuarioId(infoUser.id)
+        val retorno = EnderecoDto(usuario = infoUser, endereco = enderecoUser)
+
+        return ResponseEntity.status(200).body(retorno)
     }
 
 }

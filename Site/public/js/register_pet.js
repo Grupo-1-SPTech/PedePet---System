@@ -330,7 +330,7 @@ function cadastroAnuncio(cadastroUserOBJT, cadastroPetOBJT, cadastroPetOBJT2, ca
 
     console.log(cadastroUserOBJT);
 
-    fetch(`http://localhost:8080/cadastros/anuncio/${cadastroUserOBJT.idUsuario}`, {
+    fetch("http://localhost:8080/cadastros/anuncio/${cadastroUserOBJT.idUsuario}", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
