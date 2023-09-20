@@ -148,15 +148,15 @@
                                         <span id="bairroUser"></span>,&nbsp;
                                         <span id="cidUser"></span>&nbsp; - &nbsp;
                                         <span id="estadoUser"></span>
-                                    </span> 
+                                    </span>
                                 </div>
                                 <br>
                                 <br>
                             </div>
                             <div class="socialProfile">
                                 <h2>Contato</h2>
-                                 <br>
-                           <!-- <span>Instagram</span>
+                                <br>
+                                <!-- <span>Instagram</span>
                                 <div class="alignInput">
                                     <input placeholder="@" class="contactProfile" id="instagramProfile" type="text">
                                     <button>Adicionar</button>
@@ -169,23 +169,27 @@
                                 </div> -->
                                 <span>email</span>
                                 <div class="alignInput">
-                                    <input placeholder="exemplo@email.com" class="contactProfile" id="emailProfile"
-                                        type="text">
-                                    <button onclick="alterarEmail()">Alterar email</button>
+                                    <input placeholder="exemplo@email.com" readonly class="contactProfile"
+                                        id="emailProfile" type="text">
+                                    <button onclick="abrirModal()">Alterar email</button>
                                 </div>
                             </div>
 
-                            <div class="modal">
-                                <h2 class="titleModal">Alterar email</h1>
-                                <br>
-                                <input type="text" placeholder="novo email" id="novoEmail">
-                                <br>
-                                <input type="text" placeholder="Sua senha" id="senhaUser">
-                                <br>
-                                <div class="alinhaModal">
-                                    <button id="btnCancelar">Cancelar</button>
-                                    <button id="btnConfirmar">Confirmar</button>
+                            <div id="backModal">
+                                <div id="modal">
+                                    <h2 class="titleModal">Alterar email</h1>
+                                        <br>
+                                        <input type="text" placeholder="novo email" id="novoEmail">
+                                        <br>
+                                        <input type="password" placeholder="Sua senha" id="senhaUser">
+                                        <br>
+                                        <div class="alinhaModal">
+                                            <button onclick="fecharModal()" id="btnCancelar">Cancelar</button>
+                                            <button onclick="alterarEmail()" id="btnConfirmar">Confirmar</button>
+                                        </div>
                                 </div>
+                                <div id="snackbar"></div>
+
                             </div>
 
                         </div>
