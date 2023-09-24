@@ -25,67 +25,7 @@
           <li><a href="./index.html#FAQ">FAQ</a></li>
           <li><a href="./index.html#Contato">Contato</a></li>
         </ul>
-        <div class="profile-dropdown">
-          <div class="profile-dropdown-btn">
-            <div class="profile-img">
-            </div>
-          </div>
-
-          <ul class="profile-dropdown-list">
-            <li class="profile-name">
-              <h1>Fabio Moledo</h1>
-              <span>Comprador</span>
-            </li>
-            <hr />
-            <li class="profile-dropdown-list-item" id="config">
-              <a href="">
-                <i class="fa-regular fa-user"> </i>
-                Configurações da conta
-              </a>
-            </li>
-            <li class="profile-dropdown-list-item" id="mode">
-              <a href="">
-                <i class="fa-regular fa-moon"> </i>
-                Tema
-                <div class="switch-theme">
-                  <input type="checkbox" id="check" id=>
-                  <label for="check" class="button" id="btn-dark-mode-toggle"></label>
-                </div>
-              </a>
-            </li>
-            <li class="profile-dropdown-list-item" id="daltonismo">
-              <a href="#">
-                <i class="fa-regular fa-eye"> </i>
-                Daltonismo
-                <form class="color-picker" action="">
-                  <fieldset>
-                    <label class="visual-hidden" for="light"></label>
-                    <input type="radio" name="theme" id="light" checked>
-
-                    <label class="visual-hidden" for="tritanopia"></label>
-                    <input type="radio" name="theme" id="tritanopia" checked>
-
-                    <label class="visual-hidden" for="protanopia"></label>
-                    <input type="radio" name="theme" id="protanopia" checked>
-
-                    <label class="visual-hidden" for="deuteranopia"></label>
-                    <input type="radio" name="theme" id="deuteranopia" checked>
-
-                    <label class="visual-hidden" for="acromatico"></label>
-                    <input type="radio" name="theme" id="acromatico" checked>
-                  </fieldset>
-                </form>
-              </a>
-            </li>
-            <hr />
-            <li class="profile-dropdown-list-item" id="sair">
-              <a href="index.html">
-                <i class="fa-solid fa-arrow-right-to-bracket"> </i>
-                Sair
-              </a>
-            </li>
-          </ul>
-        </div>
+        
 
 
       </div>
@@ -103,8 +43,8 @@
 
           <div class="ladoEsquerdo">
 
-            <div class="imagem">
-
+            <div id="imagem" class="imagem">
+               
             </div>
 
             <div class="conteudo">
@@ -112,7 +52,7 @@
               <div class="cardInfos">
                 <div class="cardTempo">
                   <img class="icons_ad" src="./css/images/calendar-laranja.svg" alt="">
-                  Em 9
+                 
                   <span id="cardTempo" class="value_tempo" onload="getTotalTempoEspera()"></span>
                   semanas
                 </div>
@@ -151,11 +91,11 @@
                   <span id="frasesNegrito">Fila de espera</span>
                   <div class="informacoes">
                     <div class="filhotesTeste">
-                      <span class="qtdFilhotes" id="qtdFilhotes" onload="qtdFilhote()" style="color: black; ">6</span>
+                      <span class="qtdFilhotes" id="qtdFilhotes" onload="qtdFilhote()" style="color: black; "></span>
                       <span>filhotes disponíveis</span>
                     </div>
 
-                    <span class="raca" id="espacinho" onload="raca()">Golden Retriever</span>
+                    <span class="raca" id="raca" onload="raca()"></span>
 
                     <span id="espacinho" class="cidade">São Paulo - SP</span>
                   </div>
@@ -169,15 +109,14 @@
           <div class="ladoDireito">
 
             <div class="title-adpet">
-              <h1 onload="raca()">Spitz Alemão<h1>
-                  <span id="sub-title">Vendedor:&nbsp;<h4 onload="vendedor()">Fabio Moledo</h4></span> <br>
-                  <span id="filhotes_preco" class="value_metrica">R$1.199,99</span>
+              <h1 class="titulo" id="titulo" onload="raca()"><h1>
+                  <span id="sub-title">Vendedor:&nbsp;<h4 id="nomeVendedor" onload="vendedor()"></h4></span> <br>
+                  <span id="filhotes_preco" class="value_metrica"></span>
                   <span id="aprovacao">*Sujeito a espera de aprovação do vendedor*</span>
 
                   <span id="sub-title">Observações:</span>
 
-                  <div class="observacao" onload="info_pet()">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                  <div class="observacao" id="observacao" onload="info_pet()">
                   </div>
 
                   <span id="sub-title">Formas de pagamento:</span><br>
