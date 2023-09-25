@@ -408,6 +408,7 @@ background-color: var(--radio-color);
   margin-top: 2vh;
   display: flex;
   justify-content: space-evenly;
+  background-color: #024f45;
 }
 
 .Tittle1 {
@@ -538,6 +539,7 @@ background-color: var(--radio-color);
 .BarChart{
   width: 100%;
   height: 80%;
+  background-color: #024f455e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -563,6 +565,7 @@ background-color: var(--radio-color);
 .Meio {
   width: 100vw;
   height: 80vh;
+  background-color: #0e406b7b;
   display: flex;
   justify-content: center;
   align-items: center;
