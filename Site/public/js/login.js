@@ -1,5 +1,3 @@
-
-
 // regex de verificações (verifica os caracteres de uma variavel)
 const regexEmail = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
 

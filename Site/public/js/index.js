@@ -44,64 +44,58 @@ window.addEventListener("scroll", checkElementVisibility);
 
 checkElementVisibility();
 
-  
-  // botao perfil
-  let profileDropdownList = document.querySelector('.profile-dropdown-list');
-  let btn = document.querySelector('.profile-dropdown-btn');
-  let modoBtn = document.querySelector('dark-mode');
-  let daltonismoBtn = document.querySelector('daltonismo');
-  let configBtn = document.querySelector('config');
-  let sairBtn = document.querySelector('logout');
-  
-  const toggle = () => profileDropdownList.classList.toggle('active');
-  
-  window.addEventListener('click', function(e){
-      if (!btn.contains(e.target) && !profileDropdownList.contains(e.target)) {
-          profileDropdownList.classList.remove('active');
-      }
-  });
-  
-  // troca de temar dark mode
-  const btnDarkMode = document.getElementById('btn-dark-mode-toggle')
-  const themeSystem = localStorage.getItem("themeSystem") || "light"
-  
-  btnDarkMode.addEventListener('click', () => {
-      let oldTheme = localStorage.getItem("themeSystem") || "light"
-      let newTheme = oldTheme === "light" ? "dark" : "light"
-  
-      localStorage.setItem("themeSystem", newTheme)
-      defineCurrentTheme(newTheme)
-  })
-  
-  function defineCurrentTheme(theme) {
-      document.documentElement.setAttribute("data-theme", theme)
-      if(theme == "light")
-      {
-  
-      }
-  }
-  
-  function entrar() {
-      window.location.href = "./login.html"
-  }
-  
-  // tema ficar no localStorage
-  const colorThemes = document.querySelectorAll('[name="theme"]');
-  
-  //store theme
-  const storeTheme = function(theme) {
-      localStorage.setItem("theme", theme);
-  }
-  
-  const setTheme = function() {
-      const activeTheme = localStorage.getItem("theme");
-      colorThemes.forEach((themeOption) => {
-          if(themeOption.id === activeTheme){
-              themeOption.checked = true;
-          }
-      });
-      document.documentElement.className = theme;
-  };
+// botao perfil
+let profileDropdownList = document.querySelector('.profile-dropdown-list');
+let btn = document.querySelector('.profile-dropdown-btn');
+let modoBtn = document.querySelector('dark-mode');
+let daltonismoBtn = document.querySelector('daltonismo');
+let configBtn = document.querySelector('config');
+let sairBtn = document.querySelector('logout');
+
+const toggle = () => profileDropdownList.classList.toggle('active');
+
+window.addEventListener('click', function (e) {
+    if (!btn.contains(e.target) && !profileDropdownList.contains(e.target)) {
+        profileDropdownList.classList.remove('active');
+    }
+});
+
+// troca de temar dark mode
+const btnDarkMode = document.getElementById('btn-dark-mode-toggle')
+const themeSystem = localStorage.getItem("themeSystem") || "light"
+
+btnDarkMode.addEventListener('click', () => {
+    let oldTheme = localStorage.getItem("themeSystem") || "light"
+    let newTheme = oldTheme === "light" ? "dark" : "light"
+
+    localStorage.setItem("themeSystem", newTheme)
+    defineCurrentTheme(newTheme)
+})
+
+function defineCurrentTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme)
+    if (theme == "light") {
+
+    }
+}
+
+// tema ficar no localStorage
+const colorThemes = document.querySelectorAll('[name="theme"]');
+
+//store theme
+const storeTheme = function (theme) {
+    localStorage.setItem("theme", theme);
+}
+
+const setTheme = function () {
+    const activeTheme = localStorage.getItem("theme");
+    colorThemes.forEach((themeOption) => {
+        if (themeOption.id === activeTheme) {
+            themeOption.checked = true;
+        }
+    });
+    document.documentElement.className = theme;
+};
 
 
 // validação caso estiver logado
@@ -115,6 +109,8 @@ console.log(emailArmazenado);
 function validaLogin() {
     // Recuperando o email do usuário no localStorage ou sessionStorage, conforme necessário
     const emailArmazenado = localStorage.getItem("email") || sessionStorage.getItem("email");
+    const profileDropdown = document.querySelector('.profile-dropdown-btn');
+    const btnLogin = document.querySelector('.btn-login');
 
     if (emailArmazenado != null) {
         const url = `http://localhost:8080/usuarios/autenticado/${emailArmazenado}`;
@@ -145,12 +141,12 @@ function validaLogin() {
 
                 if (emailArmazenado !== null) {
                     // O usuário está logado, mostrar a div do perfil
-                    console.log("aaaaaa", url)
+                    console.log("Mostrando botão de perfil", url)
                     profileDropdown.style.display = 'block';
                     btnLogin.style.display = 'none'; // Esconda o botão de login
                 } else {
                     // O usuário não está logado, mostrar o botão de login
-                    console.log("bbbb", url)
+                    console.log("Mostrando botão de entrar", url)
                     btnLogin.style.display = 'block';
                     profileDropdown.style.display = 'none'; // Esconda a div do perfil
                 }
@@ -158,6 +154,16 @@ function validaLogin() {
             .catch(error => {
                 console.error("Erro ao fazer a solicitação:", error);
             });
+    }
+
+    if (emailArmazenado != null) {
+        // O usuário está logado, mostrar o botão do perfil
+        profileDropdown.style.display = 'block';
+        btnLogin.style.display = 'none'; // Esconder o botão de login
+    } else {
+        // O usuário não está logado, mostrar o botão de login
+        btnLogin.style.display = 'block';
+        profileDropdown.style.display = 'none'; // Esconder o botão do perfil
     }
 }
 
@@ -266,30 +272,30 @@ function getUsuariosTotal() {
 }
 
 
-$(document).ready(function(){
+$(document).ready(function () {
     // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-  
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-  
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 900, function(){
-  
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
+    $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 900, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
     });
-  });
+});
 
 
 
@@ -299,7 +305,7 @@ function buscarDados() {
     getRacasDisponiveis()
     getTotalVendedores()
     getUsuariosTotal()
-    // validaLogin()
+    validaLogin()
 }
 
 $(document).ready(function () {

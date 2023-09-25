@@ -156,14 +156,15 @@ async function buscarAnuncios(){
                         </div>
                     </div>
                     <div class="btn-fila">
-                        <button onclick="entrarFila()" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
+                    <button onclick="entrarFila('${anuncio.id}')" class="entrar-fila" id="entrar-fila">Entrar na fila</button>
                     </div>
                 </div>`
     }).join('');
 }
 
-function entrarFila() {
-    window.location.href = "./anuncio_pet1.html"
+function entrarFila(idAnuncio) {
+    window.location.href = `./anuncio_pet1.html?id=${idAnuncio}`;
+    console.log(idAnuncio);
 }
 
 

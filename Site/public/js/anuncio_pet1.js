@@ -1,84 +1,85 @@
 const neutralValue = 50; // Valor neutro (pode ser variado)
 const actualValue = 65; // Valor atual (pode ser variado)
 
-let profileDropdownList = document.querySelector('.profile-dropdown-list');
-let btn = document.querySelector('.profile-dropdown-btn');
-let modoBtn = document.querySelector('modo');
-let daltonismoBtn = document.querySelector('daltonismo');
+const urlParams = new URLSearchParams(window.location.search);
+const idAnuncio = urlParams.get('id');
 
-const toggle = () => profileDropdownList.classList.toggle('active');
+function anuncioInfos(){
+fetch(`http://localhost:8080/anuncios/${idAnuncio}`, {  
+  method: "GET"
+})
+    .then((resposta) => resposta.json())
+    .then((anuncio) => {
 
-window.addEventListener('click', function(e){
-    if(!btn.contains(e.target)) profileDropdownList.classList.remove('active');
-});
+      
 
-//progress bar da fila 
-const maxCapacity = 6;
-const currentPersons = 0;
+        const anuncioInfo = anuncio;
+        console.log(anuncioInfo);
+        const racaMae = anuncio.racaMae;
+        const fotoPet = anuncio.fotoPet;
+        const usuarioNome = anuncio.usuario.nome;
+        const descricao = anuncio.descricao;
+        const primeiroFilhote = anuncio.filhotes[0];
+        const tamanhoFila = anuncio.filhotes.length;
+        const tempoEsperaPrimeiroCaractere = primeiroFilhote.tempoEspera.charAt(0);
+        const precoPrimeiroFilhote = primeiroFilhote.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 
-const fillerBar = document.getElementById("filler-bar");
-const fillPercentage = (currentPersons / maxCapacity) * 100;
-const percentageText = document.getElementById("percentage-text");
-const qtdFilhotes = document.getElementById("qtdFilhotes");
+        let filhotesIndisponiveis = 0;
 
-function carregarValores(){
-fillerBar.style.width = fillPercentage + "%";
-percentageText.textContent =  + Math.round(fillPercentage) +  "%";
-qtdFilhotes.textContent = maxCapacity 
+    
+        for (const filhote of anuncio.filhotes) {
+          if (!filhote.disponivel) {
+            filhotesIndisponiveis++;
+          }
+        }
+        
+
+        let inObservacao = document.getElementById("observacao");
+        let inPrecoFilhote = document.getElementById("filhotes_preco");
+        let inImagem = document.getElementById("imagem");
+        let inCardTempo = document.getElementById("cardTempo");
+        let inQtdFilhotes = document.getElementById("qtdFilhotes");
+        let inRaca = document.getElementById("raca");
+        let inNomeVendedor = document.getElementById("nomeVendedor");
+        let inTitulo = document.getElementById("titulo");
+        const elementoImagem = document.querySelector('.imagem');
+
+            elementoImagem.style.backgroundImage = `url('${fotoPet}')`;
+            inRaca.innerHTML = racaMae;     
+            inNomeVendedor.innerHTML = usuarioNome;
+            inPrecoFilhote.innerHTML = 'R$'+ precoPrimeiroFilhote;  
+            inTitulo.innerHTML = racaMae; 
+            inObservacao.innerHTML = anuncio.titulo + "<br>" + descricao;
+            inCardTempo.innerHTML = tempoEsperaPrimeiroCaractere;
+            inQtdFilhotes.innerHTML = tamanhoFila - filhotesIndisponiveis; 
+         
+
+          
+
+            const fillerBar = document.getElementById("filler-bar");
+            const fillPercentage = (filhotesIndisponiveis / tamanhoFila) * 100;
+            const percentageText = document.getElementById("percentage-text");
+            const qtdFilhotes = document.getElementById("qtdFilhotes");
+                
+            fillerBar.style.width = fillPercentage + "%";
+            percentageText.textContent =  + Math.round(fillPercentage) +  "%";
+            qtdFilhotes.textContent = maxCapacity 
+    })
+    .catch((err) => {
+        console.error(err);
+    });
 }
+
+
+
+
 
 function entrar() {
   window.location.href = "./login.html"
 }
 
-//tema dark
-const btnDarkMode = document.getElementById('btn-dark-mode-toggle')
-const themeSystem = localStorage.getItem("themeSystem") || "light"
 
-btnDarkMode.addEventListener('click', () => {
-    let oldTheme = localStorage.getItem("themeSystem") || "light"
-    let newTheme = oldTheme === "light" ? "dark" : "light"
-
-    localStorage.setItem("themeSystem", newTheme)
-    defineCurrentTheme(newTheme)
-})
-
-function defineCurrentTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme)
-    if(theme == "light")
-    {
-
-    }
-}
-
-// tema ficar no localStorage
-
-const colorThemes = document.querySelectorAll('[name="theme"]');
-
-//store theme
-const storeTheme = function(theme) {
-    localStorage.setItem("theme", theme);
-}
-
-const setTheme = function() {
-    const activeTheme = localStorage.getItem("theme");
-    colorThemes.forEach((themeOption) => {
-        if(themeOption.id === activeTheme){
-            themeOption.checked = true;
-        }
-    });
-    document.documentElement.className = theme;
-};
-
-colorThemes.forEach(themeOption => {
-    themeOption.addEventListener('click', () => {
-        storeTheme(themeOption.id);    
-    });
-});
-
-document.onload = setTheme();
 
 function buscarDados() {
-
-  carregarValores();
+  anuncioInfos();
 }

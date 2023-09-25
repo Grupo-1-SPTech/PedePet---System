@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager's Dash - PedePet</title>
+    <link rel="stylesheet" href="./css/SellersDash.css">
+    <link rel="icon" href="./css/images/icon-pata.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body onload=buscarDados()>
+
+    <nav>
+        <div class="container-nav">
+            <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
+            <div class="options">
+                <ul>
+                  <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
+                  <li><a href="./index.html#SobreNos">Sobre nós</a></li>
+                  <li><a href="./index.html#FAQ">FAQ</a></li>
+                  <li><a href="./index.html#Contato">Contato</a></li>
+                </ul>
+                <button onclick="entrar()" href="./login.html" class="btn-login">Entrar</button>
+
+            </div>
+                <!-- <div class="profile-dropdown">
+                    <div class="profile-dropdown-btn" onclick="toggle()">
+                        <div class="profile-img">
+                        </div>
+                    </div>
+                    <ul class="profile-dropdown-list">
+                        <li class="profile-name">
+                            <h1>Fabio Moledo</h1>
+                            <span>Comprador</span>
+                        </li>
+                        <hr />
+                        <li class="profile-dropdown-list-item" id="config">
+                            <a href="perfil.html">
+                                <i class="fa-regular fa-user"> </i>
+                                Configurações da conta
+                            </a>
+                        </li>
+                        <li class="profile-dropdown-list-item" id="dark-mode">
+                            <a href="">
+                                <i class="fa-regular fa-moon"> </i>
+                                Tema
+                                <div class="switch-theme">
+                                    <input type="checkbox" id="check" id=>
+                                    <label for="check" class="button" id="btn-dark-mode-toggle"></label>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="profile-dropdown-list-item" id="daltonismo">
+                            <a href="#">
+                                <i class="fa-regular fa-eye"> </i>
+                                Daltonismo
+                                <form class="color-picker" action="">
+                                    <fieldset>
+                                        <label class="visual-hidden" for="light"></label>
+                                        <input type="radio" name="theme" id="light" checked>
+        
+                                        <label class="visual-hidden" for="tritanopia"></label>
+                                        <input type="radio" name="theme" id="tritanopia">
+        
+                                        <label class="visual-hidden" for="protanopia"></label>
+                                        <input type="radio" name="theme" id="protanopia">
+        
+                                        <label class="visual-hidden" for="deuteranopia"></label>
+                                        <input type="radio" name="theme" id="deuteranopia" >
+        
+                                        <label class="visual-hidden" for="acromatico"></label>
+                                        <input type="radio" name="theme" id="acromatico">
+                                    </fieldset>
+                                </form>
+                            </a>
+                        </li>
+                        <hr />
+                        <li class="profile-dropdown-list-item" id="logout">
+                            <a href="index.html">
+                                <i class="fa-solid fa-arrow-right-to-bracket"> </i>
+                                Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div> -->
+        </div>
+    </nav>
+    
+    <div class="ContainerDesemp">
+        <h1 class="Tittle1">
+            Métricas para gerência
+        </h1>
+
+        <div class="ContainerDivs">
+
+            <div class="Vagas">
+
+                <div>
+                    <span class="legenda1">
+                        Pessoas que voltam a comprar
+                    </span>
+                </div>
+
+                <div>
+                    <canvas  id="myChart"></canvas>
+                  </div>
+                  
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                  
+                  <script>
+                    const ctx = document.getElementById('myChart');
+                  
+                    const chartData = {
+                        labels: ['Aprovadas', 'Pendentes'],
+                        data: [60, 40]
+                    }
+
+                    new Chart(ctx, {
+                      type: 'doughnut',
+                      data: {
+                        labels: chartData.labels,
+                        datasets: [{
+                          label: "Porcentagem",
+                          data: chartData.data,
+                          backgroundColor: [
+                                    'rgb(68,32,126)',
+                                    'rgb(251,63,8)',
+                                  ],
+                        }]
+                      },
+                      options: {
+                        borderWidth: 10,
+                        borderRadius: 20,
+                      },
+                      plugins: {
+                        legend: {
+                            display: false,
+                        }
+                      }
+                    });
+                  </script>
+                  
+            </div>
+
+            <div class="Vagas2">
+
+                <div class="ConteinerLegenda2">
+                    <span class="legenda2">
+                        Tempo do usuário no site
+                    </span>
+                </div>
+
+                <div class="ContainerDias">
+                    <h1 class="Titulo">
+                        <span class="Cor"> 14 </span> Minutos
+                    </h1>
+
+                    <h3 class="legendinha"> Tempo Médio </h3>
+                </div>
+
+            </div>
+
+            <div class="Vagas3">
+                <div class="ConteinerLegenda3">
+                    <span class="legenda3">
+                        Avaliações dos usuários
+                    </span>
+                </div>
+                        <!-- BARRA HORIZONTAL -->
+                    
+                        <div class="BarChart">
+                            <canvas id="myChart2"></canvas>
+                          </div>
+                          
+                          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                          
+                          <script>
+                            const ctx2 = document.getElementById('myChart2');
+                          
+                            new Chart(ctx2, {
+                              type: 'bar',
+                              data: {
+                                labels: ['Vendidos', 'A vender'],
+                                datasets: [{
+                                  label: '# of Votes',
+                                  data: [12, 19],
+                                  backgroundColor: [
+                                    'rgb(251,63,8)',
+                                    'rgb(68,32,126)',
+                                  ],
+                                  borderWidth: 1
+                                }]
+                              },
+                              options: {
+                                indexAxis: 'y',
+                                },
+                                scales: {
+                                    x: {
+                                        display: false,
+                                    },
+                                    y: {
+                                        display: false,
+                                    }
+                                }
+                            });
+                          </script>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PARTE DO MEIO -->
+
+    <div class="Meio">
+        <div class="Visualizacao"> 
+            <div class="ConteinerLegenda4">
+                <span class="legenda4">
+                    Cadastros no site por mês
+                </span>
+            </div>
+
+              <div class="Vizu">
+                <canvas id="myChart3"></canvas>
+              </div>
+              
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+              
+              <script>
+                const ctx3 = document.getElementById('myChart3');
+              
+                new Chart(ctx3, {
+                  type: 'bar',
+                  data: {
+                    labels: ['20', '19', '35', '20', '30', '17', '23', '21', '12', '10'],
+                    datasets: [{
+                      label: '# of Votes',
+                      data: [12, 19, 3, 5, 2, 3, 1, 2, 3, 10],
+                      borderWidth: 1,
+                      backgroundColor: [
+                        'rgb(251,63,8)'
+                      ]
+                    }]
+                  },
+                  options: { 
+                    borderWidth: 10,
+                    borderRadius: 20,
+                    scales: {
+                      x: {
+                        display: false,
+                        grid: {
+                            color: 'rgb(68,32,126)',
+                            borderColor: 'purple'
+                        }
+                      },
+                      y: {
+                        grid: {
+                            color: 'rgb(68,32,126)',
+                            borderColor: 'purple'
+                        }
+                      }
+                    }
+                  }
+                });
+              </script>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script src="./js/index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
