@@ -92,7 +92,7 @@
     
     <div class="ContainerDesemp">
         <h1 class="Tittle1">
-            Métricas para gerência
+            Seu Desempenho
         </h1>
 
         <div class="ContainerDivs">
@@ -101,48 +101,55 @@
 
                 <div>
                     <span class="legenda1">
-                        Pessoas que voltam a comprar
+                        Vagas alocadas nos seus anúncios
                     </span>
                 </div>
 
-                <div>
-                    <canvas  id="myChart"></canvas>
-                  </div>
-                  
-                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                  
-                  <script>
-                    const ctx = document.getElementById('myChart');
-                  
-                    const chartData = {
-                        labels: ['Aprovadas', 'Pendentes'],
-                        data: [60, 40]
-                    }
-
-                    new Chart(ctx, {
-                      type: 'doughnut',
-                      data: {
-                        labels: chartData.labels,
-                        datasets: [{
-                          label: "Porcentagem",
-                          data: chartData.data,
-                          backgroundColor: [
-                                    'rgb(68,32,126)',
-                                    'rgb(251,63,8)',
-                                  ],
-                        }]
-                      },
-                      options: {
-                        borderWidth: 10,
-                        borderRadius: 20,
-                      },
-                      plugins: {
-                        legend: {
-                            display: false,
-                        }
-                      }
-                    });
-                  </script>
+                <div class="BarChart">
+                  <canvas id="myChart"></canvas>
+                </div>
+                
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                
+                <script>
+                  const ctx = document.getElementById('myChart');
+                
+                  new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                      labels: ['Voltaram', 'Compraram'],
+                      datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19],
+                        backgroundColor: [
+                          'rgb(251,63,8)',
+                          'rgb(68,32,126)',
+                        ],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: { 
+                      borderWidth: 10,
+                      borderRadius: 10,
+                      indexAxis: 'y',
+                          scales: {
+                              x: {
+                                  
+                                  grid: {
+                                      color: 'rgb(255,255,255)',
+                                      borderColor: 'white'
+                                  }
+                              },
+                              y: {
+                                  grid: {
+                                      color: 'rgb(255,255,255)',
+                                      borderColor: 'white'
+                                  }
+                              }
+                              }
+                          }
+                      });
+                </script>
                   
             </div>
 
@@ -150,16 +157,22 @@
 
                 <div class="ConteinerLegenda2">
                     <span class="legenda2">
-                        Tempo do usuário no site
+                        Próxima ninhada
                     </span>
                 </div>
 
                 <div class="ContainerDias">
                     <h1 class="Titulo">
-                        <span class="Cor"> 14 </span> Minutos
+                        <span class="Cor"> 13 </span> Dias
                     </h1>
 
-                    <h3 class="legendinha"> Tempo Médio </h3>
+                    <h3 class="legendinha"> Até o nascimento dos filhotes </h3>
+
+                    <h2 class="Raca"> Golden Retriever </h2>
+
+                    <div class="btns">
+                        <button class="prosseguir"> Já Nasceu</button>
+                    </div>
                 </div>
 
             </div>
@@ -167,12 +180,12 @@
             <div class="Vagas3">
                 <div class="ConteinerLegenda3">
                     <span class="legenda3">
-                        Avaliações dos usuários
+                        Filhotes vendidos
                     </span>
                 </div>
                         <!-- BARRA HORIZONTAL -->
                     
-                        <div class="BarChart">
+                        <div class="BarChart2">
                             <canvas id="myChart2"></canvas>
                           </div>
                           
@@ -195,19 +208,27 @@
                                   borderWidth: 1
                                 }]
                               },
-                              options: {
+                              options: { 
+                                borderWidth: 10,
                                 borderRadius: 10,
                                 indexAxis: 'y',
-                                },
-                                scales: {
-                                    x: {
-                                        display: false,
-                                    },
-                                    y: {
-                                        display: false,
+                                    scales: {
+                                        x: {
+                                            
+                                            grid: {
+                                                color: 'rgb(255,255,255)',
+                                                borderColor: 'white'
+                                            }
+                                        },
+                                        y: {
+                                            grid: {
+                                                color: 'rgb(255,255,255)',
+                                                borderColor: 'white'
+                                            }
+                                        }
+                                        }
                                     }
-                                }
-                            });
+                                });
                           </script>
 
                     
@@ -222,12 +243,12 @@
         <div class="Visualizacao"> 
             <div class="ConteinerLegenda4">
                 <span class="legenda4">
-                    Cadastros no site por mês
+                    Visualizações por anúncio
                 </span>
             </div>
 
               <div class="Vizu">
-                <canvas id="myChart3"></canvas>
+                <canvas style="width: 100%; height: 90%;" id="myChart3"></canvas>
               </div>
               
               <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -245,7 +266,8 @@
                       borderWidth: 1,
                       backgroundColor: [
                         'rgb(251,63,8)'
-                      ]
+                      ],
+                      barThickness: 50,
                     }]
                   },
                   options: { 
@@ -253,9 +275,8 @@
                     borderRadius: 20,
                     scales: {
                       x: {
-                        display: false,
                         grid: {
-                            color: 'rgb(68,32,126)',
+                            color: 'rgb(255,255,255)',
                             borderColor: 'purple'
                         }
                       },
@@ -269,6 +290,22 @@
                   }
                 });
               </script>
+        </div>
+
+    </div>
+
+    <!--  PARTE FINAL -->
+
+    <div class="Final">
+
+        <h1 class="Tittle2">
+            Meus anúncios
+        </h1>
+
+        <div class="ajuste"> 
+            <div class="btns2">
+                <button class="carregar"> Carregar mais</button>
+            </div>
         </div>
 
     </div>
