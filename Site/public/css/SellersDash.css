@@ -74,10 +74,17 @@ body {
   cursor: pointer;
 }
 
-.options {
+.container-nav .options {
   display: flex;
   flex-direction: row;
   width: 100%;
+  padding-left: 30%;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
   padding-left: 30%;
   align-items: center;
 }
@@ -388,6 +395,259 @@ background-color: var(--radio-color);
 
 /* FIM NAVBAR*/
 
-/* MAIN */
+/* DESEMPENHO */
+
+.ContainerDesemp{
+  width: 100vw;
+  height: 70vh;
+}
+
+.ContainerDivs{
+  width: 100vw;
+  height: 50vh;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #024f45;
+}
+
+.Tittle1 {
+  font-size: 44px;
+  font-weight: 900;
+  padding-top: 10vh;
+  padding-left: 5vw;
+  font-family: 'Montserrat' sans-serif;
+  color: var(--black);
+}
+
+/* Primeiro Gráfico */
+
+.legenda1 {
+  font-weight: bold;
+  padding-top: 5vh;
+}
 
 
+.Vagas {
+  width: 25vw;
+  height: 43vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 2vw;
+  margin-top: 20px;
+  background-color: var(--white);
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: -5px 5px 20px #00000035;
+}
+
+/* Grafico 2 */
+
+.ConteinerLegenda2 {
+  width: 100%;
+  height: 10%;
+}
+
+.legenda2 {
+  font-weight: bold;
+  padding-left: 3vw;
+}
+
+.Vagas2 {
+  width: 25vw;
+  height: 43vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: var(--white);
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: -5px 5px 20px #00000035;
+}
+
+.ContainerDias{
+  width: 100%;
+  height: 80%;
+  margin-top: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-direction: column;
+}
+
+.Cor {
+  font-size: 44px;
+  font-weight: 900;
+  font-family: 'Montserrat' sans-serif;
+  color: var(--orange);
+}
+
+.Titulo {
+  font-size: 44px;
+  font-weight: 900;
+  font-family: 'Montserrat' sans-serif;
+  color: var(--black);
+}
+
+.legendinha{
+  color: rgba(0, 0, 0, 0.60);
+}
+
+.Raca {
+  font-weight: 900;
+  font-size: 20px;
+  padding-top: 10%;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 4%;
+}
+
+.prosseguir {
+  font-size: 16px;
+  width: 180px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  color: var(--white);
+  background-color: var(--orange);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+
+/* Grafico 3 */
+
+.ConteinerLegenda3 {
+  width: 100%;
+  height: 10%;
+  margin-bottom: 3vh;
+}
+
+.legenda3 {
+  font-weight: bold;
+  padding-left: 3vw;
+}
+
+.BarChart{
+  width: 100%;
+  height: 80%;
+  background-color: #024f455e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1vw;
+  padding-left: 1vw;
+}
+
+.Vagas3 {
+  width: 25vw;
+  height: 43vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: var(--white);
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: -5px 5px 20px #00000035;
+}
+
+/* Parte do Meio */
+
+.Meio {
+  width: 100vw;
+  height: 80vh;
+  background-color: #0e406b7b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Visualizacao {
+  width: 89vw;
+  height: 67vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: -5px 5px 20px #00000035;
+  background-color: var(--white);
+}
+
+.ConteinerLegenda4 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.legenda4 {
+  font-weight: bold;
+  padding-left: 3vw;
+}
+
+.Vizu{
+  width: 100%;
+  height: 90%;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+PARTE FINALL */
+
+.Final {
+  width: 100vw;
+  height: 85vh;
+  background-color: burlywood;
+}
+
+.Tittle2 {
+  font-size: 44px;
+  font-weight: 900;
+  margin-top: 7vh;
+  padding-left: 5vw;
+  font-family: 'Montserrat' sans-serif;
+  color: var(--black);
+}
+
+.ajuste {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0e406b;
+}
+
+
+.carregar {
+  font-size: 16px;
+  width: 180px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  color: var(--white);
+  background-color: var(--purple);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btns2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
