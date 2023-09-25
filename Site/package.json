@@ -2,7 +2,7 @@
     "name": "projeto-pedepet",
     "version": "1.0.0",
     "description": "",
-    "main": "./index.js",
+    "main": "index.js",
     "scripts": {
         "start": "nodemon app.js",
         "dev": "nodemon --exec node app.js",
