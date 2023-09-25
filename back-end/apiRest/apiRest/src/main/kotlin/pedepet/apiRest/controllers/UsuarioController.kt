@@ -85,14 +85,13 @@ class UsuarioController(
 
      }
  }
-
     @GetMapping("/existente/{email}")
     fun buscarEmailExistente (@PathVariable email: String): ResponseEntity<Boolean> {
         val emailExistente = repository.findByEmail(email)
         if (emailExistente.isEmpty) {
-            return ResponseEntity.ok().build()
-        } else {
             return ResponseEntity.status(404).build()
+        } else {
+            return ResponseEntity.ok().build()
         }
     }
 
@@ -106,4 +105,15 @@ class UsuarioController(
         return ResponseEntity.status(200).body(retorno)
     }
 
+    @GetMapping("/alterar/{email}")
+    fun alterarEmail (@PathVariable infoAlt: AltEmailRequest): ResponseEntity<Usuario> {
+        val infoUser: Usuario = repository.findByEmail(infoAlt.email).get()
+
+        if (infoUser.senha == infoAlt.senha) {
+            infoUser.email = infoAlt.emailNovo
+            return ResponseEntity.status(200).body(repository.save(infoUser))
+        } else {
+            return ResponseEntity.status(404).build()
+        }
+    }
 }
