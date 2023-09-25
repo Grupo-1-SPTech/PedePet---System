@@ -1,6 +1,3 @@
-// Adicionar evento de clique no botão de login
-document.getElementById('btn-entrar').addEventListener('click', validarLogin);
-
 // regex de verificações (verifica os caracteres de uma variavel)
 const regexEmail = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
 
@@ -59,6 +56,9 @@ function fazerLogin(email, senha) {
       console.error('Erro ao fazer login:', error);
     });
 }
+
+// Adicionar evento de clique no botão de login
+document.getElementById('btn-entrar').addEventListener('click', validarLogin);
 
 function entrar() {
   window.location.href = "./login.html"
