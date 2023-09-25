@@ -57,9 +57,6 @@ function fazerLogin(email, senha) {
     });
 }
 
-// Adicionar evento de clique no botão de login
-document.getElementById('btn-entrar').addEventListener('click', validarLogin);
-
 function entrar() {
   window.location.href = "./login.html"
 }

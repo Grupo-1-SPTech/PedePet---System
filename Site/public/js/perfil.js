@@ -1,5 +1,11 @@
-var email = localStorage.getItem("email");
-const regexEmail = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+function showSnackBar(message) {
+    var x = document.getElementById("snackbar");
+    x.innerHTML = message;
+    x.className = "show";
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+}
+
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function fecharModal() {
     let modal = document.getElementById("modal");
@@ -28,26 +34,39 @@ function abrirModal() {
 
 
 function alterarEmail(email) {
+    var email = localStorage.getItem("email");
     const novoEmail = document.getElementById("novoEmail").value;
     const senha = document.getElementById("senhaUser").value;
 
-    if (!regexEmail.test(email) || email == "") {
+    console.log("1");
+
+    if (novoEmail == "" || !regexEmail.test(novoEmail)) {
         showSnackBar("Email inválido!");
+        return
     } else if (senha == "") {
-        showSnackBar("senha inválida!");
+        showSnackBar("Senha inválida!");
+        return
+    } else if (senha.length < 8) {
+        showSnackBar("Senha deve ter 8 caracteres!");
+        return
     }
 
+    console.log("4");
     fetch(`http://localhost:8080/usuarios/alterar/${email}?emailNovo=${novoEmail}&senha=${senha}`, {
         method: "GET"
     })
         .then(response => {
+            console.log("5");
+            console.log(email);
             if (response.status === 200) {
+                console.log("6");
                 console.log("Email alterado com sucesso!");
                 fetch(`http://localhost:8080/usuarios/info/${email}`, {
                     method: "GET"
                 })
                     .then(res => res.json())
                     .then((data) => {
+                        console.log("7");
                         const userInfo = data;
                         email = userInfo.usuario.email;
                         const inAlterarEmail = document.getElementById("emailProfile");
@@ -56,13 +75,16 @@ function alterarEmail(email) {
                     })
                     .catch((err) => {
                         console.error(err);
+                        console.log("8");
                     });
             } else {
-                showSnackBar("Senha inválida!");
+                showSnackBar("Senha incorreta!");
+                console.log("9");
             }
         })
         .catch(error => {
             console.error("Erro ao enviar solicitação: ", error);
+            console.log("10");
         });
 }
 
@@ -106,10 +128,3 @@ function buscaInfoUser() {
         });
 }
 
-
-function showSnackBar(message) {
-    var x = document.getElementById("snackbar");
-    x.innerHTML = message;
-    x.className = "show";
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-}
