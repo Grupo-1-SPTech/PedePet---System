@@ -604,3 +604,40 @@ background-color: var(--radio-color);
 }
 
 
+/* PARTE FINAL */
+
+.Tittle2 {
+  font-size: 44px;
+  font-weight: 900;
+  padding-top: 10vh;
+  padding-left: 5vw;
+  font-family: 'Montserrat' sans-serif;
+  color: var(--black);
+}
+
+.btns2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ajuste {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carregar {
+  font-size: 16px;
+  width: 180px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  color: var(--white);
+  background-color: var(--purple);
+  font-weight: 700;
+  cursor: pointer;
+}
+

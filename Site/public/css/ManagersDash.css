@@ -483,7 +483,6 @@ background-color: var(--radio-color);
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  flex-direction: column;
 }
 
 .Cor {
@@ -498,35 +497,11 @@ background-color: var(--radio-color);
   font-weight: 900;
   font-family: 'Montserrat' sans-serif;
   color: var(--black);
+  padding-bottom: 7vh;
 }
 
 .legendinha{
   color: rgba(0, 0, 0, 0.60);
-}
-
-.Raca {
-  font-weight: 900;
-  font-size: 20px;
-  padding-top: 10%;
-}
-
-.btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: 4%;
-}
-
-.prosseguir {
-  font-size: 16px;
-  width: 180px;
-  height: 40px;
-  border-radius: 12px;
-  border: none;
-  color: var(--white);
-  background-color: var(--orange);
-  font-weight: 700;
-  cursor: pointer;
 }
 
 
