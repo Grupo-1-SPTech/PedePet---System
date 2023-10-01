@@ -363,7 +363,7 @@
 .contentTop h2 {
   color: var(--darkpurple);
   font-weight: 800;
-  font-size: 1.5em;
+  font-size: 2.1em;
 
 }
 
@@ -396,10 +396,10 @@
 }
 
 .title {
-  padding-bottom: 10px;
   padding-top: 6%;
   font-weight: 600;
   color: #999999;
+  font-size: 1.4rem;
 }
 
 .letrinhas {
@@ -574,9 +574,9 @@ select {
 }
 
 .cancelar {
-  font-size: 16px;
-  width: 180px;
-  height: 40px;
+  font-size: 1.2rem;
+  width: 250px;
+  height: 50px;
   border-radius: 12px;
   border: 4px solid var(--darkpurple);
   color: var(--darkpurple);
@@ -592,9 +592,9 @@ select {
 }
 
 .prosseguir {
-  font-size: 16px;
-  width: 180px;
-  height: 40px;
+  font-size: 1.2rem;
+  width: 250px;
+  height: 50px;
   border-radius: 12px;
   border: none;
   color: var(--white);

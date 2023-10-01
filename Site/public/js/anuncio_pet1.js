@@ -4,6 +4,10 @@ const actualValue = 65; // Valor atual (pode ser variado)
 const urlParams = new URLSearchParams(window.location.search);
 const idAnuncio = urlParams.get('id');
 
+function redirecionarParaPagina() {
+  window.location.href = 'anuncio_pet2.html';
+}
+
 function anuncioInfos(){
 fetch(`http://localhost:8080/anuncios/${idAnuncio}`, {  
   method: "GET"
@@ -81,5 +85,5 @@ function entrar() {
 
 
 function buscarDados() {
-  anuncioInfos();
+  anuncioInfos(); 
 }
