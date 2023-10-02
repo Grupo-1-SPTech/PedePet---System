@@ -32,6 +32,9 @@
 body {
     background-color: var(--white);
 }
+main {
+  background-color: var(--white);
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -51,22 +54,19 @@ body {
 
 .container-nav {
   display: flex;
+  align-items: center;
   width: 100vw;
   height: 8vh;
-  flex-direction: row;
   padding: 2px 4%;
   background-color: var(--white);
-  align-items: center;
-  overflow-y: hidden;
-  position: fixed;
-  z-index: 2;
 }
 
 #logo {
-  height: 80%;
+    height: 80%;
+    cursor: pointer;
 }
 
-.optionsNav {
+.options {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -74,29 +74,19 @@ body {
   align-items: center;
 }
 
-.optionsNav a {
+.container-nav .options li {
+  display: inline-block;
+  text-align: center;
+  margin: 0 1.8rem;
+}
+
+.options li a {
   text-decoration: none;
-  font-family: "Montserrat", sans-serif;
-  color: var(--black);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark);
   font-weight: 800;
   font-size: 16px;
-}
-
-.optionsNav a:hover {
-transition: 0.4s;
-color: var(--darkpurple)
-}
-
-.optionsNav ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  list-style-type: none;
-}
-
-.optionsNav li {
-  text-align: center;
+  position: relative;
 }
 
 /* Botão menu */
@@ -136,7 +126,7 @@ color: var(--darkpurple)
 .profile-dropdown-list {
   position: absolute;
   top: 68px;
-  width: 320px;
+  width: 350px;
   right: 0;
   margin-right: 60px;
   background-color: var(--white);
@@ -203,7 +193,7 @@ color: var(--darkpurple)
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 68px;
+  margin-left: 84px;
 }
 
 .button{
@@ -241,6 +231,341 @@ input:checked + .button::before{
 }
 
 /* fim botão switch tema  */
+
+
+/* botão daltonismo */
+
+.visual-hidden{
+  clear: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.color-picker > fieldset{
+  border: 0;
+  display: flex;
+  align-items: center;
+  width: 9rem;
+  height: 3rem;
+  margin-left: .6rem;
+}
+
+.color-picker input[type="radio"] {
+  appearance: none;
+  width: .8rem;
+  height: .8rem;
+  outline: 2px solid var(--radio-color, currentColor);
+  outline-offset: 3px;
+  border-radius: 50%;
+  margin: 0 8px 0 9px;
+  cursor: pointer;
+}
+
+.color-picker input[type="radio"]:checked {
+  background-color: var(--radio-color);
+}
+
+.color-picker input[type="radio"]#light {
+  --radio-color: #fb3f08 ; 
+}
+
+.color-picker input[type="radio"]#tritanopia {
+  --radio-color: pink ; 
+}
+
+.color-picker input[type="radio"]#protanopia {
+  --radio-color: lightblue ; 
+}
+
+.color-picker input[type="radio"]#deuteranopia {
+  --radio-color: yellow ; 
+}
+
+.color-picker input[type="radio"]#acromatico {
+  --radio-color: lightgray ; 
+}
+
+.tritanopia,
+:root:has(#tritanopia:checked){
+  --orange: #f78da7;
+  --darkblue: #024f45;
+  --purple: #673203;
+  --darkpurple: #3f1e01;
+  --white: #fff;
+  --dark: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #f78da7, #3f1e01, #673203, #f78da7);
+  --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+
+.protanopia,
+:root:has(#protanopia:checked){
+  --orange: #957e04;
+  --darkblue: #0e406b;
+  --purple: #0e406b;
+  --darkpurple: #0e406b;
+  --white: #fff;
+  --dark: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #957e04, #0e406b, #0e406b, #957e04);
+  --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+
+.deuteranopia,
+:root:has(#deuteranopia:checked){
+  --orange: #bda007;
+  --darkblue: #16609f;
+  --purple: #16609f;
+  --darkpurple: #16609f;
+  --white: #fff;
+  --dark: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #bda007, #16609f, #16609f, #bda007);
+  --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+
+.acromatico,
+:root:has(#acromatico:checked){
+  --orange: #635d5d;
+  --darkblue: #727275;
+  --purple: #adadad;
+  --darkpurple: #1f1f1f;
+  --white: #fff;
+  --dark: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #635d5d, #727275, #adadad, #635d5d);
+  --shadow: 0px 2px 8px 0px var(--darkgray);
+}
+/* fim botão daltonismo*/
+
+.btn-login {
+    width: 50px;
+    height: 50px;
+    font-weight: 800;
+    border-radius: 50%;
+    border: none;
+    background: url(images/icon-user-white.svg) no-repeat;
+    background-position: center;
+    background-color: var(--orange);
+    background-size: 30px;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* FIM NAVBAR*/
+
+/* INICIO MAIN ADPET */
+
+.bg-adpet {
+  background-color: var(--lightgray);
+  height: 85vh;
+  background-image: url(./images/bg_adpet.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.title-adpet h1{
+  font-size: 44px;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--dark);
+  background-color: var(--white);
+}
+
+.subtitle-adpet h1{
+  font-size: 30px;
+  padding: 5% 5% 0 5%;
+  color: var(--dark);
+  background-color: var(--white);
+}
+
+.content-adpet{
+  padding: 3% 5%;
+  overflow: hidden;
+  color: var(--dark);
+  background-color: var(--white);
+}
+
+.content-adpet h3{
+  font-size: 25px;
+  font-weight: normal;
+  padding-bottom: 1%;
+}
+
+.filters{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* INICIO css dropdown raça */
+.select-menu {
+  margin-top: 4%;
+  width: 23vw;
+  border-radius: 12px;
+  border: 2px solid var(--dark);
+}
+
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  background-color: var(--white);
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.select-btn img {
+  height: 24px;
+  transition: 0.3s;
+}
+
+#select-raca {
+  background: url(images/icon-dog.png) no-repeat 18px 14px;
+  background-size: 28px 28px;
+  padding-left: 20%;
+}
+
+.select-menu.active .select-btn img {
+  transform: rotate(-180deg);
+}
+
+.select-menu .options {
+  position: relative;
+  display: none;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+}
+
+.select-menu.active .options {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  max-height: 30vh;
+  max-width: 23vw;
+}
+
+.options .option {
+  display: flex;
+  height: 45px;
+  width: 100%;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  margin-top: 10px;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 15px;
+}
+
+.options .option:hover {
+  background-color: var(--darkpurple);
+  color: var(--white);
+}
+
+/* FINAL css dropdown raça */
+
+/* INICIO css dropdown TAMANHO */
+.select-menu2 {
+  margin-top: 4%;
+  width: 23vw;
+  border-radius: 12px;
+  border: 2px solid var(--dark);
+}
+
+.select-menu2 .select-btn2 {
+  display: flex;
+  height: 55px;
+  background-color: var(--white);
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+ }
+
+ .select-btn2 img {
+  height: 24px;
+  transition: 0.3s;
+}
+
+#select-tamanho {
+  background: url(images/porte_dog.png) no-repeat 18px 14px;
+  background-size: 28px 28px;
+  padding-left: 20%;
+}
+
+.select-menu2.active2 .select-btn2 img {
+  transform: rotate(-180deg);
+}
+
+.select-menu2 .options2 {
+  position: relative;
+  display: none;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+}
+
+.select-menu2.active2 .options2 {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  max-height: 30vh;
+  max-width: 23vw;
+}
+
+.options2 .option2 {
+  display: flex;
+  height: 45px;
+  width: 100%;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  margin-top: 10px;
+  background-color: var(--white);
+  color: var(--dark);
+  font-size: 15px;
+}
+
+.options2 .option2:hover {
+  background-color: var(--darkpurple);
+  color: var(--white);
+}
+/* FINAL css dropdown tamanho */
+
 
 /* sidebar */
 
