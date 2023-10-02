@@ -1,71 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Acessibilidade - PedePet</title>
-    <link rel="stylesheet" href="css/acessibilidade.css">
+    <title>Anúncio Pet - PedePet</title>
     <link rel="icon" href="./css/images/icon-pata.png">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
-    <nav class="container-nav">
-        <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
-        <div class="optionsNav">
-            <ul>
-                <li><a href="#ComoFunciona">Como funciona</a></li>
-                <li><a href="#SobreNos">Sobre nós</a></li>
-                <li><a href="#FAQ">FAQ</a></li>
-                <li><a href="#Contato">Contato</a></li>
-            </ul>
-        </div>
-        <div class="profile-dropdown">
-            <div class="profile-dropdown-btn" onclick="toggle()">
-                <div class="profile-img">
+<body onload="buscarDados()">
+        <nav class="container-nav">
+            <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
+            <div class="options">
+                <ul>
+                  <li><a href="./index.html#ComoFunciona">Como funciona</a></li>
+                  <li><a href="./index.html#SobreNos">Sobre nós</a></li>
+                  <li><a href="./index.html#FAQ">FAQ</a></li>
+                  <li><a href="./index.html#Contato">Contato</a></li>
+                </ul>
+              </div>
+            <div class="profile-dropdown">
+                <div class="profile-dropdown-btn" onclick="toggle()">
+                    <div class="profile-img"></div>
                 </div>
+                <ul class="profile-dropdown-list">
+                    <li class="profile-name">
+                        <h1>Fabio Moledo</h1>
+                        <span>Vendedor</span>
+                    </li>
+                    <hr />
+                    <li class="profile-dropdown-list-item" id="config">
+                        <a href="perfil.html">
+                            <i class="fa-regular fa-user"> </i>
+                            Configurações da conta
+                        </a>
+                    </li>
+                    <li class="profile-dropdown-list-item" id="dark-mode">
+                        <a href="">
+                            <i class="fa-regular fa-moon"> </i>
+                            Tema
+                            <div class="switch-theme">
+                                <input type="checkbox" id="check" id=>
+                                <label for="check" class="button" id="btn-dark-mode-toggle"></label>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="profile-dropdown-list-item" id="daltonismo">
+                        <a href="#">
+                            <i class="fa-regular fa-eye"> </i>
+                            Daltonismo
+                            <form class="color-picker" action="">
+                                <fieldset>
+                                    <label class="visual-hidden" for="light"></label>
+                                    <input type="radio" name="theme" id="light" checked>
+    
+                                    <label class="visual-hidden" for="tritanopia"></label>
+                                    <input type="radio" name="theme" id="tritanopia" checked>
+    
+                                    <label class="visual-hidden" for="protanopia"></label>
+                                    <input type="radio" name="theme" id="protanopia" checked>
+    
+                                    <label class="visual-hidden" for="deuteranopia"></label>
+                                    <input type="radio" name="theme" id="deuteranopia" checked>
+    
+                                    <label class="visual-hidden" for="acromatico"></label>
+                                    <input type="radio" name="theme" id="acromatico" checked>
+                                </fieldset>
+                            </form>
+                        </a>
+                    </li>
+                    <hr />
+                    <li class="profile-dropdown-list-item" id="logout">
+                        <a href="index.html">
+                            <i class="fa-solid fa-arrow-right-to-bracket"> </i>
+                            Sair
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-            <ul class="profile-dropdown-list">
-                <li class="profile-name">
-                    <h1>Fabio Moledo</h1>
-                    <span>Comprador</span>
-                </li>
-                <hr />
-                <li class="profile-dropdown-list-item" id="config">
-                    <a href="">
-                        <i class="fa-regular fa-user"> </i>
-                        Configurações da conta
-                    </a>
-                </li>
-                <li class="profile-dropdown-list-item" id="mode">
-                    <a href="">
-                        <i class="fa-regular fa-moon"> </i>
-                        Tema
-                        <div class="switch-theme">
-                            <input type="checkbox" id="check" id=>
-                            <label for="check" class="button" id="btn-dark-mode-toggle"></label>
-                        </div>
-                    </a>
-                </li>
-                <li class="profile-dropdown-list-item" id="daltonismo">
-                    <a href="#">
-                        <i class="fa-regular fa-eye"> </i>
-                        Daltonismo
-                    </a>
-                </li>
-                <hr />
-                <li class="profile-dropdown-list-item" id="sair">
-                    <a href="index.html">
-                        <i class="fa-solid fa-arrow-right-to-bracket"> </i>
-                        Sair
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-    </nav>
+    
+        </nav>
     <main>
 
 
@@ -177,4 +195,3 @@
 </body>
 
 </html>
-<nav>
