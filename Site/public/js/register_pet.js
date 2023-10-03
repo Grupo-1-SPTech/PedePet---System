@@ -330,7 +330,7 @@ function cadastroAnuncio(cadastroUserOBJT, cadastroPetOBJT, cadastroPetOBJT2, ca
 
     console.log(cadastroUserOBJT);
 
-    fetch("http://localhost:8080/cadastros/anuncio/${cadastroUserOBJT.idUsuario}", {
+    fetch(`http://localhost:8080/cadastros/anuncio/${cadastroUserOBJT.idUsuario}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -362,22 +362,18 @@ function cadastroAnuncio(cadastroUserOBJT, cadastroPetOBJT, cadastroPetOBJT2, ca
             }
         })
     })
-        .then(res => res.json())
-        .then((response) => {
-            // window.location.href = "./puppys_ad.html";
-            console.log(cadastroUserOBJT);
-            console.log(cadastroPetOBJT);
-            console.log(cadastroPetOBJT2);
-            console.log(cadastroPetOBJT3);
-            console.log(response);
-            console.log("cadAnuncio feito");
+        .then((res) => {
+            if (res.status === 201) {
+                window.location.href = "./puppys_ad.html";
+                console.log("Anuncio criado");
+            } else {
+                return res.text().then(errorMessage => {
+                    console.log("Erro ao cadastrar o anúncio:", errorMessage);
+                });
+            }
         })
         .catch((err) => {
-            console.log(cadastroUserOBJT);
-            console.log(cadastroPetOBJT);
-            console.log(cadastroPetOBJT2);
-            console.log(cadastroPetOBJT3);
             console.log(err);
-            console.log("CdAnuncio deu erro");
+            console.log("Erro ao criar anuncio");
         })
 }

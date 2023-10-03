@@ -115,15 +115,15 @@ class UsuarioService(
 
         val user = usuarioRepository.findById(id)
         if (user.isEmpty) {
-            return ResponseEntity.status(404).build()
+            ResponseEntity.status(404).body("Usuario não existe")
         }
         val selectAnuncio = anuncioRepository.findByUsuarioId(id)
         if (selectAnuncio != null){
             ResponseEntity.status(404).body("Anuncio ja existente")
         }
         val vendedor = user.get()
-        if(vendedor is Comprador){
-            return ResponseEntity.status(404).build()
+        return if(vendedor is Comprador){
+            ResponseEntity.status(404).body("Para criar anuncio tem que ser um vendedor")
         } else {
             val anuncio = AnuncioPet()
             anuncio.usuario = user.get()
@@ -151,7 +151,7 @@ class UsuarioService(
                     cadastrarAnuncio.filhote = cadastrarAnuncio.filhote.copy(id = null)
                 }
             }
-            return ResponseEntity.status(201).body("Anuncio cadastrado")
+            ResponseEntity.status(201).build()
         }
     }
 }
