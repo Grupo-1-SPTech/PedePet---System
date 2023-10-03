@@ -74,41 +74,54 @@ btnDarkMode.addEventListener('click', () => {
 
 function defineCurrentTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme)
-    if (theme == "light") {
+    if(theme == "light")
+    {
 
     }
+}
+
+function entrar() {
+    window.location.href = "./login.html"
 }
 
 // tema ficar no localStorage
 const colorThemes = document.querySelectorAll('[name="theme"]');
 
 //store theme
-const storeTheme = function (theme) {
+const storeTheme = function(theme) {
     localStorage.setItem("theme", theme);
 }
 
-const setTheme = function () {
+const setTheme = function() {
     const activeTheme = localStorage.getItem("theme");
     colorThemes.forEach((themeOption) => {
-        if (themeOption.id === activeTheme) {
+        if(themeOption.id === activeTheme){
             themeOption.checked = true;
         }
     });
     document.documentElement.className = theme;
 };
 
+colorThemes.forEach(themeOption => {
+    themeOption.addEventListener('click', () => {
+        storeTheme(themeOption.id);    
+    });
+});
+
+document.onload = setTheme();
+
 
 // validação caso estiver logado
 // Recuperando o email do usuario no localStorageconst emailArmazenado = localStorage.getItem("email");
 
 
-const emailArmazenado = sessionStorage.getItem("email");
+const emailArmazenado = localStorage.getItem("email");
 console.log(emailArmazenado);
 
 // Função para verificar o estado de login
 function validaLogin() {
     // Recuperando o email do usuário no localStorage ou sessionStorage, conforme necessário
-    const emailArmazenado = localStorage.getItem("email") || sessionStorage.getItem("email");
+    const emailArmazenado = localStorage.getItem("email");
     const profileDropdown = document.querySelector('.profile-dropdown-btn');
     const btnLogin = document.querySelector('.btn-login');
 
@@ -165,6 +178,34 @@ function validaLogin() {
         btnLogin.style.display = 'block';
         profileDropdown.style.display = 'none'; // Esconder o botão do perfil
     }
+}
+
+function logoff(Id) {
+    // Limpar o email armazenado no localStorage
+    localStorage.removeItem("email");
+
+    // Fazer uma solicitação ao servidor para efetuar o logoff (se necessário)
+    // Você pode fazer uma solicitação DELETE para um endpoint de logoff no servidor
+    const url = `http://localhost:8080/logoff/${Id}`;
+
+    fetch(url, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // O logoff foi bem-sucedido
+            // Redirecionar o usuário para a página de login ou outra página apropriada
+            window.location.href = "./login.html";
+        } else {
+            console.error("Erro ao efetuar o logoff no servidor.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro ao fazer a solicitação de logoff:", error);
+    });
 }
 
 
@@ -271,7 +312,6 @@ function getUsuariosTotal() {
         })
 }
 
-
 $(document).ready(function () {
     // Add smooth scrolling to all links
     $("a").on('click', function (event) {
@@ -296,9 +336,6 @@ $(document).ready(function () {
         } // End if
     });
 });
-
-
-
 
 function buscarDados() {
     getFilhotesAdquiridos()

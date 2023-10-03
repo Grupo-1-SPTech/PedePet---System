@@ -94,7 +94,6 @@ class UsuarioController(
             return ResponseEntity.ok().build()
         }
     }
-
     @GetMapping("/info/{email}")
     fun buscarInfoUser (@PathVariable email: String): ResponseEntity<EnderecoDto> {
         val infoUser: Usuario = repository.findByEmail(email).get()
@@ -116,4 +115,7 @@ class UsuarioController(
             return ResponseEntity.status(404).build()
         }
     }
+
+
+    
 }
