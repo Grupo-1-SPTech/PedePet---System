@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Pedidos - PedePet</title>
+    <link rel="stylesheet" href="css/meusAnuncios.css">
+    <link rel="icon" href="./css/images/icon-pata.png">
+</head>
+
+<body>
+    <nav class="container-nav">
+        <img id="logo" src="./css/images/logoPedepetRoxo.png" onclick="location.href='./index.html'">
+        <div class="optionsNav">
+            <ul>
+                <li><a href="#ComoFunciona">Como funciona</a></li>
+                <li><a href="#SobreNos">Sobre nós</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+                <li><a href="#Contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" onclick="toggle()">
+                <div class="profile-img">
+                </div>
+            </div>
+
+            <ul class="profile-dropdown-list">
+                <li class="profile-name">
+                    <h1>Fabio Moledo</h1>
+                    <span>Comprador</span>
+                </li>
+                <hr />
+                <li class="profile-dropdown-list-item" id="config">
+                    <a href="">
+                        <i class="fa-regular fa-user"> </i>
+                        Configurações da conta
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item" id="mode">
+                    <a href="">
+                        <i class="fa-regular fa-moon"> </i>
+                        Tema
+                        <div class="switch-theme">
+                            <input type="checkbox" id="check" id=>
+                            <label for="check" class="button" id="btn-dark-mode-toggle"></label>
+                        </div>
+                    </a>
+                </li>
+                <li class="profile-dropdown-list-item" id="daltonismo">
+                    <a href="#">
+                        <i class="fa-regular fa-eye"> </i>
+                        Daltonismo
+                    </a>
+                </li>
+                <hr />
+                <li class="profile-dropdown-list-item" id="sair">
+                    <a href="index.html">
+                        <i class="fa-solid fa-arrow-right-to-bracket"> </i>
+                        Sair
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <main>
+        <div class="container">
+
+            <div class="sidebar">
+                <button id="b1" class="opt">
+                    <img src="css/images/profileOrangeIcon.svg" alt="">
+                    <a href="./perfil.html">Perfil</a>
+                </button>
+
+                <button id="b2" class="opt">
+                    <img src="css/images/archiveIcon.svg" alt="">
+                    <a href="./menupedidos.html">Meus pedidos</a>
+                </button>
+
+                <button id="b3" class="opt">
+                    <img src="css/images/accessibilityIcon.svg" alt="">
+                    <a href="./acessibilidade.html">Acessibilidade</a>
+                </button>
+
+                <button id="b4" class="opt">
+                    <img src="css/images/cardIcon.svg" alt="">
+                    <a>Pagamentos</a>
+                </button>
+
+                <button id="b5" class="opt">
+                    <img src="css/images/localOrangeIcon.svg" alt="">
+                    <a>Endereços</a>
+                </button>
+
+                <button id="b6" class="opt">
+                    <img src="css/images/verified-svgrepo-com.svg" alt="">
+                    <a href="./formulario_confianca.html">Aprovações</a>
+                </button>
+
+                <button id="b7" class="opt">
+                    <img src="css/images/logoutIcon.svg" alt="">
+                    <a>Sair</a>
+                </button>
+
+                <button class="logout" onclick="logoutUser()">Voltar ao inicio</button>
+            </div>
+
+            <div class="content">
+                <span class="titleProfile">
+                    Meus Anúncios
+                </span>
+
+                <div class="containerProfile">
+                    <div class="left">
+                        <div class="img">
+                            <img src="css/images/puppys.png" alt="">
+                        </div>
+                        <div class="bottomSide">
+                            <div class="metrica">
+                                <h1>Nascimento em</h1>
+                                <div class="valorMet">
+                                    <span>147</span><span id="dias">Dias</span>
+                                </div>
+
+                            </div>
+                            <div class="metrica">
+                                <h1>Clientes na fila</h1>
+                                <div class="valorMet2">
+                                    <span>3</span>
+                                    <span id="mcPoze">de</span>
+                                    <span>5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="topRight">
+                            <h1>Pessoas na fila</h1>
+                        </div>
+                        <div class="bottomRight">
+                            <div class="banner">
+
+                                <div class="logoHist">
+                                    <img src="css/images/profile.svg" alt="">
+                                </div>
+
+                                <div class="infoUser">
+                                    <span id="nomeUser">Luigi Ferrolho</span>
+                                </div>
+                                
+                                <div class="infoUser">
+                                    <span id="numeroUser">11 974637488</span>
+                                </div>
+
+                                <button class="status">Pendente</button>
+
+                                <button class="seeMore">Ver mais</button>
+
+                            </div>
+
+                            <div class="banner">
+
+                                <div class="logoHist">
+                                    <img src="css/images/profile.svg" alt="">
+                                </div>
+
+                                <div class="infoUser">
+                                    <span id="nomeUser">Luigi Ferrolho</span>
+                                </div>
+                                
+                                <div class="infoUser">
+                                    <span id="numeroUser">11 974637488</span>
+                                </div>
+
+                                <button class="status">Pendente</button>
+
+                                <button class="seeMore">Ver mais</button>
+
+                            </div>
+
+                            <div class="banner">
+
+                                <div class="logoHist">
+                                    <img src="css/images/profile.svg" alt="">
+                                </div>
+
+                                <div class="infoUser">
+                                    <span id="nomeUser">Luigi Ferrolho</span>
+                                </div>
+                                
+                                <div class="infoUser">
+                                    <span id="numeroUser">11 974637488</span>
+                                </div>
+
+                                <button class="status">Pendente</button>
+
+                                <button class="seeMore">Ver mais</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        </div>
+
+
+    </main>
+
+    <div vw class="enabled" style="margin: 0px 0px 0px 0px;">
+        <div vw-access-button class="active" style="margin: 0px 0px 0px 0px;"></div>
+        <div vw-plugin-wrapper style="margin: 0px 0px 0px 0px;">
+            <div class="vw-plugin-top-wrapper" style="margin: 0px 0px 0px 0px;"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>
+<nav>

@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --orange: #fb3f08;
+  --darkblue: #4c4c9d;
+  --purple: #7c4bc8;
+  --darkpurple: #44207e;
+  --white: #fffafa;
+  --black: #000;
+  --gray: #d0d0d0;
+  --darkgray: #6c6c6c;
+  --lightgray: #D9D9D9;
+  --background: linear-gradient(70deg, #fb3f08, #4c4c9d, #7c4bc8, #fb3f08);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+
+  margin-left: inherit;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--purple);
+  border-radius: 30px;
+}
+
+/* menu */
+
+.container-nav {
+  display: flex;
+  width: 100vw;
+  height: 8vh;
+  flex-direction: row;
+  padding: 2px 4%;
+  background-color: var(--white);
+  align-items: center;
+  overflow-y: hidden;
+
+}
+
+#logo {
+  height: 80%;
+  cursor: pointer;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: var(--darkpurple);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot1 {
+  height: 15px;
+  width: 15px;
+  background-color: var(--lightgray);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 30%;
+  align-items: center;
+}
+
+.options a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--black);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.options ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+}
+
+.options li {
+  text-align: center;
+}
+
+/* Botão menu */
+
+.btn-login {
+  width: 12vw;
+  height: 40px;
+  font-weight: 800;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--orange);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Parte 1 dentro do contendCad */
+
+.containerProfile {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    margin-top: 20px;
+    background-color: var(--white);
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: -5px 5px 20px #00000035;
+}
+
+/* Parte da Esquerda */
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    height: 100%;
+    width: 40%;
+}
+
+.containerImage {
+    width: 85%;
+    height: 70%;
+    overflow: hidden;
+    border-radius: 12px 12px 12px 12px;
+}
+
+.Puppy {
+    width: 100%;
+    height: 100%;
+}
+
+.containerText {
+    width: 100%;
+    height: 40%;
+    display: flex;
+}
+
+.Part {
+    width: 50%;
+    height: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Tittle2 {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    padding-left: 45px;
+}
+
+.Tittle3 {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    padding-left: 25px;
+}
+
+.subtitle1 {
+    font-size: 24px;
+    font-weight: 900;
+    padding-left: 45px;
+    padding-top: 15px;
+}
+
+.subtitle2 {
+    font-size: 24px;
+    font-weight: 900;
+    padding-left: 45px;
+    padding-top: 15px;
+}
+
+.OrangeText {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--orange);
+}
+
+/* Parte do Meio */
+
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    height: 100%;
+    width: 30%;
+    padding-bottom: 8%;
+}
+
+.text1 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    padding-left: 7%;
+    padding-bottom: 5%;
+    margin-top: 1%;
+}
+
+.Infos {
+    width: 95%;
+    height: 5vh;
+    display: flex;
+    border: none;
+    border-radius: 12px;
+    padding-left: 7%;
+    margin-top: 1%;
+}
+
+.Infos img {
+    width: 16px;
+    height: 16px;
+    align-items: center;
+}
+ 
+.Infos span {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    margin-left: 8%;
+}
+
+.ContainerRedes {
+    width: 70%;
+    display: flex;
+    height: 41px;
+    margin-left: 4%;
+    overflow: hidden;
+}
+
+.espacamento{
+    height: 5vh;
+    padding-left: 2%;
+}
+
+/* Parte da direita */
+
+.direita {
+    width: 29%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.alinhamento {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75%;
+    margin-top: 7.5%;
+    overflow: hidden;
+}
+
+.text2 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    padding-left: 12%;
+    padding-bottom: 5%;
+    margin-top: 1%;
+    overflow: hidden;
+}
+
+.Status {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    border: none;
+    border-radius: 12px;
+    padding-left: 7%;
+    margin-top: 1%;
+    line-height: normal;
+}
+
+.Status #bolinha {
+    align-items: center;
+}
+ 
+.Status span {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--darkpurple);
+    margin-left: 7%;
+}
+
+.Statustext {
+    padding-top: 0.5vh;
+}
+
+.dot {
+    height: 24px;
+    width: 24px;
+    background-color: var(--darkpurple);
+    border-radius: 55%;
+    display: inline-block;
+  }
+  
+  .dot1 {
+    height: 24px;
+    width: 24px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    display: inline-block;
+  }  
+
+  .ContainerCancelar {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 16%;
+    padding-bottom: 15%;
+    overflow: hidden;
+  }
+
+  .Cancelar {
+    width: 13vw;
+    height: 40px;
+    margin-top: 15%;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-left: 10%;
+    border-color: var(--orange);
+}
+
+.Cancelar:hover {
+    background-color: var(--white);
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    transition: 0.4s;
+}
+
+/* Fim parte 1 */
+
+/* Inicio parte 2 */
+.containerProfile2 {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    margin-top: 20px;
+    background-color: var(--white);
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: -5px 5px 20px #00000035;
+}
+
+/* Fim parte 2 */
+
+/*gradiente de fundo*/
+.containerCad {
+  background: linear-gradient(181deg, var(--orange), var(--purple), var(--darkpurple));
+  background-size: 800% 800%;
+
+  -webkit-animation: gradiente 14s ease infinite;
+  -moz-animation: gradiente 14s ease infinite;
+  animation: gradiente 14s ease infinite;
+}
+
+@-webkit-keyframes gradiente {
+  0% {
+    background-position: 96% 0%
+  }
+
+  50% {
+    background-position: 5% 100%
+  }
+
+  100% {
+    background-position: 96% 0%
+  }
+}
+
+@-moz-keyframes gradiente {
+  0% {
+    background-position: 96% 0%
+  }
+
+  50% {
+    background-position: 5% 100%
+  }
+
+  100% {
+    background-position: 96% 0%
+  }
+}
+
+@keyframes gradiente {
+  0% {
+    background-position: 96% 0%
+  }
+
+  50% {
+    background-position: 5% 100%
+  }
+
+  100% {
+    background-position: 96% 0%
+  }
+}
+
+
+
+.containerCad {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-top: 3%;
+
+}
+
+.formCad {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 75vw;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.contentCad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  background-color: var(--white);
+  padding: 2% 2% 2% 2%;
+  background-color: white;
+  margin-bottom: 7vh;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+
+.contentTop {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  background-color: white;
+  align-items: center;
+}
+
+.contentTop h2 {
+  color: var(--darkpurple);
+  font-weight: 800;
+  font-size: 1.5em;
+
+}
