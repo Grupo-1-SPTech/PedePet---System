@@ -13,7 +13,7 @@ function fecharModal() {
     modal.style.display = "none";
     backModal.style.display = "none";
 
-    document.body.classList.remove("modal-open");
+    document.body.classList.remove("modal-open");   
 
     var novoEmail = document.getElementById("novoEmail");
     var senha = document.getElementById("senhaUser");
